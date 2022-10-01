@@ -1,6 +1,6 @@
 <p align='center'>
 <img src='https://vite-plugin-pwa.netlify.app/banner_light.svg' alt="Documentation for PWA integrations for Vite and the ecosystem"><br>
-Documentation for PWA integrations for Vite and the ecosystem
+Documentation: PWA integrations for Vite and the ecosystem
 </p>
 
 <p align='center'>
