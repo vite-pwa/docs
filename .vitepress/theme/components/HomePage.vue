@@ -9,19 +9,19 @@ import { teamMembers } from '../../contributors'
     <div class="content-container">
       <main class="main">
         <div class="vp-doc" flex flex-col items-center mt-10>
-          <h2 id="integrations" op50 font-normal p="t-10 b-2">
+          <h2 id="integrations" op70 font-normal p="t-10 b-2">
             Integrations
           </h2>
           <div w-full p-10 class="integrations">
             <VPTeamMembers size="small" :members="integrations" />
           </div>
-          <h2 id="meet-the-team" op50 font-normal p="t-10 b-2">
+          <h2 id="meet-the-team" op70 font-normal p="t-10 b-2">
             Meet The Team
           </h2>
           <div w-full p-10>
             <VPTeamMembers size="medium" :members="teamMembers" />
           </div>
-          <h2 id="sponsored-by" op50 font-normal pt-5 pb-2>
+          <h2 id="sponsored-by" op70 font-normal pt-5 pb-2>
             Sponsored by
           </h2>
           <div grid="~ cols-1" w-full text-center mt-10>
