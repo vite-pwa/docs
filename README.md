@@ -35,6 +35,13 @@ Documentation for PWA integrations for Vite and the ecosystem
 - ✨ **Static assets handling**: configure static assets for offline support
 - 🐞 **Development Support**: debug your custom service worker logic as you develop your application
 
+## 📦 Integrations
+
+- [îles](https://github.com/ElMassimo/iles/tree/main/packages/pwa): documentation can be found [here](https://iles-docs.netlify.app/guide/pwa)
+- [SvelteKit](https://github.com/vite-pwa/sveltekit)
+- [VitePress](https://github.com/vite-pwa/vitepress)
+- [Astro](https://github.com/vite-pwa/astro)
+
 ## 📄 License
 
 MIT License © 2021-PRESENT [Anthony Fu](https://github.com/antfu)
