@@ -2,28 +2,28 @@
 layout: home
 sidebar: false
 
-title: Vite Plugin PWA
+title: Vite PWA
 
 hero:
   name: PWA
   text: Vite Plugin
   tagline: |
     Zero-config and framework-agnostic
-    PWA Plugin for Vite
+    PWA integrations for Vite and the ecosystem
   image:
     light:
       src: /icon_light.svg
-      alt: Vite Plugin PWA
+      alt: Vite PWA
     dark:
       src: /icon_dark.svg
-      alt: Vite Plugin PWA
+      alt: Vite PWA
   actions:
     - theme: brand
       text: Get Started
       link: /guide/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/antfu/vite-plugin-pwa
+      link: https://github.com/vite-pwa/docs
 
 features:
   - icon: 👌

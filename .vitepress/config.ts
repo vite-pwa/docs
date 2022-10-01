@@ -232,8 +232,8 @@ const ogImage = 'https://vite-plugin-pwa.netlify.app/og-image.png'
 
 export default withPwa(defineConfig({
   lang: 'en-US',
-  title: 'Vite Plugin PWA',
-  description: 'Zero-config PWA Framework-agnostic Plugin for Vite',
+  title: 'Vite PWA',
+  description: 'Zero-config PWA Framework-agnostic for Vite and Integrations',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
@@ -247,10 +247,10 @@ export default withPwa(defineConfig({
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],
     ['meta', { property: 'og:image', content: ogImage }],
-    ['meta', { property: 'og:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite' }],
+    ['meta', { property: 'og:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite and Integrations' }],
     ['meta', { property: 'og:url', content: ogUrl }],
-    ['meta', { name: 'twitter:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite' }],
-    ['meta', { name: 'twitter:title', content: 'Vite Plugin PWA' }],
+    ['meta', { name: 'twitter:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite and Integrations' }],
+    ['meta', { name: 'twitter:title', content: 'Vite PWA' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: ogImage }],
     ['meta', { name: 'twitter:site', content: '@antfu7' }],
@@ -267,7 +267,7 @@ export default withPwa(defineConfig({
   themeConfig: {
     // logo: '/favicon.svg',
     editLink: {
-      pattern: 'https://github.com/vite-pwa/vite-plugin-pwa/edit/main/docs/:path',
+      pattern: 'https://github.com/vite-pwa/docs/edit/main/docs/:path',
       text: 'Suggest changes to this page',
     },
     algolia: {
@@ -277,7 +277,7 @@ export default withPwa(defineConfig({
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },
-      { icon: 'github', link: 'https://github.com/vite-pwa/vite-plugin-pwa' },
+      { icon: 'github', link: 'https://github.com/vite-pwa/docs' },
     ],
     footer: {
       message: 'Released under the MIT License.',
@@ -313,12 +313,38 @@ export default withPwa(defineConfig({
         text: `v${version}`,
         items: [
           {
-            text: 'Release Notes',
-            link: 'https://github.com/vite-pwa/vite-plugin-pwa/releases',
+            text: 'Vite Plugin PWA',
+            items: [
+              {
+                text: 'Release Notes',
+                link: 'https://github.com/vite-pwa/vite-plugin-pwa/releases',
+              },
+              {
+                text: 'Contributing',
+                link: 'https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md',
+              },
+            ],
           },
           {
-            text: 'Contributing',
-            link: 'https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md',
+            text: 'Integrations',
+            items: [
+              {
+                text: 'îles',
+                link: 'https://github.com/ElMassimo/iles/tree/main/packages/pwa',
+              },
+              {
+                text: 'SvelteKit',
+                link: 'https://github.com/vite-pwa/sveltekit',
+              },
+              {
+                text: 'VitePress',
+                link: 'https://github.com/vite-pwa/vitepress',
+              },
+              {
+                text: 'Astro',
+                link: 'https://github.com/vite-pwa/astro',
+              },
+            ],
           },
         ],
       },
