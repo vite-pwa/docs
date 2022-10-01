@@ -1,5 +1,5 @@
 <p align='center'>
-<img src='https://vite-plugin-pwa.netlify.app/banner_light.svg' alt="Documentation for PWA integrations for Vite and the ecosystem"><br>
+<img src='./hero.png' alt="Documentation for PWA integrations for Vite and the ecosystem"><br>
 Documentation: PWA integrations for Vite and the ecosystem
 </p>
 
