@@ -1,0 +1,73 @@
+{
+  "name": "vite-pwa-docs",
+  "version": "0.13.1",
+  "packageManager": "pnpm@7.12.2",
+  "description": "Zero-config PWA for Vite Documentation",
+  "author": "antfu <anthonyfu117@hotmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu/vite-pwa-docs#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antfu/vite-pwa-docs.git"
+  },
+  "bugs": "https://github.com/antfu/vite-pwa-docs/issues",
+  "keywords": [
+    "react",
+    "pwa",
+    "vue",
+    "vitepress",
+    "preact",
+    "svelte",
+    "sveltekit",
+    "workbox",
+    "solidjs",
+    "vite",
+    "vite-plugin",
+    "astro",
+    "astro-integration",
+    "iles"
+  ],
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "npm run build && vitepress serve",
+    "serve": "npm run build && serve .vitepress/dist",
+    "prepublishOnly": "npm run build",
+    "release": "npx bumpp --push --tag --commit && npm publish"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.2.0",
+    "@vueuse/shared": "^9.2.0",
+    "vue": "^3.2.38"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/ni": "^0.18.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/workbox-build": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vite-pwa/vitepress": "file:vite-pwa-vitepress-0.13.1.tgz",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vueuse/core": "^9.2.0",
+    "eslint": "^8.23.0",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.1.0",
+    "https-localhost": "^4.7.1",
+    "typescript": "^4.8.4",
+    "unocss": "^0.45.26",
+    "unplugin-vue-components": "^0.22.4",
+    "vite": "^3.1.4",
+    "vite-plugin-pwa": "^0.13.1",
+    "vitepress": "^1.0.0-alpha.16",
+    "workbox-window": "^6.5.4"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
+  }
+}
