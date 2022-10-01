@@ -8,8 +8,9 @@ hero:
   name: PWA
   text: Vite Plugin
   tagline: |
-    Zero-config and framework-agnostic
     PWA integrations for Vite and the ecosystem
+    Zero-config and framework-agnostic
+    PWA Plugin for Vite
   image:
     light:
       src: /icon_light.svg
