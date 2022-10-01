@@ -326,12 +326,21 @@ export default withPwa(defineConfig({
             ],
           },
           {
-            text: 'Integrations',
+            text: 'îles Module',
             items: [
               {
-                text: 'îles',
+                text: 'Github',
                 link: 'https://github.com/ElMassimo/iles/tree/main/packages/pwa',
               },
+              {
+                text: 'Documentation',
+                link: 'https://iles-docs.netlify.app/guide/pwa',
+              },
+            ],
+          },
+          {
+            text: 'Integrations',
+            items: [
               {
                 text: 'SvelteKit',
                 link: 'https://github.com/vite-pwa/sveltekit',
