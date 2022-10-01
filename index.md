@@ -24,7 +24,7 @@ hero:
       link: /guide/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vite-pwa/docs
+      link: https://github.com/vite-pwa/
 
 features:
   - icon: 👌
