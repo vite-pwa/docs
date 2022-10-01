@@ -104,10 +104,6 @@ const Frameworks = [
     link: '/frameworks/svelte',
   },
   {
-    text: 'SvelteKit',
-    link: '/frameworks/sveltekit',
-  },
-  {
     text: 'SolidJS',
     link: '/frameworks/solidjs',
   },
@@ -116,12 +112,16 @@ const Frameworks = [
     link: '/frameworks/preact',
   },
   {
-    text: 'VitePress',
-    link: '/frameworks/vitepress',
-  },
-  {
     text: 'îles',
     link: '/frameworks/iles',
+  },
+  {
+    text: 'SvelteKit',
+    link: '/frameworks/sveltekit',
+  },
+  {
+    text: 'VitePress',
+    link: '/frameworks/vitepress',
   },
   {
     text: 'Astro',
@@ -147,10 +147,6 @@ const Examples = [
     link: '/examples/svelte',
   },
   {
-    text: 'SvelteKit',
-    link: '/examples/sveltekit',
-  },
-  {
     text: 'SolidJS',
     link: '/examples/solidjs',
   },
@@ -159,12 +155,16 @@ const Examples = [
     link: '/examples/preact',
   },
   {
-    text: 'VitePress',
-    link: '/examples/vitepress',
-  },
-  {
     text: 'îles',
     link: '/examples/iles',
+  },
+  {
+    text: 'SvelteKit',
+    link: '/examples/sveltekit',
+  },
+  {
+    text: 'VitePress',
+    link: '/examples/vitepress',
   },
   {
     text: 'Astro',
