@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@antfu/ni': ^0.18.0
-  '@types/fs-extra': ^9.0.13
   '@types/workbox-build': ^5.0.1
   '@typescript-eslint/eslint-plugin': ^5.38.0
   '@typescript-eslint/parser': ^5.0.0
@@ -12,8 +11,6 @@ specifiers:
   '@vueuse/core': ^9.2.0
   '@vueuse/shared': ^9.2.0
   eslint: ^8.23.0
-  fast-glob: ^3.2.11
-  fs-extra: ^10.1.0
   https-localhost: ^4.7.1
   typescript: ^4.8.4
   unocss: ^0.45.26
@@ -32,15 +29,12 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.27.0_ypn2ylkkyfa5i233caldtndbqa
   '@antfu/ni': 0.18.2
-  '@types/fs-extra': 9.0.13
   '@types/workbox-build': 5.0.1
   '@typescript-eslint/eslint-plugin': 5.38.1_c7qepppml3d4ahu5cnfwqe6ltq
   '@typescript-eslint/parser': 5.38.1_ypn2ylkkyfa5i233caldtndbqa
   '@vite-pwa/vitepress': file:vite-pwa-vitepress-0.13.1.tgz_ekej6cehfjqtjbybigrjyav3ke
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.4+vue@3.2.40
   eslint: 8.24.0
-  fast-glob: 3.2.12
-  fs-extra: 10.1.0
   https-localhost: 4.7.1
   typescript: 4.8.4
   unocss: 0.45.26_vite@3.1.4
@@ -1679,12 +1673,6 @@ packages:
 
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
-    dev: true
-
-  /@types/fs-extra/9.0.13:
-    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
-    dependencies:
-      '@types/node': 18.7.23
     dev: true
 
   /@types/json-schema/7.0.11:
@@ -3554,15 +3542,6 @@ packages:
   /fresh/0.5.2:
     resolution: {integrity: sha512-zJ2mQYM18rEFOudeV4GShTGIQ7RbzA7ozbU9I/XBpm7kqgMywgmylMwXHxZJmkVoYkna9d2pVXVXPdYTP9ej8Q==}
     engines: {node: '>= 0.6'}
-    dev: true
-
-  /fs-extra/10.1.0:
-    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      graceful-fs: 4.2.10
-      jsonfile: 6.1.0
-      universalify: 2.0.0
     dev: true
 
   /fs-extra/9.1.0:
