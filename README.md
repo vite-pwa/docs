@@ -1,17 +1,11 @@
 <p align='center'>
-<img src='https://vite-plugin-pwa.netlify.app/banner_light.svg' alt="vite-plugin-pwa - Zero-config PWA for Vite"><br>
-Zero-config PWA Framework-agnostic Plugin for Vite
+<img src='https://vite-plugin-pwa.netlify.app/banner_light.svg' alt="Documentation for PWA integrations for Vite and the ecosystem"><br>
+Documentation for PWA integrations for Vite and the ecosystem
 </p>
 
 <p align='center'>
-<a href='https://www.npmjs.com/package/vite-plugin-pwa' target="__blank">
-<img src='https://img.shields.io/npm/v/vite-plugin-pwa?color=33A6B8&label=' alt="NPM version">
-</a>
-<a href="https://www.npmjs.com/package/vite-plugin-pwa" target="__blank">
-    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/vite-plugin-pwa?color=476582&label=">
-</a>
 <a href="https://vite-plugin-pwa.netlify.app/" target="__blank">
-    <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20guides&color=2e859c" alt="Docs & Guides">
+    <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20guides&color=2e859c" alt="Documentation & Guides">
 </a>
 <br>
 <a href="https://github.com/antfu/vite-plugin-pwa" target="__blank">
