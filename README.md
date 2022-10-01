@@ -4,7 +4,7 @@ Documentation: PWA integrations for Vite and the ecosystem
 </p>
 
 <p align='center'>
-<a href="https://vite-plugin-pwa.netlify.app/" target="__blank">
+<a href="https://vite-pwa-org.netlify.app/" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20guides&color=2e859c" alt="Documentation & Guides">
 </a>
 <br>
@@ -24,7 +24,7 @@ Documentation: PWA integrations for Vite and the ecosystem
 
 ## 🚀 Features
 
-- 📖 [**Documentation & guides**](https://vite-plugin-pwa.netlify.app/)
+- 📖 [**Documentation & guides**](https://vite-pwa-org.netlify.app/)
 - 👌 **Zero-Config**: sensible built-in default configs for common use cases
 - 🔩 **Extensible**: expose the full ability to customize the behavior of the plugin
 - 🦾 **Type Strong**: written in [TypeScript](https://www.typescriptlang.org/)
