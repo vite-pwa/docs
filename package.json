@@ -32,7 +32,7 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "npm run build && vitepress serve",
-    "serve": "npm run build && serve .vitepress/dist",
+    "https": "npm run build && serve .vitepress/dist",
     "prepublishOnly": "npm run build",
     "release": "npx bumpp --push --tag --commit && npm publish"
   },
