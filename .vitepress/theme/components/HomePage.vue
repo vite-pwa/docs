@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { VPTeamMembers } from 'vitepress/theme'
+import { integrations } from '../../integrations'
 import { teamMembers } from '../../contributors'
 </script>
 
@@ -8,6 +9,12 @@ import { teamMembers } from '../../contributors'
     <div class="content-container">
       <main class="main">
         <div class="vp-doc" flex flex-col items-center mt-10>
+          <h2 id="integrations" op50 font-normal p="t-10 b-2">
+            Integrations
+          </h2>
+          <div w-full p-10 class="integrations">
+            <VPTeamMembers size="small" :members="integrations" />
+          </div>
           <h2 id="meet-the-team" op50 font-normal p="t-10 b-2">
             Meet The Team
           </h2>
@@ -43,3 +50,13 @@ import { teamMembers } from '../../contributors'
     </div>
   </div>
 </template>
+
+<style>
+.integrations .avatar {
+  --vp-shadow-3: none;
+}
+.integrations .avatar .avatar-img {
+  border-radius: unset;
+  object-fit: unset;
+}
+</style>
