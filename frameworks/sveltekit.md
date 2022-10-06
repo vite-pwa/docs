@@ -171,7 +171,8 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 	import { useRegisterSW } from 'virtual:pwa-register/svelte'
 	const {
 		needRefresh,
-		updateServiceWorker
+		updateServiceWorker,
+		offlineReady
 	} = useRegisterSW({
 		onRegistered(r) {
 		// uncomment following code if you want check for updates
