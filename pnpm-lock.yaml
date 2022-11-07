@@ -6,7 +6,7 @@ specifiers:
   '@types/workbox-build': ^5.0.1
   '@typescript-eslint/eslint-plugin': ^5.38.0
   '@typescript-eslint/parser': ^5.0.0
-  '@vite-pwa/vitepress': file:vite-pwa-vitepress-0.0.2.tgz
+  '@vite-pwa/vitepress': ^0.0.2
   '@vitejs/plugin-vue': ^3.1.0
   '@vueuse/core': ^9.2.0
   '@vueuse/shared': ^9.2.0
@@ -32,7 +32,7 @@ devDependencies:
   '@types/workbox-build': 5.0.1
   '@typescript-eslint/eslint-plugin': 5.38.1_c7qepppml3d4ahu5cnfwqe6ltq
   '@typescript-eslint/parser': 5.38.1_ypn2ylkkyfa5i233caldtndbqa
-  '@vite-pwa/vitepress': file:vite-pwa-vitepress-0.0.2.tgz_mxyp6wtzkqofzgjtkavgznr6uq
+  '@vite-pwa/vitepress': 0.0.2_mxyp6wtzkqofzgjtkavgznr6uq
   '@vitejs/plugin-vue': 3.1.0_vite@3.1.4+vue@3.2.40
   eslint: 8.24.0
   https-localhost: 4.7.1
@@ -2017,6 +2017,16 @@ packages:
       '@unocss/transformer-directives': 0.45.26
       magic-string: 0.26.5
       vite: 3.1.4
+    dev: true
+
+  /@vite-pwa/vitepress/0.0.2_mxyp6wtzkqofzgjtkavgznr6uq:
+    resolution: {integrity: sha512-APi8KZFH9QIIUGUB/Fxg2ZMlsOFqH9psntf13YReysM+xZDXQRu2WexA26Gpdo8wCnTUbgLFnekmdGYFoxLGMw==}
+    peerDependencies:
+      '@types/workbox-build': ^5.0.1
+      vite-plugin-pwa: ^0.13.3
+    dependencies:
+      '@types/workbox-build': 5.0.1
+      vite-plugin-pwa: 0.13.3_bg4cnt4dy3xq3a47wkujd6ryzq
     dev: true
 
   /@vitejs/plugin-vue/3.1.0_vite@3.1.4+vue@3.2.40:
@@ -5991,17 +6001,4 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  file:vite-pwa-vitepress-0.0.2.tgz_mxyp6wtzkqofzgjtkavgznr6uq:
-    resolution: {integrity: sha512-lRAYW15f3fN38jl5N/hlLBBxWOwUv+7ZzJuEZ+8kL6AllXOf9IZRCH2TzvDoqLY1r1RkrraRFk/Nrm2tYzKWIw==, tarball: file:vite-pwa-vitepress-0.0.2.tgz}
-    id: file:vite-pwa-vitepress-0.0.2.tgz
-    name: '@vite-pwa/vitepress'
-    version: 0.0.2
-    peerDependencies:
-      '@types/workbox-build': ^5.0.1
-      vite-plugin-pwa: ^0.13.3
-    dependencies:
-      '@types/workbox-build': 5.0.1
-      vite-plugin-pwa: 0.13.3_bg4cnt4dy3xq3a47wkujd6ryzq
     dev: true
