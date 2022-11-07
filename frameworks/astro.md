@@ -95,11 +95,9 @@ import { registerSW } from 'virtual:pwa-register'
 registerSW({
   immediate: true,
   onRegisteredSW(swScriptUrl) {
-
     console.log('SW registered: ', swScriptUrl)
   },
   onOfflineReady() {
-
     console.log('PWA application ready to work offline')
   },
 })
@@ -263,6 +261,24 @@ window.addEventListener('load', () => {
 })
 ```
 :::
+
+### Navigation Fallback
+
+If you have a `404` route, you can use it as the fallback navigation for your service worker.
+
+When using `generateSW` strategy, configure the '404' route in the `workbox` pwa integration option:
+
+```ts
+VitePWA({
+  workbox: { navigateFallback: '/404' }
+})
+```
+
+If you are using `injectManifest` strategy, configure the '404' route in the navigation fallback in your custom service worker:
+
+```ts
+registerRoute(new NavigationRoute(createHandlerBoundToURL('/404')))
+```
 
 ### Using Application UI Framework
 
