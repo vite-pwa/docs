@@ -95,11 +95,9 @@ import { registerSW } from 'virtual:pwa-register'
 registerSW({
   immediate: true,
   onRegisteredSW(swScriptUrl) {
-    // eslint-disable-next-line no-console
     console.log('SW registered: ', swScriptUrl)
   },
   onOfflineReady() {
-    // eslint-disable-next-line no-console
     console.log('PWA application ready to work offline')
   },
 })
@@ -256,7 +254,7 @@ window.addEventListener('load', () => {
       showPwaToast(false)
     },
     onRegisteredSW(swScriptUrl) {
-      // eslint-disable-next-line no-console
+
       console.log('SW registered: ', swScriptUrl)
     },
   })
@@ -274,3 +272,21 @@ If you're using some Application UI Framework in your Astro application, you can
 - [Preact](/frameworks/preact)
 
 Check also the documentation for [Astro Frameworks Components](https://docs.astro.build/en/core-concepts/framework-components/) for more information.
+
+## Navigation Fallback
+
+If you have a `404` route, you can use it as the fallback navigation for your service worker.
+
+When using `generateSW` strategy, configure the `404` route in the `workbox` pwa integration option:
+
+```ts
+VitePWA({
+  workbox: { navigateFallback: '/404' }
+})
+```
+
+If you are using `injectManifest` strategy, configure the `404` route in the navigation fallback in your custom service worker:
+
+```ts
+registerRoute(new NavigationRoute(createHandlerBoundToURL('/404')))
+```

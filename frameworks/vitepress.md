@@ -61,51 +61,51 @@ export default {
 ::: details  .vitepress/theme/components/RegisterSW.vue
 ```vue
 <script setup lang="ts">
-    import { onBeforeMount, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 
-    const offlineReady = ref(false)
-    const onOfflineReady = () => {
-        offlineReady.value = true
-    }
-    const close = async () => {
-        offlineReady.value = false
-    }
+const offlineReady = ref(false)
+const onOfflineReady = () => {
+  offlineReady.value = true
+}
+const close = async () => {
+  offlineReady.value = false
+}
 
-    onBeforeMount(async () => {
-        const { registerSW } = await import('virtual:pwa-register')
-        registerSW({
-            immediate: true,
-            onOfflineReady,
-            onRegistered() {
-                // eslint-disable-next-line no-console
-                console.info('Service Worker registered')
-            },
-            onRegisterError(e) {
-                console.error('Service Worker registration error!', e)
-            },
-        })
-    })
+onBeforeMount(async () => {
+  const { registerSW } = await import('virtual:pwa-register')
+  registerSW({
+    immediate: true,
+    onOfflineReady,
+    onRegistered() {
+
+      console.info('Service Worker registered')
+    },
+    onRegisterError(e) {
+      console.error('Service Worker registration error!', e)
+    },
+  })
+})
 </script>
 
 <template>
-    <template v-if="offlineReady">
-        <div
-                class="pwa-toast"
-                role="alertdialog"
-                aria-labelledby="pwa-message"
-        >
-            <div id="pwa-message" class="mb-3">
-                App ready to work offline
-            </div>
-            <button
-                    type="button"
-                    class="pwa-cancel"
-                    @click="close"
-            >
-                Close
-            </button>
-        </div>
-    </template>
+  <template v-if="offlineReady">
+    <div
+      class="pwa-toast"
+      role="alertdialog"
+      aria-labelledby="pwa-message"
+    >
+      <div id="pwa-message" class="mb-3">
+        App ready to work offline
+      </div>
+      <button
+        type="button"
+        class="pwa-cancel"
+        @click="close"
+      >
+        Close
+      </button>
+    </div>
+  </template>
 </template>
 
 <style>
@@ -159,68 +159,68 @@ export default {
 ::: details  .vitepress/theme/components/ReloadPrompt.vue
 ```vue
 <script setup lang="ts">
-    import { onBeforeMount, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 
-    const offlineReady = ref(false)
-    const needRefresh = ref(false)
+const offlineReady = ref(false)
+const needRefresh = ref(false)
 
-    let updateServiceWorker: (() => Promise<void>) | undefined
+let updateServiceWorker: (() => Promise<void>) | undefined
 
-    const onOfflineReady = () => {
-        offlineReady.value = true
-    }
-    const onNeedRefresh = () => {
-        needRefresh.value = true
-    }
-    const close = async () => {
-        offlineReady.value = false
-        needRefresh.value = false
-    }
+const onOfflineReady = () => {
+  offlineReady.value = true
+}
+const onNeedRefresh = () => {
+  needRefresh.value = true
+}
+const close = async () => {
+  offlineReady.value = false
+  needRefresh.value = false
+}
 
-    onBeforeMount(async () => {
-        const { registerSW } = await import('virtual:pwa-register')
-        updateServiceWorker = registerSW({
-            immediate: true,
-            onOfflineReady,
-            onNeedRefresh,
-            onRegistered() {
-                // eslint-disable-next-line no-console
-                console.info('Service Worker registered')
-            },
-            onRegisterError(e) {
-                console.error('Service Worker registration error!', e)
-            },
-        })
-    })
+onBeforeMount(async () => {
+  const { registerSW } = await import('virtual:pwa-register')
+  updateServiceWorker = registerSW({
+    immediate: true,
+    onOfflineReady,
+    onNeedRefresh,
+    onRegistered() {
+
+      console.info('Service Worker registered')
+    },
+    onRegisterError(e) {
+      console.error('Service Worker registration error!', e)
+    },
+  })
+})
 </script>
 
 <template>
-    <template v-if="offlineReady || needRefresh">
-        <div
-                class="pwa-toast"
-                role="alertdialog"
-                aria-labelledby="pwa-message"
-        >
-            <div id="pwa-message" class="mb-3">
-                {{ offlineReady ? 'App ready to work offline' : 'New content available, click the reload button to update.' }}
-            </div>
-            <button
-                    v-if="needRefresh"
-                    type="button"
-                    class="pwa-refresh"
-                    @click="updateServiceWorker?.()"
-            >
-                Reload
-            </button>
-            <button
-                    type="button"
-                    class="pwa-cancel"
-                    @click="close"
-            >
-                Close
-            </button>
-        </div>
-    </template>
+  <template v-if="offlineReady || needRefresh">
+    <div
+      class="pwa-toast"
+      role="alertdialog"
+      aria-labelledby="pwa-message"
+    >
+      <div id="pwa-message" class="mb-3">
+        {{ offlineReady ? 'App ready to work offline' : 'New content available, click the reload button to update.' }}
+      </div>
+      <button
+        v-if="needRefresh"
+        type="button"
+        class="pwa-refresh"
+        @click="updateServiceWorker?.()"
+      >
+        Reload
+      </button>
+      <button
+        type="button"
+        class="pwa-cancel"
+        @click="close"
+      >
+        Close
+      </button>
+    </div>
+  </template>
 </template>
 
 <style>

@@ -1,7 +1,7 @@
 {
   "name": "vite-pwa-docs",
-  "version": "0.13.1",
-  "packageManager": "pnpm@7.12.2",
+  "version": "0.13.3",
+  "packageManager": "pnpm@7.14.2",
   "description": "Zero-config PWA for Vite Documentation",
   "author": "antfu <anthonyfu117@hotmail.com>",
   "license": "MIT",
@@ -33,8 +33,8 @@
     "build": "vitepress build",
     "preview": "npm run build && vitepress serve",
     "https": "npm run build && serve .vitepress/dist",
-    "prepublishOnly": "npm run build",
-    "release": "npx bumpp --push --tag --commit && npm publish"
+    "lint": "eslint .",
+    "lint-fix": "nr lint --fix"
   },
   "dependencies": {
     "@vueuse/core": "^9.2.0",
@@ -47,7 +47,7 @@
     "@types/workbox-build": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "@vite-pwa/vitepress": "file:vite-pwa-vitepress-0.13.1.tgz",
+    "@vite-pwa/vitepress": "file:vite-pwa-vitepress-0.0.2.tgz",
     "@vitejs/plugin-vue": "^3.1.0",
     "@vueuse/core": "^9.2.0",
     "eslint": "^8.23.0",
@@ -56,8 +56,8 @@
     "unocss": "^0.45.26",
     "unplugin-vue-components": "^0.22.4",
     "vite": "^3.1.4",
-    "vite-plugin-pwa": "^0.13.1",
-    "vitepress": "^1.0.0-alpha.16",
+    "vite-plugin-pwa": "^0.13.3",
+    "vitepress": "^1.0.0-alpha.27",
     "workbox-window": "^6.5.4"
   },
   "pnpm": {
