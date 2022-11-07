@@ -28,7 +28,7 @@ pnpm add -D @vite-pwa/sveltekit
 To update your project to use the new `vite-plugin-pwa` for SvelteKit, you only need to change the Vite config file (you don't need oldest `pwa` and `pwa-configuration` modules):
 ```ts
 // vite.config.js / vite-config.ts
-import { SvelteKitPWA } from '@vite-pwa/sveltekit';
+import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 /** @type {import('vite').UserConfig} */
 const config = {

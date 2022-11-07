@@ -43,7 +43,7 @@ For example, if you have the following image `src/assets/logo-192x192.png` you c
 then, in your codebase, you must use it via static import:
 
 ```js
-// src/main.js or src/main.ts 
+// src/main.js or src/main.ts
 // can be any js/ts/jsx/tsx module or single file component
 import logo from './assets/logo-192x192.png'
 
