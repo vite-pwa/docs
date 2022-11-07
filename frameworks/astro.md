@@ -277,7 +277,7 @@ Check also the documentation for [Astro Frameworks Components](https://docs.astr
 
 If you have a `404` route, you can use it as the fallback navigation for your service worker.
 
-When using `generateSW` strategy, configure the '404' route in the `workbox` pwa integration option:
+When using `generateSW` strategy, configure the `404` route in the `workbox` pwa integration option:
 
 ```ts
 VitePWA({
@@ -285,7 +285,7 @@ VitePWA({
 })
 ```
 
-If you are using `injectManifest` strategy, configure the '404' route in the navigation fallback in your custom service worker:
+If you are using `injectManifest` strategy, configure the `404` route in the navigation fallback in your custom service worker:
 
 ```ts
 registerRoute(new NavigationRoute(createHandlerBoundToURL('/404')))
