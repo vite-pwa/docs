@@ -82,9 +82,7 @@ export interface SvelteKitPWAOptions extends Partial<VitePWAOptions> {
 
 ## SvelteKit Pages
 
-If you want your application to work offline, you should ensure you have not set `hydrate: false` on any of your pages since it will prevent injecting JavaScript into the layout for offline support.
-
-Unlike the [SvelteKit service worker module](https://kit.svelte.dev/docs#modules-$service-worker), the `vite-plugin-pwa` plugin will allow you to test your webmanifest and custom service worker in dev, check the [Development section](/guide/development) for more details.
+If you want your application to work offline, you should ensure you have not set `csr: false` on any of your pages since it will prevent injecting JavaScript into the layout for offline support.
 
 ### Auto Update
 
