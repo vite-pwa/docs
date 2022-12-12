@@ -6,6 +6,8 @@ title: SvelteKit | Frameworks
 
 ::: warning
 We recommend you use the latest version of SvelteKit. The latest versions will also require you to update your application to use Vite ^3.2.0 and Node 16.14+.
+
+From version 0.1.0+ requires Vite ^4.0.0.
 :::
 
 ::: info
