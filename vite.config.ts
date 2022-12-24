@@ -6,18 +6,6 @@ import NavbarFix from './plugins/navbar'
 
 export default defineConfig({
   logLevel: 'info',
-  ssr: {
-    format: 'cjs',
-  },
-  legacy: {
-    buildSsrCjsExternalHeuristics: true,
-  },
-  build: {
-    // sourcemap: true,
-    // minify: false,
-    ssrManifest: false,
-    manifest: false,
-  },
   optimizeDeps: {
     exclude: [
       '@vueuse/core',
