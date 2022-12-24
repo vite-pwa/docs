@@ -51,6 +51,7 @@ export interface KitOptions {
   /**
    * The base path for your application: by default will use the Vite base.
    *
+   * @deprecated since ^0.1.0 version, the plugin has SvelteKit ^1.0.0 as peer dependency, Vite's base is now properly configured.
    * @default '/'
    * @see https://kit.svelte.dev/docs/configuration#paths
    */
@@ -248,7 +249,7 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 ## SvelteKit and Adapters
 
 If you set certain SvelteKit options, you should also configure the PWA plugin properly using the `kit` option:
-- [base](https://kit.svelte.dev/docs/configuration#paths) (@deprecated since ^0.1.0 version, the plugin has SvelteKit ^1.0.0 as peer dependency, Vite's base is now properly configured)
+- [base](https://kit.svelte.dev/docs/configuration#paths) (`@deprecated since ^0.1.0 version`, the plugin has SvelteKit `^1.0.0` as peer dependency, Vite's base is now properly configured)
 - [outDir](https://kit.svelte.dev/docs/configuration#outdir)
 - [adapterFallback](https://github.com/sveltejs/kit/tree/master/packages/adapter-static#fallback)
 - [trailingSlash](https://kit.svelte.dev/docs/configuration#trailingslash)
