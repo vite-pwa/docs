@@ -3,4 +3,5 @@ node_modules
 dist
 # intellij stuff
 .idea/
+.vitepress/cache/
 .vitepress/dist/
