@@ -5,7 +5,7 @@ title: SvelteKit | Frameworks
 # SvelteKit
 
 ::: tip
-From version ^0.1.0, the plugin has SvelteKit as peer dependency.
+From version `^0.1.0`, the plugin has SvelteKit as peer dependency.
 :::
 
 ::: info
