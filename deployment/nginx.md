@@ -21,6 +21,7 @@ or any `http`, `server` or location `location` block with
 
 
 ```nginx
+include mime.types;
 types {
   application/manifest+json  webmanifest;
 }
