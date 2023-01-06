@@ -42,6 +42,10 @@ VitePWA({
 })
 ```
 
+### Development
+
+If you would like the service worker to run in development, make sure to enable it in the [devOptions](/guide/development#plugin-configuration) and to set the type to [module](/guide/development#injectmanifest-strategy) if required.
+
 ### Service Worker Code
 
 Your custom service worker (`public/sw.js`) should have at least this code (you also need to install `workbox-precaching` as `dev dependency` to your project):
