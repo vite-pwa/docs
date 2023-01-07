@@ -72,13 +72,6 @@ location ^~ /assets/ {
     try_files $uri =404;
 }
 
-# all workbox scripts are compiled with hash in filename, cache forever
-location ^~ /workbox- {
-    add_header Cache-Control "public, max-age=31536000, s-maxage=31536000, immutable";
-    ...
-    try_files $uri =404;
-}
-
 # assume that everything else is handled by the application router, by injecting the index.html.
 location / {
     autoindex off;
