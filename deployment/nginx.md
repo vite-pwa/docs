@@ -72,7 +72,7 @@ location ^~ /assets/ {
     try_files $uri =404;
 }
 
-# all workbox scripts are compiled with hash in filename, cache forever3
+# all workbox scripts are compiled with hash in filename, cache forever
 location ^~ /workbox- {
     add_header Cache-Control "public, max-age=31536000, s-maxage=31536000, immutable";
     ...
