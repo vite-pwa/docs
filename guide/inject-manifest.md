@@ -55,6 +55,24 @@ import { precacheAndRoute } from 'workbox-precaching'
 precacheAndRoute(self.__WB_MANIFEST)
 ```
 
+If you're not using `precaching` (`self.__WB_MANIFEST`), you need to disable `injection point` to avoid compilation errors (available only from version `^0.14.0`), add the following option to your pwa configuration:
+
+```ts
+injectManifest: {
+  injectionPoint: undefined
+}
+```
+
+### Service worker errors on browser
+
+If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iief`, add the following code to your pwa configuration:
+
+```ts
+injectManifest: {
+  rollupFormat: 'iief'
+}
+```
+
 ### Cleanup Outdated Caches
 
 <CleanupOutdatedCaches />
