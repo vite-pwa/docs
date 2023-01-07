@@ -37,7 +37,7 @@ injectManifest: {
 
 ## Error: Unable to find a place to inject the manifest
 
-If you're using a custom service worker without `precaching` (`self.__WB_MANIFEST`) and you're getting this error, you need to disable it in your pwa plugin configuration (available only from version `^0.14.0`):
+If you're using a custom service worker without `precaching` (`self.__WB_MANIFEST`) and you're getting this error on build process, you need to disable `injection point` in your pwa plugin configuration (available only from version `^0.14.0`):
 
 ```ts
 injectManifest: {
