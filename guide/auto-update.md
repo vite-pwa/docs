@@ -6,6 +6,18 @@ title: Automatic reload | Guide
 
 With this behavior, once the browser detects a new version of your application, then, it will update the caches and will reload any browser windows/tabs with the application opened automatically to take the control.
 
+::: warning
+In order to reload all client tab/window, you will need to import any virtual module provided by the plugin: if you're not using any virtual, there is no way to interact with the application ui, and so, any client tab/window will not be reloaded (the old service worker will be still controlling the application).
+
+Automatic reload is not automatic page reload, you will need to use the following code in your application entry point if you want **automatic page reload**:
+
+```js
+import { registerSW } from 'virtual:pwa-register'
+
+registerSW({ immediate: true })
+```
+:::
+
 The disadvantage of using this behavior is that the user can lose data in any browser windows/tabs in which the application is open and is filling in a form.
 
 If your application has forms, we recommend you to change the behavior to use default `prompt` option to allow the user decide when to update the content of the application.

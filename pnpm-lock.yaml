@@ -16,8 +16,8 @@ specifiers:
   unocss: ^0.48.0
   unplugin-vue-components: ^0.22.12
   vite: ^4.0.3
-  vite-plugin-pwa: ^0.14.0
-  vitepress: ^1.0.0-alpha.33
+  vite-plugin-pwa: ^0.14.1
+  vitepress: ^1.0.0-alpha.35
   vue: ^3.2.45
   workbox-window: ^6.5.4
 
@@ -32,7 +32,7 @@ devDependencies:
   '@types/workbox-build': 5.0.1
   '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
   '@typescript-eslint/parser': 5.47.0_lzzuuodtsqwxnvqeq4g4likcqa
-  '@vite-pwa/vitepress': 0.0.3_vite-plugin-pwa@0.14.0
+  '@vite-pwa/vitepress': 0.0.3_vite-plugin-pwa@0.14.1
   '@vitejs/plugin-vue': 4.0.0_vite@4.0.3+vue@3.2.45
   eslint: 8.30.0
   https-localhost: 4.7.1
@@ -40,8 +40,8 @@ devDependencies:
   unocss: 0.48.0_vite@4.0.3
   unplugin-vue-components: 0.22.12_vue@3.2.45
   vite: 4.0.3
-  vite-plugin-pwa: 0.14.0_kd2yym7bvosszn2volak4ngp5q
-  vitepress: 1.0.0-alpha.33
+  vite-plugin-pwa: 0.14.1_kd2yym7bvosszn2volak4ngp5q
+  vitepress: 1.0.0-alpha.35
   workbox-window: 6.5.4
 
 packages:
@@ -1424,14 +1424,14 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
-  /@docsearch/css/3.3.0:
-    resolution: {integrity: sha512-rODCdDtGyudLj+Va8b6w6Y85KE85bXRsps/R4Yjwt5vueXKXZQKYw0aA9knxLBT6a/bI/GMrAcmCR75KYOM6hg==}
+  /@docsearch/css/3.3.1:
+    resolution: {integrity: sha512-nznHXeFHpAYjyaSNFNFpU+IJPjQA7AINM8ONjDx/Zx4O/pGAvqwgmcLNc7zR8qXRutqnzLo06yN63xFn36KFBw==}
     dev: true
 
-  /@docsearch/js/3.3.0:
-    resolution: {integrity: sha512-oFXWRPNvPxAzBhnFJ9UCFIYZiQNc3Yrv6912nZHw/UIGxsyzKpNRZgHq8HDk1niYmOSoLKtVFcxkccpQmYGFyg==}
+  /@docsearch/js/3.3.1:
+    resolution: {integrity: sha512-BCVu7njUFJSUXDNvgK65xNYU1L7U3CKFJlawDXql17nQwfpBrNZHqp+eb8z9qu0SzauQKss9tsf/qwlFJ9BOGw==}
     dependencies:
-      '@docsearch/react': 3.3.0
+      '@docsearch/react': 3.3.1
       preact: 10.11.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1440,8 +1440,8 @@ packages:
       - react-dom
     dev: true
 
-  /@docsearch/react/3.3.0:
-    resolution: {integrity: sha512-fhS5adZkae2SSdMYEMVg6pxI5a/cE+tW16ki1V0/ur4Fdok3hBRkmN/H8VvlXnxzggkQIIRIVvYPn00JPjen3A==}
+  /@docsearch/react/3.3.1:
+    resolution: {integrity: sha512-wdeQBODPkue6yVEEg4ntt+TiGJ6iXMBUNjBQJ0s1WVoc1OdcCnks/lkQ5LEfXETYR/q9QSbCCBnMjvnSoILaag==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
       react: '>= 16.8.0 < 19.0.0'
@@ -1456,7 +1456,7 @@ packages:
     dependencies:
       '@algolia/autocomplete-core': 1.7.2
       '@algolia/autocomplete-preset-algolia': 1.7.2_algoliasearch@4.14.2
-      '@docsearch/css': 3.3.0
+      '@docsearch/css': 3.3.1
       algoliasearch: 4.14.2
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -2251,12 +2251,12 @@ packages:
       - rollup
     dev: true
 
-  /@vite-pwa/vitepress/0.0.3_vite-plugin-pwa@0.14.0:
+  /@vite-pwa/vitepress/0.0.3_vite-plugin-pwa@0.14.1:
     resolution: {integrity: sha512-dk044nNz1DEDZ9V+BEt8TUJKBUeIaPuPT2YJ3R0eeNu+WN9v2dx46tyDzbAAV6PCU6O0VdhNv11gTtJooj3yQQ==}
     peerDependencies:
       vite-plugin-pwa: ^0.14.0
     dependencies:
-      vite-plugin-pwa: 0.14.0_kd2yym7bvosszn2volak4ngp5q
+      vite-plugin-pwa: 0.14.1_kd2yym7bvosszn2volak4ngp5q
     dev: true
 
   /@vitejs/plugin-vue/4.0.0_vite@4.0.3+vue@3.2.45:
@@ -2267,6 +2267,17 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.0.3
+      vue: 3.2.45
+    dev: true
+
+  /@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45:
+    resolution: {integrity: sha512-e0X4jErIxAB5oLtDqbHvHpJe/uWNkdpYV83AOG2xo2tEVSzCzewgJMtREZM30wXnM5ls90hxiOtAuVU6H5JgbA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.0.0
+      vue: ^3.2.25
+    dependencies:
+      vite: 4.0.4
       vue: 3.2.45
     dev: true
 
@@ -5574,8 +5585,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-pwa/0.14.0_kd2yym7bvosszn2volak4ngp5q:
-    resolution: {integrity: sha512-3wZx47PLWTckOQhc8Y6YZjAbNZ89Ovh4TdCT97MGhgl7aFd2LUekVnAmIgFwgMqyxzJ93nmkPF/ALpEW/i2qCg==}
+  /vite-plugin-pwa/0.14.1_kd2yym7bvosszn2volak4ngp5q:
+    resolution: {integrity: sha512-5zx7yhQ8RTLwV71+GA9YsQQ63ALKG8XXIMqRJDdZkR8ZYftFcRgnzM7wOWmQZ/DATspyhPih5wCdcZnAIsM+mA==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
       workbox-window: ^6.5.4
@@ -5626,18 +5637,51 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.33:
-    resolution: {integrity: sha512-EhMDqWLllYr5mXqAz4GCQ1o/bu5umQ6C2d8voiSaTHMkYCxsGc31ETykflM6NOhGx6yccwXygrYIIeN1l6BUEA==}
+  /vite/4.0.4:
+    resolution: {integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: 0.16.10
+      postcss: 8.4.20
+      resolve: 1.22.1
+      rollup: 3.8.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vitepress/1.0.0-alpha.35:
+    resolution: {integrity: sha512-tJQjJstq+Ryb4pKtlxV4tD8KhxId+DTbR1FRrtJBhA+Vv4nexFHra5M9EgK9jUmoMc3rkyNaw7P3Kkix0ArP1w==}
     hasBin: true
     dependencies:
-      '@docsearch/css': 3.3.0
-      '@docsearch/js': 3.3.0
-      '@vitejs/plugin-vue': 4.0.0_vite@4.0.3+vue@3.2.45
+      '@docsearch/css': 3.3.1
+      '@docsearch/js': 3.3.1
+      '@vitejs/plugin-vue': 4.0.0_vite@4.0.4+vue@3.2.45
       '@vue/devtools-api': 6.4.5
       '@vueuse/core': 9.9.0_vue@3.2.45
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.12.1
-      vite: 4.0.3
+      vite: 4.0.4
       vue: 3.2.45
     transitivePeerDependencies:
       - '@algolia/client-search'

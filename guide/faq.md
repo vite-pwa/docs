@@ -25,6 +25,26 @@ To send the request with credentials, the `<link rel="manifest">` needs a `cross
 useCredentials: true
 ```
 
+## Service Worker errors on browser
+
+If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iief`, add the following code to your pwa configuration:
+
+```ts
+injectManifest: {
+  rollupFormat: 'iief'
+}
+```
+
+## Error: Unable to find a place to inject the manifest
+
+If you're using a custom service worker without `precaching` (`self.__WB_MANIFEST`) and you're getting this error, you need to disable it in your pwa plugin configuration (available only from version `^0.14.0`):
+
+```ts
+injectManifest: {
+  injectionPoint: undefined
+}
+```    
+
 ## Service Worker Registration Errors
 
 You can handle Service Worker registration errors if you want to notify the user with following code on your `main.ts`
