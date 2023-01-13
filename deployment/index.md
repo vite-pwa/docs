@@ -14,7 +14,7 @@ Since you need to install your application as a [Progressive Web App](https://we
 
 - [Netlify](/deployment/netlify)
 - [AWS Amplify](/deployment/aws)
-- [Vercel](/deployment/aws)
+- [Vercel](/deployment/vercel)
 - [NGINX](/deployment/nginx)
 - [Apache Http Server 2.4+](/deployment/apache)
 
