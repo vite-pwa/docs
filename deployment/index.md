@@ -10,6 +10,20 @@ Since you need to install your application as a [Progressive Web App](https://we
 - you must serve your application over `https`
 - you must redirect from `http` to `https`
 
+## Cache-Control
+
+Ensure you have a very restrictive setup for your `Cache-Control` headers in place.
+
+Double check that **you do not** have caching features enabled, especially `immutable`, on locations like:
+- `/`
+- `/sw.js`
+- `/index.html`
+- `/manifest.webmanifest`
+
+::: danger
+**Always re-test and re-assure** that the caching for mission critical files is **as low** as possible if not hashed files or you might invalidate clients for a long time.
+:::
+
 ## Servers
 
 - [Netlify](/deployment/netlify)
