@@ -28,7 +28,7 @@ Double check that **you do not** have caching features enabled, especially `immu
 
 - [Netlify](/deployment/netlify)
 - [AWS Amplify](/deployment/aws)
-- [Vercel](/deployment/aws)
+- [Vercel](/deployment/vercel)
 - [NGINX](/deployment/nginx)
 - [Apache Http Server 2.4+](/deployment/apache)
 
