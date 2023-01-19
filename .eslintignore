@@ -4,5 +4,5 @@ dev-dist/
 node_modules/
 *.d.ts
 !.vitepress
-.vitepress/*
-!.vitepress/dist/*
+.vitepress/dist/*
+.vitepress/cache/deps/*.*
