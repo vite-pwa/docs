@@ -39,13 +39,9 @@ Netlify will redirect automatically, so you don't worry about it.
 Add `netlify.toml` file to the root directory with the content:
 
 ```toml
-[build.environment]
-  NPM_FLAGS = "--prefix=/dev/null"
-  NODE_VERSION = "14"
-
 [build]
   publish = "dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+  command = "pnpm run build"
 
 [[redirects]]
   from = "/*"
