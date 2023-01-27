@@ -5,6 +5,4 @@ next: Getting Started | Examples
 
 # Nuxt 3
 
-::: info WIP
-Will coming soon.
-:::
+You can find the documentation on [Nuxt 3 modules documentation](https://nuxt.com/modules/vite-pwa-nuxt).
