@@ -361,6 +361,10 @@ export default withPwa(defineConfig({
                 text: 'Astro',
                 link: 'https://github.com/vite-pwa/astro',
               },
+              {
+                text: 'Nuxt 3',
+                link: 'https://github.com/vite-pwa/nuxt',
+              },
             ],
           },
         ],
