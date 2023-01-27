@@ -41,6 +41,7 @@ Documentation: PWA integrations for Vite and the ecosystem
 - [SvelteKit](https://github.com/vite-pwa/sveltekit)
 - [VitePress](https://github.com/vite-pwa/vitepress)
 - [Astro](https://github.com/vite-pwa/astro)
+- [Nuxt 3](https://github.com/vite-pwa/nuxt)
 
 ## 📄 License
 

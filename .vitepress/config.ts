@@ -127,6 +127,10 @@ const Frameworks = [
     text: 'Astro',
     link: '/frameworks/astro',
   },
+  {
+    text: 'Nuxt 3',
+    link: '/frameworks/nuxt',
+  },
 ]
 
 const Examples = [
@@ -169,6 +173,10 @@ const Examples = [
   {
     text: 'Astro',
     link: '/examples/astro',
+  },
+  {
+    text: 'Nuxt 3',
+    link: '/examples/nuxt',
   },
 ]
 

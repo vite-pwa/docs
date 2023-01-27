@@ -5,7 +5,7 @@ export interface Integration extends Partial<DefaultTheme.TeamMember> {
   name: string
   // required to download avatars from GitHub
   github: string
-  webtools?: string
+  mastodon?: string
   twitter?: string
   title?: string
   org?: string
@@ -14,8 +14,8 @@ export interface Integration extends Partial<DefaultTheme.TeamMember> {
 
 const createLinks = (i: Integration): Integration => {
   i.links = [{ icon: 'github', link: `https://github.com/${i.github}` }]
-  if (i.webtools)
-    i.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${i.webtools}` })
+  if (i.mastodon)
+    i.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${i.mastodon}` })
 
   if (i.twitter)
     i.links.push({ icon: 'twitter', link: `https://twitter.com/${i.twitter}` })
@@ -48,9 +48,17 @@ const plaingIntegrations = [
     avatar: '/integration-logos/astro.svg',
     name: 'Astro',
     github: 'withastro/astro',
-    webtools: 'astro',
+    mastodon: 'astro',
     twitter: 'astrodotbuild',
     title: 'Build fast websites, faster',
+  },
+  {
+    avatar: '/integration-logos/nuxt.svg',
+    name: 'Nuxt 3',
+    github: 'nuxt/nuxt',
+    mastodon: 'nuxt',
+    twitter: '@nuxt_js',
+    title: 'The Intuitive Web Framework',
   },
 ]
 
