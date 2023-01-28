@@ -53,6 +53,10 @@ You can disable this plugin by setting `pwa.client.registerPlugin` property to `
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
 :::
 
+::: warn
+We can also change the internal API (breaking changes), so please be aware of that.
+:::
+
 ### Registering Web Manifest
 
 To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` provides `VitePwaManifest.ts` functional component, you should add it to your `app.vue` or to all layouts files.
