@@ -42,6 +42,7 @@ The plugin will expose the following properties:
 - Cancelling install prompt `cancelInstall` function.
 - Fire browser PWA install via `install` function.
 - Exposes service worker registration status via `swActivated` and `registrationError` properties.
+- Exposes service worker registration via `getSWActivated` function.
 
 You will need to activate `pwa.installPrompt` property in your Nuxt config file to enable `beforeinstallprompt` event interception: configure `true` or the key name used in local storage to store the `beforeinstallprompt` cancellation for your install prompt/widget.
 
@@ -51,10 +52,6 @@ You can disable this plugin by setting `pwa.client.registerPlugin` property to `
 
 ::: info
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
-:::
-
-::: warning
-We can also change the internal API (breaking changes), so please be aware of that.
 :::
 
 ## Registering Web Manifest
