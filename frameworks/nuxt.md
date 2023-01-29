@@ -34,21 +34,21 @@ export default defineNuxtConfig({
 
 `@vite-pwa/nuxt` will register a plugin exposing PWA stuff in your Nuxt 3 application via `$pwa` property.
 
-The plugin will expose the following properties:
+The plugin will expose the following features:
 - Prompt for update and offline ready via `offlineReady` and `offlineReady` properties.
-- Cancelling the prompt for update application and offline via `closePrompt` function.
-- Update application when using `prompt` register type via `updateServiceWorker` function.
-- Intercepting the `beforeinstallprompt` event via `showInstallPrompt` property: this feature will prevent browser show the `Install Application` prompt.
-- Cancelling install prompt `cancelInstall` function.
-- Fire browser PWA install via `install` function.
-- Exposes service worker registration status via `swActivated` and `registrationError` properties.
-- Exposes service worker registration via `getSWActivated` function.
+- Cancelling prompt for update application and offline via `closePrompt` function.
+- Update application when using `prompt for update` behaviour via `updateServiceWorker` function.
+- Intercepting `beforeinstallprompt` event via `showInstallPrompt` property: this feature will prevent the browser to show the default `Install PWA Application` prompt.
+- Cancelling install prompt via `cancelInstall` function.
+- `Install PWA application` via `install` function.
+- Service worker registration status via `swActivated` and `registrationError` properties.
+- Service worker registration via `getSWActivated` function.
 
 You will need to activate `pwa.installPrompt` property in your Nuxt config file to enable `beforeinstallprompt` event interception: configure `true` or the key name used in local storage to store the `beforeinstallprompt` cancellation for your install prompt/widget.
 
 Additionally, you can also configure periodic sync for updates, you can enable it via `pwa.periodicSyncForUpdates` property in your Nuxt config file: configure the interval in seconds in previous property.
 
-You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import a PWA virtual module in your application, previous features will not be available.
+You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, previous properties will not be available.
 
 ::: info
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
