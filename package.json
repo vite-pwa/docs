@@ -1,7 +1,7 @@
 {
   "name": "vite-pwa-docs",
   "version": "0.14.1",
-  "packageManager": "pnpm@7.18.2",
+  "packageManager": "pnpm@7.26.1",
   "description": "Zero-config PWA for Vite Documentation",
   "author": "antfu <anthonyfu117@hotmail.com>",
   "license": "MIT",
@@ -26,7 +26,8 @@
     "vite-plugin",
     "astro",
     "astro-integration",
-    "iles"
+    "iles",
+    "nuxt"
   ],
   "scripts": {
     "dev": "vitepress dev",
@@ -43,10 +44,10 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.1",
-    "@antfu/ni": "^0.18.8",
+    "@antfu/ni": "^0.19.0",
     "@types/workbox-build": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
     "@vite-pwa/vitepress": "^0.0.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vueuse/core": "^9.9.0",
@@ -57,7 +58,7 @@
     "unplugin-vue-components": "^0.22.12",
     "vite": "^4.0.4",
     "vite-plugin-pwa": "^0.14.1",
-    "vitepress": "^1.0.0-alpha.36",
+    "vitepress": "^1.0.0-alpha.40",
     "workbox-window": "^6.5.4"
   },
   "pnpm": {

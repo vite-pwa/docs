@@ -1,6 +1,5 @@
 ---
 title: Astro | Frameworks
-next: Getting Started | Examples
 ---
 
 # Astro
