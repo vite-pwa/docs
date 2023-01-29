@@ -57,3 +57,7 @@ This is the initial release of `@vite-pwa/nuxt` integration, we're working to im
 ## Registering Web Manifest
 
 To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` provides `VitePwaManifest.ts` functional component, you should add it to your `app.vue` or to all layouts files.
+
+::: tip
+You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nuxt `routeRules`.
+:::
