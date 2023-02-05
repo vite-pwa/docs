@@ -7,8 +7,10 @@ next: Getting Started | Deploy
 
 You have an example in the [@vite-pwa/nuxt integration repo](https://github.com/vite-pwa/nuxt/tree/main/playground).
 
-::: info WIP
-You can also check [Elk repo](https://github.com/elk-zone/elk) for a real world example: we're working to update the repo.
+Check also [Vitesse Nuxt3 template](https://github.com/antfu/vitesse-nuxt3) for a real world example deployed on Netlify.
 
-Elk repo is using `Push Notifications` and `Web Share Target API` PWA capabilities and `Prompt for update` register type via `injectManifest` strategy.
+::: info WIP
+You can also check [Elk repo](https://github.com/elk-zone/elk) for another real world example: we're working to update the repo.
+
+Elk repo is using `Push Notifications` and `Web Share Target API` and `Prompt for update` register type via `injectManifest` strategy.
 :::

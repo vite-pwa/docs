@@ -61,3 +61,9 @@ To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` pr
 ::: tip
 You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
 :::
+
+## Service Worker Without Precache
+
+If you want to use old Nuxt PWA template in your service worker, check [Service Worker Without Precache](/guide/service-worker-without-precache.md) section.
+
+Right now, you will need to create your service worker, we're working to provide a default service worker for Nuxt 3 applications without injection point.

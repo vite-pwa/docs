@@ -18,6 +18,10 @@ const Guide = [
     link: '/guide/service-worker-precache',
   },
   {
+    text: 'Service Worker Without Precache',
+    link: '/guide/service-worker-without-precache',
+  },
+  {
     text: 'PWA Minimal Requirements',
     link: '/guide/pwa-minimal-requirements',
   },
