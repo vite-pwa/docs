@@ -1,5 +1,6 @@
 ---
 title: injectManifest | Workbox
+next: Getting Started | Integrations
 ---
 
 # injectManifest

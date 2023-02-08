@@ -195,6 +195,17 @@ const Workbox = [
   },
 ]
 
+const Integrations = [
+  {
+    text: 'Getting Started',
+    link: '/integrations/',
+  },
+  {
+    text: 'Laravel',
+    link: '/integrations/laravel',
+  },
+]
+
 function prepareSidebar(idx: number) {
   return [
     {
@@ -227,6 +238,12 @@ function prepareSidebar(idx: number) {
       collapsed: true,
       items: Workbox,
     },
+    {
+      text: 'Integrations',
+      collapsible: true,
+      collapsed: true,
+      items: Integrations,
+    },
   ].map((entry, i) => {
     if (idx === i)
       entry.collapsed = false
@@ -250,7 +267,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
       name: 'keywords',
-      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, îles, Astro',
+      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, îles, Astro, Laravel, Laravel Vite plugin',
     }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],
@@ -376,6 +393,7 @@ export default withPwa(defineConfig({
       '/examples/': prepareSidebar(2),
       '/deployment/': prepareSidebar(3),
       '/workbox/': prepareSidebar(4),
+      '/integrations/': prepareSidebar(5),
     },
   },
   vite: {
