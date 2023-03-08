@@ -4,6 +4,12 @@ title: SvelteKit | Frameworks
 
 # SvelteKit
 
+::: warning
+From version `^0.1.4`, `SvelteKitPWA` plugin will assume you're using latest `SvelteKit`.
+
+If you're using old `SvelteKit` versions between `1.0.*` and `1.3.0`, add `latestKit: false` to kit plugin options.
+:::
+
 ::: tip
 From version `^0.1.0`, `SvelteKitPWA` has SvelteKit `^1.0.0` as peer dependency.
 :::
@@ -73,6 +79,12 @@ export interface KitOptions {
    * @see https://kit.svelte.dev/docs/configuration#trailingslash
    */
   trailingSlash?: 'never' | 'always' | 'ignore'
+  /**
+   * If you're using older version of SvelteKit, you can set this to `false`.
+   *
+   * @default true
+   */
+  latestKit?: boolean
 }
 
 export interface SvelteKitPWAOptions extends Partial<VitePWAOptions> {
