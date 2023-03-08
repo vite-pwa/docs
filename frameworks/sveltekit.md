@@ -19,7 +19,34 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Sv
 :::
 
 ::: tip
-You should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/modules#$service-worker) to disable it on your application.
+If you're using an old `SvelteKit` version from `1.0.*` to `1.3.2`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/modules#$service-worker) to disable it on your application.
+
+From version `0.1.4`, `SvelteKitPWA` plugin will delegate the service worker build to `SvelteKit`, and so, you can use `service-worker` as the name of your service worker file (VanillaJS or TypeScript).
+You will need to exclude the service worker registration from the `SvelteKit` configuration if you're using any virtual module:
+```ts
+// svelte.config.js
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    serviceWorker: {
+      register: false
+    }
+  }
+};
+```
+
+You can also configure a custom service worker name, `SvelteKitPWA` plugin will update the file properly (remember to also update the service worker name in `SvelteKitPWA` plugin configuration):
+```ts
+// svelte.config.js
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    files: {
+      serviceWorker: 'src/prompt-sw.ts',
+    }
+  }
+};
+```
 :::
 
 ## SvelteKit PWA Plugin
