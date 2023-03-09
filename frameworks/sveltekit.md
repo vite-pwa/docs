@@ -51,7 +51,7 @@ const config = {
 };
 ```
 
-You can check SvelteKit docs for more information about [Service Worker](https://kit.svelte.dev/docs/service-workers).
+You can check SvelteKit docs for more information about [service workers](https://kit.svelte.dev/docs/service-workers).
 
 ::: warning
 If your custom service working is importing any `workbox-*` module (`workbox-routing`, `workbox-strategies`, etc), you will need to hack Vite build process in order to remove non `ESM` special replacements from the build process (if you don't include `process.env.NODE_ENV`, the service worker will not be registered). You only need to add this entry in your Vite config file:
