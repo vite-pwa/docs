@@ -19,7 +19,7 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Sv
 :::
 
 ::: tip
-If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/modules#$service-worker) to disable it on your application.
+If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/service-workers) to disable it on your application.
 :::
 
 ## Generate Custom Service Worker
