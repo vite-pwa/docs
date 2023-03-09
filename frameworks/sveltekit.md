@@ -58,7 +58,9 @@ If your custom service working is importing any `workbox-*` module (`workbox-rou
 /** @type {import('vite').UserConfig} */
 const config = {
   define: {
-    'process.env.NODE_ENV': process.env.NODE_ENV === 'production' ? '"production"' : '"development"'
+    'process.env.NODE_ENV': process.env.NODE_ENV === 'production' 
+      ? '"production"'
+      : '"development"'
   }
 };
 
