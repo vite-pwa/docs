@@ -24,7 +24,8 @@ If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all referen
 
 ## Generate Custom Service Worker
 
-From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so, you can use `service-worker` as the name of your service worker file (VanillaJS or TypeScript).
+From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so, you can use `src/service-worker.js`: in that case, you don't need to configure the `filename` in pwa plugin options.
+
 You will need to exclude the service worker registration from the `SvelteKit` configuration if you're using any virtual module:
 ```js
 // svelte.config.js
@@ -38,14 +39,14 @@ const config = {
 };
 ```
 
-You can also configure a custom service worker name, `SvelteKitPWA` plugin will rename your service worker (remember to also update the service worker name in `SvelteKitPWA` plugin configuration):
+You can also configure a custom service worker, remember to also update the service worker name in `SvelteKitPWA` plugin configuration, for example:
 ```js
 // svelte.config.js
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     files: {
-      serviceWorker: 'src/prompt-sw.ts',
+      serviceWorker: 'src/prompt-sw.js', // or `src/prompt-sw.ts`
     }
   }
 };
