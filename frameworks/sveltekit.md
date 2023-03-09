@@ -5,9 +5,9 @@ title: SvelteKit | Frameworks
 # SvelteKit
 
 ::: warning
-From version `^0.1.4`, `SvelteKitPWA` plugin will assume you're using latest `SvelteKit`.
+From version `^0.2.0`, `SvelteKitPWA` plugin will assume you're using latest `SvelteKit`.
 
-If you're using old `SvelteKit` versions between `1.0.*` and `1.3.0`, add `latestKit: false` to kit plugin options.
+If you're using old `SvelteKit` versions between `1.0.*` and `1.3.0`, you should use old `0.1.*` `SvelteKitPWA` plugin version.
 :::
 
 ::: tip
@@ -19,9 +19,12 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Sv
 :::
 
 ::: tip
-If you're using an old `SvelteKit` version from `1.0.*` to `1.3.2`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/modules#$service-worker) to disable it on your application.
+If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/modules#$service-worker) to disable it on your application.
+:::
 
-From version `0.1.4`, `SvelteKitPWA` plugin will delegate the service worker build to `SvelteKit`, and so, you can use `service-worker` as the name of your service worker file (VanillaJS or TypeScript).
+## Generate Custom TypeScript SW
+
+From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so, you can use `service-worker` as the name of your service worker file (VanillaJS or TypeScript).
 You will need to exclude the service worker registration from the `SvelteKit` configuration if you're using any virtual module:
 ```ts
 // svelte.config.js
@@ -47,6 +50,20 @@ const config = {
   }
 };
 ```
+
+::: warning
+If your custom service working is importing any `workbox-*` module (`workbox-routing`, `workbox-strategies`, etc), you will need to hack Vite build process in order to remove non `ESM` special replacements from the build process (if you don't include `process.env.NODE_ENV`, the service worker will not be registered). You only need to add this entry in your Vite config file:
+```ts
+// vite.config.js or vite.config.ts
+/** @type {import('vite').UserConfig} */
+const config = {
+  define: {
+    'process.env.NODE_ENV': process.env.NODE_ENV === 'production' ? '"production"' : '"development"'
+  }
+};
+
+export default config;
+```
 :::
 
 ## SvelteKit PWA Plugin
@@ -60,7 +77,7 @@ pnpm add -D @vite-pwa/sveltekit
 
 To update your project to use the new `vite-plugin-pwa` for SvelteKit, you only need to change the Vite config file (you don't need oldest `pwa` and `pwa-configuration` modules):
 ```ts
-// vite.config.js / vite-config.ts
+// vite.config.js / vite.config.ts
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
 /** @type {import('vite').UserConfig} */
