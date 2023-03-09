@@ -5,9 +5,9 @@ title: SvelteKit | Frameworks
 # SvelteKit
 
 ::: warning
-From version `^0.2.0`, `SvelteKitPWA` plugin will assume you're using latest `SvelteKit`.
+From version `v0.2.0`, `SvelteKitPWA` plugin requires SvelteKit 1.3.1+.
 
-If you're using old `SvelteKit` versions between `1.0.*` and `1.3.0`, you should use old `0.1.*` `SvelteKitPWA` plugin version.
+If you're using old `SvelteKit` version previous to `v1.3.1`, you should use old `0.1.*` `SvelteKitPWA` plugin version.
 :::
 
 ::: tip
