@@ -26,7 +26,7 @@ If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all referen
 
 From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so, you can use `service-worker` as the name of your service worker file (VanillaJS or TypeScript).
 You will need to exclude the service worker registration from the `SvelteKit` configuration if you're using any virtual module:
-```ts
+```js
 // svelte.config.js
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -39,7 +39,7 @@ const config = {
 ```
 
 You can also configure a custom service worker name, `SvelteKitPWA` plugin will rename your service worker (remember to also update the service worker name in `SvelteKitPWA` plugin configuration):
-```ts
+```js
 // svelte.config.js
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -51,9 +51,11 @@ const config = {
 };
 ```
 
+You can check SvelteKit docs for more information about [Service Worker](https://kit.svelte.dev/docs/service-workers).
+
 ::: warning
 If your custom service working is importing any `workbox-*` module (`workbox-routing`, `workbox-strategies`, etc), you will need to hack Vite build process in order to remove non `ESM` special replacements from the build process (if you don't include `process.env.NODE_ENV`, the service worker will not be registered). You only need to add this entry in your Vite config file:
-```ts
+```js
 // vite.config.js or vite.config.ts
 /** @type {import('vite').UserConfig} */
 const config = {
@@ -78,7 +80,7 @@ pnpm add -D @vite-pwa/sveltekit
 ```
 
 To update your project to use the new `vite-plugin-pwa` for SvelteKit, you only need to change the Vite config file (you don't need oldest `pwa` and `pwa-configuration` modules):
-```ts
+```js
 // vite.config.js / vite.config.ts
 import { SvelteKitPWA } from '@vite-pwa/sveltekit'
 
