@@ -35,8 +35,43 @@ const config = {
     }
   }
 };
+```
+
+Then in your Vite config file:
+```js
+// vite.config.js or vite.config.ts
+/** @type {import('vite').UserConfig} */
+const config = {
+  plugins: [
+    sveltekit(),
+    SvelteKitPWA({
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'my-sw.js', // or `my-sw.ts`
+      /* other pwa options */  
+    })
+  ],
+};
+
+export default config;
+```
 
 You can check SvelteKit docs for more information about [service workers](https://kit.svelte.dev/docs/service-workers).
+
+You will need to exclude the service worker registration from the `SvelteKit` configuration if you're using any pwa virtual module (`virtual:pwa-register` or `virtual:pwa-register/svelte`):
+```js
+// svelte.config.js
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  plugins: {
+    serviceWorker: {
+      register: false
+    }
+  }
+};
+
+export default config;
+```
 
 ::: warning
 If your custom service working is importing any `workbox-*` module (`workbox-routing`, `workbox-strategies`, etc), you will need to hack Vite build process in order to remove non `ESM` special replacements from the build process (if you don't include `process.env.NODE_ENV`, the service worker will not be registered). You only need to add this entry in your Vite config file:
