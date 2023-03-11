@@ -35,6 +35,8 @@ const config = {
     }
   }
 };
+
+export default config;
 ```
 
 Then in your Vite config file:
