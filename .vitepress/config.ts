@@ -54,6 +54,10 @@ const Guide = [
     link: '/guide/unregister-service-worker',
   },
   {
+    text: 'Custom Service Worker',
+    link: '/guide/custom-service-worker',
+  },
+  {
     text: 'FAQ',
     link: '/guide/faq',
   },
