@@ -50,6 +50,10 @@ const Guide = [
     link: '/guide/development',
   },
   {
+    text: 'Service Worker without PWA capabilities',
+    link: '/guide/service-worker-without-pwa-capabilities',
+  },
+  {
     text: 'Unregister Service Worker',
     link: '/guide/unregister-service-worker',
   },
