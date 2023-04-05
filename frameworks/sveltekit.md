@@ -65,7 +65,7 @@ You will need to exclude the service worker registration from the `SvelteKit` co
 // svelte.config.js
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  plugins: {
+  kit: {
     serviceWorker: {
       register: false
     }

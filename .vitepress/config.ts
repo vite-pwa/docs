@@ -279,7 +279,7 @@ export default withPwa(defineConfig({
   themeConfig: {
     // logo: '/favicon.svg',
     editLink: {
-      pattern: 'https://github.com/vite-pwa/docs/edit/main/docs/:path',
+      pattern: 'https://github.com/vite-pwa/docs/edit/main/:path',
       text: 'Suggest changes to this page',
     },
     algolia: {
