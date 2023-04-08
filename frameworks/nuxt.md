@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 `@vite-pwa/nuxt` will register a plugin exposing PWA stuff in your Nuxt 3 application via `$pwa` property.
 
 The plugin will expose the following features:
-- Prompt for update and offline ready via `offlineReady` and `offlineReady` properties.
+- Prompt for update and offline ready via `updateReady` and `offlineReady` properties.
 - Cancelling prompt for update application and offline via `closePrompt` function.
 - Update application when using `prompt for update` behaviour via `updateServiceWorker` function.
 - Intercepting `beforeinstallprompt` event via `showInstallPrompt` property: this feature will prevent the browser to show the default `Install PWA Application` prompt.
