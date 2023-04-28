@@ -50,6 +50,34 @@ Additionally, you can also configure periodic sync for updates, you can enable i
 
 You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, previous properties will not be available.
 
+For example an install prompt and a ready offline toast:
+```ts
+<script setup>
+// If you want to use it in setup, import from the nuxtApp.
+const { $pwa } = useNuxtApp()
+
+const toast = useToast()
+onMounted(() => {
+  if ($pwa.offlineReady) {
+    toast.success('App ready to work offline')
+  }
+})
+</script>
+
+<template>
+  // You can use $pwa directly in templates!
+  <div v-show="$pwa.needRefresh">
+    <span>
+      New content available, click on reload button to update.
+    </span>
+
+    <button @click="$pwa.updateServiceWorker()">
+      Reload
+    </button>
+  </div>
+</template>
+```
+
 ::: info
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
 :::
