@@ -123,3 +123,4 @@ These custom virtual modules will expose a wrapper for <code>virtual:pwa-registe
 - [VitePress](/frameworks/vitepress)
 - [îles](/frameworks/iles)
 - [Astro](/frameworks/astro)
+- [Nuxt 3](/frameworks/nuxt)
