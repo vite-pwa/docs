@@ -207,6 +207,6 @@ You can check this awesome repo [Elk](https://github.com/elk-zone/elk) using `Se
 
 ## Background Sync
 
-You should check the `workbox` documentation: [Introducing to Background Sync](https://developer.chrome.com/blog/background-sync/).
+You should check the `workbox` documentation: check [Introducing to Background Sync](https://developer.chrome.com/blog/background-sync/).
 
 You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Background Sync` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).

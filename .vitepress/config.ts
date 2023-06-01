@@ -252,8 +252,8 @@ export default withPwa(defineConfig({
   description: 'Zero-config PWA Framework-agnostic for Vite and Integrations',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['link', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
