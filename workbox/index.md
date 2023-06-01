@@ -11,6 +11,10 @@ prev:
 
 In this document, we focus only on the [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module from **Workbox**.
 
+:::warning
+From version `0.16.0`, `vite-plugin-pwa` has been updated to use latest `workbox` version `7.0.0` that requires Node 16 or above.
+:::
+
 ## workbox-build module
 
 This module is for build process purposes (a `node` module); that is, `Vite Plugin PWA` will use it to build your service-worker.
