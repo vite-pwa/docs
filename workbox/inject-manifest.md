@@ -10,6 +10,15 @@ Before writing your custom service worker, check if `workbox` can generate the c
 
 You can find the documentation for this method on `workbox` site: [injectManifest](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-injectManifest)
 
+:::warning
+From version `0.15.0`, `vite-plugin-pwa` builds your custom service worker using Vite instead of Rollup: configured Vite plugins were reused in the service worker build, which could lead to the generation of bad code in service worker.
+
+If you are using any Vite plugin logic within your custom service worker, you need to add those plugins twice, for the development server and the build process:
+- Vite plugins
+- `vite-plugin-pwa` plugin options: `injectManifest.plugins` 
+
+`vite-plugin-pwa` now uses the same approach as Vite to build [WebWorkers](https://vitejs.dev/config/worker-options.html#worker-plugins).
+:::
 
 ## Exclude routes
 
