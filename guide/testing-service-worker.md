@@ -8,11 +8,11 @@ There are quite a few test libraries, `vite-plugin-pwa` uses [Vitest](https://vi
 
 You can check any framework example in the `examples` folder in the repo and [Running tests](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md#running-tests) in the contributing guide.
 
-`vite-plugin-pwa` and `@vite-pwa/nuxt` have been added to the Vite `ecosystem-ci` and Nuxt `ecosystem-ci` respectively to detect possible regressions in new Vite/Nuxt versions:
+`vite-plugin-pwa` and `@vite-pwa/nuxt` have been added to the [Vite ecosystem-ci](https://github.com/vitejs/vite-ecosystem-ci) and [Nuxt ecosystem-ci](https://github.com/nuxt/ecosystem-ci) respectively to detect possible regressions in new Vite/Nuxt versions:
 - [Discord Vite ecosystem-ci](https://discord.com/channels/804011606160703521/928398470086291456)
 - [Discord Nuxt ecosystem-ci](https://discord.com/channels/473401852243869706/1098558476483055656)
 
-We're also working to include `@vite-pwa/sveltekit` in the Svelte/SvelteKit `ecosystem-ci`. 
+We're also working to include `@vite-pwa/sveltekit` in the [Svelte ecosystem-ci](https://github.com/sveltejs/svelte-ecosystem-ci).
 
 ## Testing build
 
