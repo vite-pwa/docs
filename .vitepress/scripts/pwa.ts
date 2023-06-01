@@ -11,6 +11,8 @@ export const pwa: Partial<VitePWAOptions> = {
     description: 'Zero-config PWA for Vite and the ecosystem',
     theme_color: '#ffffff',
     start_url: '/',
+    lang: 'en-US',
+    dir: 'ltr',
     orientation: 'natural',
     display: 'standalone',
     display_override: ['window-controls-overlay'],
@@ -30,6 +32,7 @@ export const pwa: Partial<VitePWAOptions> = {
         src: 'pwa-512x512.png',
         sizes: '512x512',
         type: 'image/png',
+        purpose: 'any',
       },
       {
         src: 'maskable-icon.png',
@@ -38,6 +41,12 @@ export const pwa: Partial<VitePWAOptions> = {
         purpose: 'maskable',
       },
     ],
+    screenshots: [{
+      src: 'og-image.png',
+      sizes: '1200x630',
+      type: 'image/png',
+      label: 'Screenshot of Zero-config PWA Framework-agnostic Plugin for Vite and Integrations',
+    }],
   },
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
