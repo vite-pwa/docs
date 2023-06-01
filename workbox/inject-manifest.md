@@ -10,6 +10,15 @@ Before writing your custom service worker, check if `workbox` can generate the c
 
 You can find the documentation for this method on `workbox` site: [injectManifest](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-injectManifest)
 
+:::warning
+From version `0.15.0`, `vite-plugin-pwa` builds your custom service worker using Vite instead of Rollup: configured Vite plugins were reused in the service worker build, which could lead to the generation of bad code in service worker.
+
+If you are using any Vite plugin logic within your custom service worker, you need to add those plugins twice, for the development server and the build process:
+- Vite plugins
+- `vite-plugin-pwa` plugin options: `injectManifest.plugins` 
+
+`vite-plugin-pwa` now uses the same approach as Vite to build [WebWorkers](https://vitejs.dev/config/worker-options.html#worker-plugins).
+:::
 
 ## Exclude routes
 
@@ -194,4 +203,10 @@ clientsClaim()
 
 You should check the `workbox` documentation: [Introduction to push notifications](https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications). 
 
-You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Server Push Notifications` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).
+You can check this awesome repo [Elk](https://github.com/elk-zone/elk) using `Server Push Notifications` and some other cool service worker capabilities like [Web Share Target API](https://developer.chrome.com/articles/web-share-target/): using `Nuxt 3` and `vite-plugin-pwa`.
+
+## Background Sync
+
+You should check the `workbox` documentation: check [Introducing to Background Sync](https://developer.chrome.com/blog/background-sync/).
+
+You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Background Sync` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).

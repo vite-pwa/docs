@@ -58,6 +58,10 @@ const Guide = [
     link: '/guide/unregister-service-worker',
   },
   {
+    text: 'Testing Service Worker',
+    link: '/guide/testing-service-worker',
+  },
+  {
     text: 'FAQ',
     link: '/guide/faq',
   },
@@ -248,8 +252,8 @@ export default withPwa(defineConfig({
   description: 'Zero-config PWA Framework-agnostic for Vite and Integrations',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['link', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
@@ -269,6 +273,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'twitter:url', content: ogUrl }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
+  srcExclude: ['README.md', 'CONTRIBUTING.md'],
   lastUpdated: true,
   markdown: {
     theme: {
@@ -282,10 +287,13 @@ export default withPwa(defineConfig({
       pattern: 'https://github.com/vite-pwa/docs/edit/main/:path',
       text: 'Suggest changes to this page',
     },
-    algolia: {
-      appId: 'TTO9T0AE3F',
-      apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
-      indexName: 'vite-plugin-pwa',
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'TTO9T0AE3F',
+        apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
+        indexName: 'vite-plugin-pwa',
+      },
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },

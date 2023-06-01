@@ -14,7 +14,7 @@ To develop and test the `vite-pwa-docs` package:
 
 2. Ensure using the latest Node.js (16.x)
 
-3. `vite-pwa-docs` uses pnpm v7. If you are working on multiple projects with different versions of pnpm, it's recommend to enable [Corepack](https://github.com/nodejs/corepack) by running `corepack enable`.
+3. `vite-pwa-docs` uses pnpm v8. If you are working on multiple projects with different versions of pnpm, it's recommend to enable [Corepack](https://github.com/nodejs/corepack) by running `corepack enable`.
 
 4. Check out a branch where you can work and commit your changes:
 ```shell
@@ -27,8 +27,8 @@ git checkout -b my-new-branch
 
 `vite-pwa-docs` uses `Vitepress` for the documentation website. 
 
-Once you made the changes to the documentation, you can test them running `pnpm run dev` from the root folder.
+Once you made the changes to the documentation, you can test them running `nr dev` from the root folder.
 
 To check the website build, you can:
-- run `pnpm run preview` from the root folder.
-- run `pnpm run https` from the root folder (to test it using `https`).
+- run `nr preview` from the root folder.
+- run `nr https` from the root folder (to test it using `https`).
