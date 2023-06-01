@@ -203,4 +203,10 @@ clientsClaim()
 
 You should check the `workbox` documentation: [Introduction to push notifications](https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications). 
 
-You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Server Push Notifications` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).
+You can check this awesome repo [elk.zone](https://github-com/elk.zone) using `Server Push Notifications` and some other cool service worker capabilities like [Web Share Target API](https://developer.chrome.com/articles/web-share-target/): using `Nuxt 3` and `vite-plugin-pwa`.
+
+## Background Sync
+
+You should check the `workbox` documentation: [Introducing to Background Sync](https://developer.chrome.com/blog/background-sync/).
+
+You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Background Sync` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).
