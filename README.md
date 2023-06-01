@@ -46,4 +46,4 @@ Documentation: PWA integrations for Vite and the ecosystem
 
 ## 📄 License
 
-MIT License © 2021-PRESENT [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)
