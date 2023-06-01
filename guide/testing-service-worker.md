@@ -6,7 +6,7 @@ title: Testing Service Worker | Guide
 
 There are quite a few test libraries, `vite-plugin-pwa` uses [Vitest](https://vitest.dev/) for build testing and [Playwright](https://playwright.dev/) for in-browser testing (with the Chromium browser only).
 
-You can check any framework example in the `examples` folder in the repo and the [contributing guide](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md#running-tests).
+You can check any framework example in the `examples` folder in the repo and [Running tests](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md#running-tests) in the contributing guide.
 
 `vite-plugin-pwa` and `@vite-pwa/nuxt` have been added to Vite `ecosystem-ci` and Nuxt `ecosystem-ci` respectively.
 
