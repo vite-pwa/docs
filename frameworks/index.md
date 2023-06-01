@@ -86,6 +86,27 @@ export interface RegisterSWOptions {
 }
 ```
 
+## Accessing PWA Info
+
+From version `0.12.8`, `vite-plugin-pwa` exposes a new Vite virtual module to access the PWA info: [virtual:pwa-info](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/info.d.ts).
+
+If your **TypeScript** build step or **IDE** complain about not being able to find modules or type definitions on imports, add the following to the `compilerOptions.types` array of your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "vite-plugin-pwa/info"
+    ]
+  }
+}
+```
+
+Or you can add the following reference in any of your `d.ts` files (for example, in `vite-env.d.ts` or `global.d.ts`):
+```ts
+/// <reference types="vite-plugin-pwa/info" />
+```
+
 ## Import Virtual Modules
 
 `vite-plugin-pwa` plugin exposes a `Vite` virtual module to interact with the service worker.
