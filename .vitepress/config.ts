@@ -269,6 +269,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'twitter:url', content: ogUrl }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
+  srcExclude: ['README.md', 'CONTRIBUTING.md'],
   lastUpdated: true,
   markdown: {
     theme: {
@@ -282,10 +283,13 @@ export default withPwa(defineConfig({
       pattern: 'https://github.com/vite-pwa/docs/edit/main/:path',
       text: 'Suggest changes to this page',
     },
-    algolia: {
-      appId: 'TTO9T0AE3F',
-      apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
-      indexName: 'vite-plugin-pwa',
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'TTO9T0AE3F',
+        apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
+        indexName: 'vite-plugin-pwa',
+      },
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },
