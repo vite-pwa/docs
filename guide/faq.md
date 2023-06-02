@@ -199,7 +199,7 @@ onBeforeMount(async () => {
 
 ## Monorepo with multiple projects and frameworks
 
-From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and so you can import proper virtual module in your `Astro` project. Instead using [client.d.ts via](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/client.d.ts) via `vite-plugin-pwa/client` (tsconfig.json file or TypeScript reference), use one of the following virtual modules:
+From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and so you can import proper virtual module in your monorepo project. Instead using [client.d.ts via](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/client.d.ts) via `vite-plugin-pwa/client` (tsconfig.json file or TypeScript reference), use one of the following virtual modules:
 - `virtual:pwa-register/react`: configure `vite-plugin-pwa/react`.
 - `virtual:pwa-register/preact`: configure `vite-plugin-pwa/preact`.
 - `virtual:pwa-register/solid`: configure `vite-plugin-pwa/solid`.
@@ -207,4 +207,4 @@ From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and 
 - `virtual:pwa-register/vanillajs`: configure `vite-plugin-pwa/vanillajs`.
 - `virtual:pwa-register/vue`: configure `vite-plugin-pwa/vue`.
 
-You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the repo. 
+You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the [vite-plugin-pwa repo](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples). 
