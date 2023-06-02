@@ -208,3 +208,17 @@ From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and 
 - `virtual:pwa-register/vue`: configure `vite-plugin-pwa/vue`.
 
 You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the [vite-plugin-pwa repo](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples). 
+
+## Suppress workbox-build warnings in dev
+
+If you are using `vite-plugin-pwa` with `generateSW` strategy, you can suppress `workbox-build` warnings in dev using `suppressWarnings` dev option:
+
+```ts
+devOptions: {
+  suppressWarnings: true
+}
+```
+
+Enabling this option, `vite-plugin-pwa` dev plugin will:
+- generate an empty `suppress-warnings.js` file in the `dev-dist` folder.
+- change `workbox.globPatterns` option to `[*.js']`.

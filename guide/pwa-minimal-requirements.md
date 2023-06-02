@@ -10,18 +10,26 @@ Your application **must** meet the PWA Minimal Requirements before deploying it 
 
 To make your PWA application installable (one of the requirements), you will need to modify your application entry point, add some minimal entries to your `Web App Manifest`, allow search engines to crawl all your application pages and configure your server properly (only for production, on local you can use `https-localhost` dependency and `node`).
 
+Check [Elk PWA Documentation](https://docs.elk.zone/docs/pwa) for some useful PWA hints.
+
+:::tip
+You can check [Elk PWA Icon Generator Script](https://github.com/elk-zone/elk/blob/main/scripts/generate-pwa-icons.ts) to generate all the icons required for your PWA application using an `svg` images.
+
+We're working in a new package to provide a CLI to generate all the icons required for your PWA application using an image using [sharp](https://github.com/lovell/sharp/) and  [sharp-ios](https://github.com/ssnangua/sharp-ico) packages.
+:::
+
 ## Entry Point
 
 Your application entry point (usually `index.html`) **must** have the following entries in the `<head>` section:
 - mobile viewport configuration
 - a title
 - a description
-- a favicon
+- a favicon: check the following page https://www.leereamsnyder.com/blog/favicons-in-2021
 - a link for `apple-touch-icon`
-- a link for `mask-icon`
+- a link for `mask-icon` (right now there is no need to provide a `mask-icon`)
 - a meta entry for `theme-color`
 
-For example, here a minimal configuration (you must provide all the icons and images):
+For example, a minimal configuration (you must provide all the icons and images):
 ```html
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -91,7 +99,7 @@ Once generated, download the ZIP and use `android-*` icons for `pwa-*`:
 - `apple-touch-icon.png` is `apple-touch-icon.png`
 - `favicon.ico` is `favicon.ico`
 
-If you want to add the `purpose: 'any maskable'` icon to the Web App Manifest:
+If you want you can add the `purpose: 'any maskable'` icon to the Web App Manifest, but it is better to add 2 icons with `any` and `maskable` purposes:
 ```ts
 icons: [
   {
@@ -108,7 +116,13 @@ icons: [
     src: 'pwa-512x512.png',
     sizes: '512x512',
     type: 'image/png',
-    purpose: 'any maskable'
+    purpose: 'any'
+  },
+  {
+    src: 'pwa-512x512.png',
+    sizes: '512x512',
+    type: 'image/png',
+    purpose: 'maskable'
   }
 ]
 ```
