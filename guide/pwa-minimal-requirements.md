@@ -15,7 +15,7 @@ Check [Elk PWA Documentation](https://docs.elk.zone/docs/pwa) for some useful PW
 :::tip
 You can check [Elk PWA Icon Generator Script](https://github.com/elk-zone/elk/blob/main/scripts/generate-pwa-icons.ts) to generate all the icons required for your PWA application using an `svg` image.
 
-We're working in a new package to provide a CLI to generate all the icons required for your PWA application using an image using [sharp](https://github.com/lovell/sharp/) and  [sharp-ios](https://github.com/ssnangua/sharp-ico) packages.
+We're working in a new package to provide a CLI to generate all the icons required for your PWA application using an image using [sharp](https://github.com/lovell/sharp/) and  [sharp-ico](https://github.com/ssnangua/sharp-ico) packages.
 :::
 
 ## Entry Point
