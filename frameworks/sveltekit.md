@@ -117,14 +117,12 @@ const config = {
 export default config
 ```
 
-In addition to the configuration above, it's necessary to explain SvelteKit on how to handle and insert the webmanifest into the generated source code. Currently the easiest way to do this, is to add a layout to your kit project.
-
+In addition to the configuration above, it's necessary to add the PWA web manifest, currently the easiest way to do this, is to add it to any layout to your kit project:
 ```svelte
 <!-- src/routes/+layout.svelte -->
 <script>
   import { pwaInfo } from 'virtual:pwa-info'; 
 
-  let webManifestLink;
   $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
 </script> 
   
@@ -133,7 +131,7 @@ In addition to the configuration above, it's necessary to explain SvelteKit on h
 </svelte:head> 
 ```
 
-Please see [here](/frameworks/#accessing-pwa-info) to learn more about the virtually exposed module `pwa-info`.
+Please see [virtual:pwa-info](/frameworks/#accessing-pwa-info) to learn more about the virtually exposed module `pwa-info`.
 
 ## SvelteKit PWA Plugin Options
 
