@@ -131,7 +131,7 @@ In addition to the configuration above, it's necessary to add the PWA web manife
 </svelte:head> 
 ```
 
-Please see [virtual:pwa-info](/frameworks/#accessing-pwa-info) to learn more about the virtually exposed module `pwa-info`.
+Check out the [virtual:pwa-info](/frameworks/#accessing-pwa-info) documentation to learn more about the virtually exposed module `pwa-info`.
 
 ## SvelteKit PWA Plugin Options
 
