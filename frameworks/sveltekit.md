@@ -22,6 +22,21 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Sv
 If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/service-workers) to disable it on your application.
 :::
 
+## Installing @vite-pwa/sveltekit
+
+To install the `@vite-pwa/sveltekit` plugin, just add it to your project as a `dev dependency`:
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D @vite-pwa/sveltekit
+  ```
+  ```bash [yarn]
+  yarn add -D @vite-pwa/sveltekit
+  ```
+  ```bash [npm]
+  npm install -D @vite-pwa/sveltekit
+  ```
+:::
+
 ## Generate Custom Service Worker
 
 From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so by default you will be expected to put your service worker in `src/service-worker.js`. If you would like, you can use a custom file location by changing the corresponding SvelteKit option:
@@ -95,11 +110,6 @@ export default config;
 ## SvelteKit PWA Plugin
 
 `vite-plugin-pwa` provides the new `SvelteKitPWA` plugin that will allow you to use `vite-plugin-pwa` in your SvelteKit applications.
-
-You will need to install `SvelteKitPWA` using:
-```shell
-pnpm add -D @vite-pwa/sveltekit
-```
 
 To update your project to use the new `vite-plugin-pwa` for SvelteKit, you only need to change the Vite config file (you don't need oldest `pwa` and `pwa-configuration` modules):
 ```js
