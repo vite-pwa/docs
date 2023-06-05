@@ -1,10 +1,11 @@
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { version } from '../package.json'
 import { transformHead } from './scripts/transformHead'
 import { pwa } from './scripts/pwa'
 
-const Guide = [
+const Guide: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/guide/',
@@ -67,7 +68,7 @@ const Guide = [
   },
 ]
 
-const Deployment = [
+const Deployment: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/deployment/',
@@ -94,7 +95,22 @@ const Deployment = [
   },
 ]
 
-const Frameworks = [
+const AssetsGenerator: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'Getting Started',
+    link: '/assets-generator/',
+  },
+  {
+    text: 'CLI',
+    link: '/assets-generator/cli',
+  },
+  {
+    text: 'API',
+    link: '/assets-generator/api',
+  },
+]
+
+const Frameworks: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/frameworks/',
@@ -141,7 +157,7 @@ const Frameworks = [
   },
 ]
 
-const Examples = [
+const Examples: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/examples/',
@@ -188,7 +204,7 @@ const Examples = [
   },
 ]
 
-const Workbox = [
+const Workbox: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/workbox/',
@@ -210,6 +226,12 @@ function prepareSidebar(idx: number) {
       collapsible: true,
       collapsed: true,
       items: Guide,
+    },
+    {
+      text: 'PWA Assets Generator',
+      collapsible: true,
+      collapsed: true,
+      items: AssetsGenerator,
     },
     {
       text: 'Frameworks',
@@ -235,7 +257,7 @@ function prepareSidebar(idx: number) {
       collapsed: true,
       items: Workbox,
     },
-  ].map((entry, i) => {
+  ].map<DefaultTheme.SidebarItem>((entry, i) => {
     if (idx === i)
       entry.collapsed = false
 
@@ -310,24 +332,35 @@ export default withPwa(defineConfig({
           {
             text: 'Getting Started',
             link: '/guide/',
+            activeMatch: '^/guide/',
+          },
+          {
+            text: 'PWA Assets Generator',
+            link: '/assets-generator/',
+            activeMatch: '^/assets-generator/',
           },
           {
             text: 'Frameworks',
             link: '/frameworks/',
+            activeMatch: '^/frameworks/',
           },
           {
             text: 'Examples',
             link: '/examples/',
+            activeMatch: '^/examples/',
           },
         ],
+        activeMatch: '^/(guide|assets-generator|frameworks|examples)/',
       },
       {
         text: 'Deploy',
         link: '/deployment/',
+        activeMatch: '^/deployment/',
       },
       {
         text: 'Workbox',
         link: '/workbox/',
+        activeMatch: '^/workbox/',
       },
       {
         text: `v${version}`,
@@ -384,10 +417,11 @@ export default withPwa(defineConfig({
     ],
     sidebar: {
       '/guide/': prepareSidebar(0),
-      '/frameworks/': prepareSidebar(1),
-      '/examples/': prepareSidebar(2),
-      '/deployment/': prepareSidebar(3),
-      '/workbox/': prepareSidebar(4),
+      '/assets-generator/': prepareSidebar(1),
+      '/frameworks/': prepareSidebar(2),
+      '/examples/': prepareSidebar(3),
+      '/deployment/': prepareSidebar(4),
+      '/workbox/': prepareSidebar(5),
     },
   },
   vite: {

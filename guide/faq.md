@@ -1,6 +1,6 @@
 ---
 title: FAQ | Guide
-next: Getting Started | Frameworks
+next: Assets Generator | Getting Started
 ---
 
 # FAQ

@@ -10,12 +10,8 @@ Your application **must** meet the PWA Minimal Requirements before deploying it 
 
 To make your PWA application installable (one of the requirements), you will need to modify your application entry point, add some minimal entries to your `Web App Manifest`, allow search engines to crawl all your application pages and configure your server properly (only for production, on local you can use `https-localhost` dependency and `node`).
 
-Check [Elk PWA Documentation](https://docs.elk.zone/docs/pwa) for some useful PWA hints.
-
 :::tip
-You can check [Elk PWA Icon Generator Script](https://github.com/elk-zone/elk/blob/main/scripts/generate-pwa-icons.ts) to generate all the icons required for your PWA application using an `svg` image.
-
-We're working in a new package to provide a CLI to generate all the icons required for your PWA application using an image using [sharp](https://github.com/lovell/sharp/) and  [sharp-ico](https://github.com/ssnangua/sharp-ico) packages.
+Check out the [PWA Assets Generator](/assets-generator/) to generate all the icons and images required for your PWA application.
 :::
 
 ## Entry Point
@@ -87,9 +83,11 @@ export default defineConfig({
 
 ## Icons / Images
 
-For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions (last one duplicated for `purpose: 'any maskable'` if you want to add it, it is not required).
+For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions.
 
-We suggest you to create a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate a favicon package in [Favicon Generator](https://realfavicongenerator.net/).
+We suggest you to create a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate your PWA icons:
+- [PWA Assets Generator](/assets-generator/) (recommended).
+- [Favicon Generator](https://realfavicongenerator.net/).
 
 For `mask-icon` in the entry point, use the svg or the png used to generate the favicon package.
 

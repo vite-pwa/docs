@@ -14,6 +14,8 @@ A PWA mainly consists of a [Web App Manifest](https://developer.mozilla.org/en-U
 
 If you are new to **Progressive Web Apps (PWA)**, we suggest read this guide before starting writing code: [Learn PWA](https://web.dev/learn/pwa/).
 
+Check out [Elk PWA Documentation](https://docs.elk.zone/docs/pwa) for some useful PWA hints for users and developers.
+
 ## Service Worker
 
 Service workers essentially act as proxy servers that sit between web applications, the browser, and the network (when available). They are intended, among other things, to enable the creation of effective offline experiences, intercept network requests and take appropriate action based on whether the network is available, and update assets residing on the server. They will also allow access to push notifications and background sync APIs.
@@ -36,20 +38,17 @@ The `vite-plugin-pwa` plugin will:
 
 To install the `vite-plugin-pwa` plugin, just add it to your project as a `dev dependency`:
 
-With **YARN**:
-```shell
-yarn add vite-plugin-pwa -D
-```
-
-With **NPM**:
-```shell
-npm i vite-plugin-pwa -D
-```
-
-With **PNPM**:
-```shell
-pnpm i vite-plugin-pwa -D
-```
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D vite-plugin-pwa
+  ```
+  ```bash [yarn]
+  yarn add -D vite-plugin-pwa
+  ```
+  ```bash [npm]
+  npm install -D vite-plugin-pwa
+  ```
+:::
 
 ## Configuring vite-plugin-pwa
 
