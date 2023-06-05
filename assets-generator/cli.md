@@ -65,7 +65,7 @@ All PWA assets will be generated in the same source folder.
 
 ## Presets
 
-PWA Assets Generator has 5 built-in presets, check out the [preset definition](https://github.com/vite-pwa/assets-generator/blob/src/main/preset.ts) and [types definition](https://github.com/vite-pwa/assets-generator/blob/main/src/types.ts):
+PWA Assets Generator has 5 built-in presets, check out the [preset definition](https://github.com/vite-pwa/assets-generator/tree/main/src/preset.ts) and [types definition](https://github.com/vite-pwa/assets-generator/tree/main/src/types.ts):
 - Minimal Preset (`minimal`)
 - iOS Preset (`ios`): (WIP)
 - Windows Preset (`windows`): (WIP)
@@ -95,7 +95,7 @@ export default defineConfig({
 CLI options will override the configuration file options.
 :::
 
-You can use one of the built-in presets or just define your own, this is the [minimal preset](https://github.com/vite-pwa/assets-generator/blob/main/src/presets/minimal.ts) definition:
+You can use one of the built-in presets or just define your own, this is the [minimal preset](https://github.com/vite-pwa/assets-generator/tree/main/src/presets/minimal.ts) definition:
 ```ts
 import type { Preset } from '../preset.ts'
 
@@ -129,7 +129,7 @@ or configure it in your `package.json` and run it via your package manager from 
 
 ### PNG output names
 
-The PNG files names will be generated using the following function (can be found in [utils module](https://github.com/vite-pwa/assets-generator/blob/main/src/utils.ts)):
+The PNG files names will be generated using the following function (can be found in [utils module](https://github.com/vite-pwa/assets-generator/tree/main/src/utils.ts)):
 ```ts
 export function defaultAssetName(type: AssetType, size: ResolvedAssetSize) {
   switch (type) {
