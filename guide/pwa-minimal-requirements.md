@@ -10,10 +10,6 @@ Your application **must** meet the PWA Minimal Requirements before deploying it 
 
 To make your PWA application installable (one of the requirements), you will need to modify your application entry point, add some minimal entries to your `Web App Manifest`, allow search engines to crawl all your application pages and configure your server properly (only for production, on local you can use `https-localhost` dependency and `node`).
 
-:::tip
-Check out the [PWA Assets Generator](/assets-generator/) to generate all the icons and images required for your PWA application.
-:::
-
 ## Entry Point
 
 Your application entry point (usually `index.html`) **must** have the following entries in the `<head>` section:
@@ -82,6 +78,12 @@ export default defineConfig({
 ```
 
 ## Icons / Images
+
+:::tip
+Check out the [PWA Assets Generator](/assets-generator/) to generate all the icons and images required for your PWA application.
+
+You can also use [PWA Builder Image Generator](https://www.pwabuilder.com/imageGenerator) to generate all your PWA application's icons.
+:::
 
 For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions.
 

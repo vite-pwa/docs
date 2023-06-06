@@ -29,11 +29,11 @@ We also suggest you to include:
 - A 512x512 icon for Android with `purpose: 'any'`
 - Avoid using `purpose: 'any maskable'` icon, as it is not supported by all browsers
 - A `favicon.ico` with a size of 64x64 and register it in the html head using `<link rel="icon" href="/favicon.ico" sizes="any">`
-- A `favicon.svg` and register it in the html head using `<link rel="icon" href="/favicon.svg" sizes="image/svg+xml">`
+- A `favicon.svg` and register it in the html head using `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`
 
 Our minimal recommendation is:
 - transparent 64x64 ico: register it in the html head: `<link rel="icon" href="/favicon.ico" sizes="any">`
-- Use SVG image as source image: register it in the html head: `<link rel="icon" href="/favicon.svg" sizes="image/svg+xml">`
+- Use SVG image as source image: register it in the html head: `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`
 - transparent 64x64 icon (PWA Manifest icon)
 - transparent 192x192 icon (PWA Manifest icon)
 - transparent 512x512 icon with `purpose: 'any'` (PWA Manifest icon)
@@ -72,7 +72,7 @@ HTML head entries:
 ```html
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" sizes="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 ```
