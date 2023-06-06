@@ -165,7 +165,7 @@ When generating PNG files, PWA Assets Generator will apply the following padding
 - for `transparent` PNG files: `0.05`
 - for `maskable` and `apple` PNG files: `0.3`
 
-`0` is no padding, `1` is 100% of the source image, `0.3` is a typical value for most icons. 
+`0` is no padding, `0.3` is a typical value for most icons. 
 
 ### PNG optimization/compression
 
