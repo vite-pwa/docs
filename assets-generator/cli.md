@@ -1,5 +1,5 @@
 ---
-title: CLI
+title: CLI | PWA Assets Generator
 ---
 
 # CLI

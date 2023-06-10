@@ -1,5 +1,5 @@
 ---
-title: PWA Assets Generator
+title: Getting Started | PWA Assets Generator
 prev: FAQ | Guide
 ---
 
@@ -40,7 +40,11 @@ Our minimal recommendation is:
 - white 512x512 icon with `purpose: 'maskable'` (PWA Manifest icon): background color can be customized to your needs
 - white 180x180 icon for iOS/MacOS (html head link: `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`): background color can be customized to your needs
 
-PWA Web Manifest icons:
+## Example using minimal preset
+
+You can generate icons using the `minimal` preset included in [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator) package via a source image, check out the [CLI](/assets-generator/cli) and [API](/assets-generator/api) documentation for more details.
+
+Update your PWA manifest icons entry with:
 ```ts
 icons: [
   {
@@ -60,7 +64,7 @@ icons: [
     purpose: 'any'  
   },
   {
-    src: 'maskable-icon.png',
+    src: 'maskable-icon-512x512.png',
     sizes: '512x512',
     type: 'image/png',
     purpose: 'maskable'
@@ -68,13 +72,11 @@ icons: [
 ]
 ```
 
-HTML head entries:
+and use the following HTML head entries in your entry point:
 ```html
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
 </head>
 ```
-
-You can generate previous icons using the `minimal` preset included in [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator) package via a source image, check out the [CLI](/assets-generator/cli) and [API](/assets-generator/api) documentation for more details.

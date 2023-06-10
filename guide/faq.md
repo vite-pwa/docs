@@ -1,6 +1,6 @@
 ---
 title: FAQ | Guide
-next: PWA Assets Generator | Getting Started
+next: Getting Started | PWA Assets Generator 
 ---
 
 # FAQ

@@ -1,5 +1,5 @@
 ---
-title: PWA Assets Generator API
+title: API | PWA Assets Generator
 next: Getting Started | Frameworks
 ---
 
