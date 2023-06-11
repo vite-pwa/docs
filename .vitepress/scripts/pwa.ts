@@ -51,7 +51,9 @@ export const pwa: Partial<VitePWAOptions> = {
     launch_handler: {
       client_mode: 'focus-existing',
     },
-    edge_side_panel: {},
+    edge_side_panel: {
+      preferred_width: 480,
+    },
   },
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
