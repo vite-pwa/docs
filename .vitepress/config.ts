@@ -310,12 +310,15 @@ export default withPwa(defineConfig({
       text: 'Suggest changes to this page',
     },
     search: {
+      provider: 'local',
+      /*
       provider: 'algolia',
       options: {
         appId: 'TTO9T0AE3F',
         apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
         indexName: 'vite-plugin-pwa',
       },
+       */
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },

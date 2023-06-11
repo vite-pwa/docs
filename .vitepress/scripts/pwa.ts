@@ -1,6 +1,23 @@
-import type { VitePWAOptions } from 'vite-plugin-pwa'
+import type { ManifestOptions, VitePWAOptions } from 'vite-plugin-pwa'
 
-export const pwa: Partial<VitePWAOptions> = {
+// move the following types to vite-plugin-pwa
+type ClientMode = 'auto' | 'focus-existing' | 'navigate-existing' | 'navigate-new'
+interface CustomPWAManifest extends ManifestOptions {
+  // https://github.com/WICG/pwa-url-handler/blob/main/handle_links/explainer.md#handle_links-manifest-member
+  handle_links?: 'auto' | 'preferred' | 'not-preferred'
+  // https://developer.mozilla.org/en-US/docs/Web/Manifest/launch_handler#launch_handler_item_values
+  launch_handler?: {
+    client_mode: ClientMode | ClientMode[]
+  }
+  edge_side_panel?: {
+    preferred_width?: number
+  }
+}
+interface CustomPWAOptions extends Partial<VitePWAOptions> {
+  manifest?: Partial<CustomPWAManifest> | false
+}
+
+export const pwa: Partial<CustomPWAOptions> = {
   outDir: '.vitepress/dist',
   registerType: 'prompt',
   includeManifestIcons: false,
@@ -47,6 +64,11 @@ export const pwa: Partial<VitePWAOptions> = {
       type: 'image/png',
       label: 'Screenshot of Zero-config PWA Framework-agnostic Plugin for Vite and Integrations',
     }],
+    handle_links: 'preferred',
+    launch_handler: {
+      client_mode: 'focus-existing',
+    },
+    edge_side_panel: {},
   },
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
