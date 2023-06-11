@@ -33,7 +33,7 @@ devDependencies:
     version: 0.0.2
   '@vite-pwa/vitepress':
     specifier: ^0.2.0
-    version: 0.2.0(vite-plugin-pwa@0.16.3)
+    version: 0.2.0(vite-plugin-pwa@0.16.4)
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.3.9)(vue@3.3.4)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.25.1
     version: 0.25.1(rollup@2.79.1)(vue@3.3.4)
   vite-plugin-pwa:
-    specifier: ^0.16.3
-    version: 0.16.3(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    specifier: ^0.16.4
+    version: 0.16.4(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitepress:
     specifier: 1.0.0-beta.2
     version: 1.0.0-beta.2(search-insights@2.6.0)
@@ -2313,12 +2313,12 @@ packages:
       unconfig: 0.3.9
     dev: true
 
-  /@vite-pwa/vitepress@0.2.0(vite-plugin-pwa@0.16.3):
+  /@vite-pwa/vitepress@0.2.0(vite-plugin-pwa@0.16.4):
     resolution: {integrity: sha512-dVQVaP6NB9woCFe4UASUqRp7uwBQJOVXlJlqK4krqXcbb3NuXIXIWOnU7HLpJnHqZj5U/81gKtLN6gs5gJBwiQ==}
     peerDependencies:
       vite-plugin-pwa: '>=0.16.3 <1'
     dependencies:
-      vite-plugin-pwa: 0.16.3(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
+      vite-plugin-pwa: 0.16.4(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
   /@vitejs/plugin-vue@4.2.3(vite@4.3.9)(vue@3.3.4):
@@ -6093,8 +6093,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-pwa@0.16.3(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0):
-    resolution: {integrity: sha512-eYt++n1dneEo5cChJ7Rg6ZWJG8Xr9I5EzQss5m3zgMOmfHRH83E5W+jhaoLqlSCu/8g4msy9a4iZOxAmhL4HAQ==}
+  /vite-plugin-pwa@0.16.4(vite@4.3.9)(workbox-build@7.0.0)(workbox-window@7.0.0):
+    resolution: {integrity: sha512-lmwHFIs9zI2H9bXJld/zVTbCqCQHZ9WrpyDMqosICDV0FVnCJwniX1NMDB79HGTIZzOQkY4gSZaVTJTw6maz/Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
