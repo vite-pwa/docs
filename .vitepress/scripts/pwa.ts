@@ -47,9 +47,34 @@ export const pwa: Partial<VitePWAOptions> = {
       type: 'image/png',
       label: 'Screenshot of Zero-config PWA Framework-agnostic Plugin for Vite and Integrations',
     }],
+    shortcuts: [{
+      name: 'Getting Started',
+      description: 'Progressive web applications made easy',
+      url: '/guide/',
+    }, {
+      name: 'Assets Generator',
+      description: 'Generate all the PWA assets from a single command and a single source image',
+      url: '/assets-generator/',
+    }, {
+      name: 'Frameworks',
+      description: 'All modern frameworks are supported: VanillaJS, TypeScript, Vue, React, Preact, Svelte, Solid, Web Components',
+      url: '/frameworks/',
+    }, {
+      name: 'Examples',
+      description: 'Links to the examples of the supported frameworks',
+      url: '/examples/',
+    }, {
+      name: 'Deploy',
+      description: 'Notes about how to deploy your PWA',
+      url: '/deployment/',
+    }, {
+      name: 'Workbox',
+      description: 'Production-ready service worker libraries and tooling.',
+      url: '/workbox/',
+    }],
     handle_links: 'preferred',
     launch_handler: {
-      client_mode: 'focus-existing',
+      client_mode: [/* 'focus-existing', */'navigate-existing', 'auto'],
     },
     edge_side_panel: {
       preferred_width: 480,

@@ -55,6 +55,11 @@ features:
     details: Debug your custom service worker logic as you develop your application
     link: /guide/development
     linkText: Development
+  - icon: 🛠️
+    title: Versatile
+    details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, and Nuxt 3'
+    link: /frameworks/
+    linkText: Frameworks
   - icon: 💥
     title: PWA Assets Generator
     details: Generate all the PWA assets from a single command and a single source image
