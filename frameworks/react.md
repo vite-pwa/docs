@@ -137,6 +137,10 @@ and its corresponding `ReloadPrompt.css` styles file:
 ```
 :::
 
+::: warning
+The options provided to hooks are not reactive. Therefore, the callback references will be the first rendered options instead of the latest hook’s options. If you are doing complex logic with state changes, you will need to provide a stable reference function.
+:::
+
 ## Periodic SW Updates
 
 As explained in [Periodic Service Worker Updates](/guide/periodic-sw-updates), you can use this code to configure this behavior on your application with the virtual module `virtual:pwa-register/react`:
