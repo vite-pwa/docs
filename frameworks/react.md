@@ -50,6 +50,8 @@ declare module 'virtual:pwa-register/react' {
 
 ## Prompt for update
 
+<ReactReactiveWarning />
+
 You can use this `ReloadPrompt.tsx` component:
 
 :::details ReloadPrompt.tsx
