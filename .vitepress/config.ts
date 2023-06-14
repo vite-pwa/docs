@@ -280,7 +280,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
       name: 'keywords',
-      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, îles, Astro, Nuxt 3, Nuxt module',
+      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module',
     }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],
@@ -310,12 +310,15 @@ export default withPwa(defineConfig({
       text: 'Suggest changes to this page',
     },
     search: {
+      provider: 'local',
+      /*
       provider: 'algolia',
       options: {
         appId: 'TTO9T0AE3F',
         apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
         indexName: 'vite-plugin-pwa',
       },
+       */
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },
