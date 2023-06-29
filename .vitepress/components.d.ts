@@ -18,6 +18,7 @@ declare module 'vue' {
     InjectManifestCleanupOutdatedCaches: typeof import('./theme/components/InjectManifestCleanupOutdatedCaches.md')['default']
     InjectManifestSourceMap: typeof import('./theme/components/InjectManifestSourceMap.md')['default']
     PromptForUpdateImg: typeof import('./theme/components/PromptForUpdateImg.vue')['default']
+    ReactReactiveWarning: typeof import('./theme/components/ReactReactiveWarning.md')['default']
     ReloadPrompt: typeof import('./theme/components/ReloadPrompt.vue')['default']
     RunExamples: typeof import('./theme/components/RunExamples.md')['default']
     SsrSsg: typeof import('./theme/components/SsrSsg.md')['default']
