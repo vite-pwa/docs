@@ -352,3 +352,8 @@ If you set certain SvelteKit options, you should also configure the PWA plugin p
 - [outDir](https://kit.svelte.dev/docs/configuration#outdir)
 - [adapterFallback](https://github.com/sveltejs/kit/tree/master/packages/adapter-static#fallback)
 - [trailingSlash](https://kit.svelte.dev/docs/configuration#trailingslash)
+
+::: warning
+Some kit options may have been moved/deprecated, review the SvelteKit documentation site:
+- [trailingSlash](https://kit.svelte.dev/docs/page-options#trailingslash): now it should be configured in the page options, and so, we cannot control it in the plugin.
+:::
