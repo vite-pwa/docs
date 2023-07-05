@@ -241,13 +241,7 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 ::: details src/routes/+layout.svelte
 ```html
 <script>
-  import { onMount } from 'svelte'
   import { pwaInfo } from 'virtual:pwa-info'
-
-  let ReloadPrompt
-  onMount(async () => {
-    pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default)
-  })
 
   $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''  
 </script>
@@ -260,9 +254,9 @@ The best place to include the `ReloadPrompt` component will be in main layout of
   <slot />
 </main>
 
-{#if ReloadPrompt}
-  <svelte:component this={ReloadPrompt} />
-{/if}
+{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt}}
+  <ReloadPrompt />
+{/await}
 ```
 :::
 
