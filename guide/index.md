@@ -14,7 +14,7 @@ A PWA mainly consists of a [Web App Manifest](https://developer.mozilla.org/en-U
 
 If you are new to **Progressive Web Apps (PWA)**, we suggest read this guide before starting writing code: [Learn PWA](https://web.dev/learn/pwa/).
 
-Check out [Elk PWA Documentation](https://docs.elk.zone/docs/pwa) for some useful PWA hints for users and developers.
+Check out [Elk PWA Documentation](https://docs.elk.zone/pwa) for some useful PWA hints for users and developers.
 
 ## Service Worker
 
