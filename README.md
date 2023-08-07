@@ -34,7 +34,8 @@ Documentation: PWA integrations for Vite and the ecosystem
 - ⚙️ **Stale-while-revalidate**: automatic reload when new content is available
 - ✨ **Static assets handling**: configure static assets for offline support
 - 🐞 **Development Support**: debug your custom service worker logic as you develop your application
-- 🛠️ **Versatile**: integration with meta frameworks:  [îles](https://github.com/ElMassimo/iles), [SvelteKit](https://github.com/sveltejs/kit), [VitePress](https://github.com/vuejs/vitepress), [Astro](https://github.com/withastro/astro), and [Nuxt 3](https://github.com/nuxt/nuxt)
+- 🛠️ **Versatile**: integration with meta frameworks: [îles](https://github.com/ElMassimo/iles), [SvelteKit](https://github.com/sveltejs/kit), [VitePress](https://github.com/vuejs/vitepress), [Astro](https://github.com/withastro/astro), and [Nuxt 3](https://github.com/nuxt/nuxt)
+- 💥 PWA Assets Generator: generate all the PWA assets from a single command and a single source image
 
 ## 📦 Integrations
 
@@ -46,4 +47,4 @@ Documentation: PWA integrations for Vite and the ecosystem
 
 ## 📄 License
 
-MIT License © 2021-PRESENT [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

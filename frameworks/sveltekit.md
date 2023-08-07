@@ -22,6 +22,21 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Sv
 If you're using `0.1.*` version of `SvelteKitPWA`, you should remove all references to [SvelteKit service worker module](https://kit.svelte.dev/docs/service-workers) to disable it on your application.
 :::
 
+## Installing @vite-pwa/sveltekit
+
+To install the `@vite-pwa/sveltekit` plugin, just add it to your project as a `dev dependency`:
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D @vite-pwa/sveltekit
+  ```
+  ```bash [yarn]
+  yarn add -D @vite-pwa/sveltekit
+  ```
+  ```bash [npm]
+  npm install -D @vite-pwa/sveltekit
+  ```
+:::
+
 ## Generate Custom Service Worker
 
 From version `0.2.0`, `SvelteKitPWA` plugin will delegate your custom service worker build to `SvelteKit`, and so by default you will be expected to put your service worker in `src/service-worker.js`. If you would like, you can use a custom file location by changing the corresponding SvelteKit option:
@@ -96,11 +111,6 @@ export default config;
 
 `vite-plugin-pwa` provides the new `SvelteKitPWA` plugin that will allow you to use `vite-plugin-pwa` in your SvelteKit applications.
 
-You will need to install `SvelteKitPWA` using:
-```shell
-pnpm add -D @vite-pwa/sveltekit
-```
-
 To update your project to use the new `vite-plugin-pwa` for SvelteKit, you only need to change the Vite config file (you don't need oldest `pwa` and `pwa-configuration` modules):
 ```js
 // vite.config.js / vite.config.ts
@@ -116,6 +126,22 @@ const config = {
 
 export default config
 ```
+
+In addition to the configuration above, it's necessary to add the PWA web manifest, currently the easiest way to do this, is to add it to any layout to your kit project:
+```svelte
+<!-- src/routes/+layout.svelte -->
+<script>
+  import { pwaInfo } from 'virtual:pwa-info'; 
+
+  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
+</script> 
+  
+<svelte:head> 
+ 	{@html webManifestLink} 
+</svelte:head> 
+```
+
+Check out the [virtual:pwa-info](/frameworks/#accessing-pwa-info) documentation to learn more about the virtually exposed module `pwa-info`.
 
 ## SvelteKit PWA Plugin Options
 
@@ -215,13 +241,7 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 ::: details src/routes/+layout.svelte
 ```html
 <script>
-  import { onMount } from 'svelte'
   import { pwaInfo } from 'virtual:pwa-info'
-
-  let ReloadPrompt
-  onMount(async () => {
-    pwaInfo && (ReloadPrompt = (await import('$lib/ReloadPrompt.svelte')).default)
-  })
 
   $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''  
 </script>
@@ -234,9 +254,9 @@ The best place to include the `ReloadPrompt` component will be in main layout of
   <slot />
 </main>
 
-{#if ReloadPrompt}
-  <svelte:component this={ReloadPrompt} />
-{/if}
+{#await import('$lib/ReloadPrompt.svelte') then { default: ReloadPrompt}}
+  <ReloadPrompt />
+{/await}
 ```
 :::
 
@@ -326,3 +346,8 @@ If you set certain SvelteKit options, you should also configure the PWA plugin p
 - [outDir](https://kit.svelte.dev/docs/configuration#outdir)
 - [adapterFallback](https://github.com/sveltejs/kit/tree/master/packages/adapter-static#fallback)
 - [trailingSlash](https://kit.svelte.dev/docs/configuration#trailingslash)
+
+::: warning
+Some kit options may have been moved/deprecated, review the SvelteKit documentation site:
+- [trailingSlash](https://kit.svelte.dev/docs/page-options#trailingslash): now it should be configured in the page options, and so, we cannot control it in the plugin.
+:::

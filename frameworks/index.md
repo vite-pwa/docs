@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Frameworks
-prev: FAQ | Guide
+prev: API | PWA Assets Generator
 ---
 
 # Getting Started
@@ -24,33 +24,87 @@ You can find all the `vite-plugin-pwa` virtual modules declarations in the follo
 
 ::: tip
 <TypeScriptError2307 />
+From version `0.14.5` you can also use types definition for each framework, instead of using `vite-plugin-pwa/client`, include only one of the following types:
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "vite-plugin-pwa/react",
+      "vite-plugin-pwa/preact",
+      "vite-plugin-pwa/solid",
+      "vite-plugin-pwa/svelte",
+      "vite-plugin-pwa/vanillajs",
+      "vite-plugin-pwa/vue"
+    ]
+  }
+}
+```
+
+Or you can add one of following references in any of your `d.ts` files (for example, in `vite-env.d.ts` or `global.d.ts`):
+```ts
+/// <reference types="vite-plugin-pwa/react" />
+/// <reference types="vite-plugin-pwa/preact" />
+/// <reference types="vite-plugin-pwa/solid" />
+/// <reference types="vite-plugin-pwa/svelte" />
+/// <reference types="vite-plugin-pwa/vanillajs" />
+/// <reference types="vite-plugin-pwa/vue" />
+```
 :::
 
 ```ts
 declare module 'virtual:pwa-register' {
-  export interface RegisterSWOptions {
-    immediate?: boolean
-    onNeedRefresh?: () => void
-    onOfflineReady?: () => void
-    /**
-     * Called only if `onRegisteredSW` is not provided.
-     *
-     * @deprecated Use `onRegisteredSW` instead.
-     * @param registration The service worker registration if available.
-     */
-    onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void
-    /**
-     * Called once the service worker is registered (requires version `0.12.8+`).
-     *
-     * @param swScriptUrl The service worker script url.
-     * @param registration The service worker registration if available.
-     */
-    onRegisteredSW?: (swScriptUrl: string, registration: ServiceWorkerRegistration | undefined) => void
-    onRegisterError?: (error: any) => void
-  }
+  import type { RegisterSWOptions } from 'vite-plugin-pwa/types'
+
+  export type { RegisterSWOptions }
 
   export function registerSW(options?: RegisterSWOptions): (reloadPage?: boolean) => Promise<void>
 }
+```
+
+where `vite-plugin-pwa/types` is:
+
+```ts
+export interface RegisterSWOptions {
+  immediate?: boolean
+  onNeedRefresh?: () => void
+  onOfflineReady?: () => void
+  /**
+   * Called only if `onRegisteredSW` is not provided.
+   *
+   * @deprecated Use `onRegisteredSW` instead.
+   * @param registration The service worker registration if available.
+   */
+  onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void
+  /**
+   * Called once the service worker is registered (requires version `0.12.8+`).
+   *
+   * @param swScriptUrl The service worker script url.
+   * @param registration The service worker registration if available.
+   */
+  onRegisteredSW?: (swScriptUrl: string, registration: ServiceWorkerRegistration | undefined) => void
+  onRegisterError?: (error: any) => void
+}
+```
+
+## Accessing PWA Info
+
+From version `0.12.8`, `vite-plugin-pwa` exposes a new Vite virtual module to access the PWA info: [virtual:pwa-info](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/info.d.ts).
+
+If your **TypeScript** build step or **IDE** complain about not being able to find modules or type definitions on imports, add the following to the `compilerOptions.types` array of your `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "vite-plugin-pwa/info"
+    ]
+  }
+}
+```
+
+Or you can add the following reference in any of your `d.ts` files (for example, in `vite-env.d.ts` or `global.d.ts`):
+```ts
+/// <reference types="vite-plugin-pwa/info" />
 ```
 
 ## Import Virtual Modules
@@ -123,3 +177,4 @@ These custom virtual modules will expose a wrapper for <code>virtual:pwa-registe
 - [VitePress](/frameworks/vitepress)
 - [îles](/frameworks/iles)
 - [Astro](/frameworks/astro)
+- [Nuxt 3](/frameworks/nuxt)

@@ -14,9 +14,17 @@ You will need to update your application to use Vite ^3.1.0 and latest `vite-plu
 
 You will need to install `@vite-pwa/astro` using:
 
-```shell
-pnpm add -D @vite-pwa/astro
-```
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D @vite-pwa/astro
+  ```
+  ```bash [yarn]
+  yarn add -D @vite-pwa/astro
+  ```
+  ```bash [npm]
+  npm install -D @vite-pwa/astro
+  ```
+:::
 
 To update your project to use the new `vite-plugin-pwa` integration for Astro, you only need to change the Astro config file removing the PWA plugin if present:
 

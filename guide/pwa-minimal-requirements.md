@@ -16,12 +16,12 @@ Your application entry point (usually `index.html`) **must** have the following 
 - mobile viewport configuration
 - a title
 - a description
-- a favicon
+- a favicon: check the following page https://www.leereamsnyder.com/blog/favicons-in-2021
 - a link for `apple-touch-icon`
-- a link for `mask-icon`
+- a link for `mask-icon` (right now there is no need to provide a `mask-icon`)
 - a meta entry for `theme-color`
 
-For example, here a minimal configuration (you must provide all the icons and images):
+For example, a minimal configuration (you must provide all the icons and images):
 ```html
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -53,7 +53,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [
     VitePWA({
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
         name: 'My Awesome App',
         short_name: 'MyApp',
@@ -79,9 +79,17 @@ export default defineConfig({
 
 ## Icons / Images
 
-For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions (last one duplicated for `purpose: 'any maskable'` if you want to add it, it is not required).
+:::tip
+Check out the [PWA Assets Generator](/assets-generator/) to generate all the icons and images required for your PWA application.
 
-We suggest you to create a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate a favicon package in [Favicon Generator](https://realfavicongenerator.net/).
+You can also use [PWA Builder Image Generator](https://www.pwabuilder.com/imageGenerator) to generate all your PWA application's icons.
+:::
+
+For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions.
+
+We suggest you to create a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate your PWA icons:
+- [PWA Assets Generator](/assets-generator/) (recommended).
+- [Favicon Generator](https://realfavicongenerator.net/).
 
 For `mask-icon` in the entry point, use the svg or the png used to generate the favicon package.
 
@@ -91,7 +99,7 @@ Once generated, download the ZIP and use `android-*` icons for `pwa-*`:
 - `apple-touch-icon.png` is `apple-touch-icon.png`
 - `favicon.ico` is `favicon.ico`
 
-If you want to add the `purpose: 'any maskable'` icon to the Web App Manifest:
+If you want you can add the `purpose: 'any maskable'` icon to the Web App Manifest, but it is better to add 2 icons with `any` and `maskable` purposes:
 ```ts
 icons: [
   {
@@ -108,7 +116,13 @@ icons: [
     src: 'pwa-512x512.png',
     sizes: '512x512',
     type: 'image/png',
-    purpose: 'any maskable'
+    purpose: 'any'
+  },
+  {
+    src: 'pwa-512x512.png',
+    sizes: '512x512',
+    type: 'image/png',
+    purpose: 'maskable'
   }
 ]
 ```

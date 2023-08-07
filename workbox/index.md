@@ -11,6 +11,10 @@ prev:
 
 In this document, we focus only on the [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module from **Workbox**.
 
+:::warning
+From version `0.16.0`, `vite-plugin-pwa` has been updated to use latest `workbox` version `7.0.0` that requires Node 16 or above.
+:::
+
 ## workbox-build module
 
 This module is for build process purposes (a `node` module); that is, `Vite Plugin PWA` will use it to build your service-worker.
@@ -31,4 +35,4 @@ While the `injectManifest` method will use your existing service worker and buil
 
 When you configure `strategies: 'generateSW'` option (the default value) in your `vite.config.*` file, the plugin invokes workbox' `generateSW` method. The options passed to the `workbox-build` method will be those provided via the `workbox` option of the plugin configuration.
 
-When you configure `strategies: with the 'injectManifest'` option, the plugin will first build your custom service worker via `rollup`. With the build result, vite-plugin-pwa will call Workbox' `injectManifest` method passing those options provided via the `workbox` option of the plugin configuration.
+When you configure `strategies: 'injectManifest'` option, the plugin will first build your custom service worker via custom `Vite` build. With the build result, vite-plugin-pwa will call Workbox's `injectManifest` method passing those options provided via the `injectManifest` option of the plugin configuration.

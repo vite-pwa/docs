@@ -11,7 +11,7 @@ You can also add another static assets such as `favicon`, `svg` and `font` files
 ## Reusing src/assets images
 
 ::: warning
-This feature is only available from version `0.14.7+`.
+This feature is not yet available.
 :::
 
 If you are using images in your application via `src/assets` directory (or any other directory), and you want to reuse those images in your `PWA Manifest` icons, you can use them with these 3 limitations:
@@ -74,22 +74,22 @@ A common pitfall is to only include some assets and forget to add `css`, `js` an
 For example, if you don't include `html` assets pattern, you will get this error from your service worker:  **WorkboxError non-precached-url index.html**.
 :::
 
-If you use `generateSW` strategy, then you need to configure `globPatterns` inside `workbox` plugin option:
+To configure `globPatterns` you need to use `workbox` or `injectManifest` plugin option for`generateSW` and `injectManifest` strategies respectively:
 
-```ts
-VitePWA({
-  workbox: {
-    globPatterns: [],
-  }
-})
-```
+::: code-group
+  ```ts [generateSW]
+  VitePWA({
+    workbox: {
+      globPatterns: ['**/*.{js,css,html}'],
+    }
+  })
+  ```
+  ```ts [injectManifest]
+  VitePWA({
+    injectManifest: {
+      globPatterns: ['**/*.{js,css,html}'],
+    }
+  })
+  ```
+:::
 
-If you use `injectManifest` strategy, then you need to configure`globPatterns` inside `injectManifest` plugin option:
-
-```ts
-VitePWA({
-  injectManifest: {
-    globPatterns: [],
-  }
-})
-```

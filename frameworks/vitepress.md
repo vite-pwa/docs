@@ -17,9 +17,17 @@ For `Type declarations`, `Prompt for update` and `Periodic SW Updates` go to [Vu
 `vite-plugin-pwa` provides the new `withPwa` module augmentation that will allow you to use `vite-plugin-pwa` in your VitePress applications.
 
 You will need to install `@vite-pwa/vitepress` using:
-```shell
-pnpm add -D @vite-pwa/vitepress
-```
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D @vite-pwa/vitepress
+  ```
+  ```bash [yarn]
+  yarn add -D @vite-pwa/vitepress
+  ```
+  ```bash [npm]
+  npm install -D @vite-pwa/vitepress
+  ```
+:::
 
 To update your project to use the new `vite-plugin-pwa` for VitePress, you only need to wrap your VitePress config with `withPwa` (you don't need oldest `pwa` and `pwa-configuration` modules):
 ```ts

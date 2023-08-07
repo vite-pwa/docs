@@ -1,10 +1,11 @@
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { version } from '../package.json'
 import { transformHead } from './scripts/transformHead'
 import { pwa } from './scripts/pwa'
 
-const Guide = [
+const Guide: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/guide/',
@@ -58,12 +59,16 @@ const Guide = [
     link: '/guide/unregister-service-worker',
   },
   {
+    text: 'Testing Service Worker',
+    link: '/guide/testing-service-worker',
+  },
+  {
     text: 'FAQ',
     link: '/guide/faq',
   },
 ]
 
-const Deployment = [
+const Deployment: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/deployment/',
@@ -90,7 +95,22 @@ const Deployment = [
   },
 ]
 
-const Frameworks = [
+const AssetsGenerator: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'Getting Started',
+    link: '/assets-generator/',
+  },
+  {
+    text: 'CLI',
+    link: '/assets-generator/cli',
+  },
+  {
+    text: 'API',
+    link: '/assets-generator/api',
+  },
+]
+
+const Frameworks: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/frameworks/',
@@ -137,7 +157,7 @@ const Frameworks = [
   },
 ]
 
-const Examples = [
+const Examples: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/examples/',
@@ -184,7 +204,7 @@ const Examples = [
   },
 ]
 
-const Workbox = [
+const Workbox: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/workbox/',
@@ -206,6 +226,12 @@ function prepareSidebar(idx: number) {
       collapsible: true,
       collapsed: true,
       items: Guide,
+    },
+    {
+      text: 'PWA Assets Generator',
+      collapsible: true,
+      collapsed: true,
+      items: AssetsGenerator,
     },
     {
       text: 'Frameworks',
@@ -231,7 +257,7 @@ function prepareSidebar(idx: number) {
       collapsed: true,
       items: Workbox,
     },
-  ].map((entry, i) => {
+  ].map<DefaultTheme.SidebarItem>((entry, i) => {
     if (idx === i)
       entry.collapsed = false
 
@@ -248,13 +274,13 @@ export default withPwa(defineConfig({
   description: 'Zero-config PWA Framework-agnostic for Vite and Integrations',
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
+    ['link', { rel: 'icon', href: '/favicon.ico', sizes: 'any' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
       name: 'keywords',
-      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, îles, Astro, Nuxt 3, Nuxt module',
+      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module',
     }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],
@@ -269,6 +295,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'twitter:url', content: ogUrl }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
+  srcExclude: ['README.md', 'CONTRIBUTING.md'],
   lastUpdated: true,
   markdown: {
     theme: {
@@ -282,10 +309,16 @@ export default withPwa(defineConfig({
       pattern: 'https://github.com/vite-pwa/docs/edit/main/:path',
       text: 'Suggest changes to this page',
     },
-    algolia: {
-      appId: 'TTO9T0AE3F',
-      apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
-      indexName: 'vite-plugin-pwa',
+    search: {
+      provider: 'local',
+      /*
+      provider: 'algolia',
+      options: {
+        appId: 'TTO9T0AE3F',
+        apiKey: '71bd3d3c7274205843267bb1ccb6b1a8',
+        indexName: 'vite-plugin-pwa',
+      },
+       */
     },
     socialLinks: [
       { icon: 'discord', link: 'https://chat.antfu.me' },
@@ -302,24 +335,35 @@ export default withPwa(defineConfig({
           {
             text: 'Getting Started',
             link: '/guide/',
+            activeMatch: '^/guide/',
+          },
+          {
+            text: 'PWA Assets Generator',
+            link: '/assets-generator/',
+            activeMatch: '^/assets-generator/',
           },
           {
             text: 'Frameworks',
             link: '/frameworks/',
+            activeMatch: '^/frameworks/',
           },
           {
             text: 'Examples',
             link: '/examples/',
+            activeMatch: '^/examples/',
           },
         ],
+        activeMatch: '^/(guide|assets-generator|frameworks|examples)/',
       },
       {
         text: 'Deploy',
         link: '/deployment/',
+        activeMatch: '^/deployment/',
       },
       {
         text: 'Workbox',
         link: '/workbox/',
+        activeMatch: '^/workbox/',
       },
       {
         text: `v${version}`,
@@ -376,10 +420,11 @@ export default withPwa(defineConfig({
     ],
     sidebar: {
       '/guide/': prepareSidebar(0),
-      '/frameworks/': prepareSidebar(1),
-      '/examples/': prepareSidebar(2),
-      '/deployment/': prepareSidebar(3),
-      '/workbox/': prepareSidebar(4),
+      '/assets-generator/': prepareSidebar(1),
+      '/frameworks/': prepareSidebar(2),
+      '/examples/': prepareSidebar(3),
+      '/deployment/': prepareSidebar(4),
+      '/workbox/': prepareSidebar(5),
     },
   },
   vite: {

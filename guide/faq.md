@@ -1,6 +1,6 @@
 ---
 title: FAQ | Guide
-next: Getting Started | Frameworks
+next: Getting Started | PWA Assets Generator 
 ---
 
 # FAQ
@@ -27,11 +27,11 @@ useCredentials: true
 
 ## Service Worker errors on browser
 
-If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iief`, add the following code to your pwa configuration:
+If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iife`, add the following code to your pwa configuration:
 
 ```ts
 injectManifest: {
-  rollupFormat: 'iief'
+  rollupFormat: 'iife'
 }
 ```
 
@@ -196,3 +196,29 @@ onBeforeMount(async () => {
 })
 </script>
 ```
+
+## Monorepo with multiple projects and frameworks
+
+From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and so you can import proper virtual module in your monorepo project. Instead using [client.d.ts](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/client.d.ts) via `vite-plugin-pwa/client` (tsconfig.json file or TypeScript reference), use one of the following virtual modules:
+- `virtual:pwa-register/react`: configure `vite-plugin-pwa/react`.
+- `virtual:pwa-register/preact`: configure `vite-plugin-pwa/preact`.
+- `virtual:pwa-register/solid`: configure `vite-plugin-pwa/solid`.
+- `virtual:pwa-register/svelte`: configure `vite-plugin-pwa/svelte`.
+- `virtual:pwa-register/vanillajs`: configure `vite-plugin-pwa/vanillajs`.
+- `virtual:pwa-register/vue`: configure `vite-plugin-pwa/vue`.
+
+You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the [vite-plugin-pwa repo](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples). 
+
+## Suppress workbox-build warnings in dev
+
+If you are using `vite-plugin-pwa` with `generateSW` strategy, you can suppress `workbox-build` warnings in dev using `suppressWarnings` dev option:
+
+```ts
+devOptions: {
+  suppressWarnings: true
+}
+```
+
+Enabling this option, `vite-plugin-pwa` dev plugin will:
+- generate an empty `suppress-warnings.js` file in the `dev-dist` folder.
+- change `workbox.globPatterns` option to `[*.js']`.
