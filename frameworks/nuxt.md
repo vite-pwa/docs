@@ -1,6 +1,7 @@
 ---
 title: Nuxt 3 | Frameworks
 next: Getting Started | Examples
+outline: deep
 ---
 
 # Nuxt 3
@@ -50,8 +51,24 @@ Additionally, you can also configure periodic sync for updates, you can enable i
 
 You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, previous properties will not be available.
 
-For example an install prompt and a ready offline toast:
-```ts
+::: info
+This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
+:::
+
+## Registering Web Manifest
+
+To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` provides `VitePwaManifest.ts` functional component, you should add it to your `app.vue` or to all layouts files.
+
+::: tip
+You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
+:::
+
+
+## Examples
+
+### Prompt for update and offline ready
+
+```vue
 <script setup>
 // If you want to use it in setup, import from the nuxtApp.
 const { $pwa } = useNuxtApp()
@@ -78,14 +95,3 @@ onMounted(() => {
 </template>
 ```
 
-::: info
-This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
-:::
-
-## Registering Web Manifest
-
-To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` provides `VitePwaManifest.ts` functional component, you should add it to your `app.vue` or to all layouts files.
-
-::: tip
-You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
-:::
