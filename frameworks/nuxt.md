@@ -1,6 +1,7 @@
 ---
 title: Nuxt 3 | Frameworks
 next: Getting Started | Examples
+outline: deep
 ---
 
 # Nuxt 3
@@ -11,7 +12,7 @@ This PWA module can only be used with Vite.
 
 ## Nuxt 3 Integration
 
-`vite-plugin-pwa` provides the new `@vite-pwa/nuxt` integration that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
+`vite-plugin-pwa` provides the new `@vite-pwa/nuxt` module that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
 
 You will need to install `@vite-pwa/nuxt` using:
 ::: code-group
@@ -26,7 +27,7 @@ You will need to install `@vite-pwa/nuxt` using:
   ```
 :::
 
-To update your project to use the new `vite-plugin-pwa` integration for Nuxt 3, you only need to change the Nuxt config file removing the `vite-pwa-plugin` plugin if present:
+To update your project to use the new `@vite-pwa/nuxt` module for Nuxt 3, you only need to change the Nuxt config file adding the `@vite-pwa/nuxt` module, move the `vite-plugin-pwa` options to the module options, and remove the `vite-pwa-plugin` plugin (if present):
 
 ```ts
 export default defineNuxtConfig({
@@ -39,9 +40,11 @@ export default defineNuxtConfig({
 
 ## Using Nuxt 3 Plugin
 
-`@vite-pwa/nuxt` will register a plugin exposing PWA stuff in your Nuxt 3 application via `$pwa` property.
+`@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (`$pwa` will be `undefined` if PWA disabled or running dev server without PWA dev options enabled).
 
-The plugin will expose the following features:
+You can access `$pwa` property directly inside your Vue component templates. You can also access to `$pwa` in your Vue script setup or in any other module via `useNuxtApp().$pwa`.
+
+The module will provide the following features via `$pwa` property:
 - Prompt for update and offline ready via `needRefresh` and `offlineReady` properties.
 - Cancelling prompt for update application and offline via `closePrompt` function.
 - Update application when using `prompt for update` behaviour via `updateServiceWorker` function.
@@ -55,7 +58,7 @@ You will need to activate `pwa.installPrompt` property in your Nuxt config file 
 
 Additionally, you can also configure periodic sync for updates, you can enable it via `pwa.periodicSyncForUpdates` property in your Nuxt config file: configure the interval in seconds in previous property.
 
-You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, previous properties will not be available.
+You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, and previous features will not be available (you can only access to the features exposed by the virtual module).
 
 ::: info
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
@@ -68,6 +71,30 @@ To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` pr
 ::: tip
 You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
 :::
+
+## TypeScript
+
+```ts
+export interface PwaInjection {
+  isInstalled: boolean
+  showInstallPrompt: Ref<boolean>
+  cancelInstall: () => void
+  install: () => Promise<void>
+  swActivated: Ref<boolean>
+  registrationError: Ref<boolean>
+  offlineReady: Ref<boolean>
+  needRefresh: Ref<boolean>
+  updateServiceWorker: (reloadPage?: boolean | undefined) => Promise<void>
+  cancelPrompt: () => Promise<void>
+  getSWRegistration: () => ServiceWorkerRegistration | undefined
+}
+
+declare module '#app' {
+  interface NuxtApp {
+    $pwa: UnwrapNestedRefs<PwaInjection>
+  }
+}
+```
 
 ## Examples
 
@@ -88,4 +115,32 @@ then, the web manifest link will be added to your HTML pages:
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
 </html>
+
+### Prompt for update and offline ready
+
+```vue
+<script setup>
+// If you want to use it in setup, import from the nuxtApp.
+const { $pwa } = useNuxtApp()
+
+const toast = useToast()
+onMounted(() => {
+  if ($pwa.offlineReady) {
+    toast.success('App ready to work offline')
+  }
+})
+</script>
+
+<template>
+  <!-- You can use $pwa directly in templates! -->
+  <div v-show="$pwa.needRefresh">
+    <span>
+      New content available, click on reload button to update.
+    </span>
+
+    <button @click="$pwa.updateServiceWorker()">
+      Reload
+    </button>
+  </div>
+</template>
 ```
