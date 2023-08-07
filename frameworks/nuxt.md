@@ -41,32 +41,7 @@ export default defineNuxtConfig({
 
 `@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (will be undefined if disabled or running development without PWA dev options enabled).
 
-You can access `$pwa` property directly inside your Vue component templates or script setup (or any other module) via `useNuxtApp()` (for example: `const { $pwa } = useNuxtApp()`).
-<details>
-<summary><strong>TypeScript: $pwa property</strong></summary>
-
-```ts
-export interface PwaInjection {
-  isInstalled: boolean
-  showInstallPrompt: Ref<boolean>
-  cancelInstall: () => void
-  install: () => Promise<void>
-  swActivated: Ref<boolean>
-  registrationError: Ref<boolean>
-  offlineReady: Ref<boolean>
-  needRefresh: Ref<boolean>
-  updateServiceWorker: (reloadPage?: boolean | undefined) => Promise<void>
-  cancelPrompt: () => Promise<void>
-  getSWRegistration: () => ServiceWorkerRegistration | undefined
-}
-
-declare module '#app' {
-  interface NuxtApp {
-    $pwa: UnwrapNestedRefs<PwaInjection>
-  }
-}
-```
-</details>
+You can access `$pwa` property directly inside your Vue component templates or script setup (or any other module) via `useNuxtApp().$pwa`.
 
 The module will provide the following features via `$pwa` property:
 - Prompt for update and offline ready via `needRefresh` and `offlineReady` properties.
@@ -96,3 +71,26 @@ To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` pr
 You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
 :::
 
+## TypeScript
+
+```ts
+export interface PwaInjection {
+  isInstalled: boolean
+  showInstallPrompt: Ref<boolean>
+  cancelInstall: () => void
+  install: () => Promise<void>
+  swActivated: Ref<boolean>
+  registrationError: Ref<boolean>
+  offlineReady: Ref<boolean>
+  needRefresh: Ref<boolean>
+  updateServiceWorker: (reloadPage?: boolean | undefined) => Promise<void>
+  cancelPrompt: () => Promise<void>
+  getSWRegistration: () => ServiceWorkerRegistration | undefined
+}
+
+declare module '#app' {
+  interface NuxtApp {
+    $pwa: UnwrapNestedRefs<PwaInjection>
+  }
+}
+```
