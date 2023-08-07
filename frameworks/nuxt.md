@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 
 ## Using Nuxt 3 Plugin
 
-`@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (will be undefined if disabled or running development without PWA dev options enabled).
+`@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (`$pwa` will be `undefined` if PWA disabled or running dev server without PWA dev options enabled).
 
 You can access `$pwa` property directly inside your Vue component templates or script setup (or any other module) via `useNuxtApp().$pwa`.
 
