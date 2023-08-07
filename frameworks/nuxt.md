@@ -114,7 +114,7 @@ onMounted(() => {
 </script>
 
 <template>
-  // You can use $pwa directly in templates!
+  <!-- You can use $pwa directly in templates! -->
   <div v-show="$pwa.needRefresh">
     <span>
       New content available, click on reload button to update.
