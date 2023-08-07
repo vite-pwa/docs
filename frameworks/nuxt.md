@@ -11,7 +11,7 @@ This PWA module can only be used with Vite.
 
 ## Nuxt 3 Integration
 
-`vite-plugin-pwa` provides the new `@vite-pwa/nuxt` integration that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
+`vite-plugin-pwa` provides the new `@vite-pwa/nuxt` module that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
 
 You will need to install `@vite-pwa/nuxt` using:
 ::: code-group
@@ -26,7 +26,7 @@ You will need to install `@vite-pwa/nuxt` using:
   ```
 :::
 
-To update your project to use the new `vite-plugin-pwa` integration for Nuxt 3, you only need to change the Nuxt config file removing the `vite-pwa-plugin` plugin if present:
+To update your project to use the new `@vite-pwa/nuxt` module for Nuxt 3, you only need to change the Nuxt config file adding the `@vite-pwa/nuxt` module, move the `vite-plugin-pwa` options to the module options, and remove the `vite-pwa-plugin` plugin (if present):
 
 ```ts
 export default defineNuxtConfig({
@@ -39,9 +39,36 @@ export default defineNuxtConfig({
 
 ## Using Nuxt 3 Plugin
 
-`@vite-pwa/nuxt` will register a plugin exposing PWA stuff in your Nuxt 3 application via `$pwa` property.
+`@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (will be undefined if disabled or running development without PWA dev options enabled).
 
-The plugin will expose the following features:
+You can access `$pwa` property directly inside your Vue component templates or script setup (or any other module) via `useNuxtApp()` (for example: `const { $pwa } = useNuxtApp()`).
+<details>
+<summary><strong>TypeScript: $pwa property</strong></summary>
+
+```ts
+export interface PwaInjection {
+  isInstalled: boolean
+  showInstallPrompt: Ref<boolean>
+  cancelInstall: () => void
+  install: () => Promise<void>
+  swActivated: Ref<boolean>
+  registrationError: Ref<boolean>
+  offlineReady: Ref<boolean>
+  needRefresh: Ref<boolean>
+  updateServiceWorker: (reloadPage?: boolean | undefined) => Promise<void>
+  cancelPrompt: () => Promise<void>
+  getSWRegistration: () => ServiceWorkerRegistration | undefined
+}
+
+declare module '#app' {
+  interface NuxtApp {
+    $pwa: UnwrapNestedRefs<PwaInjection>
+  }
+}
+```
+</details>
+
+The module will provide the following features via `$pwa` property:
 - Prompt for update and offline ready via `needRefresh` and `offlineReady` properties.
 - Cancelling prompt for update application and offline via `closePrompt` function.
 - Update application when using `prompt for update` behaviour via `updateServiceWorker` function.
@@ -68,3 +95,4 @@ To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` pr
 ::: tip
 You can enable `registerWebManifestInRouteRules` property in PWA configuration to register the web manifest in Nitro `routeRules` property: useful for example if your application is deployed to Netlify.
 :::
+
