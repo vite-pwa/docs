@@ -98,6 +98,25 @@ declare module '#app' {
 
 ## Examples
 
+### VitePwaManifest in app.vue
+
+When adding `VitePwaManifest` component to your `app.vue`:
+```vue
+<template>
+  <VitePwaManifest />
+  <NuxtPage />
+</template>
+```
+
+then, the web manifest link will be added to your HTML pages:
+```html
+<html>
+<head>
+    <link rel="manifest" href="/manifest.webmanifest">
+</head>
+</html>
+```
+
 ### Prompt for update and offline ready
 
 ```vue
