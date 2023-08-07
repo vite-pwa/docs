@@ -115,6 +115,7 @@ then, the web manifest link will be added to your HTML pages:
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
 </html>
+```
 
 ### Prompt for update and offline ready
 
