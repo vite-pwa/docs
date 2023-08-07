@@ -41,7 +41,7 @@ export default defineNuxtConfig({
 
 `@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (`$pwa` will be `undefined` if PWA disabled or running dev server without PWA dev options enabled).
 
-You can access `$pwa` property directly inside your Vue component templates or script setup (or any other module) via `useNuxtApp().$pwa`.
+You can access `$pwa` property directly inside your Vue component templates. You can also access to `$pwa` in your Vue script setup or in any other module via `useNuxtApp().$pwa`.
 
 The module will provide the following features via `$pwa` property:
 - Prompt for update and offline ready via `needRefresh` and `offlineReady` properties.
