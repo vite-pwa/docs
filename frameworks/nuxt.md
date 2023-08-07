@@ -57,7 +57,7 @@ You will need to activate `pwa.installPrompt` property in your Nuxt config file 
 
 Additionally, you can also configure periodic sync for updates, you can enable it via `pwa.periodicSyncForUpdates` property in your Nuxt config file: configure the interval in seconds in previous property.
 
-You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, previous properties will not be available.
+You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, and previous features will not be available (you can only access to the features exposed by the virtual module).
 
 ::: info
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
