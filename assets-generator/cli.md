@@ -241,4 +241,4 @@ export default defineConfig({
 })
 ```
 
-PWA Assets Generator will generate the `public/pwa-48x48.png` PWA icon, then generate the corresponding favicon (`public/pwa-48x48.ico`) and finally remove the PWA icon (`public/pwa-48x48.png`).
+PWA Assets Generator will generate the `public/pwa-48x48.png` PWA icon, then generate the corresponding favicon (`public/favicon-48x48.ico`) and finally remove the PWA icon (`public/pwa-48x48.png`).
