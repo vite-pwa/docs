@@ -218,7 +218,7 @@ export default defineConfig({
 
 ### Favicons
 
-PWA Assets Generator will generate favicons when explicitly defined in the preset. If you want to generate favicons, but not the corresponding PWA icons, add the favicons sizes you want to generate, PWA Assets Generator will generate the corresponding PWA icon to generate the favicon and once generated the PWA icon will be removed.
+PWA Assets Generator will generate favicons when explicitly defined in the preset. If you want to generate favicons, but not the corresponding PWA icons, add the favicons sizes you want to generate, PWA Assets Generator will generate the PWA icon to generate the corresponding favicon and once generated, the PWA icon will be removed.
 
 For example, if you want to generate a `48x48` favicon using the default preset, you can use the following configuration:
 ```ts
