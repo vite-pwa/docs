@@ -258,40 +258,86 @@ For example, if you want to generate splash screens for `iPad Air 9.7"` device, 
 import {
   createAppleSplashScreens,
   defineConfig,
-  minimalPreset as preset
+  minimalPreset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
-  preset,
-  images: ['public/logo.svg'],
-  appleSplashScreens: createAppleSplashScreens({
-    padding: 0.3,
-    resizeOptions: { background: 'white' },
-    // by default, dark splash screens are exluded
-    // darkResizeOptions: { background: 'black' },
-    linkMediaOptions: {
-      // will log the links you need to add to your html pages
-      log: true,
-      // add screen to media attribute link?
-      // by default:
-      // <link rel="apple-touch-startup-image" href="..." media="screen and ...">
-      addMediaScreen: true,
-      basePath: '/',
-      // add closing link tag?
-      // by default:
-      // <link rel="apple-touch-startup-image" href="..." media="...">
-      // with xhtml enabled:
-      // <link rel="apple-touch-startup-image" href="..." media="..." />
-      xhtml: false
-    },
-    png: {
-      compressionLevel: 9,
-      quality: 60
-    },
-    name: (landscape, size, dark) => {
-      return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${typeof dark === 'boolean' ? (dark ? 'dark-' : 'light-') : ''}${size.width}x${size.height}.png`
-    }
-  }, ['iPad Air 9.7"'])
+  preset: {
+    ...minimalPreset,
+    appleSplashScreens: createAppleSplashScreens({
+      padding: 0.3,
+      resizeOptions: { background: 'white' },
+      // by default, dark splash screens are exluded
+      // darkResizeOptions: { background: 'black' },
+      linkMediaOptions: {
+        // will log the links you need to add to your html pages
+        log: true,
+        // add screen to media attribute link?
+        // by default:
+        // <link rel="apple-touch-startup-image" href="..." media="screen and ...">
+        addMediaScreen: true,
+        basePath: '/',
+        // add closing link tag?
+        // by default:
+        // <link rel="apple-touch-startup-image" href="..." media="...">
+        // with xhtml enabled:
+        // <link rel="apple-touch-startup-image" href="..." media="..." />
+        xhtml: false
+      },
+      png: {
+        compressionLevel: 9,
+        quality: 60
+      },
+      name: (landscape, size, dark) => {
+        return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${typeof dark === 'boolean' ? (dark ? 'dark-' : 'light-') : ''}${size.width}x${size.height}.png`
+      }
+    }, ['iPad Air 9.7"'])
+  },
+  images: ['public/logo.svg']
+})
+```
+
+You can also use `combinePresetAndAppleSplashScreens` to combine the preset and the splash screens configuration:
+```ts
+import {
+  combinePresetAndAppleSplashScreens,
+  defineConfig,
+  minimalPreset
+} from '@vite-pwa/assets-generator/config'
+
+export default defineConfig({
+  preset: combinePresetAndAppleSplashScreens(
+    minimalPreset, {
+      padding: 0.3,
+      resizeOptions: { background: 'white' },
+      // by default, dark splash screens are exluded
+      // darkResizeOptions: { background: 'black' },
+      linkMediaOptions: {
+        // will log the links you need to add to your html pages
+        log: true,
+        // add screen to media attribute link?
+        // by default:
+        // <link rel="apple-touch-startup-image" href="..." media="screen and ...">
+        addMediaScreen: true,
+        basePath: '/',
+        // add closing link tag?
+        // by default:
+        // <link rel="apple-touch-startup-image" href="..." media="...">
+        // with xhtml enabled:
+        // <link rel="apple-touch-startup-image" href="..." media="..." />
+        xhtml: false
+      },
+      png: {
+        compressionLevel: 9,
+        quality: 60
+      },
+      name: (landscape, size, dark) => {
+        return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${typeof dark === 'boolean' ? (dark ? 'dark-' : 'light-') : ''}${size.width}x${size.height}.png`
+      }
+    }, 
+    ['iPad Air 9.7"']
+  ),
+  images: ['public/logo.svg']
 })
 ```
 
@@ -300,20 +346,19 @@ export default defineConfig({
 If you also want to generate `dark` splash screens, you can provide an empty `darkResizeOptions` option (the generator will set `background` to `black`) or providing any other options. Following with the previous example:
 ```ts
 import {
-  createAppleSplashScreens,
+  combinePresetAndAppleSplashScreens,
   defineConfig,
-  minimalPreset as preset
+  minimalPreset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
-  preset,
-  images: ['public/logo.svg'],
-  appleSplashScreens: createAppleSplashScreens({
+  preset: combinePresetAndAppleSplashScreens(minimalPreset, {
     // dark splash screens using black background (the default)
     darkResizeOptions: {},
     // or using a custom background color
     // darkResizeOptions: { background: '#1f1f1f' },
-  }, ['iPad Air 9.7"'])
+  }, ['iPad Air 9.7"']),
+  images: ['public/logo.svg']
 })
 ```
 
@@ -342,9 +387,8 @@ import {
   type AppleDeviceName,
   type AppleDeviceSize,
   appleSplashScreenSizes,
-  createAppleSplashScreens,
   defineConfig,
-  minimalPreset as preset
+  minimalPreset
 } from '@vite-pwa/assets-generator/config'
 
 const devices: AppleDeviceName[] = ['iPad Air 9.7"', 'iPhone 6']
@@ -388,11 +432,13 @@ function createCustomAppleSplashScreens(
 }
 
 export default defineConfig({
-  preset,
-  images: ['public/logo.svg'],
-  appleSplashScreens: createCustomAppleSplashScreens({
-    padding: 0.5,
-    darkResizeOptions: { background: '#1f1f1f' },
-  })
+  preset: {
+    ...minimalPreset,
+    appleSplashScreens: createCustomAppleSplashScreens({
+      padding: 0.5,
+      darkResizeOptions: { background: '#1f1f1f' },
+    })
+  },
+  images: ['public/logo.svg']
 })
 ```
