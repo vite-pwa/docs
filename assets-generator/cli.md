@@ -242,3 +242,157 @@ export default defineConfig({
 ```
 
 PWA Assets Generator will generate the `public/pwa-48x48.png` PWA icon, then generate the corresponding favicon (`public/favicon-48x48.ico`) and finally remove the PWA icon (`public/pwa-48x48.png`).
+
+### iOS/iPad Splash Screens
+
+PWA Assets Generator will generate iOS/iPad splash screens when explicitly defined in the preset: [iOS and iPadOS in web.dev](https://web.dev/learn/pwa/enhancements/#splash-screens).
+
+You can use `createAppleSplashScreens` function to create the splash screens configuration using global configuration and the device names you want to generate the splash screens for.
+
+If the device names are not provided in the `createAppleSplashScreens` function, PWA Assets Generator will generate splash screens for all devices (defined in the [splash](https://github.com/vite-pwa/assets-generator/blob/main/src/splash.ts) module).
+
+PWA Assets Generator will generate the landscape and portrait PNG files per device. If you also want to generate the dark splash screens, you will end up with four PNG files per device.
+
+For example, if you want to generate splash screens for `iPad Air 9.7"` device, you can use the following configuration (the values in the example are the default ones if you don't provide any configuration):
+```ts
+import {
+  createAppleSplashScreens,
+  defineConfig,
+  minimalPreset as preset
+} from '@vite-pwa/assets-generator/config'
+
+export default defineConfig({
+  preset,
+  images: ['public/logo.svg'],
+  appleSplashScreens: createAppleSplashScreens({
+    padding: 0.3,
+    resizeOptions: { background: 'white' },
+    // by default, dark splash screens are exluded
+    // darkResizeOptions: { background: 'black' },
+    linkMediaOptions: {
+      // will log the links you need to add to your html pages
+      log: true,
+      // add screen to media attribute link?
+      // by default:
+      // <link rel="apple-touch-startup-image" href="..." media="screen and ...">
+      addMediaScreen: true,
+      basePath: '/',
+      // add closing link tag?
+      // by default:
+      // <link rel="apple-touch-startup-image" href="..." media="...">
+      // with xhtml enabled:
+      // <link rel="apple-touch-startup-image" href="..." media="..." />
+      xhtml: false
+    },
+    png: {
+      compressionLevel: 9,
+      quality: 60
+    },
+    name: (landscape, size, dark) => {
+      return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${typeof dark === 'boolean' ? (dark ? 'dark-' : 'light-') : ''}${size.width}x${size.height}.png`
+    }
+  }, ['iPad Air 9.7"'])
+})
+```
+
+#### Dark Splash Screens
+
+If you also want to generate `dark` splash screens, you can provide an empty `darkResizeOptions` option (the generator will set `background` to `black`) or providing any other options. Following with the previous example:
+```ts
+import {
+  createAppleSplashScreens,
+  defineConfig,
+  minimalPreset as preset
+} from '@vite-pwa/assets-generator/config'
+
+export default defineConfig({
+  preset,
+  images: ['public/logo.svg'],
+  appleSplashScreens: createAppleSplashScreens({
+    // dark splash screens using black background (the default)
+    darkResizeOptions: {},
+    // or using a custom background color
+    // darkResizeOptions: { background: '#1f1f1f' },
+  }, ['iPad Air 9.7"'])
+})
+```
+
+#### Advanced Configuration
+
+We strongly suggest you to use the global configuration, providing `padding`, `resizeOptions`, `darkResizeOptions` and `png` options globally, PWA Assets Generator will configure any splash screen device options properly.
+
+If you still want to use a custom configuration per device, you can provide `padding`, `resizeOptions`, `darkResizeOptions` and `png` options per device, but you will need to configure them via some custom logic. You can use the following exports from the `config` module (check the [splash](https://github.com/vite-pwa/assets-generator/blob/main/src/splash.ts) module, all splash exports being exported also in the `@vite-pwa/assets-generator/config` module):
+- `AppleDeviceName`: all Apple device names
+- `appleSplashScreenSizes`: all Apple splash screen sizes including the scale factor
+- `AllAppleDeviceNames`: all Apple device names as an array
+- `createAppleSplashScreens`: the logic inside that function is quite simple, you can use it as a starting point to create your own splash screens configuration
+
+For example, to create this custom configuration:
+- generate dark splash screens
+- global configuration with `0.5` padding, default splash screen names and `#1f1f1f` background color for dark splash screens
+- create splash screens for `iPad Air 9.7"` device using global configuration
+- create splash screens for `iPhone 6` device using a custom configuration:
+  - padding: `0.4`
+  - custom splash screen name
+  - `#2f2f2f` background color for dark splash screens 
+
+you can use the following configuration:
+```ts
+import {
+  type AppleDeviceName,
+  type AppleDeviceSize,
+  appleSplashScreenSizes,
+  createAppleSplashScreens,
+  defineConfig,
+  minimalPreset as preset
+} from '@vite-pwa/assets-generator/config'
+
+const devices: AppleDeviceName[] = ['iPad Air 9.7"', 'iPhone 6']
+
+function createCustomAppleSplashScreens(
+  options: {
+    padding?: number
+    resizeOptions?: ResizeOptions
+    darkResizeOptions?: ResizeOptions
+    linkMediaOptions?: AppleTouchStartupImageOptions
+    name?: AppleSplashScreenName
+  } = {}
+) {
+  const {
+    padding,
+    resizeOptions,
+    darkResizeOptions,
+    linkMediaOptions,
+    name,
+  } = options
+
+  return <AppleSplashScreens>{
+    sizes: devices.map((deviceName) => {
+      const size = appleSplashScreenSizes[deviceName]
+      if (deviceName === 'iPhone 6') {
+        return <AppleDeviceSize>{
+          size: { ...size, padding: 0.4 },
+          darkResizeOptions: { background: '#2f2f2f' },
+          name: (landscape, size, dark) => `iphone6-${landscape ? 'landscape' : 'portrait'}${dark ? '-dark' : ''}.png`
+        }
+      }
+      
+      return size
+    }),
+    padding,
+    resizeOptions,
+    darkResizeOptions,
+    linkMediaOptions,
+    name,
+  }
+}
+
+export default defineConfig({
+  preset,
+  images: ['public/logo.svg'],
+  appleSplashScreens: createCustomAppleSplashScreens({
+    padding: 0.5,
+    darkResizeOptions: { background: '#1f1f1f' },
+  })
+})
+```
