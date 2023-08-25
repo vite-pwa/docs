@@ -145,18 +145,22 @@ export function defaultAssetName(type: AssetType, size: ResolvedAssetSize) {
 ```
 
 You can override the PNG output names providing custom `assetName` option:
+
 ```ts
 import {
   defineConfig,
-  minimalPreset as preset
+  minimalPreset
 } from '@vite-pwa/assets-generator/config'
+import {minor} from "semver";
 
 export default defineConfig({
-  preset,
-  images: ['public/logo.svg'],
-  assetName: (type: AssetType, size: ResolvedAssetSize) => {
-    /* your logic here */  
-  }
+  preset: {
+    ...minimalPreset,
+    assetName: (type: AssetType, size: ResolvedAssetSize) => {
+      /* your logic here */
+    }
+  },
+  images: ['public/logo.svg']
 })
 ```
 
@@ -203,16 +207,18 @@ You can provide your optimization options using `png` option, check the options 
 ```ts
 import {
   defineConfig,
-  minimalPreset as preset
+  minimalPreset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
-  preset,
-  images: ['public/logo.svg'],
-  png: {
-    compressionLevel: 9,
-    quality: 85
-  }
+  preset: {
+    ...minimalPreset,
+    png: {
+      compressionLevel: 9,
+      quality: 85
+    }
+  },
+  images: ['public/logo.svg']
 })
 ```
 
