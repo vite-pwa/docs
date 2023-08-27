@@ -4,8 +4,6 @@ outline: deep
 ---
 
 <script setup>
-import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
-
 const images = Object.entries(
   import.meta.glob('/assets/*.svg', { as: 'raw', eager: true })
 ).reduce((acc, [image, content]) => {
@@ -20,12 +18,7 @@ const images = Object.entries(
 
 In this page we're going to explain how `vite-plugin-pwa` build the service worker.
 
-You can download Excalidraw source diagram for the SVG images and open it in Excalidraw website using the following links:
-
-<VPButton href="/vite-plugin-pwa.excalidraw" download="vite-plugin-pwa.excalidraw" text="Download the source code"></VPButton>
-<br/>
-<br/>
-<VPButton href="https://excalidraw.com" text="Open Excalidraw"></VPButton>
+You can <a href="/vite-plugin-pwa.excalidraw" download="vite-plugin-pwa.excalidraw">download Excalidraw source diagram</a> for the SVG images and [open it in Excalidraw website](https://excalidraw.com).
 
 ## Vite Build CLI
 
