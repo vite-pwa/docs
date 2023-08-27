@@ -104,6 +104,7 @@ export const pwa: Partial<VitePWAOptions> = {
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
     globIgnores: ['shortcuts/*.svg'],
+    navigateFallbackDenylist: [/\.excalidraw$/],
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
