@@ -102,7 +102,7 @@ export const pwa: Partial<VitePWAOptions> = {
     },
   },
   workbox: {
-    globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2}'],
+    globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,excalidraw}'],
     globIgnores: ['shortcuts/*.svg'],
     runtimeCaching: [
       {
