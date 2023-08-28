@@ -32,3 +32,27 @@ Once you made the changes to the documentation, you can test them running `nr de
 To check the website build, you can:
 - run `nr preview` from the root folder.
 - run `nr https` from the root folder (to test it using `https`).
+
+## Excalidraw diagram and Cookbook page
+
+Open `public/vite-plugin-pwa.excalidraw` file in [Excalidraw](https://excalidraw.com/).
+
+Apply your changes in the diagram: all images are grouped, you can remove the group to change the diagram, don't forget to group it once changes are done.
+
+Save your changes, don't forget to save it to local: `public/vite-plugin-pwa.excalidraw`.
+
+Save the diagram using `Export link`: copy the link and paste it in the `guide/cookbook.md` file link.
+
+Export each changed image as SVG: click on the image to select it, click on the `...` button, click on `Export as SVG`, save the file in `assets` folder using `Only Selected` and `Scale 3x` options (uncheck background, dark mode and embed scene if checked).
+
+Save each image changed to the `assets` folder:
+- vite-build-cli.svg
+- vite-config-file.svg
+- close-bundle-hook.svg
+- inject-manifest.svg
+
+Once all SVG image saved in `assets` folder, you need to remove the `height`, update the `width`, add `preserveAspectRatio` and change the `font-face src` to be local:
+- remove `height` attribute
+- change `width` attribute to `100%`
+- add `preserveAspectRatio` attribute with `xMidYMid meet` value
+- change `@font-face src` attribute to `url("/Virgil.woff2");` for and `url("/Cascadia.woff2");` for Virgil and Cascadia fonts in the style tag

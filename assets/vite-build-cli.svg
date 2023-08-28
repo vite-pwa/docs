@@ -13,11 +13,11 @@
     <style class="style-fonts">
       @font-face {
         font-family: "Virgil";
-        src: url("https://excalidraw.com/Virgil.woff2");
+        src: url("/Virgil.woff2");
       }
       @font-face {
         font-family: "Cascadia";
-        src: url("https://excalidraw.com/Cascadia.woff2");
+        src: url("/Cascadia.woff2");
       }
     </style>
 
