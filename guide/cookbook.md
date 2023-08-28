@@ -11,14 +11,13 @@ const images = Object.entries(
   acc[name.replace('.svg', '')] = content
   return acc
 }, {})
-
 </script>
 
 # Vite, Rollup, PWA and Workbox cookbook
 
 In this page we're going to explain how `vite-plugin-pwa` build the service worker.
 
-You can <a href="/vite-plugin-pwa.excalidraw" download="vite-plugin-pwa.excalidraw">download Excalidraw source diagram</a> for the SVG images and [open it in Excalidraw website](https://excalidraw.com).
+You can <a href="https://excalidraw.com/#json=TwI1I_rRXYcGFINLH-Yrw,JRavRIdQuT-uvqjTi6S3Qg">open Excalidraw source diagram</a> for the SVG images.
 
 ## Vite Build CLI
 
@@ -28,6 +27,10 @@ You can <a href="/vite-plugin-pwa.excalidraw" download="vite-plugin-pwa.excalidr
 
 <div v-html="images['vite-config-file']"></div>
 
-## closeBundle hook
+## vite-plugin-pwa closeBundle hook
 
 <div v-html="images['close-bundle-hook']"></div>
+
+## workbox-build injectManifest
+
+<div v-html="images['inject-manifest']"></div>
