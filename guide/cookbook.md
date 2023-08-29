@@ -1,5 +1,5 @@
 ---
-title: Vite, Rollup, PWA and Workbox cookbook | Guide
+title: Vite, Rollup, PWA and Workbox Cookbook | Guide
 outline: deep
 ---
 
@@ -15,17 +15,17 @@ const images = Object.entries(
 
 # Vite, Rollup, PWA and Workbox cookbook
 
-In this page we're going to explain how `vite-plugin-pwa` build the service worker.
+In this page we're going to explain how `vite-plugin-pwa` builds the service worker.
 
 You can <a href="https://excalidraw.com/#json=TwI1I_rRXYcGFINLH-Yrw,JRavRIdQuT-uvqjTi6S3Qg">open Excalidraw source diagram</a> for the SVG images.
-
-## Vite Build CLI
-
-<div v-html="images['vite-build-cli']"></div>
 
 ## Vite config file
 
 <div v-html="images['vite-config-file']"></div>
+
+## Vite Build CLI
+
+<div v-html="images['vite-build-cli']"></div>
 
 ## vite-plugin-pwa closeBundle hook
 

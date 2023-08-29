@@ -12,7 +12,7 @@ export interface Integration extends Partial<DefaultTheme.TeamMember> {
   desc?: string
 }
 
-const createLinks = (i: Integration): Integration => {
+function createLinks(i: Integration): Integration {
   i.links = [{ icon: 'github', link: `https://github.com/${i.github}` }]
   if (i.mastodon)
     i.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${i.mastodon}` })
@@ -23,7 +23,7 @@ const createLinks = (i: Integration): Integration => {
   return i
 }
 
-const plaingIntegrations = [
+const plainIntegrations = [
   {
     avatar: '/integration-logos/iles.svg',
     name: 'îles',
@@ -62,6 +62,6 @@ const plaingIntegrations = [
   },
 ]
 
-const integrations = plaingIntegrations.map(i => createLinks(i))
+const integrations = plainIntegrations.map(i => createLinks(i))
 
 export { integrations }

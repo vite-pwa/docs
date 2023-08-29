@@ -63,7 +63,7 @@ const Guide: DefaultTheme.SidebarItem[] = [
     link: '/guide/testing-service-worker',
   },
   {
-    text: 'Vite, Rollup, PWA and Workbox cookbook',
+    text: 'Vite, Rollup, PWA and Workbox Cookbook',
     link: '/guide/cookbook',
   },
   {
