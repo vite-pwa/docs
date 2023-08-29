@@ -15,7 +15,7 @@ const images = Object.entries(
 
 # Vite, Rollup, PWA and Workbox cookbook
 
-In this page we're going to explain how `vite-plugin-pwa` build the service worker.
+In this page we're going to explain how `vite-plugin-pwa` builds the service worker.
 
 You can <a href="https://excalidraw.com/#json=TwI1I_rRXYcGFINLH-Yrw,JRavRIdQuT-uvqjTi6S3Qg">open Excalidraw source diagram</a> for the SVG images.
 
