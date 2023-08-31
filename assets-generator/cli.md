@@ -370,6 +370,15 @@ If you still want to use a custom configuration per device, you can provide `pad
 - `AllAppleDeviceNames`: all Apple device names as an array
 - `createAppleSplashScreens`: the logic inside that function is quite simple, you can use it as a starting point to create your own splash screens configuration
 
+`resizeOptions` and `darkResizeOptions` are [ResizeOptions from Sharp](https://github.com/search?q=repo%3Alovell%2Fsharp%20ResizeOptions&type=code)
+
+::: tip
+If you have issues with images being cut off, you can adjust the `fit` parameter in `resizeOptions` or `darkResizeOptions` (default is `cover`):
+```ts
+resizeOptions: { fit: 'contain' }
+```
+:::
+
 For example, to create this custom configuration:
 - generate dark splash screens
 - global configuration with `0.5` padding, default splash screen names and `#1f1f1f` background color for dark splash screens
