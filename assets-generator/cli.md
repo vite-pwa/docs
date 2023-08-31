@@ -362,9 +362,9 @@ export default defineConfig({
 
 #### Advanced Configuration
 
-We strongly suggest you to use the global configuration, providing `padding`, `resizeOptions`, and `darkResizeOptions` options globally, PWA Assets Generator will configure any splash screen device options properly.
+We strongly suggest you to use the global configuration, providing `padding`, `resizeOptions`, `darkResizeOptions` and `png` options globally, PWA Assets Generator will configure any splash screen device options properly.
 
-If you still want to use a custom configuration per device, you can provide `padding`, `resizeOptions`, and `darkResizeOptions` options per device, but you will need to configure them via some custom logic. You can use the following exports from the `config` module (check the [splash](https://github.com/vite-pwa/assets-generator/blob/main/src/splash.ts) module, all splash exports being exported also in the `@vite-pwa/assets-generator/config` module):
+If you still want to use a custom configuration per device, you can provide `padding`, `resizeOptions`, `darkResizeOptions` and `png` options per device, but you will need to configure them via some custom logic. You can use the following exports from the `config` module (check the [splash](https://github.com/vite-pwa/assets-generator/blob/main/src/splash.ts) module, all splash exports being exported also in the `@vite-pwa/assets-generator/config` module):
 - `AppleDeviceName`: all Apple device names
 - `appleSplashScreenSizes`: all Apple splash screen sizes including the scale factor
 - `AllAppleDeviceNames`: all Apple device names as an array
