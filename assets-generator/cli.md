@@ -272,7 +272,7 @@ export default defineConfig({
     ...minimalPreset,
     appleSplashScreens: createAppleSplashScreens({
       padding: 0.3,
-      resizeOptions: { background: 'white' },
+      resizeOptions: { background: 'white', fit: 'contain' },
       // by default, dark splash screens are exluded
       // darkResizeOptions: { background: 'black' },
       linkMediaOptions: {
@@ -315,7 +315,7 @@ export default defineConfig({
   preset: combinePresetAndAppleSplashScreens(
     minimalPreset, {
       padding: 0.3,
-      resizeOptions: { background: 'white' },
+      resizeOptions: { background: 'white', fit: 'contain' },
       // by default, dark splash screens are exluded
       // darkResizeOptions: { background: 'black' },
       linkMediaOptions: {
@@ -349,7 +349,7 @@ export default defineConfig({
 
 #### Dark Splash Screens
 
-If you also want to generate `dark` splash screens, you can provide an empty `darkResizeOptions` option (the generator will set `background` to `black`) or providing any other options. Following with the previous example:
+If you also want to generate `dark` splash screens, you can provide an empty `darkResizeOptions` option (the generator will set `background: 'black'` and `'fit: 'contain'` if missing) or providing any other options. Following with the previous example:
 ```ts
 import {
   combinePresetAndAppleSplashScreens,
@@ -360,7 +360,7 @@ import {
 export default defineConfig({
   preset: combinePresetAndAppleSplashScreens(minimalPreset, {
     // dark splash screens using black background (the default)
-    darkResizeOptions: {},
+    darkResizeOptions: { background: 'black', fit: 'contain' },
     // or using a custom background color
     // darkResizeOptions: { background: '#1f1f1f' },
   }, ['iPad Air 9.7"']),
@@ -370,13 +370,15 @@ export default defineConfig({
 
 #### Advanced Configuration
 
-We strongly suggest you to use the global configuration, providing `padding`, `resizeOptions`, `darkResizeOptions` and `png` options globally, PWA Assets Generator will configure any splash screen device options properly.
+We strongly suggest using the global configuration, providing `padding`, `resizeOptions`, `darkResizeOptions` and `png` options globally, PWA Assets Generator will configure any splash screen device options properly.
 
 If you still want to use a custom configuration per device, you can provide `padding`, `resizeOptions`, `darkResizeOptions` and `png` options per device, but you will need to configure them via some custom logic. You can use the following exports from the `config` module (check the [splash](https://github.com/vite-pwa/assets-generator/blob/main/src/splash.ts) module, all splash exports being exported also in the `@vite-pwa/assets-generator/config` module):
 - `AppleDeviceName`: all Apple device names
 - `appleSplashScreenSizes`: all Apple splash screen sizes including the scale factor
 - `AllAppleDeviceNames`: all Apple device names as an array
 - `createAppleSplashScreens`: the logic inside that function is quite simple, you can use it as a starting point to create your own splash screens configuration
+
+`resizeOptions` and `darkResizeOptions` are [ResizeOptions from Sharp](https://github.com/search?q=repo%3Alovell%2Fsharp%20ResizeOptions&type=code)
 
 For example, to create this custom configuration:
 - generate dark splash screens
