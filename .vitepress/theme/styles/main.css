@@ -71,6 +71,12 @@ img.resizable-img {
 details > summary:hover {
   cursor: pointer;
 }
+
+.custom-block.warning code {
+  font-size: var(--vp-custom-block-code-font-size);
+  font-weight: 700;
+}
+
 /* remove the gray color from code block inside details > summary */
 .vp-doc .custom-block div[class*=language-] code,
 .vp-doc details > summary + div[class*='language-'] > pre > code {
@@ -153,3 +159,22 @@ details > summary:hover {
     min-height: unset;
   }
 }
+
+/* transitions */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+

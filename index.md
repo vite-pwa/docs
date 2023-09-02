@@ -14,10 +14,10 @@ hero:
   image:
     light:
       src: /icon_light.svg
-      alt: Vite PWA
+      alt: Vite PWA Logo
     dark:
       src: /icon_dark.svg
-      alt: Vite PWA
+      alt: Vite PWA Logo
   actions:
     - theme: brand
       text: Get Started
