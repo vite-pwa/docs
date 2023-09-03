@@ -22,7 +22,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <template v-if="needRefresh">
+  <template v-if="!needRefresh">
     <div
       class="pwa-toast z-100 bg-$vp-c-bg b b-solid b-1px b-color-$pwa-border fixed right-0 bottom-0 m-6 px-6 py-4 rounded-2 shadow-xl"
       role="alertdialog"
