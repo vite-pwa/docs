@@ -1,18 +1,11 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import DefaultTheme, { VPHomeHero, VPImage } from 'vitepress/theme'
-import type { DefaultTheme as DTheme } from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
 import HomePage from './components/HomePage.vue'
 import ReloadPrompt from './components/ReloadPrompt.vue'
 
 const { isDark } = useData()
-
-const image: DTheme.ThemeableImage = {
-  light: '/icon_light.svg',
-  dark: '/icon_dark.svg',
-  alt: 'Vite PWA Logo',
-}
 
 function enableTransitions() {
   return 'startViewTransition' in document
@@ -51,13 +44,6 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 <template>
   <DefaultTheme.Layout>
-    <template #home-hero>
-      <VPHomeHero>
-        <template #home-hero-image>
-          <VPImage :image="image" />
-        </template>
-      </VPHomeHero>
-    </template>
     <template #home-features-after>
       <HomePage />
     </template>

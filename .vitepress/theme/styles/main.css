@@ -1,50 +1,16 @@
+/* show/hide PWA icon in navbar */
 .dark [img-light],
 .dark .logo[light-logo] {
   display: none;
 }
-
 html:not(.dark) [img-dark],
 html:not(.dark) .logo[dark-logo] {
   display: none;
 }
 
 /* Overrides */
-
 .VPSocialLink {
   transform: scale(0.9);
-}
-
-.vp-doc th,
-.vp-doc td {
-  padding: 6px 10px;
-  border: 1px solid #8882;
-}
-
-html:not(.dark) .vp-doc [class*=language-]:before {
-  color: var(--vp-custom-block-details-text);
-}
-
-html:not(.dark) .vp-doc [class*='language-']:not(:hover) > span.copy,
-html:not(.dark) .vp-doc [class*='language-']:not(:hover) > span.copy.copied:before {
-  background-color: var(--vp-code-block-hover-bg);
-  opacity: 0;
-}
-
-html:not(.dark) .vp-doc [class*='language-']:hover > span.copy:hover {
-  opacity: 1;
-  background-color: var(--vp-code-block-hover-bg);
-}
-
-html:not(.dark) .vp-doc [class*='language-']:hover > span.copy.copied,
-html:not(.dark) .vp-doc [class*='language-']:hover > span.copy.copied:hover {
-  opacity: 1;
-  background-color: var(--vp-code-block-hover-bg);
-}
-
-html:not(.dark) .vp-doc [class*='language-']:hover > span.copy.copied:before,
-html:not(.dark) .vp-doc [class*='language-']:hover > span.copy.copied:hover:before {
-  color: var(--vp-custom-block-details-text);
-  background-color: var(--vp-code-block-hover-bg);
 }
 
 /* h3 breaks SEO => replaced with h2 with the same size */
@@ -70,22 +36,16 @@ img.resizable-img {
 
 details > summary:hover {
   cursor: pointer;
+  user-select: none;
 }
 
-.custom-block.warning code {
+.custom-block.warning code,
+.custom-block.danger code {
   font-size: var(--vp-custom-block-code-font-size);
   font-weight: 700;
 }
 
-/* remove the gray color from code block inside details > summary */
-.vp-doc .custom-block div[class*=language-] code,
-.vp-doc details > summary + div[class*='language-'] > pre > code {
-  --vp-code-block-bg: transparent;
-}
-
-.pwa-toast {
-  --c-divider: var(--vp-c-divider-light);
-}
+/* PWA: Prompt for Update */
 .pwa-toast .pwa-refresh {
   border-color: var(--vp-button-brand-border);
   color: var(--vp-button-brand-text);
@@ -116,14 +76,13 @@ details > summary:hover {
   color: var(--vp-button-alt-active-text);
   background-color: var(--vp-button-alt-active-bg);
 }
-.dark .pwa-toast {
-  --pwa-divider: var(--vp-c-divider-dark-1);
-}
 
+/* code block with pre padding */
 .vp-doc :not(pre) > code {
   padding: 1px 6px;
 }
 
+/* Team member media queries */
 /* fix height ~ 2 lines of text: 3 cards per row */
 .VPTeamMembersItem.medium .profile .data .affiliation {
   min-height: 3rem;
@@ -160,7 +119,65 @@ details > summary:hover {
   }
 }
 
-/* transitions */
+/* Excalidraw SVG colors */
+/* Vite purple color */
+html:not(.dark) svg g > text[fill="#646cff"] {
+  fill: #5d65ee;
+}
+html.dark svg g > text[fill="#646cff"] {
+  fill: #6d75ff;
+}
+/* Vite circles */
+html:not(.dark) svg g[stroke-linecap="round"] > path[stroke="#646cff"] {
+  stroke: #5d65ee;
+}
+html.dark svg g[stroke-linecap="round"] > path[stroke="#646cff"] {
+  stroke: #6d75ff;
+}
+/* Vite green text */
+html:not(.dark) svg g > text[fill="#2f9e44"] {
+  fill: #28863a;
+}
+/* Vite green rectangle */
+html:not(.dark) svg g[stroke-linecap="round"] > path[stroke="#2f9e44"] {
+  stroke: #28863a;
+}
+/* Vite plugins rectangle */
+html.dark svg g[stroke-linecap="round"] > path[stroke="#1e1e1e"] {
+  stroke: #fff;
+}
+/* Rollup links */
+html.dark svg g > text[fill="#e03131"] {
+  fill: #f93636;
+}
+/* Rollup circles */
+html.dark svg g[stroke-linecap="round"] > path[stroke="#e03131"] {
+  stroke: #f93636;
+}
+/* PWA blue color */
+svg g > text[fill="#35849a"] {
+  fill: var(--vp-c-brand-1);
+}
+/* PWA circles and arrows */
+svg g[stroke-linecap="round"] > path[stroke="#35849a"],
+svg g[stroke-linecap="round"] > g > path[stroke="#35849a"] {
+  stroke: var(--vp-c-brand-1);
+}
+/* workbox rectangle */
+html:not(.dark) svg g[stroke-linecap="round"] > path[stroke="#f08c00"],
+/* workbox arrows */
+html:not(.dark) svg g[stroke-linecap="round"] > g > path[stroke="#f08c00"],
+/* workbox circles */
+html:not(.dark) svg g[stroke-linecap="round"] > path[stroke="#fa903e"] {
+  stroke: #ab6400;
+}
+/* workbox text */
+html:not(.dark) svg g > text[fill="#f08c00"],
+html:not(.dark) svg g > text[fill="#fa903e"] {
+  fill: #ab6400;
+}
+
+/* dark/light radial transition */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
