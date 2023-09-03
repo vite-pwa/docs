@@ -17,7 +17,7 @@
       "@types/fs-extra",
       "node",
       "vite/client",
-      "vite-plugin-pwa/client",
+      "vite-plugin-pwa/vanillajs",
       "vitepress"
     ],
     "paths": {

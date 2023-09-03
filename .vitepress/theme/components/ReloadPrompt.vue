@@ -24,7 +24,7 @@ onBeforeMount(async () => {
 <template>
   <template v-if="needRefresh">
     <div
-      class="pwa-toast z-100 bg-$vp-c-bg border border-$pwa-divider fixed right-0 bottom-0 m-6 px-6 py-4 rounded shadow-xl"
+      class="pwa-toast z-100 bg-$vp-c-bg b b-solid b-1px b-color-$pwa-border fixed right-0 bottom-0 m-6 px-6 py-4 rounded-2 shadow-xl"
       role="alertdialog"
       aria-labelledby="pwa-message"
     >
@@ -40,7 +40,7 @@ onBeforeMount(async () => {
       </button>
       <button
         type="button"
-        class="pwa-cancel border border-$pwa-divider mr-2 px-3 py-1 rounded"
+        class="pwa-cancel b b-solid b-1px !b-color-$pwa-border mr-2 px-3 py-1 rounded"
         @click="close"
       >
         Close
