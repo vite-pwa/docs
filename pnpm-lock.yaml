@@ -56,8 +56,8 @@ devDependencies:
     specifier: ^0.16.4
     version: 0.16.4(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitepress:
-    specifier: 1.0.0-rc.10
-    version: 1.0.0-rc.10(search-insights@2.6.0)
+    specifier: 1.0.0-rc.11
+    version: 1.0.0-rc.11(search-insights@2.6.0)
   workbox-window:
     specifier: ^7.0.0
     version: 7.0.0
@@ -6169,8 +6169,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-rc.10(search-insights@2.6.0):
-    resolution: {integrity: sha512-+MsahIWqq5WUEmj6MR4obcKYbT7im07jZPCQPdNJExkeOSbOAJ4xypSLx88x7rvtzWHhHc5aXbOhCRvGEGjFrw==}
+  /vitepress@1.0.0-rc.11(search-insights@2.6.0):
+    resolution: {integrity: sha512-HUnfYOadqwLSahtgQxKt9/wiNHdd80BaUfQ+DIMpfq03Iv9CWX1SCBK4gxK/bMWns3Q0ArhXajQbU/fmBwYUMg==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.5.2

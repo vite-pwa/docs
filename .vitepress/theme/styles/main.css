@@ -209,6 +209,10 @@ html:not(.dark) svg g > text[fill="#f08c00"],
 html:not(.dark) svg g > text[fill="#fa903e"] {
   fill: #ab6400;
 }
+/* vertical black lines */
+html.dark svg g[stroke-linecap="round"] > g[transform] > path[stroke="#1e1e1e"] {
+  stroke: #fff;
+}
 
 /* dark/light radial transition */
 ::view-transition-old(root),
