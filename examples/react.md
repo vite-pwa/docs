@@ -4,7 +4,7 @@ title: React | Examples
 
 # React
 
-The `React` example project can be found on `examples/react-router` package/directory.
+The `React` example project can be found on [examples/react-router](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/react-router) package/directory.
 
 The router used on this example project is [react-router](https://reactrouter.com/).
 
