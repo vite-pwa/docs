@@ -4,7 +4,7 @@ title: Vue | Examples
 
 # Vue
 
-The `Vue 3` example project can be found on `examples/vue-router` package/directory.
+The `Vue 3` example project can be found on [examples/vue-router](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/vue-router) package/directory.
 
 The router used on this example project is [vue-router](https://next.router.vuejs.org/).
 

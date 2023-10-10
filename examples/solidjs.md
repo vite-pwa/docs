@@ -4,7 +4,7 @@ title: SolidJS | Examples
 
 # SolidJS
 
-The `SolidJS` example project can be found on `examples/solid-router` package/directory.
+The `SolidJS` example project can be found on [examples/solid-router](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/solid-router) package/directory.
 
 The router used on this example project is [solid-app-router](https://github.com/solidjs/solid-app-router).
 
