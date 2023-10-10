@@ -4,7 +4,7 @@ title: Preact | Examples
 
 # Preact
 
-The `Preact` example project can be found on `examples/preact-router` package/directory.
+The `Preact` example project can be found on [examples/preact-router](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/preact-router) package/directory.
 
 The router used on this example project is [preact-router](https://github.com/preactjs/preact-router).
 
