@@ -30,11 +30,6 @@
   to = "/workbox/index.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [[headers]]
   for = "/manifest.webmanifest"
   [headers.values]
