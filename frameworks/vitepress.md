@@ -264,9 +264,13 @@ onBeforeMount(async () => {
 
 ### includeAllowlist
 
-To prevent breaking Vitepress layout when the user visits a page that does not exist, you can enable the new experimental option `includeAllowlist`. Check the problem in the following issue: https://github.com/vite-pwa/vitepress/issues/22.
+To prevent breaking Vitepress layout when the user visits a page that does not exist, you can enable the new experimental option `includeAllowlist`, requires VitePress `1.0.0-rc.14+`. 
 
-This option is only available for the `generateSW` strategy:
+Check the problem in the following issue: https://github.com/vite-pwa/vitepress/issues/22.
+
+You also need to force your server to return response with status code 404 when the requested page doesn't exist.
+
+This option is only available for the `generateSW` strategy, to enable it, you need to add the following configuration:
 ```ts
 // .vitepress/config.ts
 import { defineConfig } from 'vitepress'
