@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^0.0.2
     version: 0.0.2
   '@vite-pwa/vitepress':
-    specifier: ^0.2.0
-    version: 0.2.0(vite-plugin-pwa@0.16.4)
+    specifier: ^0.2.2
+    version: 0.2.2(vite-plugin-pwa@0.16.5)
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.4.9)(vue@3.3.4)
@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.25.1
     version: 0.25.1(rollup@2.79.1)(vue@3.3.4)
   vite-plugin-pwa:
-    specifier: ^0.16.4
-    version: 0.16.4(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
+    specifier: ^0.16.5
+    version: 0.16.5(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
   vitepress:
     specifier: 1.0.0-rc.11
     version: 1.0.0-rc.11(search-insights@2.6.0)
@@ -2331,12 +2331,12 @@ packages:
       unconfig: 0.3.9
     dev: true
 
-  /@vite-pwa/vitepress@0.2.0(vite-plugin-pwa@0.16.4):
-    resolution: {integrity: sha512-dVQVaP6NB9woCFe4UASUqRp7uwBQJOVXlJlqK4krqXcbb3NuXIXIWOnU7HLpJnHqZj5U/81gKtLN6gs5gJBwiQ==}
+  /@vite-pwa/vitepress@0.2.2(vite-plugin-pwa@0.16.5):
+    resolution: {integrity: sha512-DBysLLXeHP/+DmUUJbf22s/eR6Q/CpyavI/RK6NE29S9ceSja2CdYCmzgmjM4jpkf08qpFeaXqePWeg2FAgtnA==}
     peerDependencies:
-      vite-plugin-pwa: '>=0.16.3 <1'
+      vite-plugin-pwa: '>=0.16.5 <1'
     dependencies:
-      vite-plugin-pwa: 0.16.4(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
+      vite-plugin-pwa: 0.16.5(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0)
     dev: true
 
   /@vitejs/plugin-vue@4.2.3(vite@4.4.9)(vue@3.3.4):
@@ -3839,6 +3839,17 @@ packages:
       micromatch: 4.0.5
     dev: true
 
+  /fast-glob@3.3.1:
+    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
+    engines: {node: '>=8.6.0'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.5
+    dev: true
+
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
@@ -5132,8 +5143,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /pretty-bytes@6.0.0:
-    resolution: {integrity: sha512-6UqkYefdogmzqAZWzJ7laYeJnaXDy2/J+ZqiiMtS7t7OfpXWTlaeGMwX8U6EFvPV/YWWEKRkS8hKS4k60WHTOg==}
+  /pretty-bytes@6.1.1:
+    resolution: {integrity: sha512-mQUvGU6aUFQ+rNvTIAcZuWGRT9a6f6Yrg9bHs4ImKF+HZCEK+plBvnAZYSIQztknZF2qnzNtr6F8s0+IuptdlQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: true
 
@@ -6116,8 +6127,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-pwa@0.16.4(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0):
-    resolution: {integrity: sha512-lmwHFIs9zI2H9bXJld/zVTbCqCQHZ9WrpyDMqosICDV0FVnCJwniX1NMDB79HGTIZzOQkY4gSZaVTJTw6maz/Q==}
+  /vite-plugin-pwa@0.16.5(vite@4.4.9)(workbox-build@7.0.0)(workbox-window@7.0.0):
+    resolution: {integrity: sha512-Ahol4dwhMP2UHPQXkllSlXbihOaDFnvBIDPmAxoSZ1EObBUJGP4CMRyCyAVkIHjd6/H+//vH0DM2ON+XxHr81g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
@@ -6125,8 +6136,8 @@ packages:
       workbox-window: ^7.0.0
     dependencies:
       debug: 4.3.4
-      fast-glob: 3.2.12
-      pretty-bytes: 6.0.0
+      fast-glob: 3.3.1
+      pretty-bytes: 6.1.1
       vite: 4.4.9
       workbox-build: 7.0.0
       workbox-window: 7.0.0

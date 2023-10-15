@@ -1,6 +1,6 @@
-import type { VitePWAOptions } from 'vite-plugin-pwa'
+import type { PwaOptions } from '@vite-pwa/vitepress'
 
-export const pwa: Partial<VitePWAOptions> = {
+export const pwa: Partial<PwaOptions> = {
   outDir: '.vitepress/dist',
   registerType: 'prompt',
   includeManifestIcons: false,
@@ -100,6 +100,9 @@ export const pwa: Partial<VitePWAOptions> = {
     edge_side_panel: {
       preferred_width: 480,
     },
+  },
+  experimental: {
+    includeAllowlist: true,
   },
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,excalidraw}'],
