@@ -105,7 +105,7 @@ export const pwa: Partial<PwaOptions> = {
     includeAllowlist: true,
   },
   workbox: {
-    globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,excalidraw}', 'hashmap.json'],
+    globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,json,excalidraw}'],
     globIgnores: ['shortcuts/*.svg'],
     runtimeCaching: [
       {
