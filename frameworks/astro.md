@@ -1,5 +1,6 @@
 ---
 title: Astro | Frameworks
+outline: deep
 ---
 
 # Astro
@@ -287,7 +288,7 @@ If you have a `404` route, you can use it as the fallback navigation for your se
 When using `generateSW` strategy, configure the `404` route in the `workbox` pwa integration option:
 
 ```ts
-VitePWA({
+AstroPWA({
   workbox: { navigateFallback: '/404' }
 })
 ```
@@ -296,4 +297,35 @@ If you are using `injectManifest` strategy, configure the `404` route in the nav
 
 ```ts
 registerRoute(new NavigationRoute(createHandlerBoundToURL('/404')))
+```
+## Experimental
+
+### Directory and Trailing Slash Handler
+
+Check the problem in the following issue: https://github.com/vite-pwa/astro/issues/23.
+
+You can find a list of hosts and how they handle trailing slash in this [repository](https://github.com/slorber/trailing-slash-guide).
+
+To enable this feature, you need to add the following configuration to your PWA options:
+```ts
+import { defineConfig } from 'astro/config'
+import AstroPWA from '@vite-pwa/astro'
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [
+    AstroPWA({
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      }
+    })
+  ]
+})
+```
+
+If you're using `injectManifest` strategy, you also need to include `directoryIndex` and optionally `cleanURLs` in your custom service worker in the precaching controller:
+```ts
+import { precacheAndRoute } from 'workbox-precaching'
+
+precacheAndRoute(self.__WB_MANIFEST, { directoryIndex: 'index.html', cleanURLs: true })
 ```

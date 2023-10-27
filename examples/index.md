@@ -100,7 +100,7 @@ We provide the following examples projects:
 - [Preact](/examples/preact)
   - [Preact generateSW Router Examples](/examples/preact#generatesw): set of examples with disparate behaviors.
   - [Preact injectManifest Router Examples](/examples/preact#generatesw): set of examples with disparate behaviors.
-- [VitePress](/examples/vitepress)
+- [VitePress](/examples/vitepress).
 - [îles](/examples/iles): prompt for update.
-- [Astro](/examples/astro): coming soon (WIP).
+- [Astro](/examples/astro).
 

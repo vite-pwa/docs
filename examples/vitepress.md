@@ -12,5 +12,5 @@ The behavior used in this website is [Prompt for update](/guide/prompt-for-updat
 
 To run this site on your local, execute the following script from your shell (from root folder):
 ```shell
-pnpm run serve
+pnpm run preview
 ```
