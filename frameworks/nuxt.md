@@ -10,6 +10,8 @@ outline: deep
 This PWA module can only be used with Vite.
 :::
 
+You may be interested in the [Nuxt example](/examples/nuxt.html).
+
 ## Nuxt 3 Integration
 
 `vite-plugin-pwa` provides the new `@vite-pwa/nuxt` module that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
@@ -34,6 +36,11 @@ export default defineNuxtConfig({
   modules: ['@vite-pwa/nuxt'],
   pwa: {
     /* your pwa options */
+    manifest: {}, // set to generate manifest.webmanifest
+    workbox: {
+      navigateFallback: "/",
+      globPatterns: ["**/*.{js,css,html,json,ico,png,svg}"], // include json files offline.  See .output/public/_nuxt/builds/*.json
+    },
   }
 })
 ```
