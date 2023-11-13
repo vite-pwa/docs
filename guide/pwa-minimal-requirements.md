@@ -87,8 +87,9 @@ You can also use [PWA Builder Image Generator](https://www.pwabuilder.com/imageG
 
 For `manifest` icons entry, you will need to create `pwa-192x192.png`, and `pwa-512x512.png` icons. The icons specified above are the minimum required to meet PWA, that is, icons with `192x192` and `512x512` resolutions.
 
-We suggest you to create a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate your PWA icons:
+We suggest creating a svg or png icon (if it is a png icon, with the maximum resolution possible) for your application and use it to generate your PWA icons:
 - [PWA Assets Generator](/assets-generator/) (recommended).
+- [Favicon InBrowser.App](https://favicon.inbrowser.app/tools/favicon-generator) (recommended).
 - [Favicon Generator](https://realfavicongenerator.net/).
 
 For `mask-icon` in the entry point, use the svg or the png used to generate the favicon package.
