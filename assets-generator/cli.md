@@ -151,7 +151,7 @@ import {
   defineConfig,
   minimalPreset
 } from '@vite-pwa/assets-generator/config'
-import {minor} from "semver";
+import { minor } from "semver";
 
 export default defineConfig({
   preset: {
@@ -196,7 +196,7 @@ export const minimalPresetNoPadding: Preset = {
 ### PNG optimization/compression
 
 By default, all generated PNG files are optimized using:
-```ts
+```txt
 {
   compressionLevel: 9,
   quality: 60
@@ -340,7 +340,7 @@ export default defineConfig({
       name: (landscape, size, dark) => {
         return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${typeof dark === 'boolean' ? (dark ? 'dark-' : 'light-') : ''}${size.width}x${size.height}.png`
       }
-    }, 
+    },
     ['iPad Air 9.7"']
   ),
   images: ['public/logo.svg']
@@ -428,7 +428,7 @@ function createCustomAppleSplashScreens(
           name: (landscape, size, dark) => `iphone6-${landscape ? 'landscape' : 'portrait'}${dark ? '-dark' : ''}.png`
         }
       }
-      
+
       return size
     }),
     padding,

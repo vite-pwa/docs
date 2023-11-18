@@ -33,8 +33,6 @@ Or you can add the following reference in any of your `d.ts` files (for example,
 
 ```ts
 declare module 'virtual:pwa-register/preact' {
-  // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
-  // @ts-expect-error ignore when preact/hooks is not installed
   import type { StateUpdater } from 'preact/hooks'
   import type { RegisterSWOptions } from 'vite-plugin-pwa/types'
 

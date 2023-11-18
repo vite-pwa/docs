@@ -4,7 +4,7 @@ const firaFont = 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swa
 const googleapis = 'https://fonts.googleapis.com'
 const gstatic = 'https://fonts.gstatic.com'
 
-export const transformHead = async ({ pageData }: TransformContext): Promise<HeadConfig[]> => {
+export async function transformHead({ pageData }: TransformContext): Promise<HeadConfig[]> {
   const head: HeadConfig[] = []
 
   // prefetch fira font
