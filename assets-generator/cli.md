@@ -151,7 +151,6 @@ import {
   defineConfig,
   minimalPreset
 } from '@vite-pwa/assets-generator/config'
-import { minor } from "semver";
 
 export default defineConfig({
   preset: {
