@@ -17,7 +17,7 @@ From version `0.14.5` you can also use types definition for vue instead of `vite
 {
   "compilerOptions": {
     "types": [
-       "vite-plugin-pwa/vue"
+      "vite-plugin-pwa/vue"
     ]
   }
 }
@@ -31,8 +31,6 @@ Or you can add the following reference in any of your `d.ts` files (for example,
 
 ```ts
 declare module 'virtual:pwa-register/vue' {
-  // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error  
-  // @ts-expect-error ignore when vue is not installed
   import type { Ref } from 'vue'
   import type { RegisterSWOptions } from 'vite-plugin-pwa/types'
 
@@ -61,7 +59,7 @@ const {
   updateServiceWorker,
 } = useRegisterSW()
 
-const close = async () => {
+async function close() {
   offlineReady.value = false
   needRefresh.value = false
 }
@@ -182,7 +180,6 @@ export default {
     catch {
       console.log('PWA disabled.')
     }
-
   },
   methods: {
     async closePromptUpdateSW() {

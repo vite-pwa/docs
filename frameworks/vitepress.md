@@ -73,10 +73,10 @@ export default {
 import { onBeforeMount, ref } from 'vue'
 
 const offlineReady = ref(false)
-const onOfflineReady = () => {
+function onOfflineReady() {
   offlineReady.value = true
 }
-const close = async () => {
+async function close() {
   offlineReady.value = false
 }
 
@@ -86,7 +86,6 @@ onBeforeMount(async () => {
     immediate: true,
     onOfflineReady,
     onRegistered() {
-
       console.info('Service Worker registered')
     },
     onRegisterError(e) {
@@ -175,13 +174,13 @@ const needRefresh = ref(false)
 
 let updateServiceWorker: (() => Promise<void>) | undefined
 
-const onOfflineReady = () => {
+function onOfflineReady() {
   offlineReady.value = true
 }
-const onNeedRefresh = () => {
+function onNeedRefresh() {
   needRefresh.value = true
 }
-const close = async () => {
+async function close() {
   offlineReady.value = false
   needRefresh.value = false
 }
@@ -193,7 +192,6 @@ onBeforeMount(async () => {
     onOfflineReady,
     onNeedRefresh,
     onRegistered() {
-
       console.info('Service Worker registered')
     },
     onRegisterError(e) {

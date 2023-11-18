@@ -67,6 +67,10 @@ const Guide: DefaultTheme.SidebarItem[] = [
     link: '/guide/cookbook',
   },
   {
+    text: 'Breaking Changes',
+    link: '/guide/breaking-changes',
+  },
+  {
     text: 'FAQ',
     link: '/guide/faq',
   },

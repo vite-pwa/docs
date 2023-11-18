@@ -125,10 +125,10 @@ then, the web manifest link will be added to your HTML pages:
 const { $pwa } = useNuxtApp()
 
 const toast = useToast()
+
 onMounted(() => {
-  if ($pwa.offlineReady) {
+  if ($pwa.offlineReady)
     toast.success('App ready to work offline')
-  }
 })
 </script>
 

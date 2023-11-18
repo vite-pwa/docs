@@ -16,7 +16,7 @@ Your application entry point (usually `index.html`) **must** have the following 
 - mobile viewport configuration
 - a title
 - a description
-- a favicon: check the following page https://www.leereamsnyder.com/blog/favicons-in-2021
+- a favicon, check the following pages: https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7 and this old one https://www.leereamsnyder.com/blog/favicons-in-2021
 - a link for `apple-touch-icon`
 - a link for `mask-icon` (right now there is no need to provide a `mask-icon`)
 - a meta entry for `theme-color`
@@ -50,6 +50,7 @@ To configure the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web
 Following with the example, here a minimal configuration (you must provide all the icons and images):
 ```ts
 import { VitePWA } from 'vite-plugin-pwa'
+
 export default defineConfig({
   plugins: [
     VitePWA({
