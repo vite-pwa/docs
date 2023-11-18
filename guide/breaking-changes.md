@@ -22,7 +22,7 @@ Rollup 4 has changed the asset name layout format, it is using `base64` encoding
 
 This change breaks the way `vite-plugin-pwa` build plugin builds the service worker, since it is using this regular expression `/[.-][a-f0-9]{8}\./` for [dontCacheBustURLsMatching](https://developer.chrome.com/docs/workbox/reference/workbox-build/) in `workbox` and `injectManifest` options.
 
-In version `v0.17.0`, `vite-plugin-pwa` configures `dontCacheBustURLsMatching` with a regular expression using the [build.assetsDir](https://vitejs.dev/config/build-options.html#build-assetsdir) Vite's option (defaults to `assets`):
+In version `v0.17.0`, `vite-plugin-pwa` configures `dontCacheBustURLsMatching` with a regular expression using the Vite's [build.assetsDir](https://vitejs.dev/config/build-options.html#build-assetsdir) option (defaults to `assets`):
 - `workbox.dontCacheBustURLsMatching = /^assets\//`
 - `injectManifest.dontCacheBustURLsMatching = /^assets\//`
 
@@ -30,7 +30,7 @@ You can refer to this issue for more details about `dontCacheBustURLsMatching`: 
 
 ## @vite-pwa/vitepress
 
-In version `v0.3.0`, `@vite-pwa/vitepress` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using [build.assetsDir](https://vitepress.dev/reference/site-config#assetsdir) VitePress' option.
+In version `v0.3.0`, `@vite-pwa/vitepress` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the VitePress' [assetsDir](https://vitepress.dev/reference/site-config#assetsdir) option.
 
 ## Other integrations
 
