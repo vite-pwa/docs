@@ -22,9 +22,9 @@ In a future, if you want to add the PWA again to your application, you only need
 
 If you want to remove the current deployed service worker but installing a new one, don't use `selfDestroying`:
 - create a new JavaScript file with the current deployed service worker name in the `public` folder, check the example below
-- change filename in the PWA configuration (this will generate a new service worker with the new name)
+- change `filename` in the PWA configuration (this will generate a new service worker with the new name)
 
-For example, if you don't specify the `filename`, the service worker name will be `sw.js`. Change the `filename` PWA option to `service-worker.js` or other name different to `sw.js`, then add the following code to `public/sw.js` JavasScript file (the current deployed service worker):
+For example, if you don't specify the `filename`, the service worker name will be `sw.js` (default). Change the `filename` PWA option to `service-worker.js` or other name different to `sw.js`, then add the following code to `public/sw.js` file (the current deployed service worker):
 
 ```js
 // public/sw.js
