@@ -9,7 +9,7 @@ If you want to unregister the service worker from your PWA application, you only
 `vite-plugin-pwa` plugin will create a new special service worker and replace the existing one in your application once deployed in production: it has to be put in the place of the previous broken/unwanted service worker, with the same name.
 
 ::: info
-From version `0.17.2+`, the service worker will remove all cache storage entries. 
+From version `0.17.2+`, the service worker will delete all of its cache storage entries.
 :::
 
 ::: danger
@@ -54,6 +54,7 @@ self.addEventListener('activate', (e) => {
 ```
 
 You can repeat the above process as many times as necessary, **remember not to delete** any service worker from the public directory (you don't know what version the users of your application have installed).
+
 ## Development
 
 You can also check the `selfDestroying` plugin option in the dev server with development options enabled: check [Development section](/guide/development) for more info.
