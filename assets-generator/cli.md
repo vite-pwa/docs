@@ -28,7 +28,7 @@ This package is shipped with the `@vite-pwa/assets-generator` package:
 ## Usage
 
 ```bash
-$ pwa-asset-generator [options] [sources]
+$ pwa-assets-generator [options] [sources]
 ```
 
 :::info
@@ -116,7 +116,7 @@ export const minimalPreset: Preset = {
 
 Then run the CLI from the command line:
 ```bash
-$ pwa-asset-generator
+$ pwa-assets-generator
 ```
 
 or configure it in your `package.json` and run it via your package manager from the command line:
