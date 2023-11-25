@@ -74,7 +74,7 @@ You can enable `registerWebManifestInRouteRules` property in PWA configuration t
 
 ## Payload Extraction <Badge type="tip" text="from v0.3.1+" /> <Badge type="info" text="offline support" />
 
-When you enable the experimental `payload` flag in your Nuxt configuration file, `@vite-pwa/nuxt` will add `**/_payload.json` to the `globPatterns` array inside `workbox` or `injectManifest` option, depending on the configured  `strategy`.
+When you enable the experimental `payloadExtraction` flag in your Nuxt configuration file, `@vite-pwa/nuxt` will add `**/_payload.json` to the `globPatterns` array inside `workbox` or `injectManifest` option, depending on the configured  `strategy`.
 
 ## App Manifest <Badge type="tip" text="from v0.3.1+" /> <Badge type="tip" text="from Nuxt v3.8+" /> <Badge type="info" text="offline support" />
 
