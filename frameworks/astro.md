@@ -5,6 +5,8 @@ outline: deep
 
 # Astro
 
+<BreakingChanges />
+
 ::: warning
 You will need to update your application to use Vite ^3.1.0 and latest `vite-plugin-pwa` 0.13.1+.
 :::

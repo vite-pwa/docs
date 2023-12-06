@@ -6,6 +6,8 @@ outline: deep
 
 # Nuxt 3
 
+<BreakingChanges />
+
 ::: warning
 This PWA module can only be used with Vite.
 :::
