@@ -66,6 +66,10 @@ You can disable this plugin by setting `pwa.client.registerPlugin` property to `
 This is the initial release of `@vite-pwa/nuxt` integration, we're working to improve it and add more features.
 :::
 
+### PWA Installation Status <Badge type="tip" text="from v0.3.5+" />
+
+`@vite-pwa/nuxt` provides the new `$pwa?.isPWAInstalled` reactive property to check if your PWA application is installed.
+
 ## Registering Web Manifest
 
 To register the PWA web manifest in your Nuxt 3 application, `@vite-pwa/nuxt` provides the functional components `VitePwaManifest` and `NuxtPwaManifest`, you should add one of them to your `app.vue` or to all of your layouts (add only `VitePwaManifest` or `NuxtPwaManifest`).
@@ -88,7 +92,14 @@ When you enable the experimental `appManifest` flag in your Nuxt configuration f
 
 ```ts
 export interface PwaInjection {
+  /**
+   * @deprecated use `isPWAInstalled` instead
+   */
   isInstalled: boolean
+  /**
+   * From version v0.3.5+. 
+   */  
+  isPWAInstalled: Ref<boolean>
   showInstallPrompt: Ref<boolean>
   cancelInstall: () => void
   install: () => Promise<void>
