@@ -116,6 +116,10 @@ const AssetsGenerator: DefaultTheme.SidebarItem[] = [
     text: 'API',
     link: '/assets-generator/api',
   },
+  {
+    text: 'Migrations',
+    link: '/assets-generator/migrations',
+  },
 ]
 
 const Frameworks: DefaultTheme.SidebarItem[] = [

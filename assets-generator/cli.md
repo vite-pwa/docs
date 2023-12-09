@@ -55,14 +55,14 @@ All PWA assets will be generated in the same source folder.
 
 ## Options
 
-| Options                      |                                                                                       |
-|------------------------------|---------------------------------------------------------------------------------------|
-| `-v, --version`              | Display version number                                                                |
-| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                  |
-| `-c, --config <path>`        | Path to config file                                                                   |
-| `-p, --preset <preset-name>` | Built-in preset name: `minimal`, `minimal-2023`, `android`, `windows`, `ios` or `all` |
-| `-o, --override`             | Override assets? Defaults to true                                                     |
-| `-h, --help`                 | Display available CLI options                                                         |
+| Options                      |                                                                                                 |
+|------------------------------|-------------------------------------------------------------------------------------------------|
+| `-v, --version`              | Display version number                                                                          |
+| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                            |
+| `-c, --config <path>`        | Path to config file                                                                             |
+| `-p, --preset <preset-name>` | Built-in preset name: `minimal` (default), `minimal-2023`, `android`, `windows`, `ios` or `all` |
+| `-o, --override`             | Override assets? Defaults to true                                                               |
+| `-h, --help`                 | Display available CLI options                                                                   |
 
 ## Presets
 

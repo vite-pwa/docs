@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Frameworks
-prev: API | PWA Assets Generator
+prev: Migrations | PWA Assets Generator
 ---
 
 # Getting Started
