@@ -136,7 +136,9 @@ or configure it in your `package.json` and run it via your package manager from 
 
 From version `v0.1.0`, the `@vite-pwa/assets-generator` CLI will generate the favicon and apple touch icon links.
 
-You will need to include the new `headLinkOptions` option in your configuration file to configure the new preset `2023` layout for your favicons and apple touch icon links:
+If you're using any of the built-in presets from the CLI, the preset will be auto-detected.
+
+If you're using the configuration file, you will need to include the new `headLinkOptions` option in your configuration file to configure the new preset `2023` layout for your favicons and apple touch icon links:
 ```ts
 export interface HeadLinkOptions {
   /**
@@ -163,8 +165,6 @@ export interface HeadLinkOptions {
   resolveSvgName?: (name: string) => string
 }
 ```
-
-If you're using any of the built-in presets, the preset will be auto detected.
 
 ### PNG output names
 
