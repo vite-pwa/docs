@@ -19,7 +19,7 @@ Remember to check the changes before upgrading to a new version in your local en
 
 ## From `minimal` to `minimal-2023` Preset
 
-Update your script in `package.json` from:
+If you are using `pwa-assets-generator` in your `package.json` scripts, update the script from:
 ```json
 "generate-assets": "pwa-assets-generator --preset minimal <your-logo-path>"
 ```
@@ -27,6 +27,8 @@ to:
 ```json
 "generate-assets": "pwa-assets-generator --preset minimal-2023 <your-logo-path>"
 ```
+
+If you are using a configuration file, update the built-in preset name or update the import to use `minimal2023Preset`: check the code snippets in the [built-in features section](/assets-generator/cli#built-in-features).
 
 The new `minimal-2023` preset changes only the `favicon.ico` size, the `apple-touch-icon` and PWA manifest icons are the same, you need to update your html head favicon entries, from:
 ```html
