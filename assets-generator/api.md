@@ -35,9 +35,9 @@ The CLI has been rebuilt on top of the API, you can check the [CLI documentation
 
 ### generateFavicon
 
-### createAppleTouchStartHtmlLink
-
 ### createFaviconHtmlLink
+
+### createAppleTouchStartHtmlLink
 
 ### createAppleSplashScreenHtmlLink
 
