@@ -97,14 +97,14 @@ export default defineConfig({
 CLI options will override the configuration file options.
 :::
 
-You can use one of the built-in presets or just define your own, this is the [minimal preset](https://github.com/vite-pwa/assets-generator/tree/main/src/presets/minimal.ts) definition:
+You can use one of the built-in presets or just define your own, this is the [minimal-2023 preset](https://github.com/vite-pwa/assets-generator/tree/main/src/presets/minimal-2023.ts) definition:
 ```ts
 import type { Preset } from '@vite-pwa/assets-generator/config';
 
-export const minimalPreset: Preset = {
+export const minimal2023Preset: Preset = {
   transparent: {
     sizes: [64, 192, 512],
-    favicons: [[64, 'favicon.ico']]
+    favicons: [[48, 'favicon.ico']]
   },
   maskable: {
     sizes: [512]
@@ -150,12 +150,12 @@ You can override the PNG output names providing custom `assetName` option:
 ```ts
 import {
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     assetName: (type: AssetType, size: ResolvedAssetSize) => {
       /* your logic here */
     }
@@ -179,7 +179,7 @@ import type { Preset } from '@vite-pwa/assets-generator/config';
 export const minimalPresetNoPadding: Preset = {
   transparent: {
     sizes: [64, 192, 512],
-    favicons: [[64, 'favicon.ico']],
+    favicons: [[48, 'favicon.ico']],
     padding: 0
   },
   maskable: {
@@ -207,12 +207,12 @@ You can provide your optimization options using `png` option, check the options 
 ```ts
 import {
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     png: {
       compressionLevel: 9,
       quality: 85
@@ -264,12 +264,12 @@ For example, if you want to generate splash screens for `iPad Air 9.7"` device, 
 import {
   createAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     appleSplashScreens: createAppleSplashScreens({
       padding: 0.3,
       resizeOptions: { background: 'white', fit: 'contain' },
@@ -308,12 +308,12 @@ You can also use `combinePresetAndAppleSplashScreens` to combine the preset and 
 import {
   combinePresetAndAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
   preset: combinePresetAndAppleSplashScreens(
-    minimalPreset, {
+    minimal2023Preset, {
       padding: 0.3,
       resizeOptions: { background: 'white', fit: 'contain' },
       // by default, dark splash screens are exluded
@@ -354,11 +354,11 @@ If you also want to generate `dark` splash screens, you can provide an empty `da
 import {
   combinePresetAndAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
-  preset: combinePresetAndAppleSplashScreens(minimalPreset, {
+  preset: combinePresetAndAppleSplashScreens(minimal2023Preset, {
     // dark splash screens using black background (the default)
     darkResizeOptions: { background: 'black', fit: 'contain' },
     // or using a custom background color
@@ -396,7 +396,7 @@ import {
   type AppleDeviceSize,
   appleSplashScreenSizes,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 const devices: AppleDeviceName[] = ['iPad Air 9.7"', 'iPhone 6']
@@ -441,7 +441,7 @@ function createCustomAppleSplashScreens(
 
 export default defineConfig({
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     appleSplashScreens: createCustomAppleSplashScreens({
       padding: 0.5,
       darkResizeOptions: { background: '#1f1f1f' },
