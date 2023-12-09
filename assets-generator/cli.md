@@ -37,14 +37,14 @@ The source files should be relative to `root`.
 
 Example using command line:
 ```bash
-$ pwa-assets-generator --preset minimal public/logo.svg
+$ pwa-assets-generator --preset minimal-2023 public/logo.svg
 ```
 
 or using package configuration:
 ```json
 {
   "scripts": {
-    "generate-pwa-assets": "pwa-assets-generator --preset minimal public/logo.svg"
+    "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/logo.svg"
   }
 }
 ```
@@ -55,19 +55,20 @@ All PWA assets will be generated in the same source folder.
 
 ## Options
 
-| Options                      |                                                                       |
-|------------------------------|-----------------------------------------------------------------------|
-| `-v, --version`              | Display version number                                                |
-| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                  |
-| `-c, --config <path>`        | Path to config file                                                   |
-| `-p, --preset <preset-name>` | Built-in preset name: `minimal`, `android`, `windows`, `ios` or `all` |
-| `-o, --override`             | Override assets? Defaults to true                                     |
-| `-h, --help`                 | Display available CLI options                                         |
+| Options                      |                                                                                       |
+|------------------------------|---------------------------------------------------------------------------------------|
+| `-v, --version`              | Display version number                                                                |
+| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                  |
+| `-c, --config <path>`        | Path to config file                                                                   |
+| `-p, --preset <preset-name>` | Built-in preset name: `minimal`, `minimal-2023`, `android`, `windows`, `ios` or `all` |
+| `-o, --override`             | Override assets? Defaults to true                                                     |
+| `-h, --help`                 | Display available CLI options                                                         |
 
 ## Presets
 
 PWA Assets Generator has 5 built-in presets, check out the [preset definition](https://github.com/vite-pwa/assets-generator/tree/main/src/preset.ts) and [types definition](https://github.com/vite-pwa/assets-generator/tree/main/src/types.ts):
-- Minimal Preset (`minimal`)
+- Minimal Preset 2023 (`minimal-2023`) <Badge type="tip" text="New from v0.1.0" />
+- Minimal Preset (`minimal`) <Badge type="danger" text="Deprecated from v0.1.0" />
 - iOS Preset (`ios`): (WIP)
 - Windows Preset (`windows`): (WIP)
 - Android Preset (`android`): (WIP)
@@ -83,7 +84,7 @@ Create a `pwa-assets.config.js` or `pwa-assets.config.ts` configuration file in 
 ```ts
 import {
   defineConfig,
-  minimalPreset as preset
+  minimalPreset2023 as preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
