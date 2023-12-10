@@ -33,18 +33,6 @@ As mentioned previously, the API is low-level, it means that you have to handle 
 
 The CLI has been rebuilt on top of the API, you can check the [CLI documentation](/assets-generator/cli) for more details about the default values.
 
-### generateFavicon
+The API can be found in the [api folder](https://github.com/vite-pwa/assets-generator/tree/main/src/api) and the [JSDOCS documentationJSDOCS](https://paka.dev/npm/@vite-pwa/assets-generator).
 
-### createFaviconHtmlLink
 
-### createAppleTouchIconHtmlLink
-
-### createAppleSplashScreenHtmlLink
-
-### generateMaskableAsset
-
-### generateTransparentAsset
-
-### extractAssetSize <Badge type="info" text="helper" />
-
-### createSharp <Badge type="info" text="helper" />
