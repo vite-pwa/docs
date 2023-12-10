@@ -1,6 +1,7 @@
 ---
 title: Getting Started | PWA Assets Generator
 prev: FAQ | Guide
+outline: deep
 ---
 
 # Getting Started
@@ -25,11 +26,25 @@ As pointed out in [PWA Minimal Requirements](/guide/pwa-minimal-requirements), y
 - a 180x180 icon for iOS/MacOS (html head link: `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`)
 
 We also suggest you to include:
-- A 64x64 icon for Windows (Edge)
-- A 512x512 icon for Android with `purpose: 'any'`
+- A 64x64 icon for Windows (Edge) (PWA Manifest icon)
+- A 512x512 icon for Android with `purpose: 'any'` (PWA Manifest icon)
 - Avoid using `purpose: 'any maskable'` icon, as it is not supported by all browsers
-- A `favicon.ico` with a size of 64x64 and register it in the html head using `<link rel="icon" href="/favicon.ico" sizes="any">`
-- A `favicon.svg` and register it in the html head using `<link rel="icon" href="/favicon.svg" type="image/svg+xml">`
+- An `favicon.ico` and `favicon.svg`, check [Preset Minimal 2023](#preset-minimal-2023) for more details
+
+### Preset Minimal 2023 <Badge type="tip" text="New from v0.1.0" />
+
+Refer to [Definitive edition of "How to Favicon" in 2023](https://dev.to/masakudamatsu/favicon-nightmare-how-to-maintain-sanity-3al7) for more details.
+
+Our minimal recommendation is:
+- transparent 48x48 ico: register it in the html head: `<link rel="icon" href="/favicon.ico" sizes="48x48">`
+- Use SVG image as source image: register it in the html head: `<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">`
+- transparent 64x64 icon (PWA Manifest icon)
+- transparent 192x192 icon (PWA Manifest icon)
+- transparent 512x512 icon with `purpose: 'any'` (PWA Manifest icon)
+- white 512x512 icon with `purpose: 'maskable'` (PWA Manifest icon): background color can be customized to your needs
+- white 180x180 icon for iOS/MacOS (html head link: `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`): background color can be customized to your needs
+
+### Preset Minimal <Badge type="danger" text="Deprecated from v0.1.0" />
 
 Our minimal recommendation is:
 - transparent 64x64 ico: register it in the html head: `<link rel="icon" href="/favicon.ico" sizes="any">`
@@ -42,7 +57,7 @@ Our minimal recommendation is:
 
 ## Example using minimal preset
 
-You can generate icons using the `minimal` preset included in [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator) package via a source image, check out the [CLI](/assets-generator/cli) and [API](/assets-generator/api) documentation for more details.
+You can generate icons using the `minimal-2023` preset included in [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator) package via a source image, check out the [CLI](/assets-generator/cli) and [API](/assets-generator/api) documentation for more details.
 
 Update your PWA manifest icons entry with:
 ```ts
@@ -73,6 +88,19 @@ icons: [
 ```
 
 and use the following HTML head entries in your entry point:
+
+### Using Preset Minimal 2023 <Badge type="tip" text="New from v0.1.0" />
+
+```html
+<head>
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+</head>
+```
+
+### Using Preset Minimal <Badge type="danger" text="Deprecated from v0.1.0" />
+
 ```html
 <head>
   <link rel="icon" href="/favicon.ico" sizes="any">

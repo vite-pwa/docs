@@ -37,14 +37,14 @@ The source files should be relative to `root`.
 
 Example using command line:
 ```bash
-$ pwa-assets-generator --preset minimal public/logo.svg
+$ pwa-assets-generator --preset minimal-2023 public/logo.svg
 ```
 
 or using package configuration:
 ```json
 {
   "scripts": {
-    "generate-pwa-assets": "pwa-assets-generator --preset minimal public/logo.svg"
+    "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/logo.svg"
   }
 }
 ```
@@ -55,19 +55,20 @@ All PWA assets will be generated in the same source folder.
 
 ## Options
 
-| Options                      |                                                                       |
-|------------------------------|-----------------------------------------------------------------------|
-| `-v, --version`              | Display version number                                                |
-| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                  |
-| `-c, --config <path>`        | Path to config file                                                   |
-| `-p, --preset <preset-name>` | Built-in preset name: `minimal`, `android`, `windows`, `ios` or `all` |
-| `-o, --override`             | Override assets? Defaults to true                                     |
-| `-h, --help`                 | Display available CLI options                                         |
+| Options                      |                                                                                                 |
+|------------------------------|-------------------------------------------------------------------------------------------------|
+| `-v, --version`              | Display version number                                                                          |
+| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                            |
+| `-c, --config <path>`        | Path to config file                                                                             |
+| `-p, --preset <preset-name>` | Built-in preset name: `minimal` (default), `minimal-2023`, `android`, `windows`, `ios` or `all` |
+| `-o, --override`             | Override assets? Defaults to true                                                               |
+| `-h, --help`                 | Display available CLI options                                                                   |
 
 ## Presets
 
 PWA Assets Generator has 5 built-in presets, check out the [preset definition](https://github.com/vite-pwa/assets-generator/tree/main/src/preset.ts) and [types definition](https://github.com/vite-pwa/assets-generator/tree/main/src/types.ts):
-- Minimal Preset (`minimal`)
+- Minimal Preset 2023 (`minimal-2023`) <Badge type="tip" text="New from v0.1.0" />
+- Minimal Preset (`minimal`) <Badge type="danger" text="Deprecated from v0.1.0" />
 - iOS Preset (`ios`): (WIP)
 - Windows Preset (`windows`): (WIP)
 - Android Preset (`android`): (WIP)
@@ -83,10 +84,13 @@ Create a `pwa-assets.config.js` or `pwa-assets.config.ts` configuration file in 
 ```ts
 import {
   defineConfig,
-  minimalPreset as preset
+  minimalPreset2023 as preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset,
   images: ['public/logo.svg']
 })
@@ -96,14 +100,14 @@ export default defineConfig({
 CLI options will override the configuration file options.
 :::
 
-You can use one of the built-in presets or just define your own, this is the [minimal preset](https://github.com/vite-pwa/assets-generator/tree/main/src/presets/minimal.ts) definition:
+You can use one of the built-in presets or just define your own, this is the [minimal-2023 preset](https://github.com/vite-pwa/assets-generator/tree/main/src/presets/minimal-2023.ts) definition:
 ```ts
 import type { Preset } from '@vite-pwa/assets-generator/config';
 
-export const minimalPreset: Preset = {
+export const minimal2023Preset: Preset = {
   transparent: {
     sizes: [64, 192, 512],
-    favicons: [[64, 'favicon.ico']]
+    favicons: [[48, 'favicon.ico']]
   },
   maskable: {
     sizes: [512]
@@ -128,6 +132,40 @@ or configure it in your `package.json` and run it via your package manager from 
 }
 ```
 
+### Favicon and Apple Touch Icon Links <Badge type="tip" text="New from v0.1.0" />
+
+From version `v0.1.0`, the `@vite-pwa/assets-generator` CLI will generate the favicon and apple touch icon links.
+
+If you're using any of the built-in presets from the CLI, the preset will be auto-detected.
+
+If you're using the configuration file, you will need to include the new `headLinkOptions` option in your configuration file to configure the new preset `2023` layout for your favicons and apple touch icon links:
+```ts
+export interface HeadLinkOptions {
+  /**
+   * Base path to generate the html head links.
+   *
+   * @default '/'
+   */
+  basePath?: string
+  /**
+   * The preset to use.
+   *
+   * If using the built-in presets from CLI (`minimal` or `minimal-2023`), this option will be ignored (will be set to `default` or `2023` for `minimal` and `minimal-2023` respectively).
+   *
+   * @default 'default'
+   */
+  preset?: HtmlLinkPreset
+  /**
+   * By default, the SVG favicon will use the SVG file name as the name.
+   *
+   * For example, if you provide `public/logo.svg` as the image source, the name will be `<basePath>logo.svg`.
+   *
+   * @param name The name of the SVG icons.
+   */
+  resolveSvgName?: (name: string) => string
+}
+```
+
 ### PNG output names
 
 The PNG files names will be generated using the following function (can be found in [utils module](https://github.com/vite-pwa/assets-generator/tree/main/src/utils.ts)):
@@ -149,12 +187,15 @@ You can override the PNG output names providing custom `assetName` option:
 ```ts
 import {
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     assetName: (type: AssetType, size: ResolvedAssetSize) => {
       /* your logic here */
     }
@@ -178,7 +219,7 @@ import type { Preset } from '@vite-pwa/assets-generator/config';
 export const minimalPresetNoPadding: Preset = {
   transparent: {
     sizes: [64, 192, 512],
-    favicons: [[64, 'favicon.ico']],
+    favicons: [[48, 'favicon.ico']],
     padding: 0
   },
   maskable: {
@@ -206,12 +247,15 @@ You can provide your optimization options using `png` option, check the options 
 ```ts
 import {
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     png: {
       compressionLevel: 9,
       quality: 85
@@ -230,6 +274,10 @@ For example, if you want to generate a `48x48` favicon using the default preset,
 import { defineConfig } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  /* remember to include the preset for favicons and apple touch icon */
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: {
     transparent: {
       sizes: [64, 192, 512],
@@ -263,12 +311,15 @@ For example, if you want to generate splash screens for `iPad Air 9.7"` device, 
 import {
   createAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     appleSplashScreens: createAppleSplashScreens({
       padding: 0.3,
       resizeOptions: { background: 'white', fit: 'contain' },
@@ -307,12 +358,15 @@ You can also use `combinePresetAndAppleSplashScreens` to combine the preset and 
 import {
   combinePresetAndAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: combinePresetAndAppleSplashScreens(
-    minimalPreset, {
+    minimal2023Preset, {
       padding: 0.3,
       resizeOptions: { background: 'white', fit: 'contain' },
       // by default, dark splash screens are exluded
@@ -353,11 +407,14 @@ If you also want to generate `dark` splash screens, you can provide an empty `da
 import {
   combinePresetAndAppleSplashScreens,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
-  preset: combinePresetAndAppleSplashScreens(minimalPreset, {
+  headLinkOptions: {
+    preset: '2023'
+  },
+  preset: combinePresetAndAppleSplashScreens(minimal2023Preset, {
     // dark splash screens using black background (the default)
     darkResizeOptions: { background: 'black', fit: 'contain' },
     // or using a custom background color
@@ -395,7 +452,7 @@ import {
   type AppleDeviceSize,
   appleSplashScreenSizes,
   defineConfig,
-  minimalPreset
+  minimal2023Preset
 } from '@vite-pwa/assets-generator/config'
 
 const devices: AppleDeviceName[] = ['iPad Air 9.7"', 'iPhone 6']
@@ -439,8 +496,11 @@ function createCustomAppleSplashScreens(
 }
 
 export default defineConfig({
+  headLinkOptions: {
+    preset: '2023'
+  },
   preset: {
-    ...minimalPreset,
+    ...minimal2023Preset,
     appleSplashScreens: createCustomAppleSplashScreens({
       padding: 0.5,
       darkResizeOptions: { background: '#1f1f1f' },
