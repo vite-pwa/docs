@@ -29,7 +29,7 @@ This package is shipped with the `@vite-pwa/assets-generator` package:
 
 ## API
 
-As mentioned previously, the API is low-level, it means that you have to handle the default values yourself: you can check the default values in the [defauls.ts](https://github.com/vite-pwa/assets-generator/tree/main/src/api/default.ts) module.
+As mentioned previously, the API is low-level, it means that you have to handle the default values yourself: you can check the default values in the [defaults.ts](https://github.com/vite-pwa/assets-generator/tree/main/src/api/defaults.ts) module.
 
 The CLI has been rebuilt on top of the API, you can check the [CLI documentation](/assets-generator/cli) for more details about the default values.
 
