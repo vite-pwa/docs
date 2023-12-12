@@ -26,6 +26,7 @@ The main changes included in version `v0.2.0` are:
 - new `@vite-pwa/assets-generator/api/instructions` package export: new `instructions` function to collect the icon assets instructions.
 - new `@vite-pwa/assets-generator/api/generate-assets` package export: new `generateAssets` function to generate icon assets from an instruction.
 - new `@vite-pwa/assets-generator/api/generate-html-markup` package export: new `generateHtmlMarkup` function to generate all html head links from an instruction.
+- new `@vite-pwa/assets-generator/api/generate-manifest-icons-entry` package export: new `generateManifestIconsEntry` function to generate the PWA web manifest icons' entry.
 - new CLI options for html head links generation: `xhtml` and `includeId`.
 
 If you are using `generatePWAImageAssets` and/or `generatePWAAssets` functions, you need to update your code to use the new `instructions` and `generateAssets` functions.
