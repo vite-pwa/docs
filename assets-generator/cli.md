@@ -84,7 +84,7 @@ Create a `pwa-assets.config.js` or `pwa-assets.config.ts` configuration file in 
 ```ts
 import {
   defineConfig,
-  minimalPreset2023 as preset
+  minimal2023Preset as preset
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
