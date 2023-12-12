@@ -17,6 +17,23 @@ Remember to check the changes before upgrading to a new version in your local en
 - upgrade the package to the new version and regenerate the PWA assets
 - start the new version in your local server, refresh your application to check the new PWA assets
 
+## From `v0.1.0` to `v0.2.0`
+
+The `api` and the core has been built from scratch, the CLI has been rebuilt on top of the API.
+
+The main changes included in version `v0.2.0` are:
+- `generatePWAImageAssets` and  `generatePWAAssets` functions have been removed from `@vite-pwa/assets-generator` package export: now the package only export types and some utilities.
+- new `@vite-pwa/assets-generator/api/instructions` package export: new `instructions` function to collect the icon assets instructions.
+- new `@vite-pwa/assets-generator/api/generate-assets` package export: new `generateAssets` function to generate icon assets from an instruction.
+- new `@vite-pwa/assets-generator/api/generate-html-markup` package export: new `generateHtmlMarkup` function to generate all html head links from an instruction.
+- new CLI options for html head links generation: `xhtml` and `includeId`.
+
+If you are using `generatePWAImageAssets` and/or `generatePWAAssets` functions, you need to update your code to use the new `instructions` and `generateAssets` functions.
+
+If you're only using the CLI, you don't need to change anything.
+
+For more details about the new version `v0.2.0`, check [this comment](https://github.com/vite-pwa/assets-generator/issues/20#issuecomment-1848382903) in the repository.
+
 ## From `minimal` to `minimal-2023` Preset
 
 If you are using `pwa-assets-generator` in your `package.json` scripts, update the script from:

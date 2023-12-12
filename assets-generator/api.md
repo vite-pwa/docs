@@ -5,9 +5,7 @@ outline: deep
 
 # PWA Assets Generator API
 
-From `v0.1.0`, `@vite-pwa/assets-generator` is shipped with a CLI and an API (low-level api).
-
-`@vite-pwa/assets-generator` is bundler/framework agnostic, you can use it in any project: right now, there is no integration available, we're working on this (stay tuned).
+From `v0.2.0`, `@vite-pwa/assets-generator` is shipped with a CLI, an API (low-level api): refer to [API](#api) for more details.
 
 The API can be found in the [api folder](https://github.com/vite-pwa/assets-generator/tree/main/src/api).
 
@@ -29,10 +27,27 @@ This package is shipped with the `@vite-pwa/assets-generator` package:
 
 ## API
 
+From version `v0.2.0`, `@vite-pwa/assets-generator` exposes the following packages:
+- new `@vite-pwa/assets-generator/api`: low-level functions api.
+- new `@vite-pwa/assets-generator/api/instructions`: `instructions` function to collect the icon assets instructions.
+- new `@vite-pwa/assets-generator/api/generate-assets`: `generateAssets` function to generate icon assets from an instruction.
+- new `@vite-pwa/assets-generator/api/generate-html-markup`: `generateHtmlMarkup` function to generate all html head links from an instruction.
+
+The API can be found in the [api folder](https://github.com/vite-pwa/assets-generator/tree/main/src/api) and the [JSDOCS documentation](https://paka.dev/npm/@vite-pwa/assets-generator).
+
+If you need to generate the PWA assets from your own code, you can use the `instructions`, `generateHtmlMarkup` and `generateAssets` functions:
+1) [instructions](https://github.com/vite-pwa/assets-generator/tree/main/src/api/instructions.ts): collect the icon assets instructions, provides function helpers to generate each icon asset as a `Buffer` and html head links with `string` and `object` notation.
+2) [generateAssets](https://github.com/vite-pwa/assets-generator/tree/main/src/api/generate-assets.ts): once you collect the icon assets instructions, you can use this function to save all the icon assets to the file system.
+3) [generateHtmlMarkup](https://github.com/vite-pwa/assets-generator/tree/main/src/api/generate-html-markup.ts): once you collect the icon assets instructions, you can use this function to generate all the html head markup for the icon assets.
+
+::: info
+We're working to expose the new api in `vite-plugin-pwa` plugin and the integrations.
+:::
+
+### v0.1.0 <Badge text="deprecated" type="warn" />
+
 As mentioned previously, the API is low-level, it means that you have to handle the default values yourself: you can check the default values in the [defauls.ts](https://github.com/vite-pwa/assets-generator/tree/main/src/api/default.ts) module.
 
 The CLI has been rebuilt on top of the API, you can check the [CLI documentation](/assets-generator/cli) for more details about the default values.
-
-The API can be found in the [api folder](https://github.com/vite-pwa/assets-generator/tree/main/src/api) and the [JSDOCS documentation](https://paka.dev/npm/@vite-pwa/assets-generator).
 
 
