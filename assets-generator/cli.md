@@ -55,14 +55,15 @@ All PWA assets will be generated in the same source folder.
 
 ## Options
 
-| Options                      |                                                                                                 |
-|------------------------------|-------------------------------------------------------------------------------------------------|
-| `-v, --version`              | Display version number                                                                          |
-| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                            |
-| `-c, --config <path>`        | Path to config file                                                                             |
-| `-p, --preset <preset-name>` | Built-in preset name: `minimal` (default), `minimal-2023`, `android`, `windows`, `ios` or `all` |
-| `-o, --override`             | Override assets? Defaults to true                                                               |
-| `-h, --help`                 | Display available CLI options                                                                   |
+| Options                      |                                                                                                           |
+|------------------------------|-----------------------------------------------------------------------------------------------------------|
+| `-v, --version`              | Display version number                                                                                    |
+| `-r, --root <path>`          | Define the project root, defaults to `process.cwd()`                                                      |
+| `-c, --config <path>`        | Path to config file                                                                                       |
+| `-p, --preset <preset-name>` | Built-in preset name: `minimal` (default), `minimal-2023`, `android`, `windows`, `ios` or `all`           |
+| `-o, --override`             | Override assets. Defaults to true (`--override=false` or `-o=false` to disable it)                        |
+| `-m, --manifest`             | Generate PWA web manifest icons entry. Defaults to true  (`--manifest=false` or `-m=false` to disable it) |
+| `-h, --help`                 | Display available CLI options                                                                             |
 
 ## Presets
 
@@ -295,6 +296,12 @@ export default defineConfig({
 ```
 
 PWA Assets Generator will generate the `public/pwa-48x48.png` PWA icon, then generate the corresponding favicon (`public/favicon-48x48.ico`) and finally remove the PWA icon (`public/pwa-48x48.png`).
+
+### PWA Manifest Icons Entry <Badge type="tip" text="New from v0.2.0" />
+
+By default, the CLI will show the PWA manifest icons' entry in the terminal. You can disable it using `-m` o `--no-manifest` option from CLI or using `manifestIconsEntry: false` in the file configuration.
+
+If you have configured `logLevel: 'silent'` in your configuration file, the CLI will not log the PWA manifest icons' entry. 
 
 ### iOS/iPad Splash Screens
 
