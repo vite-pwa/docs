@@ -46,7 +46,7 @@ If you need to generate the PWA assets from your own code, you can use the `inst
 We're working to expose the new api in `vite-plugin-pwa` plugin and the integrations.
 :::
 
-### v0.1.0 <Badge text="deprecated" type="warn" />
+### v0.1.0 <Badge text="deprecated" type="warning" />
 
 As mentioned previously, the API is low-level, it means that you have to handle the default values yourself: you can check the default values in the [defaults.ts](https://github.com/vite-pwa/assets-generator/tree/main/src/api/defaults.ts) module.
 
