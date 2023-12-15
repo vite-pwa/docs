@@ -42,7 +42,7 @@ From version `v0.2.0`, `@vite-pwa/astro` configures `dontCacheBustURLsMatching` 
 
 ## @vite-pwa/sveltekit
 
-From version `v0.3.0`, `@vite-pwa/sveltekit` supports SvelteKit 2: it should be also support SvelteKit 1.
+From version `v0.3.0`, `@vite-pwa/sveltekit` supports SvelteKit 2: it should also support SvelteKit 1.
 
 From version `v0.2.9`, `@vite-pwa/sveltekit` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Sveltkit's [appDir](https://kit.svelte.dev/docs/configuration#appdir) option (defaults to `_app`).
 
