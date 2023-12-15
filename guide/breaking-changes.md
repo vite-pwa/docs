@@ -40,6 +40,18 @@ From version `v0.3.3`, `@vite-pwa/nuxt` configures `dontCacheBustURLsMatching` i
 
 From version `v0.2.0`, `@vite-pwa/astro` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Astro's [build.assets](https://docs.astro.build/en/reference/configuration-reference/#buildassets) option (defaults to `_astro`).
 
+## @vite-pwa/sveltekit
+
+From version `v0.3.0`, `@vite-pwa/sveltekit` supports SvelteKit 2: it should be also support SvelteKit 1.
+
+From version `v0.2.9`, `@vite-pwa/sveltekit` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Sveltkit's [appDir](https://kit.svelte.dev/docs/configuration#appdir) option (defaults to `_app`).
+
+::: warning
+From version `v0.2.0`, `SvelteKitPWA` plugin requires SvelteKit 1.3.1 or above.
+
+If you're using a SvelteKit version prior to `v1.3.1`, you should use `SvelteKitPWA` plugin version `0.1.*`.
+:::
+
 ## Other integrations
 
-If you're using `vite-plugin-pwa` or another integration with other meta frameworks (îles, SvelteKit), review the generated service worker if you're using Vite 5 or Rollup 4, and update the `dontCacheBustURLsMatching` regular expression properly when required.
+If you're using `vite-plugin-pwa` or another integration with other meta frameworks (îles), review the generated service worker if you're using Vite 5 or Rollup 4, and update the `dontCacheBustURLsMatching` regular expression properly when required.

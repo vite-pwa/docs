@@ -7,16 +7,6 @@ outline: deep
 
 <BreakingChanges />
 
-::: info
-From version `v0.2.9`, `@vite-pwa/sveltekit` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Sveltkit's [appDir](https://kit.svelte.dev/docs/configuration#appdir) option (defaults to `_app`).
-:::
-
-::: warning
-From version `v0.2.0`, `SvelteKitPWA` plugin requires SvelteKit 1.3.1 or above.
-
-If you're using a SvelteKit version prior to `v1.3.1`, you should use `SvelteKitPWA` plugin version `0.1.*`.
-:::
-
 ::: tip
 From version `^0.1.0`, `SvelteKitPWA` has SvelteKit `^1.0.0` as peer dependency.
 :::
