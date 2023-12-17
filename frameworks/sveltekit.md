@@ -5,7 +5,7 @@ outline: deep
 
 # SvelteKit
 
-<BreakingChanges />
+<ChangeLog />
 
 ::: tip
 From version `^0.1.0`, `SvelteKitPWA` has SvelteKit `^1.0.0` as peer dependency.

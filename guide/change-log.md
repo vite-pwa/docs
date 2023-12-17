@@ -1,9 +1,9 @@
 ---
-title: Breaking Changes | Guide
+title: Change Log | Guide
 outline: deep
 ---
 
-# Breaking Changes
+# Change Log
 
 Please refer to the corresponding installation section:
 - [vite-plugin-pwa](https://github.com/vite-pwa/vite-plugin-pwa#-install)

@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BreakingChanges: typeof import('./theme/components/BreakingChanges.md')['default']
+    ChangeLog: typeof import('./theme/components/ChangeLog.md')['default']
     CleanupOutdatedCaches: typeof import('./theme/components/CleanupOutdatedCaches.md')['default']
     ExamplesBehaviors: typeof import('./theme/components/ExamplesBehaviors.md')['default']
     ExamplesGenerateSW: typeof import('./theme/components/ExamplesGenerateSW.md')['default']

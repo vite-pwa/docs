@@ -5,7 +5,7 @@ outline: deep
 
 # VitePress
 
-<BreakingChanges />
+<ChangeLog />
 
 ::: warning
 We recommend you use the latest version of VitePress. The latest versions will also require you to update your application to use Vite ^3.1.0.
