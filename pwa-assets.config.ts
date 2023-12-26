@@ -1,9 +1,14 @@
 import {
   defineConfig,
-  minimalPreset as preset,
+  minimal2023Preset as preset,
 } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
+  overrideAssets: false,
+  logLevel: 'info',
+  headLinkOptions: {
+    preset: '2023',
+  },
   preset: {
     ...preset,
     assetName(type, size) {
