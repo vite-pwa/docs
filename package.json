@@ -44,26 +44,26 @@
     "generate-pwa-icons": "pwa-assets-generator"
   },
   "dependencies": {
-    "@vueuse/core": "^10.6.1",
-    "@vueuse/shared": "^10.6.1",
-    "vue": "^3.3.10"
+    "@vueuse/core": "^10.7.0",
+    "@vueuse/shared": "^10.7.0",
+    "vue": "^3.3.13"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.43.1",
     "@antfu/ni": "^0.21.12",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "@vite-pwa/assets-generator": "^0.0.11",
+    "@vite-pwa/assets-generator": "^0.2.2",
     "@vite-pwa/vitepress": "^0.3.1",
-    "@vitejs/plugin-vue": "^4.5.1",
-    "@vueuse/core": "^10.6.1",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vueuse/core": "^10.7.0",
     "eslint": "^8.54.0",
     "https-localhost": "^4.7.1",
-    "typescript": "^5.3.2",
+    "typescript": "^5.3.3",
     "unocss": "^0.58.0",
     "unplugin-vue-components": "^0.25.2",
     "vite-plugin-pwa": "^0.17.4",
-    "vitepress": "1.0.0-rc.31",
+    "vitepress": "1.0.0-rc.33",
     "workbox-window": "^7.0.0"
   },
   "pnpm": {
