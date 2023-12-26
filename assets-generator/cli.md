@@ -516,3 +516,9 @@ export default defineConfig({
   images: ['public/logo.svg']
 })
 ```
+
+#### Custom Dark Splash Screens Image Source <Badge type="tip" text="New from v0.2.2" />
+
+From version `v0.2.2`, you can provide a custom dark splash screens image source using `darkImageResolver` option in the `createAppleSplashScreens` and `combinePresetAndAppleSplashScreens` functions options:
+- if you're using multiple images, you will need to return the proper dark image using the `imageName` parameter in the `darkImageResolver` function: check the [playground](https://github.com/vite-pwa/assets-generator/blob/main/playground/pwa-assets.config.mts) for an example.
+- if you're using a single image, you can ignore the `imageName` parameter.
