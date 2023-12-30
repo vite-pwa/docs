@@ -117,6 +117,10 @@ const AssetsGenerator: DefaultTheme.SidebarItem[] = [
     link: '/assets-generator/api',
   },
   {
+    text: 'Integrations <sup class="VPBadge tip">Experimental</sup>',
+    link: '/assets-generator/integrations',
+  },
+  {
     text: 'Migrations',
     link: '/assets-generator/migrations',
   },
@@ -167,6 +171,10 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     text: 'Nuxt 3',
     link: '/frameworks/nuxt',
   },
+  {
+    text: 'Qwik',
+    link: '/frameworks/qwik',
+  },
 ]
 
 const Examples: DefaultTheme.SidebarItem[] = [
@@ -213,6 +221,10 @@ const Examples: DefaultTheme.SidebarItem[] = [
   {
     text: 'Nuxt 3',
     link: '/examples/nuxt',
+  },
+  {
+    text: 'Qwik',
+    link: '/examples/qwik',
   },
 ]
 

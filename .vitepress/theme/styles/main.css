@@ -9,6 +9,21 @@ html:not(.dark) .logo[dark-logo] {
 }
 
 /* Overrides */
+sup.VPBadge {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0 10px;
+  line-height: 20px;
+  font-size: 10px;
+  font-weight: 500;
+  transform: translateY(-6px);
+}
+sup.VPBadge.tip {
+  border-color: var(--vp-badge-tip-border);
+  color: var(--vp-badge-tip-text);
+  background-color: var(--vp-badge-tip-bg);
+}
 .VPSocialLink {
   transform: scale(0.9);
 }

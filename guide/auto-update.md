@@ -1,5 +1,6 @@
 ---
 title: Automatic reload | Guide
+outline: deep
 ---
 
 # Automatic reload
@@ -43,6 +44,10 @@ VitePWA({
 <CleanupOutdatedCaches />
 
 <GenerateSWCleanupOutdatedCaches />
+
+### Inject Manifest Source Map <Badge type="tip" text="new options from v0.18.0+" />
+
+<InjectManifestSourceMap />
 
 ### Generate SW Source Map
 

@@ -1,5 +1,6 @@
 ---
 title: Advanced (injectManifest) | Guide
+outline: deep
 ---
 
 # Advanced (injectManifest)
@@ -66,13 +67,7 @@ injectManifest: {
 
 ### Service worker errors on browser
 
-If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iife`, add the following code to your pwa configuration:
-
-```ts
-injectManifest: {
-  rollupFormat: 'iife'
-}
-```
+<ServiceWorkerClientErrors />
 
 ### Cleanup Outdated Caches
 
@@ -80,7 +75,7 @@ injectManifest: {
 
 <InjectManifestCleanupOutdatedCaches />
 
-### Generate SW Source Map
+### Inject Manifest Source Map <Badge type="tip" text="new options from v0.18.0+" />
 
 <InjectManifestSourceMap />
 

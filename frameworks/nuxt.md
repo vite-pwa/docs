@@ -1,6 +1,5 @@
 ---
 title: Nuxt 3 | Frameworks
-next: Getting Started | Examples
 outline: deep
 ---
 

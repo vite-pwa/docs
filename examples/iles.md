@@ -1,5 +1,5 @@
 ---
-title: îles | Frameworks
+title: îles | Examples
 ---
 
 # îles

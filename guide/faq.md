@@ -27,13 +27,7 @@ useCredentials: true
 
 ## Service Worker errors on browser
 
-If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iife`, add the following code to your pwa configuration:
-
-```ts
-injectManifest: {
-  rollupFormat: 'iife'
-}
-```
+<ServiceWorkerClientErrors />
 
 ## Error: Unable to find a place to inject the manifest
 
