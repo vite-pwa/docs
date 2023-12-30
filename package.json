@@ -63,7 +63,7 @@
     "unocss": "^0.58.0",
     "unplugin-vue-components": "^0.25.2",
     "vite-plugin-pwa": "^0.17.4",
-    "vitepress": "1.0.0-rc.33",
+    "vitepress": "1.0.0-rc.34",
     "workbox-window": "^7.0.0"
   },
   "pnpm": {

@@ -9,7 +9,10 @@ html:not(.dark) .logo[dark-logo] {
 }
 
 /* Overrides */
-sup.VPBadge {
+.VPBadge {
+  transform: translateY(-6px);
+}
+sup.VPBadgeCustom {
   display: inline-block;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -19,7 +22,7 @@ sup.VPBadge {
   font-weight: 500;
   transform: translateY(-6px);
 }
-sup.VPBadge.tip {
+sup.VPBadgeCustom.tip {
   border-color: var(--vp-badge-tip-border);
   color: var(--vp-badge-tip-text);
   background-color: var(--vp-badge-tip-bg);

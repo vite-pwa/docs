@@ -117,7 +117,7 @@ const AssetsGenerator: DefaultTheme.SidebarItem[] = [
     link: '/assets-generator/api',
   },
   {
-    text: 'Integrations <sup class="VPBadge tip">Experimental</sup>',
+    text: 'Integrations <sup class="VPBadgeCustom tip">Experimental</sup>',
     link: '/assets-generator/integrations',
   },
   {
@@ -436,6 +436,10 @@ export default withPwa(defineConfig({
               {
                 text: 'Nuxt 3',
                 link: 'https://github.com/vite-pwa/nuxt',
+              },
+              {
+                text: 'Qwik',
+                link: 'https://github.com/QwikDev/pwa',
               },
             ],
           },
