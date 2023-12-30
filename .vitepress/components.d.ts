@@ -23,7 +23,6 @@ declare module 'vue' {
     ReloadPrompt: typeof import('./theme/components/ReloadPrompt.vue')['default']
     RunExamples: typeof import('./theme/components/RunExamples.md')['default']
     ServiceWorkerClientErrors: typeof import('./theme/components/ServiceWorkerClientErrors.md')['default']
-    ServiceWorkerErrors: typeof import('./theme/components/ServiceWorkerErrors.md')['default']
     SsrSsg: typeof import('./theme/components/SsrSsg.md')['default']
     TypeScriptError2307: typeof import('./theme/components/TypeScriptError2307.md')['default']
   }
