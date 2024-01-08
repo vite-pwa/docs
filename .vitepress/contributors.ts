@@ -35,7 +35,7 @@ function createLinks(tm: CoreTeam): CoreTeam {
 
 const plainTeamMembers = [
   {
-    avatar: '/team-avatars/antfu',
+    avatar: '/team-avatars/antfu.webp',
     name: 'Anthony Fu',
     github: 'antfu',
     webtools: 'antfu',
@@ -49,7 +49,7 @@ const plainTeamMembers = [
     desc: 'Core team member of Vite & Vue',
   },
   {
-    avatar: '/team-avatars/userquin',
+    avatar: '/team-avatars/userquin.webp',
     name: 'Joaquín Sánchez',
     github: 'userquin',
     webtools: 'userquin',
@@ -58,7 +58,7 @@ const plainTeamMembers = [
     desc: 'Vite\'s fanatical follower',
   },
   {
-    avatar: '/team-avatars/hannoeru',
+    avatar: '/team-avatars/hannoeru.webp',
     name: 'ハン / Han',
     github: 'hannoeru',
     twitter: 'hannoeru',

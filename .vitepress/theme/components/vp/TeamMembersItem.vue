@@ -1,18 +1,9 @@
-import type { Plugin } from 'vite'
-
-export default function TeamItemFix(): Plugin {
-  return {
-    name: 'vitepress-team-member-item-fix',
-    enforce: 'pre',
-    async transform(code, id) {
-      if (id.includes('VPTeamMembersItem.vue') && !id.endsWith('.css') && !id.includes('&setup=')) {
-        return `
 <script setup lang="ts">
 import type { DefaultTheme } from 'vitepress/theme'
+import VPIconHeart from 'vitepress/dist/client/theme-default/components/icons/VPIconHeart.vue'
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import VPSocialLinks from 'vitepress/dist/client/theme-default/components/VPSocialLinks.vue'
 import { computed } from 'vue'
-import VPIconHeart from './icons/VPIconHeart.vue'
-import VPLink from './VPLink.vue'
-import VPSocialLinks from './VPSocialLinks.vue'
 
 interface Props {
   size?: 'small' | 'medium'
@@ -20,20 +11,16 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'medium'
+  size: 'medium',
 })
+const dimension = computed(() => 'teamMember' in props.member ? '96' : '64')
 </script>
 
 <template>
   <article class="VPTeamMembersItem" :class="[size]">
     <div class="profile">
       <figure class="avatar">
-        <picture v-if="'teamMember' in member">
-          <source :srcset="\`\${member.avatar}.webp\`" type="image/webp" />
-          <source :srcset="\`\${member.avatar}.png\`" type="image/png" />
-          <img class="avatar-img" width="96" height="96" :src="\`\${member.avatar}.png\`" :alt="member.name" />
-        </picture>
-        <img v-else class="avatar-img" width="96" height="96" :src="member.avatar" :alt="member.name" />
+        <img class="avatar-img" :width="dimension" :height="dimension" :src="member.avatar" :alt="member.name">
       </figure>
       <div class="data">
         <h1 class="name">
@@ -241,8 +228,3 @@ const props = withDefaults(defineProps<Props>(), {
   fill: currentColor;
 }
 </style>
-`
-      }
-    },
-  }
-}
