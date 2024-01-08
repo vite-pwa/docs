@@ -28,12 +28,14 @@ function createLinks(tm: CoreTeam): CoreTeam {
 
   tm.links.push({ icon: 'twitter', link: `https://twitter.com/${tm.twitter}` })
 
+  ;(tm as any).teamMember = true
+
   return tm
 }
 
 const plainTeamMembers = [
   {
-    avatar: '/team-avatars/antfu.png',
+    avatar: '/team-avatars/antfu',
     name: 'Anthony Fu',
     github: 'antfu',
     webtools: 'antfu',
@@ -47,7 +49,7 @@ const plainTeamMembers = [
     desc: 'Core team member of Vite & Vue',
   },
   {
-    avatar: '/team-avatars/userquin.png',
+    avatar: '/team-avatars/userquin',
     name: 'Joaquín Sánchez',
     github: 'userquin',
     webtools: 'userquin',
@@ -56,7 +58,7 @@ const plainTeamMembers = [
     desc: 'Vite\'s fanatical follower',
   },
   {
-    avatar: '/team-avatars/hannoeru.png',
+    avatar: '/team-avatars/hannoeru',
     name: 'ハン / Han',
     github: 'hannoeru',
     twitter: 'hannoeru',

@@ -3,6 +3,7 @@ import Components from 'unplugin-vue-components/vite'
 import { presetAttributify, presetUno } from 'unocss'
 import Unocss from 'unocss/vite'
 import NavbarFix from './plugins/navbar'
+import TeamItemFix from './plugins/team'
 
 export default defineConfig({
   logLevel: 'info',
@@ -34,6 +35,7 @@ export default defineConfig({
     }),
 
     NavbarFix(),
+    TeamItemFix(),
 
     // https://github.com/unocss/unocss
     Unocss({

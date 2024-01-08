@@ -3,6 +3,7 @@ import type { HeadConfig, TransformContext } from 'vitepress'
 const firaFont = 'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
 const googleapis = 'https://fonts.googleapis.com'
 const gstatic = 'https://fonts.gstatic.com'
+const sponsors = 'https://cdn.jsdelivr.net'
 
 export async function transformHead({ pageData }: TransformContext): Promise<HeadConfig[]> {
   const head: HeadConfig[] = []
@@ -23,6 +24,8 @@ export async function transformHead({ pageData }: TransformContext): Promise<Hea
 
   // banner for index page
   if (pageData.relativePath === 'index.md') {
+    head.push(['link', { rel: 'dns-prefetch', href: sponsors }])
+    head.push(['link', { rel: 'preconnect', crossorigin: 'anonymous', href: sponsors }])
     head.push(['link', { rel: 'prefetch', href: '/banner_light.svg' }])
     head.push(['link', { rel: 'prefetch', href: '/banner_dark.svg' }])
   }
