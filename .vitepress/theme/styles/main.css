@@ -96,6 +96,11 @@ details > summary:hover {
   font-weight: 700;
 }
 
+/* sp-link:hover on dark */
+.dark .VPLink.sp-link:hover {
+  background-color: #d51a6d !important;
+}
+
 /* PWA: Prompt for Update */
 .pwa-toast .pwa-refresh {
   border-color: var(--vp-button-brand-border);

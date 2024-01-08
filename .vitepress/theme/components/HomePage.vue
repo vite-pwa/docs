@@ -26,7 +26,7 @@ import { teamMembers } from '../../contributors'
           </h2>
           <div grid="~ cols-1" w-full text-center mt-10>
             <div class="flex flex-col">
-              <a text-lg h="32px" href="https://github.com/sponsors/antfu" rel="noopener noreferrer">Anthony's Sponsors</a>
+              <a text-lg mb-1em h="32px" href="https://github.com/sponsors/antfu" rel="noopener noreferrer">Anthony's Sponsors</a>
               <a href="https://cdn.jsdelivr.net/gh/antfu/static/sponsors.svg" target="_blank" rel="noopener noreferrer">
                 <img
                   crossorigin="anonymous"
