@@ -1,17 +1,8 @@
-import type { Plugin } from 'vite'
-
-export default function NavbarFix(): Plugin {
-  return {
-    name: 'vitepress-sidebar-logo-fix',
-    enforce: 'pre',
-    transform(code, id) {
-      if (id.includes('VPNavBarTitle.vue') && !id.endsWith('.css') && !id.includes('&setup=')) {
-        return `
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { useSidebar } from '../composables/sidebar'
+import { useSidebar } from 'vitepress/theme'
 
-const { site, theme } = useData()
+const { site } = useData()
 const { hasSidebar } = useSidebar()
 </script>
 
@@ -63,8 +54,3 @@ const { hasSidebar } = useSidebar()
   height: 50px;
 }
 </style>
-`
-      }
-    },
-  }
-}

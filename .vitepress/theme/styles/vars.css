@@ -9,6 +9,7 @@
   --vp-c-warning-soft: #eeeef0;
   --vp-c-danger-1: #b71c1c;
   --vp-c-danger-soft: #ffebee77;
+  --vp-c-sponsor: #d51a6d;
   /* pwa prompt divider */
   --pwa-border: #e5e5e5;
 }
@@ -18,6 +19,7 @@
   --vp-c-warning-1: #EAB306;
   --vp-c-danger-1: #fff;
   --vp-c-danger-soft: #660000;
+  --vp-c-sponsor: #ff3d93;
   /* pwa prompt divider */
   --pwa-border: #ffffff75;
 }
