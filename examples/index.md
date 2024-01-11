@@ -10,7 +10,7 @@ You can find a set of examples projects on [Vite Plugin PWA GitHub repo](https:/
 All the examples projects are under `examples` package/directory of the repo root directory.
 
 ::: info
-The main purpose of these examples projects is to test the service worker and not to meet the [PWA Minimal Requirements](/guide/#pwa-minimal-requirements), that is, if you use any of these examples for your projects, you will need to modify the code supplied and then test that it meets the [PWA Minimal Requirements](/guide/#pwa-minimal-requirements). Almost all the examples projects should meet [PWA Minimal Requirements](/guide/#pwa-minimal-requirements), but you must check it on your target project.
+The main purpose of these examples projects is to test the service worker and not to meet the [PWA Minimal Requirements](/guide/pwa-minimal-requirements), that is, if you use any of these examples for your projects, you will need to modify the code supplied and then test that it meets the [PWA Minimal Requirements](/guide/pwa-minimal-requirements). Almost all the examples projects should meet [PWA Minimal Requirements](/guide/pwa-minimal-requirements), but you must check it on your target project.
 
 All the examples projects use `@rollup/plugin-replace` to configure a timestamp initialized to `now` on each build, and so, the service worker will be regenerated/versioned on each build: this timestamp will help us since the service worker won't be regenerated/versioned if none source code changed (on your project you shouldn't want this behavior,  you should want to only regenerate/version the service worker when your source code change).
 :::
