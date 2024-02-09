@@ -116,10 +116,10 @@ const AssetsGenerator: DefaultTheme.SidebarItem[] = [
     text: 'API',
     link: '/assets-generator/api',
   },
-  {
-    text: 'Integrations <sup class="VPBadgeCustom tip">Experimental</sup>',
-    link: '/assets-generator/integrations',
-  },
+  // {
+  //   text: 'Integrations <sup class="VPBadgeCustom tip">Experimental</sup>',
+  //   link: '/assets-generator/integrations',
+  // },
   {
     text: 'Migrations',
     link: '/assets-generator/migrations',
@@ -319,7 +319,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'twitter:url', content: ogUrl }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
-  srcExclude: ['README.md', 'CONTRIBUTING.md'],
+  srcExclude: ['README.md', 'CONTRIBUTING.md', 'assets-generator/integrations.md'],
   lastUpdated: true,
   markdown: {
     theme: {

@@ -45,7 +45,7 @@ If you need to generate the PWA assets from your own code, you can use the `inst
 ::: info
 We're working to expose the new api in `vite-plugin-pwa` plugin and the integrations.
 
-From `v0.18.0`, `vite-plugin-pwa` includes a new experimental feature, check [Integrations](/assets-generator/integrations) section.
+[//]: # (From `v0.18.0`, `vite-plugin-pwa` includes a new experimental feature, check [Integrations]&#40;/assets-generator/integrations&#41; section.)
 :::
 
 ### v0.1.0 <Badge text="deprecated" type="warning" />
