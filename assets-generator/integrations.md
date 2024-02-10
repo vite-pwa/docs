@@ -4,7 +4,7 @@ title: Integrations | PWA Assets Generator
 
 # Integrations <Badge text="Experimental" type="tip"/>
 
-From `v0.18.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` for serving, generate and inject PWA assets on the fly:
+From `v0.18.1`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` for serving, generate and inject PWA assets on the fly:
 - inlined or external file configuration support
 - generate PWA assets on demand in dev server and build from single image file
 - auto-inject PWA assets in your HTML entry point
@@ -24,8 +24,6 @@ You can find a working example in the [examples/assets-generator](https://github
 ## Configuration
 
 We suggest you using external configuration file, `vite-plugin-pwa` plugin will watch it for changes, avoiding dev server restarts. If you use inlined configuration, Vite will restart the dev server when changing any option.
-
-::: details pwaAssets definition types
 
 ```ts
 /**
@@ -104,7 +102,6 @@ export interface PWAAssetsOptions {
   injectThemeColor?: boolean
 }
 ```
-:::
 
 ## New Virtual Modules
 
