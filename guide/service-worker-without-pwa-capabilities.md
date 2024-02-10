@@ -32,7 +32,7 @@ VitePWA({
   injectRegister: false,
   manifest: false,
   injectManifest: {
-    injectionPoint: null,
+    injectionPoint: undefined,
   },
 })
 ```
