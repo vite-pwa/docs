@@ -16,6 +16,7 @@ declare module 'vue' {
     GenerateSWSourceMap: typeof import('./theme/components/GenerateSWSourceMap.md')['default']
     HeuristicWorkboxWindow: typeof import('./theme/components/HeuristicWorkboxWindow.md')['default']
     HomePage: typeof import('./theme/components/HomePage.vue')['default']
+    InjectManifestBuild: typeof import('./theme/components/InjectManifestBuild.md')['default']
     InjectManifestCleanupOutdatedCaches: typeof import('./theme/components/InjectManifestCleanupOutdatedCaches.md')['default']
     InjectManifestSourceMap: typeof import('./theme/components/InjectManifestSourceMap.md')['default']
     NavBarTitle: typeof import('./theme/components/vp/NavBarTitle.vue')['default']
