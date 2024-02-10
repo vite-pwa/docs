@@ -13,6 +13,10 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## New Vite Build <Badge type="tip" text="from v0.18.0+" />
+
+<InjectManifestBuild />
+
 ## Rollup 4 and Vite 5
 
 Rollup 4 has changed the asset name layout format, it is using `ascii` letters (no encoding, including also dash and underscore), previous Rollup versions are using `hex` encoding:

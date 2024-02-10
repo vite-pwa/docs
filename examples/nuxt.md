@@ -1,6 +1,5 @@
 ---
 title: Nuxt 3 | Examples
-next: Getting Started | Deploy
 ---
 
 # Nuxt 3

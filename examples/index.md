@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Examples
-prev: Astro | Frameworks
+prev: Qwik | Frameworks
 ---
 
 # Getting Started

@@ -1,5 +1,6 @@
 ---
 title: Prompt for new content refreshing | Guide
+outline: deep
 ---
 
 # Prompt for new content refreshing
@@ -15,6 +16,10 @@ Since this is the default behavior for the `registerType` plugin option, you don
 <CleanupOutdatedCaches />
 
 <GenerateSWCleanupOutdatedCaches />
+
+### Inject Manifest Source Map <Badge type="tip" text="new options from v0.18.0+" />
+
+<InjectManifestSourceMap />
 
 ### Generate SW Source Map
 

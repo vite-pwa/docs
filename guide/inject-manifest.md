@@ -1,5 +1,6 @@
 ---
 title: Advanced (injectManifest) | Guide
+outline: deep
 ---
 
 # Advanced (injectManifest)
@@ -66,13 +67,7 @@ injectManifest: {
 
 ### Service worker errors on browser
 
-If your service worker code is being compiled with unexpected `exports` (for example: `export default require_sw();`), you can change the build output format to `iife`, add the following code to your pwa configuration:
-
-```ts
-injectManifest: {
-  rollupFormat: 'iife'
-}
-```
+<ServiceWorkerClientErrors />
 
 ### Cleanup Outdated Caches
 
@@ -80,9 +75,21 @@ injectManifest: {
 
 <InjectManifestCleanupOutdatedCaches />
 
-### Generate SW Source Map
+### Inject Manifest Source Map <Badge type="tip" text="new options from v0.18.0+" />
 
 <InjectManifestSourceMap />
+
+### Custom Rollup and Vite Plugins <Badge type="tip" text="from v0.18.0+" />
+
+From `v0.18.0`, you can add custom Rollup and/or Vite plugins to the service worker build, using `rollup` and `vite` options in the new `buildPlugins` option.
+
+::: warning
+The old `plugins` option has been deprecated, use `buildPlugins.rollup` instead: 
+- if `buildPlugins.rollup` is configured then `plugins` will be ignored
+- if `buildPlugins.rollup` is not configured then `plugins` will be used
+:::
+
+You can check the [vue-router example](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/vue-router) using a custom Vite plugin with a simple virtual module consumed by both custom service workers.
 
 ## Auto Update Behavior
 

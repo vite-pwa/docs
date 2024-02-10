@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Deploy
-prev: Astro | Examples
+prev: Qwik | Examples
 ---
 
 # Getting Started

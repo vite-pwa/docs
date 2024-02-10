@@ -10,6 +10,8 @@ Your application **must** meet the PWA Minimal Requirements before deploying it 
 
 To make your PWA application installable (one of the requirements), you will need to modify your application entry point, add some minimal entries to your `Web App Manifest`, allow search engines to crawl all your application pages and configure your server properly (only for production, on local you can use `https-localhost` dependency and `node`).
 
+Check also the new [PWA Minimal Requirements](/assets-generator/#pwa-minimal-icons-requirements) page in the [PWA Assets Generator](/assets-generator/) section.
+
 ## Entry Point
 
 Your application entry point (usually `index.html`) **must** have the following entries in the `<head>` section:
@@ -76,6 +78,15 @@ export default defineConfig({
     })
   ]
 })
+```
+
+You can also specify `manifest: false` to disable the `Web App Manifest` generation adding your own `manifest.webmanifest/manifest.json` file to the `public` folder on your application.
+
+The `vite-plugin-pwa` has the full definition of the `Web App Manifest` options, if you want to have DX support when using your own web manifest, add the following entry to your custom web manifest (VSCode and JetBrains IDEs will use it to provide DX support):
+```json
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json"
+}
 ```
 
 ## Icons / Images
