@@ -78,6 +78,8 @@ Check the [SvelteKit PWA Assets](/frameworks/sveltekit#pwa-assets) section for m
 
 `@vite-pwa/vitepress` plugin will configure `integration` option properly. VitePress dev server will be restarted when changing the configuration (inlined or using external file).
 
+Check the [VitePress PWA Assets](/frameworks/vitepress#pwa-assets) section for more details.
+
 ### Astro <Badge type="tip" text="from v0.3.0" />
 
 `@vite-pwa/astro` plugin will configure `integration` option properly. We suggest you to use external configuration file, Astro dev server will not be restarted when changing the configuration.
