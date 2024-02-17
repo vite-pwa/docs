@@ -79,11 +79,6 @@ const { title } = Astro.props as Props;
     <meta name="theme-color" content="#ffffff">
     <title>{title}</title>
     <meta name="description" content={title}>
-    <style>
-    main, footer {
-        text-align: center;
-    }
-    </style>
     <script src="/src/pwa.ts"></script>
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
   </head>
@@ -329,4 +324,28 @@ If you're using `injectManifest` strategy, you also need to include `directoryIn
 import { precacheAndRoute } from 'workbox-precaching'
 
 precacheAndRoute(self.__WB_MANIFEST, { directoryIndex: 'index.html', cleanURLs: true })
+```
+
+## PWA Assets <Badge text="Experimental" type="tip"/> <Badge type="tip" text="from v0.3.0" />
+
+`@vite-pwa/astro` plugin will configure `integration` option properly. We suggest you to use external configuration file, Astro dev server will not be restarted when changing the configuration.
+
+To inject the PWA icons links and the `theme-color`, you can use the `virtual:pwa-assets/head` virtual module in your layout components:
+- remove all links with rel `icon`, `apple-touch-icon` and `apple-touch-startup-image` from your html head
+- remove the `theme-color` meta tag from your html head
+- add the virtual import
+- include theme color and icons links using code-snippet shown below
+
+```astro
+---
+import { pwaAssetsHead } from 'virtual:pwa-assets/head';
+---
+<html lang="en">
+  <head>
+    { pwaAssetsHead.themeColor && <meta name="theme-color" content={pwaAssetsHead.themeColor.content} /> }
+    { pwaAssetsHead.links.map(link => (
+        <link {...link} />
+    )) }
+  </head>
+</html>    
 ```

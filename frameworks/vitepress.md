@@ -291,3 +291,6 @@ export default withPwa(defineConfig({
 
 If you're using `injectManifest` strategy, you can find the required logic in the following [experimiental service worker](https://github.com/vite-pwa/vitepress/blob/main/examples/pwa-simple-sw/.vitepress/sw.ts).
 
+## PWA Assets <Badge text="Experimental" type="tip"/> <Badge type="tip" text="from v0.4.0" />
+
+`@vite-pwa/vitepress` plugin will configure `integration` option properly. VitePress dev server will be restarted when changing the configuration (inlined or using external file).

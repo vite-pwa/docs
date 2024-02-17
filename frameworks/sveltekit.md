@@ -365,3 +365,29 @@ If you set certain SvelteKit options, you should also configure the PWA plugin p
 Some kit options may have been moved/deprecated, review the SvelteKit documentation site:
 - [trailingSlash](https://kit.svelte.dev/docs/page-options#trailingslash): now it should be configured in the page options, and so, we cannot control it in the plugin.
 :::
+
+## PWA Assets <Badge text="Experimental" type="tip"/> <Badge type="tip" text="from v0.4.0" />
+
+We suggest you using external configuration file, `@vite-pwa/sveltekit` plugin will watch it for changes, avoiding dev server restarts. If you use inlined configuration, Vite will restart the dev server when changing any option.
+
+To inject the PWA icons links and the `theme-color`, you can use the `virtual:pwa-assets/head` virtual module in your `+layout.svelte` component:
+- add `import 'vite-plugin-pwa/pwa-assets';` to your `src/app.d.ts` file
+- remove all links with rel `icon`, `apple-touch-icon` and `apple-touch-startup-image` from `<svelte:head>`
+- remove the `theme-color` meta tag from `<svelte:head>`
+- add the virtual import
+- include theme color and icons links using code-snippet shown below
+
+```svelte
+<script>
+import { pwaAssetsHead } from 'virtual:pwa-assets/head';
+</script>
+
+<svelte:head>
+	{#if pwaAssetsHead.themeColor}
+	<meta name="theme-color" content={pwaAssetsHead.themeColor.content} />
+	{/if}
+	{#each pwaAssetsHead.links as link}
+	<link {...link} />
+	{/each}
+</svelte:head>
+```
