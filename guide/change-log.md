@@ -13,7 +13,13 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
-## New Vite Build <Badge type="tip" text="from v0.18.0+" />
+## PWA Assets <Badge type="tip" text="from v0.19.0" /> <Badge type="warning" text="experimental" />
+
+From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` for serving, generate and inject PWA assets on the fly.
+
+Check the [PWA Assets Generator Integrations](/assets-generator/integrations) section for more details.  
+
+## New Vite Build <Badge type="tip" text="from v0.18.0" />
 
 <InjectManifestBuild />
 

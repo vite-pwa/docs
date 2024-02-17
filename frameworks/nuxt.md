@@ -176,3 +176,13 @@ onMounted(() => {
   </div>
 </template>
 ```
+
+## PWA Assets <Badge text="Experimental" type="tip"/> <Badge type="tip" text="from v0.6.0" />
+
+This new feature includes:
+- new `NuxtPwaAssets` component to include the PWA assets in your HTML pages: if you're using `VitePwaManifest` or `NuxtPwaManifest` component, replace it with `NuxtPwaAssets`: it will inject the web manifest link, the `theme-color` meta and the PWA icon links.
+- new `PwaAppleImage`, `PwaAppleSplashScreenImage`, `PwaFaviconImage`, `PwaMaskableImage` and `PwaTransparentImage` components to use PWA icons in your code base
+- new `useApplePwaIcon`, `useAppleSplashScreenPwaIcon`, `useFaviconPwaIcon`, `useMaskablePwaIcon` and `useTransparentPwaIcon` composables
+- injects `$pwaIcons` with all configured PWA icons: you can use them via `useNuxtApp().$pwaIcons` or inside your Vue templates
+
+New components, composables and `$pwaIcons` injection are statically analisable, that's, pwa icons types are generated when running `nuxt prepare` command: if you want to disable the PWA assets you don't need to remove the code (you can remove unused components/code later if you want to remove the new feature).
