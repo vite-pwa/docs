@@ -372,8 +372,8 @@ We suggest you using external configuration file, `@vite-pwa/sveltekit` plugin w
 
 To inject the PWA icons links and the `theme-color`, you can use the `virtual:pwa-assets/head` virtual module in your `+layout.svelte` component:
 - add `import 'vite-plugin-pwa/pwa-assets';` to your `src/app.d.ts` file
-- remove all links with rel `icon`, `apple-touch-icon` and `apple-touch-startup-image` from `<svelte:head>`
-- remove the `theme-color` meta tag from `<svelte:head>`
+- remove all links with rel `icon`, `apple-touch-icon` and `apple-touch-startup-image` from `<svelte:head>` or from your `app.html` file
+- remove the `theme-color` meta tag from `<svelte:head>` or from your `app.html` file
 - add the virtual import
 - include theme color and icons links using code-snippet shown below
 
