@@ -65,5 +65,9 @@ features:
     details: Generate all the PWA assets from a single command and a single source image
     link: /assets-generator/
     linkText: Getting Started
-
+  - icon: 🚀
+    title: PWA Assets Integration
+    details: Serve, generate and inject PWA Assets on the fly in your application
+    link: /assets-generator/integrations
+    linkText: PWA Assets Integrations
 ---

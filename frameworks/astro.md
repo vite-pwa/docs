@@ -349,3 +349,5 @@ import { pwaAssetsHead } from 'virtual:pwa-assets/head';
   </head>
 </html>    
 ```
+
+You can find a working example in the [examples folder](https://github.com/vite-pwa/astro/tree/main/examples/pwa-simple-assets-generator).

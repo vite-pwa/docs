@@ -391,3 +391,5 @@ import { pwaAssetsHead } from 'virtual:pwa-assets/head';
 	{/each}
 </svelte:head>
 ```
+
+You can find a working example in the [examples folder](https://github.com/vite-pwa/sveltekit/tree/main/examples/sveltekit-ts-assets-generator).
