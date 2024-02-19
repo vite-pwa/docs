@@ -298,3 +298,5 @@ If you're using `injectManifest` strategy, you can find the required logic in th
 To inject the PWA icons links and the `theme-color`:
 - remove all links with rel `icon`, `apple-touch-icon` and `apple-touch-startup-image` from `head` entry in your VitePress configuration
 - remove the `theme-color` meta tag from `head` entry in your VitePress configuration
+
+You can find a working example in the [examples folder](https://github.com/vite-pwa/vitepress/tree/main/examples/pwa-simple-assets-generator).

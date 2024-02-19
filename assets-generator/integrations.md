@@ -16,8 +16,6 @@ The new experimental feature must be enabled explicitly in your PWA configuratio
 - using inlined preset or
 - using external configuration file (will take precedence over inlined preset)
 
-It should be used only with `vite-plugin-pwa` plugin, it is not yet supported in other integrations (may or may not work, not yet tested), we'll add support soon.
-
 This feature is experimental, it may change (with or without breaking changes) in the future without notice, please report any issues you find.
 
 You can find a working example in the [examples/assets-generator](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/assets-generator) folder.
