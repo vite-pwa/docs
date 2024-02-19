@@ -67,7 +67,7 @@ features:
     linkText: Getting Started
   - icon: 🚀
     title: PWA Assets Integration
-    details: Serving, generate and inject PWA Assets on the fly in your application
+    details: Serve, generate and inject PWA Assets on the fly in your application
     link: /assets-generator/integrations
     linkText: PWA Assets Integrations
 ---

@@ -15,7 +15,7 @@ Please refer to the corresponding installation section:
 
 ## PWA Assets <Badge type="tip" text="from v0.19.0" /> <Badge type="warning" text="experimental" />
 
-From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` for serving, generate and inject PWA assets on the fly.
+From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` to serve, generate and inject PWA assets on the fly.
 
 Check the [PWA Assets Generator Integrations](/assets-generator/integrations) section for more details.  
 

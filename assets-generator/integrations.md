@@ -5,7 +5,7 @@ outline: deep
 
 # Integrations <Badge text="Experimental" type="tip"/>
 
-From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` for serving, generate and inject PWA assets on the fly:
+From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` to serve, generate and inject PWA assets on the fly:
 - inlined or external file configuration support
 - generate PWA assets on demand in dev server and build from single image file
 - auto-inject PWA assets in your HTML entry point
