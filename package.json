@@ -1,7 +1,7 @@
 {
   "name": "vite-pwa-docs",
   "type": "module",
-  "version": "0.19.1",
+  "version": "0.19.2",
   "packageManager": "pnpm@8.15.4",
   "description": "Zero-config PWA for Vite Documentation",
   "author": "antfu <anthonyfu117@hotmail.com>",
@@ -62,7 +62,7 @@
     "typescript": "^5.3.3",
     "unocss": "^0.58.0",
     "unplugin-vue-components": "^0.25.2",
-    "vite-plugin-pwa": "^0.19.1",
+    "vite-plugin-pwa": "^0.19.2",
     "vitepress": "1.0.0-rc.44",
     "workbox-window": "^7.0.0"
   },
