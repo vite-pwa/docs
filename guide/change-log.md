@@ -13,6 +13,16 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## Updated Vite Build <Badge type="tip" text="from v0.19.6" />
+
+**These new features are meant to be used only from integrations.**
+
+From `v0.19.6`, `vite-plugin-pwa` adds `envOptions` option to `injectManifest` to allow customizing the environment options for the service worker build output:
+- `envDir`: you can change the `envDir`, the plugin will use the Vite's [envDir](https://vitejs.dev/config/shared-options.html#envdir) option if not configured
+- `envPrefix`: you can change the `envPrefix`, the plugin will use the Vite's [envDir](https://vitejs.dev/config/shared-options.html#envprefix) option if not configured
+
+`vite-plugin-pwa` also includes the new `configureCustomSWViteBuild` integration option to allow you to change the Vite's build options for the custom service worker build, check the [PWAIntegration type](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/src/types.ts) definition for more details. 
+
 ## PWA Assets <Badge type="tip" text="from v0.19.0" /> <Badge type="warning" text="experimental" />
 
 From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` to serve, generate and inject PWA assets on the fly.
@@ -49,6 +59,8 @@ From version `v0.4.0`, `@vite-pwa/nuxt` requires Vite 5 and Nuxt 3.9+.
 From version `v0.3.3`, `@vite-pwa/nuxt` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Nuxt's [app.buildAssetsDir](https://nuxt.com/docs/api/nuxt-config#buildassetsdir) option (defaults to `_nuxt`).
 
 ## @vite-pwa/astro
+
+From version `v0.3.1`, you can use `import.meta.env.PUBLIC_` variables in your custom service worker when configured using [.env files](https://docs.astro.build/en/guides/environment-variables/#setting-environment-variables).
 
 From version `v0.2.0`, `@vite-pwa/astro` configures `dontCacheBustURLsMatching` in a similar way to how `vite-plugin-pwa` does, but using the Astro's [build.assets](https://docs.astro.build/en/reference/configuration-reference/#buildassets) option (defaults to `_astro`).
 
