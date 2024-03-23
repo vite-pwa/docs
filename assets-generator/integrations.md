@@ -5,7 +5,7 @@ outline: deep
 
 # Integrations <Badge text="Experimental" type="tip"/>
 
-Starting with `v0.19.0`, `vite-plugin-pwa` adds experimental support for the following `@vite-pwa/assets-generator` integrations for serving, generating and injecting PWA assets on the fly:
+Starting with `v0.19.0`, `vite-plugin-pwa` provides experimental support for the following `@vite-pwa/assets-generator` integrations for serving, generating, and injecting PWA assets on the fly:
 
 - Inlined or external file configuration support
 - Generate PWA assets on demand in dev server and build from single image file
@@ -20,7 +20,9 @@ The new experimental feature must be enabled explicitly in your `vite-plugin-pwa
 
 You can find a working example in the [examples/assets-generator](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/assets-generator) folder.
 
+:::warning
 This feature is experimental and is subject to (potentially breaking) changes without notice. Please [file a GitHub Issue](https://github.com/vite-pwa/vite-plugin-pwa/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) for any bugs you may find.
+:::
 
 ## Installation
 
