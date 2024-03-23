@@ -29,19 +29,15 @@ This feature is experimental and is subject to (potentially breaking) changes wi
 To use the new feature, install the `@vite-pwa/assets-generator` package as a dev dependency:
 
 ::: code-group
-
 ```bash [pnpm]
 pnpm add -D @vite-pwa/assets-generator
 ```
-
 ```bash [yarn]
 yarn add -D @vite-pwa/assets-generator
 ```
-
 ```bash [npm]
 npm install -D @vite-pwa/assets-generator
 ```
-
 :::
 
 ## Configuration
@@ -53,7 +49,7 @@ You can still use inline inside your `vite.config.js` file. This will cause Vite
 To use the new feature, you only need to configure the new `pwaAssets` option in your PWA configuration:
 
 ```ts
-import { VitePWA } from "vite-plugin-pwa";
+import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
   plugins: [
@@ -63,10 +59,10 @@ export default defineConfig({
       // pwa assets
       pwaAssets: {
         // options
-      },
-    }),
-  ],
-});
+      }
+    })
+  ]
+})
 ```
 
 Check the [PWA Assets Options](#pwa-assets-options) section for further details.
@@ -109,11 +105,12 @@ Check the [Nuxt 3 PWA Assets](/frameworks/nuxt#pwa-assets) section for more deta
 - `virtual:pwa-assets/icons`: will expose PWA web manifest icons
 
 If you're using TypeScript in your application, you can add `vite-plugin-pwa/pwa-assets` to your `tsconfig.json` file to avoid TypeScript errors:
-
 ```json
 {
   "compilerOptions": {
-    "types": ["vite-plugin-pwa/pwa-assets"]
+    "types": [
+      "vite-plugin-pwa/pwa-assets"
+    ]
   }
 }
 ```
@@ -138,7 +135,7 @@ export interface PWAAssetsOptions {
    *
    * @default false
    */
-  disabled?: boolean;
+  disabled?: boolean
 
   /**
    * PWA assets generation and injection.
@@ -160,7 +157,7 @@ export interface PWAAssetsOptions {
    * @default false
    * @see https://vite-pwa-org.netlify.app/assets-generator/cli.html#configurations
    */
-  config?: string | boolean;
+  config?: string | boolean
 
   /**
    * Preset to use.
@@ -171,7 +168,7 @@ export interface PWAAssetsOptions {
    *
    * @default 'minimal-2023'
    */
-  preset?: false | BuiltInPreset | Preset;
+  preset?: false | BuiltInPreset | Preset
 
   /**
    * Path relative to `root` folder where to find the image to use for generating PWA assets.
@@ -180,7 +177,7 @@ export interface PWAAssetsOptions {
    *
    * @default `public/favicon.svg`
    */
-  image?: string;
+  image?: string
 
   /**
    * The preset to use for head links (favicon links).
@@ -191,14 +188,14 @@ export interface PWAAssetsOptions {
    * @see https://vite-pwa-org.netlify.app/assets-generator/#preset-minimal
    * @default '2023'
    */
-  htmlPreset?: HtmlLinkPreset;
+  htmlPreset?: HtmlLinkPreset
 
   /**
    * Should the plugin include html head links?
    *
    * @default true
    */
-  includeHtmlHeadLinks?: boolean;
+  includeHtmlHeadLinks?: boolean
 
   /**
    * Should the plugin override the PWA web manifest icons' entry?
@@ -207,14 +204,14 @@ export interface PWAAssetsOptions {
    *
    * @default false
    */
-  overrideManifestIcons?: boolean;
+  overrideManifestIcons?: boolean
 
   /**
    * Should the PWA web manifest `theme_color` be injected in the html head?
    *
    * @default true
    */
-  injectThemeColor?: boolean;
+  injectThemeColor?: boolean
 
   /**
    * PWA Assets integration support.
@@ -227,21 +224,21 @@ export interface PWAAssetsOptions {
      *
      * @default `vite.base`
      */
-    baseUrl?: string;
+    baseUrl?: string
 
     /**
      * The public directory to resolve the image: should be an absolute path.
      *
      * @default `vite.root/vite.publicDir`
      */
-    publicDir?: string;
+    publicDir?: string
 
     /**
      * The output directory: should be an absolute path.
      *
      * @default `vite.root/vite.build.outDir`
      */
-    outDir?: string;
+    outDir?: string
   };
 }
 ```
