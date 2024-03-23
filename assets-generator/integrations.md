@@ -5,60 +5,69 @@ outline: deep
 
 # Integrations <Badge text="Experimental" type="tip"/>
 
-From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` to serve, generate and inject PWA assets on the fly:
-- inlined or external file configuration support
-- generate PWA assets on demand in dev server and build from single image file
-- auto-inject PWA assets in your HTML entry point
-- auto-inject `theme-color` meta tag in your HTML entry point, it will be extracted from your web manifest `theme_color` property
-- auto-inject web manifest icons
+Starting with `v0.19.0`, `vite-plugin-pwa` adds experimental support for the following `@vite-pwa/assets-generator` integrations for serving, generating and injecting PWA assets on the fly:
 
-The new experimental feature must be enabled explicitly in your PWA configuration via `pwaAssets` option:
-- using inlined preset or
-- using external configuration file (will take precedence over inlined preset)
+- Inlined or external file configuration support
+- Generate PWA assets on demand in dev server and build from single image file
+- Auto-inject PWA assets in your HTML entry point
+- Auto-inject `theme-color` meta tag in your HTML entry point, it will be extracted from your web manifest `theme_color` property
+- Auto-inject web manifest icons
 
-This feature is experimental, it may change (with or without breaking changes) in the future without notice, please report any issues you find.
+The new experimental feature must be enabled explicitly in your `vite-plugin-pwa` configuration with the `pwaAssets` option. This can be done by either:
+
+- using an inlined preset or
+- using an external configuration file (will take precedence over inlined preset)
 
 You can find a working example in the [examples/assets-generator](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples/assets-generator) folder.
 
+This feature is experimental and is subject to (potentially breaking) changes without notice. Please [file a GitHub Issue](https://github.com/vite-pwa/vite-plugin-pwa/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc) for any bugs you may find.
+
 ## Installation
 
-To use the new feature, you need to install the `@vite-pwa/assets-generator` package as dev dependency in your application:
+To use the new feature, install the `@vite-pwa/assets-generator` package as a dev dependency:
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @vite-pwa/assets-generator
-  ```
-  ```bash [yarn]
-  yarn add -D @vite-pwa/assets-generator
-  ```
-  ```bash [npm]
-  npm install -D @vite-pwa/assets-generator
-  ```
+
+```bash [pnpm]
+pnpm add -D @vite-pwa/assets-generator
+```
+
+```bash [yarn]
+yarn add -D @vite-pwa/assets-generator
+```
+
+```bash [npm]
+npm install -D @vite-pwa/assets-generator
+```
+
 :::
 
 ## Configuration
 
-We suggest you using external configuration file, `vite-plugin-pwa` plugin will watch it for changes, avoiding dev server restarts. If you use inlined configuration, Vite will restart the dev server when changing any option.
+We recommend using an external `pwa-assets.config.js` or `pwa-assets.config.ts` file.
+The `vite-plugin-pwa` plugin will watch it for changes to avoid dev server restarts.
+You can still use inline inside your `vite.config.js` file. This will cause Vite to restart the dev server when changing any option.
 
 To use the new feature, you only need to configure the new `pwaAssets` option in your PWA configuration:
 
 ```ts
-import { VitePWA } from 'vite-plugin-pwa'
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
     VitePWA({
       // other pwa options
+
       // pwa assets
       pwaAssets: {
         // options
-      }  
-    })
-  ]
-})
+      },
+    }),
+  ],
+});
 ```
 
-Check the [PWA Assets Options](#pwa-assets-options) section for more details about the options.
+Check the [PWA Assets Options](#pwa-assets-options) section for further details.
 
 ## Integrations
 
@@ -93,21 +102,22 @@ Check the [Nuxt 3 PWA Assets](/frameworks/nuxt#pwa-assets) section for more deta
 ## New Virtual Modules
 
 `vite-plugin-pwa` plugin exposes two new virtual modules for the integrations, they are not meant to be consumed from your application:
+
 - `virtual:pwa-assets/head`: will expose PWA image links and the `theme-color` meta tag
 - `virtual:pwa-assets/icons`: will expose PWA web manifest icons
 
 If you're using TypeScript in your application, you can add `vite-plugin-pwa/pwa-assets` to your `tsconfig.json` file to avoid TypeScript errors:
+
 ```json
 {
   "compilerOptions": {
-    "types": [
-      "vite-plugin-pwa/pwa-assets"
-    ]
+    "types": ["vite-plugin-pwa/pwa-assets"]
   }
 }
 ```
 
 You can also add the following reference to the beginning of your application code:
+
 ```ts
 /// <reference types="vite-plugin-pwa/pwa-assets" />
 ```
@@ -121,7 +131,13 @@ You can find the virtual modules types in the [pwa-assets.d.ts](https://github.c
  * PWA assets generation and injection options.
  */
 export interface PWAAssetsOptions {
-  disabled?: boolean
+  /**
+   * Enable PWA assets generation and injection.
+   *
+   * @default false
+   */
+  disabled?: boolean;
+
   /**
    * PWA assets generation and injection.
    *
@@ -142,7 +158,8 @@ export interface PWAAssetsOptions {
    * @default false
    * @see https://vite-pwa-org.netlify.app/assets-generator/cli.html#configurations
    */
-  config?: string | boolean
+  config?: string | boolean;
+
   /**
    * Preset to use.
    *
@@ -152,7 +169,8 @@ export interface PWAAssetsOptions {
    *
    * @default 'minimal-2023'
    */
-  preset?: false | BuiltInPreset | Preset
+  preset?: false | BuiltInPreset | Preset;
+
   /**
    * Path relative to `root` folder where to find the image to use for generating PWA assets.
    *
@@ -160,7 +178,8 @@ export interface PWAAssetsOptions {
    *
    * @default `public/favicon.svg`
    */
-  image?: string
+  image?: string;
+
   /**
    * The preset to use for head links (favicon links).
    *
@@ -170,13 +189,15 @@ export interface PWAAssetsOptions {
    * @see https://vite-pwa-org.netlify.app/assets-generator/#preset-minimal
    * @default '2023'
    */
-  htmlPreset?: HtmlLinkPreset
+  htmlPreset?: HtmlLinkPreset;
+
   /**
    * Should the plugin include html head links?
    *
    * @default true
    */
-  includeHtmlHeadLinks?: boolean
+  includeHtmlHeadLinks?: boolean;
+
   /**
    * Should the plugin override the PWA web manifest icons' entry?
    *
@@ -184,13 +205,15 @@ export interface PWAAssetsOptions {
    *
    * @default false
    */
-  overrideManifestIcons?: boolean
+  overrideManifestIcons?: boolean;
+
   /**
    * Should the PWA web manifest `theme_color` be injected in the html head?
    *
    * @default true
    */
-  injectThemeColor?: boolean
+  injectThemeColor?: boolean;
+
   /**
    * PWA Assets integration support.
    *
@@ -202,19 +225,21 @@ export interface PWAAssetsOptions {
      *
      * @default `vite.base`
      */
-    baseUrl?: string
+    baseUrl?: string;
+
     /**
      * The public directory to resolve the image: should be an absolute path.
      *
      * @default `vite.root/vite.publicDir`
      */
-    publicDir?: string
+    publicDir?: string;
+
     /**
      * The output directory: should be an absolute path.
      *
      * @default `vite.root/vite.build.outDir`
      */
-    outDir?: string
-  }
+    outDir?: string;
+  };
 }
 ```
