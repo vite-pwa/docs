@@ -239,6 +239,6 @@ export interface PWAAssetsOptions {
      * @default `vite.root/vite.build.outDir`
      */
     outDir?: string
-  };
+  }
 }
 ```
