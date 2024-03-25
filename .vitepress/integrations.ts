@@ -60,6 +60,13 @@ const plainIntegrations = [
     twitter: '@nuxt_js',
     title: 'The Intuitive Web Framework',
   },
+  {
+    avatar: '/integration-logos/remix.svg',
+    name: 'Remix',
+    github: 'remix-run/remix',
+    twitter: 'remix_run',
+    title: 'Build better websites with Remix and React Router',
+  },
 ]
 
 const integrations = plainIntegrations.map(i => createLinks(i))
