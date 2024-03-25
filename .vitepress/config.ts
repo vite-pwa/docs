@@ -175,6 +175,10 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     text: 'Qwik',
     link: '/frameworks/qwik',
   },
+  {
+    text: 'Remix',
+    link: '/frameworks/remix',
+  },
 ]
 
 const Examples: DefaultTheme.SidebarItem[] = [
@@ -225,6 +229,10 @@ const Examples: DefaultTheme.SidebarItem[] = [
   {
     text: 'Qwik',
     link: '/examples/qwik',
+  },
+  {
+    text: 'Remix',
+    link: '/examples/remix',
   },
 ]
 
@@ -440,6 +448,10 @@ export default withPwa(defineConfig({
               {
                 text: 'Qwik',
                 link: 'https://github.com/QwikDev/pwa',
+              },
+              {
+                text: 'Remix',
+                link: 'https://github.com/vite-pwa/remix',
               },
             ],
           },

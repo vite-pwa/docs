@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Deploy
-prev: Qwik | Examples
+prev: Remix | Examples
 ---
 
 # Getting Started

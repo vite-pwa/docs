@@ -1,6 +1,6 @@
 ---
 title: Getting Started | Examples
-prev: Qwik | Frameworks
+prev: Remix | Frameworks
 ---
 
 # Getting Started

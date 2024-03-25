@@ -97,6 +97,12 @@ Check the [Astro PWA Assets](/frameworks/astro#pwa-assets) section for more deta
 
 Check the [Nuxt 3 PWA Assets](/frameworks/nuxt#pwa-assets) section for more details about new components, composables and injections.
 
+### Remix
+
+Vite dev server will be restarted when changing the configuration (inlined or using external file).
+
+Check the [Remix PWA Assets](/frameworks/remix#pwa-assets) section for more details about the components.
+
 ## New Virtual Modules
 
 `vite-plugin-pwa` plugin exposes two new virtual modules for the integrations, they are not meant to be consumed from your application:

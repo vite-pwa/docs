@@ -57,7 +57,7 @@ features:
     linkText: Development
   - icon: 🛠️
     title: Versatile
-    details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, and Nuxt 3'
+    details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, Nuxt 3, and Remix'
     link: /frameworks/
     linkText: Frameworks
   - icon: 💥

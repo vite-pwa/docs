@@ -1,6 +1,5 @@
 ---
 title: Qwik | Examples
-next: Getting Started | Deploy
 ---
 
 # Qwik
