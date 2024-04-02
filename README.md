@@ -45,6 +45,7 @@ Documentation: PWA integrations for Vite and the ecosystem
 - [VitePress](https://github.com/vite-pwa/vitepress)
 - [Astro](https://github.com/vite-pwa/astro)
 - [Nuxt 3](https://github.com/vite-pwa/nuxt)
+- [Remix](https://github.com/remix-run/remix)
 
 ## 📄 License
 
