@@ -16,17 +16,9 @@ This PWA module can only be used with Vite.
 `vite-plugin-pwa` provides the new `@vite-pwa/nuxt` module that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
 
 You will need to install `@vite-pwa/nuxt` using:
-::: code-group
-  ```bash [pnpm]
-  pnpm add -D @vite-pwa/nuxt
-  ```
-  ```bash [yarn]
-  yarn add -D @vite-pwa/nuxt
-  ```
-  ```bash [npm]
-  npm install -D @vite-pwa/nuxt
-  ```
-:::
+```shell
+npx nuxi@latest module add @vite-pwa/nuxt
+```
 
 To update your project to use the new `@vite-pwa/nuxt` module for Nuxt 3, you only need to change the Nuxt config file adding the `@vite-pwa/nuxt` module, move the `vite-plugin-pwa` options to the module options, and remove the `vite-pwa-plugin` plugin (if present):
 
