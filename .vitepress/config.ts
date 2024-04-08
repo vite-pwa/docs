@@ -353,7 +353,7 @@ export default withPwa(defineConfig({
        */
     },
     socialLinks: [
-      { icon: 'discord', link: 'https://discord.gg/EZvBhD8H' },
+      { icon: 'discord', link: 'https://discord.gg/uccDuWkScq' },
       { icon: 'github', link: 'https://github.com/vite-pwa/docs' },
     ],
     footer: {
