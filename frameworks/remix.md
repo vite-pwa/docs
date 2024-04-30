@@ -128,3 +128,9 @@ Check the [shared-sw.ts module](https://github.com/vite-pwa/remix/blob/main/exam
 This feature includes the following components:
 - `PwaManifest` component to include the PWA manifest in your HTML pages: will inject the PWA web manifest in the HTML head
 - `PwaAssets` component to include the PWA assets in your HTML pages: will inject the PWA assets in the HTML head (PWA web manifest, theme-color, favicon and PWA web manifest)
+
+## Remix PWA Alternative
+
+You can use [Remix PWA](https://remix-pwa.run/) to add PWA support to your Remix application.
+
+

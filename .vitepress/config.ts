@@ -312,7 +312,7 @@ export default withPwa(defineConfig({
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', {
       name: 'keywords',
-      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module',
+      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module, Remix',
     }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],

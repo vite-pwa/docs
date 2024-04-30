@@ -8,7 +8,7 @@ title: Periodic Service Worker Updates | Guide
 If you're not importing any of the virtual modules provided by `vite-plugin-pwa` you'll need to figure out how to configure it, it is out of the scope of this guide.
 :::
 
-As explained in [Manual Updates](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#manual-updates) entry in [The Service Worker Lifecycle](https://web.dev/service-worker-lifecycle/) article, you can use this code to configure periodic service worker updates on your application on your `main.ts` or `main.js`:
+As explained in [Manual Updates](https://web.dev/articles/service-worker-lifecycle#manual_updates) entry in [The Service Worker Lifecycle](https://web.dev/articles/service-worker-lifecycle) article, you can use this code to configure periodic service worker updates on your application on your `main.ts` or `main.js`:
 
 ::: details main.ts / main.js
 ```ts

@@ -17,7 +17,7 @@ You can find all the `vite-plugin-pwa` virtual modules declarations in the follo
 
 ## Web app manifest and 401 status code (Unauthorized)
 
-[Browsers send requests for the web manifest without credentials](https://web.dev/add-manifest/#link-manifest), so if your site sits behind auth, the request will fail with a 401 Unauthorized error – even if the user is logged in.
+[Browsers send requests for the web manifest without credentials](https://web.dev/articles/add-manifest#link-manifest), so if your site sits behind auth, the request will fail with a 401 Unauthorized error – even if the user is logged in.
 
 To send the request with credentials, the `<link rel="manifest">` needs a `crossorigin="use-credentials"` attribute, which you can enable via `useCredentials` in the [plugin options](https://github.com/antfu/vite-plugin-pwa/blob/main/src/types.ts#L79):
 

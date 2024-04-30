@@ -5,7 +5,7 @@ outline: deep
 
 <script setup>
 const images = Object.entries(
-  import.meta.glob('/assets/*.svg', { as: 'raw', eager: true })
+  import.meta.glob('/assets/*.svg', { query: '?raw', eager: true, import: 'default' })
 ).reduce((acc, [image, content]) => {
   const name = image.replace('/assets/', '')
   acc[name.replace('.svg', '')] = content

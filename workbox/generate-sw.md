@@ -6,9 +6,9 @@ title: generateSW | Workbox
 
 You must read [Which Mode to Use](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use) before decide using this strategy on `vite-plugin-pwa` plugin.
 
-You can find the documentation for this method on `workbox` site: [generateSW](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-generateSW).
+You can find the documentation for this method on `workbox` site: [generateSW](https://developer.chrome.com/docs/workbox/modules/workbox-build#method-generateSW).
 
-You can find a guide for plugins on `workbox` site: [Using Plugins](https://developers.google.com/web/tools/workbox/guides/using-plugins).
+You can find a guide for plugins on `workbox` site: [Using Plugins](https://developer.chrome.com/docs/workbox/using-plugins/).
 
 ## Cache External Resources
 
@@ -16,7 +16,7 @@ If you use some `CDN` to download some resources like `fonts` and `css`, you mus
 
 The following example will use `css` from `https://fonts.googleapis.com` and `fonts` from `https://fonts.gstatic.com`.
 
-On `index.html` file you must configure the `css` `link`, you **MUST** also include `crossorigin="anonymous"` attribute for the external resources  (see [Handle Third Party Requests](https://developers.google.com/web/tools/workbox/guides/handle-third-party-requests)):
+On `index.html` file you must configure the `css` `link`, you **MUST** also include `crossorigin="anonymous"` attribute for the external resources  (see [Handle Third Party Requests](https://developer.chrome.com/docs/workbox/caching-resources-during-runtime#cross-origin_considerations)):
 
 ::: details index.html
 ```html

@@ -6,9 +6,9 @@ title: injectManifest | Workbox
 
 You must read [Which Mode to Use](https://developer.chrome.com/docs/workbox/modules/workbox-build/#which-mode-to-use) before decide using this strategy on `vite-plugin-pwa` plugin.
 
-Before writing your custom service worker, check if `workbox` can generate the code for you using `generateSW` strategy, looking for some plugin on `workbox` site on [Runtime Caching Entry](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-RuntimeCaching).
+Before writing your custom service worker, check if `workbox` can generate the code for you using `generateSW` strategy, looking for some plugin on `workbox` site on [Runtime Caching Entry](https://developer.chrome.com/docs/workbox/modules/workbox-build#type-RuntimeCaching).
 
-You can find the documentation for this method on `workbox` site: [injectManifest](https://developer.chrome.com/docs/workbox/reference/workbox-build/#method-injectManifest)
+You can find the documentation for this method on `workbox` site: [injectManifest](https://developer.chrome.com/docs/workbox/modules/workbox-build#method-injectManifest)
 
 :::warning
 From version `0.15.0`, `vite-plugin-pwa` builds your custom service worker using Vite instead of Rollup: configured Vite plugins were reused in the service worker build, which could lead to the generation of bad code in service worker.
@@ -201,12 +201,12 @@ clientsClaim()
 
 ## Server Push Notifications
 
-You should check the `workbox` documentation: [Introduction to push notifications](https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications). 
+You should check the `workbox` documentation: [Introduction to push notifications](https://web.dev/explore/notifications). 
 
-You can check this awesome repo [Elk](https://github.com/elk-zone/elk) using `Server Push Notifications` and some other cool service worker capabilities like [Web Share Target API](https://developer.chrome.com/articles/web-share-target/): using `Nuxt 3` and `vite-plugin-pwa`.
+You can check this awesome repo [Elk](https://github.com/elk-zone/elk) using `Server Push Notifications` and some other cool service worker capabilities like [Web Share Target API](https://developer.chrome.com/docs/capabilities/web-apis/web-share-target): using `Nuxt 3` and `vite-plugin-pwa`.
 
 ## Background Sync
 
 You should check the `workbox` documentation: check [Introducing to Background Sync](https://developer.chrome.com/blog/background-sync/).
 
-You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Background Sync` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developers.google.com/web/tools/workbox).
+You can check this awesome repo [YT Playlist Notifier](https://github.com/jeffposnick/yt-playlist-notifier) using `Background Sync` and some other cool service worker capabilities from the major collaborator of [Workbox](https://developer.chrome.com/docs/workbox/).

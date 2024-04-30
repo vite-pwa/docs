@@ -13,6 +13,12 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## Workbox 7.1.0 <Badge type="tip" text="from v0.20.0" />
+
+From `v0.20.0`, `vite-plugin-pwa` updates `workbox` to `7.1.0`.
+
+Workbox has deprecated [workbox-google-analytics](https://developer.chrome.com/docs/workbox/modules/workbox-google-analytics/), it is not compatible with newer Google Analytics v4.
+
 ## Updated Vite Build <Badge type="tip" text="from v0.19.6" />
 
 **These new features are meant to be used only from integrations.**

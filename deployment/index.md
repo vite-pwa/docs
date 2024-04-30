@@ -5,7 +5,7 @@ prev: Remix | Examples
 
 # Getting Started
 
-Since you need to install your application as a [Progressive Web App](https://web.dev/progressive-web-apps/), you must configure your server to meet [PWA Minimal Requirements](/guide/pwa-minimal-requirements), that is, your server **must**:
+Since you need to install your application as a [Progressive Web App](https://web.dev/explore/progressive-web-apps), you must configure your server to meet [PWA Minimal Requirements](/guide/pwa-minimal-requirements), that is, your server **must**:
 - serve `manifest.webmanifest` with `application/manifest+json` mime type
 - you must serve your application over `https`
 - you must redirect from `http` to `https`
