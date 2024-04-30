@@ -62,7 +62,7 @@ document.getElementById('#app').innerHTML = `
 
 ## globPatterns
 
-If you need to include other assets that are not under Vite's `publicDir` option directory, you can use the `globPatterns` parameter of [workbox](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.generateSW) or [injectManifest](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.injectManifest) plugin options.
+If you need to include other assets that are not under Vite's `publicDir` option directory, you can use the `globPatterns` parameter of [workbox](https://developer.chrome.com/docs/workbox/modules/workbox-build#generatesw) or [injectManifest](https://developer.chrome.com/docs/workbox/modules/workbox-build#injectmanifest) plugin options.
 
 ::: warning
 If you configure `globPatterns` on `workbox` or `injectManifest` plugin option, you **MUST** include all your assets patterns: `globPatterns` will be used by `workbox-build` to match files on `dist` folder.

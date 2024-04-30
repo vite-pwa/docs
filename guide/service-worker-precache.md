@@ -26,7 +26,7 @@ You can check this website or the [VueUse docs site](https://vueuse.org/) in a p
 
 ## Precache Manifest
 
-Since `vite-plugin-pwa` plugin uses [workbox-build](https://developer.chrome.com/docs/workbox/modules/workbox-build/) node library to build the service worker, it will only include `css`, `js` and `html` resources in the manifest precache (check the `globPatterns` entry in [GlobPartial](https://developer.chrome.com/docs/workbox/reference/workbox-build/#type-GlobPartial)).
+Since `vite-plugin-pwa` plugin uses [workbox-build](https://developer.chrome.com/docs/workbox/modules/workbox-build/) node library to build the service worker, it will only include `css`, `js` and `html` resources in the manifest precache (check the `globPatterns` entry in [GlobPartial](https://developer.chrome.com/docs/workbox/modules/workbox-build#type-GlobPartial)).
 
 `workbox-build` node library is file based, that is, it will traverse the build output folder of your application. `Vite` will generate your build in the `dist` folder, and so, `workbox-build` will traverse the `dist` folder adding all resources found in it to the service worker's precache manifest.
 

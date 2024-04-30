@@ -7,9 +7,9 @@ prev:
 
 # Getting Started
 
-[**Workbox**](https://developers.google.com/web/tools/workbox/) is a massive package with many modules to make service worker development more enjoyable and remove the need to deal with the low-level service worker API.
+[**Workbox**](https://developer.chrome.com/docs/workbox/) is a massive package with many modules to make service worker development more enjoyable and remove the need to deal with the low-level service worker API.
 
-In this document, we focus only on the [workbox-build](https://developer.chrome.com/docs/workbox/reference/workbox-build/) module from **Workbox**.
+In this document, we focus only on the [workbox-build](https://developer.chrome.com/docs/workbox/modules/workbox-build) module from **Workbox**.
 
 :::warning
 From version `0.16.0`, `vite-plugin-pwa` has been updated to use latest `workbox` version `7.0.0` that requires Node 16 or above.
