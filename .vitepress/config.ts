@@ -354,7 +354,7 @@ export default withPwa(defineConfig({
     },
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/uccDuWkScq' },
-      { icon: 'github', link: 'https://github.com/vite-pwa/docs' },
+      { icon: 'github', link: 'https://github.com/vite-pwa/vite-plugin-pwa' },
     ],
     footer: {
       message: 'Released under the MIT License.',
