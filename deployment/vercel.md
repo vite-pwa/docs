@@ -1,5 +1,6 @@
 ---
 title: Vercel | Deployment
+outline: deep
 ---
 
 # Vercel
