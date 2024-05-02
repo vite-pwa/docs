@@ -93,7 +93,7 @@ Create a `vercel.json` file at the root of your project to manage HTTP headers a
 
 Once deployment is complete, Vercel will provide a URL to access your deployed application. Check that everything works as expected, especially that the HTTP headers are applied correctly by inspecting the server responses using your browser's developer tools.
 
-### (Optional) Clearing the Data Cache in Vercel's Administration
+### Clearing the Data Cache in Vercel's Administration <Badge text="Optional" type="tip"/>
 
 It might be useful to clear the data cache in Vercel's administration panel, especially if you are experiencing issues with stale content or deployment errors that seem unrelated to your current build. Clearing the cache ensures that all previous build settings, dependencies, and stored data are removed, allowing a fresh start for a new deployment. This can help in resolving unexpected behavior and improving the reliability of deployment processes.
 
