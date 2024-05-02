@@ -103,7 +103,7 @@ Here is an explanation of the `vercel.json` configuration file, suitable for add
 
 The `vercel.json` file is a crucial component for configuring deployments on Vercel. It allows you to customize how Vercel serves your application, including how it handles HTTP headers, redirects, rewrites, caching, and more. This file should be placed in the root directory of your project.
 
-Vercel docs : [https://vercel.com/docs/projects/project-configuration](https://vercel.com/docs/projects/project-configuration)
+[Vercel docs](https://vercel.com/docs/projects/project-configuration)
 
 Below is a detailed explanation of each part of the `vercel.json` file provided in the setup instructions:
 
