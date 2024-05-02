@@ -2,10 +2,6 @@
 title: Vercel | Deployment
 ---
 
-Here's a translation of your markdown into English, including an explanation of why it might be useful to clear the data cache in Vercel's administration panel:
-
----
-
 # Vercel | Deployment
 
 ## Introduction
