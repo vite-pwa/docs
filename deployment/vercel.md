@@ -2,7 +2,7 @@
 title: Vercel | Deployment
 ---
 
-# Vercel | Deployment
+# Vercel
 
 ## Introduction
 

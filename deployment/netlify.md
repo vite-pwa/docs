@@ -1,5 +1,5 @@
 ---
-title: Netlify
+title: Netlify | Deployment
 ---
 
 # Netlify
