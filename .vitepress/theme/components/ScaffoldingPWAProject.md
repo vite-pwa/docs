@@ -40,4 +40,4 @@ pnpm create @vite-pwa/pwa my-vue-app --template vue
 bun create @vite-pwa/pwa my-vue-app --template vue
 ```
 
-See [create-pwa](https://github.com/vite-pwa/create-pwa) for more details on each supported template: `vanilla`, `vanilla-ts`, `vue`, `vue-ts`, `react`, `react-ts`, `preact`, `preact-ts`, `lit`, `lit-ts`, `svelte`, `svelte-ts`, `solid`, `solid-ts` (templates can be found inside the `templates` folder.
+See [create-pwa](https://github.com/vite-pwa/create-pwa) for more details on each supported template: `vanilla`, `vanilla-ts`, `vue`, `vue-ts`, `react`, `react-ts`, `preact`, `preact-ts`, `lit`, `lit-ts`, `svelte`, `svelte-ts`, `solid`, `solid-ts` (templates can be found inside the `templates` folder).
