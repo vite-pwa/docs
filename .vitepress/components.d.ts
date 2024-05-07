@@ -24,6 +24,7 @@ declare module 'vue' {
     ReactReactiveWarning: typeof import('./theme/components/ReactReactiveWarning.md')['default']
     ReloadPrompt: typeof import('./theme/components/ReloadPrompt.vue')['default']
     RunExamples: typeof import('./theme/components/RunExamples.md')['default']
+    ScaffoldingPWAProject: typeof import('./theme/components/ScaffoldingPWAProject.md')['default']
     ServiceWorkerClientErrors: typeof import('./theme/components/ServiceWorkerClientErrors.md')['default']
     SsrSsg: typeof import('./theme/components/SsrSsg.md')['default']
     TeamMembersItem: typeof import('./theme/components/vp/TeamMembersItem.vue')['default']

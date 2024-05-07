@@ -51,6 +51,10 @@ const Guide: DefaultTheme.SidebarItem[] = [
     link: '/guide/development',
   },
   {
+    text: 'Scaffolding Your First Vite PWA Project <sup class="VPBadgeCustom tip">New</sup>',
+    link: '/guide/scaffolding',
+  },
+  {
     text: 'Service Worker without PWA capabilities',
     link: '/guide/service-worker-without-pwa-capabilities',
   },
