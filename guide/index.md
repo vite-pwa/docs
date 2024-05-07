@@ -34,6 +34,11 @@ The `vite-plugin-pwa` plugin will:
 - generate the service worker: using the `strategies` plugin option (for more information read [Service Worker Strategies](/guide/service-worker-strategies-and-behaviors#service-worker-strategies) section)
 - generate the script to register the service worker in the browser: using `injectRegister` plugin option (for more information read [Register Service Worker](/guide/register-service-worker) section)
 
+
+## Scaffolding Your First Vite PWA Project <Badge type="tip" text="New"/>
+
+<ScaffoldingPWAProject />
+
 ## Installing vite-plugin-pwa
 
 To install the `vite-plugin-pwa` plugin, just add it to your project as a `dev dependency`:
