@@ -9,7 +9,7 @@ Documentation: PWA integrations for Vite and the ecosystem
 </a>
 <br>
 <a href="https://github.com/antfu/vite-plugin-pwa" target="__blank">
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/antfu/vite-plugin-pwa?style=social">
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/vite-pwa/vite-pwa-docs?style=social">
 </a>
 </p>
 
