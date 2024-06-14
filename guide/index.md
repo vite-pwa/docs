@@ -6,7 +6,7 @@ title: Getting Started | Guide
 
 Progressive Web Apps (PWAs) are web applications built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device&mdash;all with a single codebase.
 
-From a high level, a PWA consists of a [web application manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) to give the browser information about your app, and a service worker to manage the offline experience.
+At a high level, a PWA consists of a [web application manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) to give the browser information about your app, and a service worker to manage the offline experience.
 
 If you are new to Progressive Web Apps, you might consider reading Google's ["Learn PWA"](https://web.dev/learn/pwa/) course before you begin.
 
