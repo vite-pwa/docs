@@ -4,17 +4,11 @@ title: Getting Started | Guide
 
 # Getting Started
 
-::: tip [Learn PWA](https://web.dev/learn/pwa/)
-Progressive Web Apps (PWAs) are web application built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device, all with a single codebase.
+Progressive Web Apps (PWAs) are web applications built and enhanced with modern APIs to deliver enhanced capabilities, reliability, and installability while reaching anyone, anywhere, on any device&mdash;all with a single codebase.
 
-If you want to build a Progressive Web App, you may be wondering where to start, if it's possible to upgrade a website to a PWA without starting from scratch, or how to move from a platform-specific app to a PWA.
-:::
+At a high level, a PWA consists of a [web application manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) to give the browser information about your app, and a service worker to manage the offline experience.
 
-A PWA mainly consists of a [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest), a service worker and a script/module to register the service worker in the browser.
-
-If you are new to **Progressive Web Apps (PWA)**, we suggest read this guide before starting writing code: [Learn PWA](https://web.dev/learn/pwa/).
-
-Check out [Elk PWA Documentation](https://docs.elk.zone/pwa) for some useful PWA hints for users and developers.
+If you are new to Progressive Web Apps, you might consider reading Google's ["Learn PWA"](https://web.dev/learn/pwa/) course before you begin.
 
 ## Service Worker
 
@@ -24,16 +18,15 @@ A service worker is an event-driven [worker](https://developer.mozilla.org/en-US
 
 You can find more information about service workers in [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API).
 
-## vite-plugin-pwa
+## Vite PWA
 
-`vite-plugin-pwa` will help you to add PWA, with almost zero configuration, to your existing applications. The plugin will add sensible built-in default configuration for common use cases.
+Vite PWA will help you to turn your existing applications into PWAs with very little configuration. It comes preset with sensible defaults for common use cases.
 
-The `vite-plugin-pwa` plugin will:
-- generate the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest): using the `manifest` plugin option
-- configure the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) on your application entry point: adding a link on the `head` on your entry point
-- generate the service worker: using the `strategies` plugin option (for more information read [Service Worker Strategies](/guide/service-worker-strategies-and-behaviors#service-worker-strategies) section)
-- generate the script to register the service worker in the browser: using `injectRegister` plugin option (for more information read [Register Service Worker](/guide/register-service-worker) section)
+The `vite-plugin-pwa` plugin can:
 
+- Generate the [web appplication manifest][webmanifest] and add it to your entry point (see the [setup guide for manifest generation](pwa-minimal-requirements#web-app-manifest)).
+- Generate the service worker using the `strategies` option (for more information, see ["Service Worker Strategies"](/guide/service-worker-strategies-and-behaviors#service-worker-strategies) section)
+- Generate a script to register the service worker in the browser (see the ["Register Service Worker"](/guide/register-service-worker) section)
 
 ## Scaffolding Your First Vite PWA Project <Badge type="tip" text="New"/>
 
@@ -69,7 +62,7 @@ export default defineConfig({
 })
 ```
 
-With this minimal configuration of the `vite-plugin-pwa` plugin, your application is now able to generate the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and inject it at the entry point, generate the service worker and register it in the browser.
+With this minimal configuration of the `vite-plugin-pwa` plugin, your application is now able to generate the [Web App Manifest][webmanifest] and inject it at the entry point, generate the service worker and register it in the browser.
 
 You can find the full list of the `vite-plugin-pwa` plugin configuration options in the following [client.d.ts](https://github.com/antfu/vite-plugin-pwa/blob/main/src/types.ts).
 
@@ -94,7 +87,7 @@ export default defineConfig({
 ```
 :::
 
-If you want to check it in `dev`, add the `devOptions` option to the plugin configuration (you will have the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and the generated service worker):
+If you want to check it in `dev`, add the `devOptions` option to the plugin configuration (you will have the [Web App Manifest][webmanifest] and the generated service worker):
 ```ts
 import { VitePWA } from 'vite-plugin-pwa'
 
@@ -110,8 +103,10 @@ export default defineConfig({
 })
 ```
 
-If you build your application, the [Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) will be generated and configured on the application entry point, the service worker will be also generated and the script/module to register it in the browser added.
+If you build your application, the [Web App Manifest][webmanifest] will be generated and configured on the application entry point, the service worker will be also generated and the script/module to register it in the browser added.
 
 ::: info
 `vite-plugin-pwa` plugin uses [workbox-build](https://developer.chrome.com/docs/workbox/modules/workbox-build) node library to build the service worker, you can find more information in the [Service Worker Strategies And Behaviors](/guide/service-worker-strategies-and-behaviors) and [Workbox](/workbox/) sections.
 :::
+
+[webmanifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
