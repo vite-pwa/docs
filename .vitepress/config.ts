@@ -152,6 +152,10 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     link: '/frameworks/solidjs',
   },
   {
+    text: 'SolidStart',
+    link: '/frameworks/solidstart',
+  },
+  {
     text: 'Preact',
     link: '/frameworks/preact',
   },
