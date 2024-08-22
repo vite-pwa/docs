@@ -40,26 +40,26 @@ features:
     title: 完全可摇树
     details: 自动注入 Web 应用程序清单
   - icon: 💬
-    title: Prompt for new content
-    details: Built-in support for Vanilla JavaScript, Vue 3, React, Svelte, SolidJS and Preact
+    title: 提示新内容
+    details: 内置支持原生 JavaScript、Vue 3、React、Svelte、SolidJS 和 Preact
     link: /zh/guide/prompt-for-update
-    linkText: Prompt for new content refreshing
+    linkText: 新内容刷新提示
   - icon: ⚙️
     title: Stale-while-revalidate
-    details: Automatic reload when new content is available
+    details: 当有新的内容可用时自动刷新
   - icon: ✨
     title: Static assets handling
     details: Configure static assets for offline support
   - icon: 🐞
-    title: Development Support
-    details: Debug your custom service worker logic as you develop your application
+    title: 开发支持
+    details: 在开发应用程序时调试自定义 Service Worker 逻辑
     link: /zh/guide/development
-    linkText: Development
+    linkText: 开发
   - icon: 🛠️
     title: Versatile
     details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, Nuxt 3, and Remix'
     link: /zh/frameworks/
-    linkText: Frameworks
+    linkText: 框架
   - icon: 💥
     title: PWA Assets 生成器
     details: Generate all the PWA assets from a single command and a single source image
