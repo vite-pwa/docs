@@ -1,7 +1,7 @@
 {
   "name": "vite-pwa-docs",
   "type": "module",
-  "version": "0.20.9",
+  "version": "0.20.2",
   "packageManager": "pnpm@9.9.0",
   "description": "Zero-config PWA for Vite Documentation",
   "author": "antfu <anthonyfu117@hotmail.com>",
