@@ -13,6 +13,10 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## Service worker build <Badge type="tip" text="from v0.20.2" />
+
+From `v0.20.2`, the plugin will throw an error if the `maximumFileSizeToCacheInBytes` warning is present when building the service worker.
+
 ## Workbox 7.1.0 <Badge type="tip" text="from v0.20.0" />
 
 From `v0.20.0`, `vite-plugin-pwa` updates `workbox` to `7.1.0`.

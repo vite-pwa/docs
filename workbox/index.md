@@ -15,6 +15,10 @@ In this document, we focus only on the [workbox-build](https://developer.chrome.
 From version `0.16.0`, `vite-plugin-pwa` has been updated to use latest `workbox` version `7.0.0` that requires Node 16 or above.
 :::
 
+:::tip
+From version `0.20.2`, the plugin will throw an error if the `maximumFileSizeToCacheInBytes` warning is present when building the service worker.
+:::
+
 ## workbox-build module
 
 This module is for build process purposes (a `node` module); that is, `Vite Plugin PWA` will use it to build your service-worker.
@@ -31,7 +35,7 @@ While the `injectManifest` method will use your existing service worker and buil
 
 ## How is `workbox-build` related to `vite-plugin-pwa`?
 
-`vite-plugin-pwa` uses `generateSW` and `injectManifest` `workbox` methods internally when the `strategies` option is set to `generateSW` and `injectManifest` respectively.
+`vite-plugin-pwa` uses `generateSW` and `injectManifest` Workbox methods internally when the `strategies` option is set to `generateSW` and `injectManifest` respectively.
 
 When you configure `strategies: 'generateSW'` option (the default value) in your `vite.config.*` file, the plugin invokes workbox' `generateSW` method. The options passed to the `workbox-build` method will be those provided via the `workbox` option of the plugin configuration.
 
