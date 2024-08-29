@@ -56,6 +56,10 @@ and then inside `onRegisterError`, just notify the user that there was an error 
 
 ## Missing assets from SW precache manifest
 
+:::tip
+From version `0.20.2`, the plugin will throw an error if the `maximumFileSizeToCacheInBytes` warning is present when building the service worker.
+:::
+
 If you find any assets are missing from the service worker's precache manifest, you should check if they exceed the `maximumFileSizeToCacheInBytes`, the default value is **2 MiB**.
 
 You can increase the value to your needs, for example to allow assets up to **3 MiB**:
