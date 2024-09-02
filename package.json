@@ -1,7 +1,7 @@
 {
   "name": "vite-pwa-docs",
   "type": "module",
-  "version": "0.20.2",
+  "version": "0.20.3",
   "packageManager": "pnpm@9.9.0",
   "description": "Zero-config PWA for Vite Documentation",
   "author": "antfu <anthonyfu117@hotmail.com>",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/vite-pwa/docs#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vite-pwa/docs.git"
+    "url": "git+https://github.com/vite-pwa/docs.git"
   },
   "bugs": "https://github.com/vite-pwa/docs/issues",
   "keywords": [
