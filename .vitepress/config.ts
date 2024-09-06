@@ -340,8 +340,21 @@ export default withPwa(defineConfig({
     },
   },
   locales: {
-    root: { label: 'English' },
-    zh: { label: '简体中文', link: 'https://vite-pwa-org-zh.netlify.app/' },
+    root: {
+      label: 'English',
+      repository: {
+        link: 'https://github.com/vite-pwa/docs',
+        title: 'English Repository',
+      },
+    },
+    zh: {
+      label: '简体中文',
+      link: 'https://vite-pwa-org-zh.netlify.app/',
+      repository: {
+        link: 'https://github.com/EnochGao/vite-plugin-pwa-zh-docs',
+        title: '中文存储库',
+      },
+    },
   },
   themeConfig: {
     // logo: '/favicon.svg',
