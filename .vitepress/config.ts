@@ -339,6 +339,10 @@ export default withPwa(defineConfig({
       dark: 'vitesse-dark',
     },
   },
+  locales: {
+    root: { label: 'English' },
+    zh: { label: '简体中文', link: 'https://vite-pwa-org-zh.netlify.app/' },
+  },
   themeConfig: {
     // logo: '/favicon.svg',
     editLink: {
