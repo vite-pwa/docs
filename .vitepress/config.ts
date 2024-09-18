@@ -1,6 +1,7 @@
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import { version } from '../package.json'
 import { transformHead } from './scripts/transformHead'
 import { pwa } from './scripts/pwa'
@@ -338,6 +339,9 @@ export default withPwa(defineConfig({
       light: 'vitesse-light',
       dark: 'vitesse-dark',
     },
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
   },
   locales: {
     root: { label: 'English' },
@@ -477,6 +481,7 @@ export default withPwa(defineConfig({
   },
   vite: {
     logLevel: 'info',
+    plugins: [groupIconVitePlugin()],
   },
   pwa,
   transformHead,
