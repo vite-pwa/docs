@@ -19,7 +19,7 @@ function createLinks(i: Integration): Integration {
     i.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${i.mastodon}` })
 
   if (i.bluesky)
-    i.links.push({ icon: 'bluesky', link: `https://bluesky.app/profile/${i.x}` })
+    i.links.push({ icon: 'bluesky', link: `https://bsky.app/profile/${i.bluesky}` })
 
   if (i.x)
     i.links.push({ icon: 'x', link: `https://x.com/${i.x}` })
@@ -64,7 +64,7 @@ const plainIntegrations = [
     github: 'nuxt/nuxt',
     mastodon: 'nuxt',
     x: '@nuxt_js',
-    bluesky: '@nuxt.com',
+    bluesky: 'nuxt.com',
     title: 'The Intuitive Web Framework',
   },
   {
