@@ -6,7 +6,8 @@ export interface Integration extends Partial<DefaultTheme.TeamMember> {
   // required to download avatars from GitHub
   github: string
   mastodon?: string
-  twitter?: string
+  x?: string
+  bluesky?: string
   title?: string
   org?: string
   desc?: string
@@ -17,8 +18,11 @@ function createLinks(i: Integration): Integration {
   if (i.mastodon)
     i.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${i.mastodon}` })
 
-  if (i.twitter)
-    i.links.push({ icon: 'twitter', link: `https://twitter.com/${i.twitter}` })
+  if (i.bluesky)
+    i.links.push({ icon: 'bluesky', link: `https://bluesky.app/profile/${i.x}` })
+
+  if (i.x)
+    i.links.push({ icon: 'x', link: `https://x.com/${i.x}` })
 
   return i
 }
@@ -28,14 +32,15 @@ const plainIntegrations = [
     avatar: '/integration-logos/iles.svg',
     name: 'îles',
     github: 'ElMassimo/iles',
-    twitter: 'ilesjs',
+    x: 'ilesjs',
     title: 'The joyful site generator',
   },
   {
     avatar: '/integration-logos/sveltekit.svg',
     name: 'SvelteKit',
     github: 'sveltejs/kit',
-    twitter: 'sveltejs',
+    x: 'sveltejs',
+    bluesky: 'svelte.dev',
     title: 'The fastest way to build svelte apps',
   },
   {
@@ -49,7 +54,8 @@ const plainIntegrations = [
     name: 'Astro',
     github: 'withastro/astro',
     mastodon: 'astro',
-    twitter: 'astrodotbuild',
+    x: 'astrodotbuild',
+    bluesky: 'astro.build',
     title: 'Build fast websites, faster',
   },
   {
@@ -57,14 +63,15 @@ const plainIntegrations = [
     name: 'Nuxt 3',
     github: 'nuxt/nuxt',
     mastodon: 'nuxt',
-    twitter: '@nuxt_js',
+    x: '@nuxt_js',
+    bluesky: '@nuxt.com',
     title: 'The Intuitive Web Framework',
   },
   {
     avatar: '/integration-logos/remix.svg',
     name: 'Remix',
     github: 'remix-run/remix',
-    twitter: 'remix_run',
+    x: 'remix_run',
     title: 'Build better websites with Remix and React Router',
   },
 ]
