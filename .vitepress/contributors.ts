@@ -5,7 +5,7 @@ export interface CoreTeam extends Partial<DefaultTheme.TeamMember> {
   name: string
   // required to download avatars from GitHub
   github: string
-  twitter: string
+  bluesky?: string
   webtools?: string
   discord?: string
   youtube?: string
@@ -17,6 +17,9 @@ export interface CoreTeam extends Partial<DefaultTheme.TeamMember> {
 
 function createLinks(tm: CoreTeam): CoreTeam {
   tm.links = [{ icon: 'github', link: `https://github.com/${tm.github}` }]
+  if (tm.bluesky)
+    tm.links.push({ icon: 'bluesky', link: `https://bsky.app/profile/${tm.bluesky}` })
+
   if (tm.webtools)
     tm.links.push({ icon: 'mastodon', link: `https://elk.zone/m.webtoo.ls/@${tm.webtools}` })
 
@@ -25,8 +28,6 @@ function createLinks(tm: CoreTeam): CoreTeam {
 
   if (tm.youtube)
     tm.links.push({ icon: 'youtube', link: `https://www.youtube.com/@${tm.youtube}` })
-
-  tm.links.push({ icon: 'twitter', link: `https://twitter.com/${tm.twitter}` })
 
   ;(tm as any).teamMember = true
 
@@ -38,10 +39,10 @@ const plainTeamMembers = [
     avatar: '/team-avatars/antfu.webp',
     name: 'Anthony Fu',
     github: 'antfu',
+    bluesky: 'antfu.me',
     webtools: 'antfu',
     youtube: 'antfu',
     discord: 'https://chat.antfu.me',
-    twitter: 'antfu7',
     sponsor: 'https://github.com/sponsors/antfu',
     title: 'A fanatical open sourceror, working',
     org: 'NuxtLabs',
@@ -53,7 +54,7 @@ const plainTeamMembers = [
     name: 'Joaquín Sánchez',
     github: 'userquin',
     webtools: 'userquin',
-    twitter: 'userquin',
+    bluesky: 'userquin.bsky.social',
     title: 'A fullstack and android developer',
     desc: 'Vite\'s fanatical follower',
   },
@@ -61,7 +62,7 @@ const plainTeamMembers = [
     avatar: '/team-avatars/hannoeru.webp',
     name: 'ハン / Han',
     github: 'hannoeru',
-    twitter: 'hannoeru',
+    bluesky: 'hannoeru.me',
     title: 'Student / Front-End Engineer',
     desc: '@windi_css member',
   },
