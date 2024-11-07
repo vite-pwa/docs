@@ -5,7 +5,6 @@ export interface CoreTeam extends Partial<DefaultTheme.TeamMember> {
   name: string
   // required to download avatars from GitHub
   github: string
-  x?: string
   bluesky?: string
   webtools?: string
   discord?: string
@@ -30,9 +29,6 @@ function createLinks(tm: CoreTeam): CoreTeam {
   if (tm.youtube)
     tm.links.push({ icon: 'youtube', link: `https://www.youtube.com/@${tm.youtube}` })
 
-  if (tm.x)
-    tm.links.push({ icon: 'x', link: `https://x.com/${tm.x}` })
-
   ;(tm as any).teamMember = true
 
   return tm
@@ -47,7 +43,6 @@ const plainTeamMembers = [
     webtools: 'antfu',
     youtube: 'antfu',
     discord: 'https://chat.antfu.me',
-    x: 'antfu7',
     sponsor: 'https://github.com/sponsors/antfu',
     title: 'A fanatical open sourceror, working',
     org: 'NuxtLabs',
@@ -68,7 +63,6 @@ const plainTeamMembers = [
     name: 'ハン / Han',
     github: 'hannoeru',
     bluesky: 'hannoeru.me',
-    x: 'hannoeru',
     title: 'Student / Front-End Engineer',
     desc: '@windi_css member',
   },
