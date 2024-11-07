@@ -39,7 +39,6 @@ const plainIntegrations = [
     avatar: '/integration-logos/sveltekit.svg',
     name: 'SvelteKit',
     github: 'sveltejs/kit',
-    x: 'sveltejs',
     bluesky: 'svelte.dev',
     title: 'The fastest way to build svelte apps',
   },
