@@ -13,6 +13,38 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## Vite 6 support <Badge type="tip" text="from v0.23.0" />
+
+From `v0.21.1`, `vite-plugin-pwa` adds support for Vite 6:
+- should also work with Vite 3, 4 and 5.
+- still not using the Vite 6 [Environment API](https://vite.dev/guide/api-environment).
+
+If you want to use `vite-plugin-pwa` with Vite 6 [Environment API](https://vite.dev/guide/api-environment), check this PR: [feat!: add Vite 6 Environment API support](https://github.com/vite-pwa/vite-plugin-pwa/pull/786): install the `vite-plugin-pwa` version from `pkg-pr-new` using the last commit:
+
+::: code-group
+  ```bash [pnpm]
+  pnpm add -D https://pkg.pr.new/vite-plugin-pwa@88b2e45
+  ```
+  ```bash [yarn]
+  yarn add -D https://pkg.pr.new/vite-plugin-pwa@88b2e45
+  ```
+  ```bash [npm]
+  npm i -D https://pkg.pr.new/vite-plugin-pwa@88b2e45
+  ```
+:::
+
+::: info
+`vite-plugin-pwa` should still work with Vite 3, 4 and 5.
+:::
+
+## Workbox 7.3.0 <Badge type="tip" text="from v0.21.0" />
+
+From `v0.21.0`, `vite-plugin-pwa` updates `workbox` to `7.3.0`.
+
+## Workbox 7.3.0 <Badge type="tip" text="from v0.21.0" />
+
+From `v0.21.0`, `vite-plugin-pwa` updates `workbox` to `7.3.0`.
+
 ## Service worker build <Badge type="tip" text="from v0.20.2" />
 
 From `v0.20.2`, the plugin will throw an error if the `maximumFileSizeToCacheInBytes` warning is present when building the service worker.
