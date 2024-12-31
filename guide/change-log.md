@@ -13,6 +13,14 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 
+## SvelteKit Single-page App Support <Badge type="tip" text="from v0.6.7" />
+
+From `v0.6.7`, `@vite-pwa/sveltekit` adds support for [single-page apps](https://svelte.dev/docs/kit/single-page-apps), including also:
+- add `static-adapter` fallback in the service worker precache manifest in SPA mode
+- update `globPatterns` to include `__data.json` files when using `static-adapter` with `load` functions
+
+Check the [SvelteKit documentation](/frameworks/sveltekit) for further details.
+
 ## Vite 6 support <Badge type="tip" text="from v0.21.1" />
 
 From `v0.21.1`, `vite-plugin-pwa` adds support for Vite 6:
