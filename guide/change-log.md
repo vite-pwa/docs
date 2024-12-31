@@ -16,10 +16,10 @@ Please refer to the corresponding installation section:
 ## SvelteKit Single-page App Support <Badge type="tip" text="from v0.6.7" />
 
 From `v0.6.7`, `@vite-pwa/sveltekit` adds support for [single-page apps](https://svelte.dev/docs/kit/single-page-apps), including also:
-- include `static-adapter` fallback in the service worker precache manifest in SPA mode
-- update the `globPatterns` to include `__data.json` files when using `static-adapter` with `load` functions
+- add `static-adapter` fallback in the service worker precache manifest in SPA mode
+- update `globPatterns` to include `__data.json` files when using `static-adapter` with `load` functions
 
-Check the [SvelteKit frame section](/frameworks/sveltekit) for more details.
+Check the [SvelteKit documentation](/frameworks/sveltekit) for further details.
 
 ## Vite 6 support <Badge type="tip" text="from v0.21.1" />
 
