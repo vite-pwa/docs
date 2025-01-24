@@ -52,7 +52,7 @@ const Guide: DefaultTheme.SidebarItem[] = [
     link: '/guide/development',
   },
   {
-    text: 'Scaffolding Your First Vite PWA Project <sup class="VPBadgeCustom tip">New</sup>',
+    text: 'Scaffolding Your First Vite PWA Project',
     link: '/guide/scaffolding',
   },
   {

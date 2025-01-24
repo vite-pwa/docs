@@ -12,6 +12,13 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/astro](https://github.com/vite-pwa/astro#-install)
 - [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt#-install)
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
+- [@vite-pwa/create-pwa](https://github.com/vite-pwa/create-pwa#-usage)
+
+## @vite-pwa/create-pwa <Badge type="tip" text="from v0.6.0" />
+
+From version `v0.6.0`, all the templates to use Vite 6, including also the latest frameworks changes.
+
+Use version `v0.5.0` for Vite 5 and previous versions of the frameworks.
 
 ## SvelteKit Single-page App Support <Badge type="tip" text="from v0.6.7" />
 
