@@ -20,7 +20,7 @@ You will need to install `@vite-pwa/nuxt` using:
 npx nuxi@latest module add @vite-pwa/nuxt
 ```
 
-To update your project to use the new `@vite-pwa/nuxt` module for Nuxt 3, you only need to change the Nuxt config file adding the `@vite-pwa/nuxt` module, move the `vite-plugin-pwa` options to the module options, and remove the `vite-pwa-plugin` plugin (if present):
+To update your project to use the new `@vite-pwa/nuxt` module for Nuxt 3, you only need to change the Nuxt config file adding the `@vite-pwa/nuxt` module, move the `vite-plugin-pwa` options to the module options, and remove the `vite-plugin-pwa` plugin (if present):
 
 ```ts
 export default defineNuxtConfig({
