@@ -6,7 +6,7 @@ title: Service Worker Precache | Guide
 
 As explained in the [Service Worker](/guide/#service-worker) section, service workers act as proxies intercepting requests between the browser and the server.
 
-To add PWA capability to your application, we need to give it a service worker. The service worker's precache manifest must include all the resources of your application, so that the service worker knows what resources to downlaod into the browser's cache storage for use during `network requests interception` and when the application is offline.
+To add PWA capability to your application, we need to give it a service worker. The service worker's precache manifest must include all the resources of your application, so that the service worker knows what resources to download into the browser's cache storage for use during `network requests interception` and when the application is offline.
 
 ::: tip Network requests interception
 You can also configure whether to apply network request interception for any of your application resources. You can find more information on [Workbox - Caching Strategies](https://developer.chrome.com/docs/workbox/caching-strategies-overview/#caching-strategies).
