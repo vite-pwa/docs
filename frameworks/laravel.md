@@ -76,7 +76,7 @@ Before you run it, bear in mind that the PWA installs a service worker and fills
 php artisan serve --port=8082
 ```
 
-The app should now be running on http://localhost:8082. It should immediately work as a PWA. If you check the dev tools, the service worker should be running. If your browser supports it there will be an intall prompt in the address bar. It should then be installable. And if you use dev tools to take either the network or service worker offline, it should continue working if you reload the page.
+The app should now be running on `http://localhost:8082`. It should immediately work as a PWA. If you check the dev tools, the service worker should be running. If your browser supports it there will be an intall prompt in the address bar. It should then be installable. And if you use dev tools to take either the network or service worker offline, it should continue working if you reload the page.
 
 ## Working on the PWA
 
