@@ -184,6 +184,10 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     text: 'Remix',
     link: '/frameworks/remix',
   },
+  {
+    text: 'Laravel',
+    link: '/frameworks/laravel',
+  },
 ]
 
 const Examples: DefaultTheme.SidebarItem[] = [
