@@ -99,9 +99,3 @@ npm run pwa-icons
 This generates a set of icons defined by the minimal preset described [here](/assets-generator/cli.html#presets).
 
 They are automatically packaged in the public folder so they are web readable. They are also included in the repo so this process only needs repeating if you change the canonical `favicon.svg` icon.
-
-## Screenshot
-
-This screenshot demonstrates the useful features of `vite-plugin-pwa` runing within Laravel:
-
-![image](https://github.com/sfreytag/laravel-vite-pwa/assets/1155275/f98383dd-93e8-4d6d-abb0-06a6ddd55022)
