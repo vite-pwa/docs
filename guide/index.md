@@ -24,7 +24,7 @@ Vite PWA will help you to turn your existing applications into PWAs with very li
 
 The `vite-plugin-pwa` plugin can:
 
-- Generate the [web appplication manifest][webmanifest] and add it to your entry point (see the [setup guide for manifest generation](pwa-minimal-requirements#web-app-manifest)).
+- Generate the [web application manifest][webmanifest] and add it to your entry point (see the [setup guide for manifest generation](pwa-minimal-requirements#web-app-manifest)).
 - Generate the service worker using the `strategies` option (for more information, see ["Service Worker Strategies"](/guide/service-worker-strategies-and-behaviors#service-worker-strategies) section)
 - Generate a script to register the service worker in the browser (see the ["Register Service Worker"](/guide/register-service-worker) section)
 
