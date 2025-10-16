@@ -1,5 +1,5 @@
-import sharp from 'sharp'
 import fg from 'fast-glob'
+import sharp from 'sharp'
 
 async function createWebp() {
   /** @type {string[]} */

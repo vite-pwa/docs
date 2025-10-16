@@ -32,16 +32,15 @@ Double check that **you do not** have caching features enabled, especially `immu
 - [NGINX](/deployment/nginx)
 - [Apache Http Server 2.4+](/deployment/apache)
 
-
 ## Testing your application on production
 
 Once you deploy your application to your server, you can test it using [WebPageTest](https://www.webpagetest.org/).
 
-There are many test sites, but we suggest you use `WebPageTest` as this is the most comprehensive in terms of test: 
+There are many test sites, but we suggest you use `WebPageTest` as this is the most comprehensive in terms of test:
 - Security.
 - First byte time.
 - Keep alive enabled.
-- Compress transfer. 
+- Compress transfer.
 - Cache static content.
 - Effective use of CDN.
 - Lighthouse: Core Web Vitals, Performance, Images size optimization...

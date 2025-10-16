@@ -25,7 +25,7 @@ On `index.html` file you must configure the `css` `link`, you **MUST** also incl
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" crossorigin="anonymous" href="https://fonts.googleapis.com">
   <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" />
+  <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
 </head>
 ```
 :::
@@ -97,7 +97,7 @@ VitePWA({
   workbox: {
     runtimeCaching: [{
       handler: 'NetworkOnly',
-      urlPattern: /\/api\/.*\/*.json/,
+      urlPattern: /\/api\/.*\.json/,
       method: 'POST',
       options: {
         backgroundSync: {

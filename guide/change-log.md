@@ -78,13 +78,13 @@ From `v0.19.6`, `vite-plugin-pwa` adds `envOptions` option to `injectManifest` t
 - `envDir`: you can change the `envDir`, the plugin will use the Vite's [envDir](https://vitejs.dev/config/shared-options.html#envdir) option if not configured
 - `envPrefix`: you can change the `envPrefix`, the plugin will use the Vite's [envDir](https://vitejs.dev/config/shared-options.html#envprefix) option if not configured
 
-`vite-plugin-pwa` also includes the new `configureCustomSWViteBuild` integration option to allow you to change the Vite's build options for the custom service worker build, check the [PWAIntegration type](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/src/types.ts) definition for more details. 
+`vite-plugin-pwa` also includes the new `configureCustomSWViteBuild` integration option to allow you to change the Vite's build options for the custom service worker build, check the [PWAIntegration type](https://github.com/vite-pwa/vite-plugin-pwa/blob/main/src/types.ts) definition for more details.
 
 ## PWA Assets <Badge type="tip" text="from v0.19.0" /> <Badge type="warning" text="experimental" />
 
 From `v0.19.0`, `vite-plugin-pwa` adds experimental support for `@vite-pwa/assets-generator` to serve, generate and inject PWA assets on the fly.
 
-Check the [PWA Assets Generator Integrations](/assets-generator/integrations) section for more details.  
+Check the [PWA Assets Generator Integrations](/assets-generator/integrations) section for more details.
 
 ## New Vite Build <Badge type="tip" text="from v0.18.0" />
 
@@ -103,7 +103,7 @@ From version `v0.17.0`, `vite-plugin-pwa` configures `dontCacheBustURLsMatching`
 - `workbox.dontCacheBustURLsMatching = /^assets\//`
 - `injectManifest.dontCacheBustURLsMatching = /^assets\//`
 
-You can refer to this issue for more details about `dontCacheBustURLsMatching`: [Workbox appears to be needlessly generating revision hashes](https://github.com/vite-pwa/vite-plugin-pwa/issues/163). 
+You can refer to this issue for more details about `dontCacheBustURLsMatching`: [Workbox appears to be needlessly generating revision hashes](https://github.com/vite-pwa/vite-plugin-pwa/issues/163).
 
 ## @vite-pwa/vitepress
 

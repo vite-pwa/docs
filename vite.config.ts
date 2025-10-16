@@ -1,8 +1,8 @@
 import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vite'
-import Components from 'unplugin-vue-components/vite'
-import { presetAttributify, presetUno } from 'unocss'
+import { presetAttributify, presetWind3 } from 'unocss'
 import Unocss from 'unocss/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   logLevel: 'info',
@@ -11,6 +11,9 @@ export default defineConfig({
       '@vueuse/core',
       'vitepress',
     ],
+  },
+  experimental: {
+    enableNativePlugin: true,
   },
   server: {
     hmr: {
@@ -51,7 +54,7 @@ export default defineConfig({
 
     // https://github.com/unocss/unocss
     Unocss({
-      presets: [presetUno(), presetAttributify()],
+      presets: [presetWind3(), presetAttributify()],
     }),
   ],
 })

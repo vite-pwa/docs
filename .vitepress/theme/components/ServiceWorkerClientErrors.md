@@ -7,4 +7,3 @@ injectManifest: {
   rollupFormat: 'iife'
 }
 ```
-

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { VPTeamMembers } from 'vitepress/theme'
-import { integrations } from '../../integrations'
 import { teamMembers } from '../../contributors'
+import { integrations } from '../../integrations'
 </script>
 
 <template>

@@ -50,7 +50,6 @@ If you are using a configuration file:
 - update the built-in preset name or update the import to use `minimal2023Preset`: check the code snippets in the [built-in features section](/assets-generator/cli#built-in-features).
 - include `headLinkOptions.preset = '2023'` in you configuration file
 
-
 The new `minimal-2023` preset changes only the `favicon.ico` size, the `apple-touch-icon` and PWA manifest icons are the same, you need to update your html head favicon entries, from:
 ```html
 <head>
@@ -66,4 +65,3 @@ to:
   <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
 </head>
 ```
-

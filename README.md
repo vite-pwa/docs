@@ -21,7 +21,6 @@ Documentation: PWA integrations for Vite and the ecosystem
   </a>
 </p>
 
-
 ## 🚀 Features
 
 - 📖 [**Documentation & guides**](https://vite-pwa-org.netlify.app/)

@@ -62,12 +62,12 @@ When using `injectManifest` strategy, `@vite-pwa/remix` exposes a virtual module
 import {
   cleanupOutdatedCaches,
   clientsClaimMode,
+  dynamicRoutes,
   enablePrecaching,
   navigateFallback,
   promptForUpdate,
-  staticRoutes,
-  dynamicRoutes,
   routes,
+  staticRoutes,
   ssr,
 } from 'virtual:vite-pwa/remix/sw'
 ```
@@ -132,5 +132,3 @@ This feature includes the following components:
 ## Remix PWA Alternative
 
 You can use [Remix PWA](https://remix-pwa.run/) to add PWA support to your Remix application.
-
-

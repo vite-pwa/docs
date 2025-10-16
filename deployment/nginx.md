@@ -13,12 +13,11 @@ You need to register the correct MIME type for the web manifest by adding it eit
 types {
   # Manifest files
   application/manifest+json  webmanifest;
-  ... 
+  ...
 }
 ```
 
 or any `http`, `server` or location `location` block with
-
 
 ```nginx
 include mime.types;

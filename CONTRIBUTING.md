@@ -25,7 +25,7 @@ git checkout -b my-new-branch
 
 ## Testing website docs changes
 
-`vite-pwa-docs` uses `Vitepress` for the documentation website. 
+`vite-pwa-docs` uses `Vitepress` for the documentation website.
 
 Once you made the changes to the documentation, you can test them running `nr dev` from the root folder.
 

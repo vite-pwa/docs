@@ -84,7 +84,7 @@ const config = {
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'my-sw.js', // or `my-sw.ts`
-      /* other pwa options */  
+      /* other pwa options */
     })
   ],
 };
@@ -116,7 +116,7 @@ If your custom service working is importing any `workbox-*` module (`workbox-rou
 /** @type {import('vite').UserConfig} */
 const config = {
   define: {
-    'process.env.NODE_ENV': process.env.NODE_ENV === 'production' 
+    'process.env.NODE_ENV': process.env.NODE_ENV === 'production'
       ? '"production"'
       : '"development"'
   }
@@ -148,16 +148,16 @@ export default config
 
 In addition to the configuration above, it's necessary to add the PWA web manifest, currently the easiest way to do this, is to add it to any layout to your kit project:
 ```svelte
-<!-- src/routes/+layout.svelte -->
+// src/routes/+layout.svelte
 <script>
-  import { pwaInfo } from 'virtual:pwa-info'; 
+  import { pwaInfo } from 'virtual:pwa-info';
 
-  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
-</script> 
-  
-<svelte:head> 
- 	{@html webManifestLink} 
-</svelte:head> 
+  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : ''
+</script>
+
+<svelte:head>
+  {@html webManifestLink}
+</svelte:head>
 ```
 
 Check out the [virtual:pwa-info](/frameworks/#accessing-pwa-info) documentation to learn more about the virtually exposed module `pwa-info`.
@@ -252,11 +252,11 @@ Since SvelteKit uses SSR/SSG, we need to call the `vite-plugin-pwa` virtual modu
 The best place to include the virtual call will be in main layout of the application (you should register it in any layout):
 
 ::: details src/routes/+layout.svelte
-```html
+```svelte
 <script>
   import { onMount } from 'svelte'
   import { pwaInfo } from 'virtual:pwa-info'
-  
+
   onMount(async () => {
     if (pwaInfo) {
       const { registerSW } = await import('virtual:pwa-register')
@@ -276,7 +276,7 @@ The best place to include the virtual call will be in main layout of the applica
       })
     }
   })
-  
+
   $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 </script>
 
@@ -301,7 +301,7 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 <script>
   import { pwaInfo } from 'virtual:pwa-info'
 
-  $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''  
+  $: webManifest = pwaInfo ? pwaInfo.webManifest.linkTag : ''
 </script>
 
 <svelte:head>
@@ -321,79 +321,79 @@ The best place to include the `ReloadPrompt` component will be in main layout of
 ::: details $lib/ReloadPrompt.svelte
 ```html
 <script lang="ts">
-	import { useRegisterSW } from 'virtual:pwa-register/svelte'
-	const {
-		needRefresh,
-		updateServiceWorker,
-		offlineReady
-	} = useRegisterSW({
-		onRegistered(r) {
-		// uncomment following code if you want check for updates
-		// r && setInterval(() => {
-		//    console.log('Checking for sw update')
-		//    r.update()
-		// }, 20000 /* 20s for testing purposes */)
-			console.log(`SW Registered: ${r}`)
-		},
-		onRegisterError(error) {
-			console.log('SW registration error', error)
-		},
-	})
-	const close = () => {
-		offlineReady.set(false)
-		needRefresh.set(false)
-	}
-	$: toast = $offlineReady || $needRefresh
+  import { useRegisterSW } from 'virtual:pwa-register/svelte'
+  const {
+    needRefresh,
+    updateServiceWorker,
+    offlineReady
+  } = useRegisterSW({
+    onRegistered(r) {
+      // uncomment following code if you want check for updates
+      // r && setInterval(() => {
+      //   console.log('Checking for sw update')
+      //   r.update()
+      // }, 20000 /* 20s for testing purposes */)
+      console.log(`SW Registered: ${r}`)
+    },
+    onRegisterError(error) {
+      console.log('SW registration error', error)
+    },
+  })
+  const close = () => {
+    offlineReady.set(false)
+    needRefresh.set(false)
+  }
+  $: toast = $offlineReady || $needRefresh
 </script>
 
 {#if toast}
-	<div class="pwa-toast" role="alert">
-		<div class="message">
-			{#if $offlineReady}
-				<span>
-					App ready to work offline
-				</span>
-			{:else}
-				<span>
-					New content available, click on reload button to update.
-				</span>
-			{/if}
-		</div>
-		{#if $needRefresh}
-			<button on:click={() => updateServiceWorker(true)}>
-				Reload
-			</button>
-		{/if}
-		<button on:click={close}>
-			Close
-		</button>
-	</div>
+<div class="pwa-toast" role="alert">
+  <div class="message">
+    {#if $offlineReady}
+      <span>
+        App ready to work offline
+      </span>
+    {:else}
+      <span>
+        New content available, click on reload button to update.
+      </span>
+    {/if}
+  </div>
+  {#if $needRefresh}
+    <button on:click={() => updateServiceWorker(true)}>
+      Reload
+    </button>
+  {/if}
+  <button on:click={close}>
+    Close
+  </button>
+</div>
 {/if}
 
 <style>
-	.pwa-toast {
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		margin: 16px;
-		padding: 12px;
-		border: 1px solid #8885;
-		border-radius: 4px;
-		z-index: 2;
-		text-align: left;
-		box-shadow: 3px 4px 5px 0 #8885;
-		background-color: white;
-	}
-	.pwa-toast .message {
-		margin-bottom: 8px;
-	}
-	.pwa-toast button {
-		border: 1px solid #8885;
-		outline: none;
-		margin-right: 5px;
-		border-radius: 2px;
-		padding: 3px 10px;
-	}
+.pwa-toast {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 16px;
+  padding: 12px;
+  border: 1px solid #8885;
+  border-radius: 4px;
+  z-index: 2;
+  text-align: left;
+  box-shadow: 3px 4px 5px 0 #8885;
+  background-color: white;
+}
+.pwa-toast .message {
+  margin-bottom: 8px;
+}
+.pwa-toast button {
+  border: 1px solid #8885;
+  outline: none;
+  margin-right: 5px;
+  border-radius: 2px;
+  padding: 3px 10px;
+}
 </style>
 ```
 :::
@@ -429,18 +429,18 @@ To inject the PWA icons links and the `theme-color`, you can use the `virtual:pw
 - add the virtual import
 - include theme color and icons links using code-snippet shown below
 
-```svelte
+```html
 <script>
 import { pwaAssetsHead } from 'virtual:pwa-assets/head';
 </script>
 
 <svelte:head>
-	{#if pwaAssetsHead.themeColor}
-	<meta name="theme-color" content={pwaAssetsHead.themeColor.content} />
-	{/if}
-	{#each pwaAssetsHead.links as link}
-	<link {...link} />
-	{/each}
+  {#if pwaAssetsHead.themeColor}
+  <meta name="theme-color" content={pwaAssetsHead.themeColor.content} />
+  {/if}
+  {#each pwaAssetsHead.links as link}
+  <link {...link} />
+  {/each}
 </svelte:head>
 ```
 
