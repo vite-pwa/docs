@@ -14,6 +14,15 @@ Please refer to the corresponding installation section:
 - [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator#-install)
 - [@vite-pwa/create-pwa](https://github.com/vite-pwa/create-pwa#-usage)
 
+You can check the release notes to see the corresponding changes:
+- [vite-plugin-pwa](https://github.com/vite-pwa/vite-plugin-pwa/releases)
+- [@vite-pwa/sveltekit](https://github.com/vite-pwa/sveltekit/releases)
+- [@vite-pwa/vitepress](https://github.com/vite-pwa/vitepress/releases)
+- [@vite-pwa/astro](https://github.com/vite-pwa/astro/releases)
+- [@vite-pwa/nuxt](https://github.com/vite-pwa/nuxt/releases)
+- [@vite-pwa/assets-generator](https://github.com/vite-pwa/assets-generator/releases)
+- [@vite-pwa/create-pwa](https://github.com/vite-pwa/create-pwa/releases)
+
 ## @vite-pwa/create-pwa <Badge type="tip" text="from v1.0.0" />
 
 From version `v1.0.0`, all the templates to use Vite 7, including also the latest frameworks changes.
