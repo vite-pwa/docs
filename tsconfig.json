@@ -3,12 +3,13 @@
     "incremental": false,
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "Bundler",
-    "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     },
+    "resolveJsonModule": true,
     "types": [
       "@types/fs-extra",
       "node",
@@ -16,12 +17,11 @@
       "vite-plugin-pwa/vanillajs",
       "vitepress"
     ],
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
   "include": [
