@@ -40,7 +40,7 @@
     "preview": "nr build && vitepress serve",
     "https": "nr build && serve .vitepress/dist",
     "lint": "eslint .",
-    "lint-fix": "nr lint --fix",
+    "lint:fix": "nr lint --fix",
     "generate-pwa-icons": "pwa-assets-generator"
   },
   "dependencies": {
