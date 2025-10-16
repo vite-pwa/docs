@@ -68,7 +68,7 @@ npm install
 npm run build
 ```
 
-## Run 
+## Run
 
 Before you run it, bear in mind that the PWA installs a service worker and fills a cache. This can conflict with other service workers and caches from your other localhost projects. So it is recommended to use a port unique to each PWA project. To use eg 8082 for Laravel:
 

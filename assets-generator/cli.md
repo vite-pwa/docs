@@ -283,7 +283,7 @@ export default defineConfig({
   preset: {
     transparent: {
       sizes: [64, 192, 512],
-      favicons: [[48, "favicon-48x48.ico"], [64, "favicon.ico"]]
+      favicons: [[48, 'favicon-48x48.ico'], [64, 'favicon.ico']]
     },
     maskable: {
       sizes: [512]
@@ -302,7 +302,7 @@ PWA Assets Generator will generate the `public/pwa-48x48.png` PWA icon, then gen
 
 By default, the CLI will show the PWA manifest icons' entry in the terminal. You can disable it using `-m=false` or `--manifest=false` option from CLI or using `manifestIconsEntry: false` in the file configuration.
 
-If you have configured `logLevel: 'silent'` in your configuration file, the CLI will not log the PWA manifest icons' entry. 
+If you have configured `logLevel: 'silent'` in your configuration file, the CLI will not log the PWA manifest icons' entry.
 
 ### iOS/iPad Splash Screens
 
@@ -374,7 +374,8 @@ export default defineConfig({
     preset: '2023'
   },
   preset: combinePresetAndAppleSplashScreens(
-    minimal2023Preset, {
+    minimal2023Preset,
+    {
       padding: 0.3,
       resizeOptions: { background: 'white', fit: 'contain' },
       // by default, dark splash screens are exluded
@@ -451,13 +452,15 @@ For example, to create this custom configuration:
 - create splash screens for `iPhone 6` device using a custom configuration:
   - padding: `0.4`
   - custom splash screen name
-  - `#2f2f2f` background color for dark splash screens 
+  - `#2f2f2f` background color for dark splash screens
 
 you can use the following configuration:
 ```ts
+import type {
+  AppleDeviceName,
+  AppleDeviceSize,
+} from '@vite-pwa/assets-generator/config'
 import {
-  type AppleDeviceName,
-  type AppleDeviceSize,
   appleSplashScreenSizes,
   defineConfig,
   minimal2023Preset

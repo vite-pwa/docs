@@ -20,8 +20,7 @@ If you are running an example with `Periodic SW updates`, you will need to wait 
 ## generateSW
 
 <ExamplesGenerateSW />
-  
+
 ## injectManifest
 
 <ExamplesInjectManifest />
-

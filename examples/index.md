@@ -103,4 +103,3 @@ We provide the following examples projects:
 - [VitePress](/examples/vitepress).
 - [îles](/examples/iles): prompt for update.
 - [Astro](/examples/astro).
-

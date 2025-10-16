@@ -4,7 +4,7 @@ Before following the instructions below, read the [Contribution Guide](https://g
 
 Make sure you install project dependencies, and build the repo on your local clone/fork:
 
-```shell
+```bash
 cd vite-plugin-pwa
 pnpm install
 pnpm run build

@@ -4,7 +4,7 @@ title: Service Worker without PWA capabilities | Guide
 
 # Service Worker without PWA capabilities
 
-Sometimes you don't need the full blown PWA functionality like **offline cache** and **manifest file**, but need simple custom Service Worker. 
+Sometimes you don't need the full blown PWA functionality like **offline cache** and **manifest file**, but need simple custom Service Worker.
 
 You can disable all `vite-plugin-pwa` supported features, and use it just to manage your Service Worker file.
 
@@ -13,9 +13,9 @@ You can disable all `vite-plugin-pwa` supported features, and use it just to man
 Suppose you want to have a Service Worker file that captures browser `fetch`:
 ```js
 // src/service-worker.js or src/service-worker.ts
-self.addEventListener("fetch", (event) => {
-  event.respondWith(fetch(event.request));
-});
+self.addEventListener('fetch', (event) => {
+  event.respondWith(fetch(event.request))
+})
 ```
 
 You would like to have this service worker reloaded on each change in **development** and prepared for **production**.
@@ -26,9 +26,9 @@ You should configure `vite-plugin-pwa` plugin options in your Vite configuration
 ```js
 // vite.config.js or vite.config.ts
 VitePWA({
-  srcDir: "src",
-  filename: "service-worker.js",
-  strategies: "injectManifest",
+  srcDir: 'src',
+  filename: 'service-worker.js',
+  strategies: 'injectManifest',
   injectRegister: false,
   manifest: false,
   injectManifest: {

@@ -1,6 +1,6 @@
 ---
 title: FAQ | Guide
-next: Getting Started | PWA Assets Generator 
+next: Getting Started | PWA Assets Generator
 ---
 
 # FAQ
@@ -37,7 +37,7 @@ If you're using a custom service worker without `precaching` (`self.__WB_MANIFES
 injectManifest: {
   injectionPoint: undefined
 }
-```    
+```
 
 ## Service Worker Registration Errors
 
@@ -207,7 +207,7 @@ From version `0.14.5`, `vite-plugin-pwa` includes types for each framework, and 
 - `virtual:pwa-register/vanillajs`: configure `vite-plugin-pwa/vanillajs`.
 - `virtual:pwa-register/vue`: configure `vite-plugin-pwa/vue`.
 
-You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the [vite-plugin-pwa repo](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples). 
+You can find some examples for `preact`, `solid` and `svelte` in the examples folder in the [vite-plugin-pwa repo](https://github.com/vite-pwa/vite-plugin-pwa/tree/main/examples).
 
 ## Suppress workbox-build warnings in dev
 

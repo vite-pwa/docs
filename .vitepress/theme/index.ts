@@ -1,6 +1,6 @@
-import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
 import PwaLayout from './PwaLayout.vue'
 
 import './styles/main.css'

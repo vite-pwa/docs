@@ -29,28 +29,28 @@ For example, if you don't specify the `filename`, the service worker name will b
 ```js
 // public/sw.js
 self.addEventListener('install', (e) => {
-  self.skipWaiting();
-});
+  self.skipWaiting()
+})
 self.addEventListener('activate', (e) => {
   self.registration.unregister()
     .then(() => self.clients.matchAll())
     .then((clients) => {
       clients.forEach((client) => {
         if (client instanceof WindowClient)
-          client.navigate(client.url);
-      });
-      return Promise.resolve();
+          client.navigate(client.url)
+      })
+      return Promise.resolve()
     })
     .then(() => {
       self.caches.keys().then((cacheNames) => {
         Promise.all(
           cacheNames.map((cacheName) => {
-            return self.caches.delete(cacheName);
+            return self.caches.delete(cacheName)
           })
-        );
+        )
       })
-    });
-});
+    })
+})
 ```
 
 You can repeat the above process as many times as necessary, **remember not to delete** any service worker from the public directory (you don't know what version the users of your application have installed).

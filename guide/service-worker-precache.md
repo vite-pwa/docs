@@ -15,9 +15,9 @@ You can also configure whether to apply network request interception for any of 
 Once the application registers the service worker, the browser will try to install it. This involves downloading all the resources in the service worker's precache manifest, and then trying to activate the service worker to take the control of the application.
 
 ::: tip
-The browser will **only** download the resources in the service worker's precache manifest **if the service worker is not installed** (the first time the user visits your application) or **if there is a new version of your application** (if you change some resource in your application, the service worker will also change once you build the application, since its precache manifest is modified to include your changes). 
+The browser will **only** download the resources in the service worker's precache manifest **if the service worker is not installed** (the first time the user visits your application) or **if there is a new version of your application** (if you change some resource in your application, the service worker will also change once you build the application, since its precache manifest is modified to include your changes).
 
-The browser will always download these resouces **in a background thread** and not in the main browser thread, so that the application is usable even before the service worker is installed. 
+The browser will always download these resouces **in a background thread** and not in the main browser thread, so that the application is usable even before the service worker is installed.
 
 You can see this behaviour on this website or the [VueUse docs site](https://vueuse.org/) in a private window. Just open `Network Tab` on dev tools before visiting the site: the browser will be downloading all the resources while you navigate the site.
 :::

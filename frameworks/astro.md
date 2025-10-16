@@ -63,7 +63,7 @@ The best place to use/import the PWA virtual module will be in the main layout o
 import { pwaInfo } from 'virtual:pwa-info';
 
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props as Props;
@@ -347,7 +347,7 @@ import { pwaAssetsHead } from 'virtual:pwa-assets/head';
         <link {...link} />
     )) }
   </head>
-</html>    
+</html>
 ```
 
 You can find a working example in the [examples folder](https://github.com/vite-pwa/astro/tree/main/examples/pwa-simple-assets-generator).

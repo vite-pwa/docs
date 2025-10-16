@@ -74,7 +74,6 @@ Or you can import any of the virtual modules exposed by the plugin.
 
 If you're using `injectManifest` strategy in development with `devOptions` enabled, you should check [injectManifest development section](/guide/development#injectmanifest-strategy) to get details on getting the right ServiceWorker URL for your development setup.
 
-
 ## Auto Registration
 
 If your application code base is not importing any of the virtual modules exposed by the plugin, the plugin will fallback to [Script Registration](/guide/register-service-worker#script-registration), otherwise, the imported virtual module will register the service worker for you.

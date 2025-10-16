@@ -19,7 +19,6 @@ If you are using images in your application via `src/assets` directory (or any o
 - you must reference the images in the `PWA Manifest` icons using the assets directory path relative to the root folder: `./src/assets/logo.png` or `src/assets/logo.png`
 - inlined icons cannot be used, in that case you will need to copy/move those images to the Vite's `publicDir` option directory: refer to [Importing Asset as URL](https://vitejs.dev/guide/assets.html#importing-asset-as-url) and [Vite's assetsInlineLimit option](https://vitejs.dev/config/build-options.html#build-assetsinlinelimit)
 
-
 ::: warning
 If you're using `PWA Manifest` icons from any asset folder, but you are not using those images in your application (via static import or in src attribute), Vite will not emit those assets, and so missing from the build output:
 
@@ -92,4 +91,3 @@ To configure `globPatterns` you need to use `workbox` or `injectManifest` plugin
   })
   ```
 :::
-

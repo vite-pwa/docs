@@ -49,18 +49,18 @@ Include conf/extra/https-www.yourdomain.com.conf
 
 <VirtualHost www.yourdomain.com:80>
     ServerName www.yourdomain.com
-    
+
     RewriteEngine On
-    
+
     # disable TRACE and TRACK methods
     RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
     RewriteRule .* - [F]
-    
+
     Options +FollowSymlinks
     RewriteCond %{SERVER_PORT} !443
-    
+
     RewriteRule (.*) https://www.yourdomain.com/ [L,R]
-    
+
     ErrorLog logs/www.yourdomain.com-error_log
     CustomLog logs/www.yourdomain.com-access_log combined
 </VirtualHost>

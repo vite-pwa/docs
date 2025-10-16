@@ -264,7 +264,7 @@ onBeforeMount(async () => {
 
 ### includeAllowlist
 
-To prevent breaking Vitepress layout when the user visits a page that does not exist, you can enable the new experimental option `includeAllowlist`, requires VitePress `1.0.0-rc.14+`. 
+To prevent breaking Vitepress layout when the user visits a page that does not exist, you can enable the new experimental option `includeAllowlist`, requires VitePress `1.0.0-rc.14+`.
 
 Check the problem in the following issue: https://github.com/vite-pwa/vitepress/issues/22.
 
@@ -280,7 +280,7 @@ export default withPwa(defineConfig({
   /* your VitePress options */
   /* Vite PWA Options */
   pwa: {
-    strategies: 'generateSW', // <== if omitted, defaults to `generateSW`  
+    strategies: 'generateSW', // <== if omitted, defaults to `generateSW`
     workbox: { /* your workbox configuration if any */ },
     experimental: {
       includeAllowlist: true

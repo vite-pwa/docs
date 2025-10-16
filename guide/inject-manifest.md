@@ -9,10 +9,10 @@ With this service worker `strategy` you can build your own service worker.
 
 The `vite-plugin-pwa` plugin will compile your custom service worker and inject its service worker's precache manifest.
 
-By default, the plugin will assume the `service worker` source code is located at the `Vite's public` folder with the name `sw.js`, that's, it will search in the following file: `/public/sw.js`. 
+By default, the plugin will assume the `service worker` source code is located at the `Vite's public` folder with the name `sw.js`, that's, it will search in the following file: `/public/sw.js`.
 
 If you want to change the location and/or the service worker name, you will need to change the following plugin options:
-- `srcDir`: **must** be relative to the project root folder 
+- `srcDir`: **must** be relative to the project root folder
 - `filename`: including the file extension and **must** be relative to the `srcDir` folder
 
 For example, if your service worker is located at `/src/my-sw.js` you must configure it using:
@@ -84,7 +84,7 @@ injectManifest: {
 From `v0.18.0`, you can add custom Rollup and/or Vite plugins to the service worker build, using `rollup` and `vite` options in the new `buildPlugins` option.
 
 ::: warning
-The old `plugins` option has been deprecated, use `buildPlugins.rollup` instead: 
+The old `plugins` option has been deprecated, use `buildPlugins.rollup` instead:
 - if `buildPlugins.rollup` is configured then `plugins` will be ignored
 - if `buildPlugins.rollup` is not configured then `plugins` will be used
 :::
@@ -131,7 +131,7 @@ self.addEventListener('message', (event) => {
 })
 ```
 
-## TypeScript support 
+## TypeScript support
 
 You can use TypeScript to write your custom service worker. To resolve service worker types, just add `WebWorker` to `lib` entry on your `tsconfig.json` file:
 
@@ -145,7 +145,7 @@ You can use TypeScript to write your custom service worker. To resolve service w
 
 ### Plugin Configuration
 
-We recommend you to put your custom service worker inside `src` directory. 
+We recommend you to put your custom service worker inside `src` directory.
 
 You need to configure `srcDir: 'src'` and `filename: 'sw.ts'` plugin options in your `vite.config.ts` file, configure both options with the directory and the name of your custom service worker properly:
 

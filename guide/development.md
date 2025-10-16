@@ -139,12 +139,12 @@ export default defineConfig({
 
 You can use `type: 'module'` when registering the service worker (right now only supported on latest versions of `Chromium` based browsers: `Chromium/Chrome/Edge`):
 
-<!--eslint-skip-->
+<!-- eslint-skip -->
 ```ts
 devOptions: {
   enabled: true,
   type: 'module',
-  /* other options */  
+  /* other options */
 }
 ```
 
@@ -200,7 +200,7 @@ When you change your service worker source code, `Vite` will force a full reload
 
 You can find an example here: [vue-router](https://github.com/antfu/vite-plugin-pwa/tree/main/examples/vue-router).
 
-To run the example, you must build the PWA plugin (`pnpm run build` from root folder), change to `vue-router` directory 
+To run the example, you must build the PWA plugin (`pnpm run build` from root folder), change to `vue-router` directory
 (`cd examples/vue-router`) and run it:
 - `generateSW` strategy: `pnpm run dev`
 - `injectManifest` strategy: `pnpm run dev-claims`

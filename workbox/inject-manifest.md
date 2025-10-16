@@ -15,7 +15,7 @@ From version `0.15.0`, `vite-plugin-pwa` builds your custom service worker using
 
 If you are using any Vite plugin logic within your custom service worker, you need to add those plugins twice, for the development server and the build process:
 - Vite plugins
-- `vite-plugin-pwa` plugin options: `injectManifest.plugins` 
+- `vite-plugin-pwa` plugin options: `injectManifest.plugins`
 
 `vite-plugin-pwa` now uses the same approach as Vite to build [WebWorkers](https://vitejs.dev/config/worker-options.html#worker-plugins).
 :::
@@ -70,15 +70,15 @@ Then in your `src/sw.ts` file, remember you will also need to add following `wor
 
 ::: details src/sw.ts
 ```ts
+import type { ManifestEntry } from 'workbox-build'
+import type { StrategyHandler } from 'workbox-strategies'
 import { cacheNames, clientsClaim } from 'workbox-core'
 import { registerRoute, setCatchHandler, setDefaultHandler } from 'workbox-routing'
-import type { StrategyHandler } from 'workbox-strategies'
 import {
   NetworkFirst,
   NetworkOnly,
   Strategy
 } from 'workbox-strategies'
-import type { ManifestEntry } from 'workbox-build'
 
 // Give TypeScript the correct global.
 declare let self: ServiceWorkerGlobalScope
@@ -201,7 +201,7 @@ clientsClaim()
 
 ## Server Push Notifications
 
-You should check the `workbox` documentation: [Introduction to push notifications](https://web.dev/explore/notifications). 
+You should check the `workbox` documentation: [Introduction to push notifications](https://web.dev/explore/notifications).
 
 You can check this awesome repo [Elk](https://github.com/elk-zone/elk) using `Server Push Notifications` and some other cool service worker capabilities like [Web Share Target API](https://developer.chrome.com/docs/capabilities/web-apis/web-share-target): using `Nuxt 3` and `vite-plugin-pwa`.
 

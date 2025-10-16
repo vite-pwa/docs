@@ -88,8 +88,8 @@ export interface PwaInjection {
    */
   isInstalled: boolean
   /**
-   * From version v0.3.5+. 
-   */  
+   * From version v0.3.5+.
+   */
   isPWAInstalled: Ref<boolean>
   showInstallPrompt: Ref<boolean>
   cancelInstall: () => void

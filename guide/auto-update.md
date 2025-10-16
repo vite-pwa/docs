@@ -78,4 +78,3 @@ When the user clicks the `OK` button, just hide the prompt shown on `onOfflineRe
 ### SSR/SSG
 
 <SsrSsg />
-
