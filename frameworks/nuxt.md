@@ -49,7 +49,7 @@ The module will provide the following features via `$pwa` property:
 
 You will need to activate `pwa.client.installPrompt` property in your Nuxt config file to enable `beforeinstallprompt` event interception: configure `true` or the key name used in local storage to store the `beforeinstallprompt` cancellation for your install prompt/widget.
 
-Additionally, you can also configure periodic sync for updates, you can enable it via `pwa.periodicSyncForUpdates` property in your Nuxt config file: configure the interval in seconds in previous property.
+Additionally, you can also configure periodic sync for updates, you can enable it via `pwa.client.periodicSyncForUpdates` property in your Nuxt config file: configure the interval in seconds in previous property.
 
 You can disable this plugin by setting `pwa.client.registerPlugin` property to `false` in your Nuxt config file. In that case, you will need to import `VanillaJS` or `Vue` PWA virtual module in your application, and previous features will not be available (you can only access to the features exposed by the virtual module).
 
