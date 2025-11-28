@@ -56,7 +56,7 @@ export default defineConfig({
     Unocss({
       presets: [presetWind3(), presetAttributify()],
     }),
-    {
+    /* {
       name: 'fix-workbox-window-import',
       apply: 'build',
       enforce: 'post',
@@ -71,15 +71,26 @@ export default defineConfig({
           console.log('Changed ssr.noExternal:', noExternal)
         }
       },
-      configEnvironment(_name) {
-        return {
-          build: {
-            rolldownOptions: {
-              external: ['workbox-window'],
+      configEnvironment(_name, config) {
+        if (config.consumer === 'client') {
+          return {
+            build: {
+              rolldownOptions: {
+                noExternal: ['workbox-window'],
+              },
             },
-          },
+          }
+        }
+        else {
+          return {
+            build: {
+              rolldownOptions: {
+                external: ['workbox-window'],
+              },
+            },
+          }
         }
       },
-    },
+    }, */
   ],
 })
