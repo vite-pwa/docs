@@ -78,7 +78,7 @@ const offlineReady = ref(false)
 function onOfflineReady() {
   offlineReady.value = true
 }
-async function close() {
+function close() {
   offlineReady.value = false
 }
 
@@ -182,7 +182,7 @@ function onOfflineReady() {
 function onNeedRefresh() {
   needRefresh.value = true
 }
-async function close() {
+function close() {
   offlineReady.value = false
   needRefresh.value = false
 }
