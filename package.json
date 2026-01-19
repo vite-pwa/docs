@@ -66,6 +66,7 @@
     "vite-plugin-pwa": "^1.2.0",
     "vitepress": "2.0.0-alpha.12",
     "vitepress-plugin-group-icons": "^1.6.5",
+    "vitepress-plugin-llms": "^1.10.0",
     "workbox-window": "^7.4.0"
   },
   "pnpm": {

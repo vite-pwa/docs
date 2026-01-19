@@ -2,6 +2,7 @@ import type { DefaultTheme } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
+import llmsVitePlugin from 'vitepress-plugin-llms'
 import { version } from '../package.json'
 import { pwa } from './scripts/pwa'
 import { transformHead } from './scripts/transformHead'
@@ -485,7 +486,16 @@ export default withPwa(defineConfig({
   },
   vite: {
     logLevel: 'info',
-    plugins: [groupIconVitePlugin()],
+    plugins: [
+      groupIconVitePlugin(),
+      llmsVitePlugin({
+        title: 'Vite PWA Plugin Documentation',
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        injectLLMHint: true,
+        stripHTML: true,
+      }),
+    ],
   },
   pwa,
   transformHead,
