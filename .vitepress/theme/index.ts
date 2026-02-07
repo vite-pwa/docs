@@ -1,4 +1,5 @@
 import type { Theme } from 'vitepress'
+import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
 import DefaultTheme from 'vitepress/theme'
 import { h } from 'vue'
 import PwaLayout from './PwaLayout.vue'
@@ -13,5 +14,8 @@ export default {
   extends: DefaultTheme,
   Layout() {
     return h(PwaLayout)
+  },
+  enhanceApp({ app }) {
+    app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons)
   },
 } satisfies Theme
