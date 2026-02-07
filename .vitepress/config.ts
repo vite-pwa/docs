@@ -490,10 +490,6 @@ export default withPwa(defineConfig({
       groupIconVitePlugin(),
       llmsVitePlugin({
         title: 'Vite PWA Plugin Documentation',
-        generateLLMsTxt: true,
-        generateLLMsFullTxt: true,
-        injectLLMHint: true,
-        stripHTML: true,
       }),
     ],
   },
