@@ -23,6 +23,15 @@ git checkout -b my-new-branch
 
 5. Run `pnpm i` in `vite-pwa-docs`'s root folder
 
+## Making changes
+
+Follow these steps to make your changes:
+
+- add new `.md` files in the appropriate section
+- add the page in the navigation menu by editing `.vitepress/config.ts`
+  - locate the relevant sidebar section
+  - add your new page link
+
 ## Testing website docs changes
 
 `vite-pwa-docs` uses `Vitepress` for the documentation website.
@@ -33,7 +42,11 @@ To check the website build, you can:
 - run `nr preview` from the root folder.
 - run `nr https` from the root folder (to test it using `https`).
 
-## Excalidraw diagram and Cookbook page
+## Adding images to the documentation
+
+Here is an example to add images in your markdown files.
+
+### Example of Excalidraw diagram and Cookbook page
 
 Open `public/vite-plugin-pwa.excalidraw` file in [Excalidraw](https://excalidraw.com/).
 
