@@ -189,6 +189,10 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     text: 'Laravel',
     link: '/frameworks/laravel',
   },
+  {
+    text: 'React Router',
+    link: '/frameworks/reactrouter',
+  },
 ]
 
 const Examples: DefaultTheme.SidebarItem[] = [
