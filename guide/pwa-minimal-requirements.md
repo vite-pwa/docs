@@ -10,6 +10,8 @@ Your application **must** meet the PWA Minimal Requirements before deploying it 
 
 To make your PWA application installable (one of the requirements), you will need to modify your application entry point, add some minimal entries to your `Web App Manifest`, allow search engines to crawl all your application pages and configure your server properly (only for production, on local you can use `https-localhost` dependency and `node`).
 
+To check which browsers and operating systems support installation and each manifest member, see the [OpenPWA compatibility board](https://openpwa.net/compatibility/install-prompt/) (per-feature support data checked against MDN browser-compat-data).
+
 Check also the new [PWA Minimal Requirements](/assets-generator/#pwa-minimal-icons-requirements) page in the [PWA Assets Generator](/assets-generator/) section.
 
 ## Entry Point
