@@ -106,7 +106,17 @@ export const pwa: Partial<PwaOptions> = {
   },
   workbox: {
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,json,excalidraw}'],
-    globIgnores: ['shortcuts/*.svg'],
+    globIgnores: [
+      'shortcuts/*.svg',
+      'unplugin-pwa/api/symbols/**',
+      'unplugin-pwa/api/packages/**',
+      'assets/unplugin-pwa_api_packages_*',
+      'assets/unplugin-pwa_api_symbols_*',
+      'vite-pwa-workbox/api/packages/**',
+      'vite-pwa-workbox/api/symbols/**',
+      'assets/vite-pwa-workbox_api_packages_*',
+      'assets/vite-pwa-workbox_api_symbols_*',
+    ],
     runtimeCaching: [
       {
         urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -147,6 +157,19 @@ export const pwa: Partial<PwaOptions> = {
           },
           cacheableResponse: {
             statuses: [0, 200],
+          },
+        },
+      },
+      {
+        urlPattern: /^\/(?:(?:vite-pwa-workbox|unplugin-pwa)\/api\/(?:packages|symbols)\/|assets\/(?:vite-pwa-workbox|unplugin-pwa)_api_(?:packages|symbols)_)/i,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'api-cache',
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
+          },
+          cacheableResponse: {
+            statuses: [200],
           },
         },
       },
