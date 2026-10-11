@@ -28,7 +28,7 @@ flowchart LR
         WB["<div style='padding: 10px'>📦 @vite-pwa/workbox-build<br>(SW Generation, lazy-loaded)</div>"]
 
         subgraph Extras ["Optional"]
-            Client["<div style='padding: 10px'>📦 @unplugin-pwa/client<br>(React, Vue, Svelte types...)</div>"]
+            Client["<div style='padding: 10px'>📦 @unplugin-pwa/core<br>(React, Vue, Svelte types...)</div>"]
         end
 
     %% Internal Relations
