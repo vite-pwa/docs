@@ -9,11 +9,11 @@ aside: false
 
 ```mermaid
 graph TD
-    subgraph Monorepo ["Vite PWA Ecosystem (unplugin-pwa)"]
+    subgraph Monorepo ["PWA Ecosystem (unplugin-pwa)"]
         direction TB
 
-        Core["📦 @unplugin-pwa/core<br/>(Context, Configuration, Helpers)"]
-        WB["📦 @vite-pwa/workbox-build<br/>(SW Generation, lazy-loaded)"]
+        Core["📦 @unplugin-pwa/core\n(Context, Configuration, Helpers)"]
+        WB["📦 @vite-pwa/workbox-build\n(SW Generation, lazy-loaded)"]
 
         subgraph Builders ["Adapters / Builders"]
             direction LR
@@ -24,7 +24,7 @@ graph TD
 
         subgraph Extras ["Optional"]
             direction LR
-            Client["📦 @unplugin-pwa/core<br/>(React, Vue, Svelte types...)"]
+            Client["📦 @unplugin-pwa/core\n(React, Vue, Svelte types...)"]
         end
 
     %% Internal Relations
@@ -98,7 +98,7 @@ sequenceDiagram
 
 ## Nuxt + Vite Lifecycle Diagram (Execution Flow)
 
-> [!NOTE]
+> [!TIP]
 > **On Lifecycle Execution:**
 > While the sequence diagram represents a chronological flow, it is important to understand that the architecture is highly **event-driven**. During Phase 1, the Nuxt Module (`@vite-pwa/nuxt`) only resolves the initial context and synchronously registers the lifecycle hooks. The execution is not blocking or strictly sequential thereafter. Phases 2, 3, and 4 are executed asynchronously in complete isolation whenever the underlying Nuxt and Nitro reach those specific milestones in their internal build processes.
 

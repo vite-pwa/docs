@@ -433,6 +433,8 @@ export default withPwa(withMermaid(defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' }],
   ],
   srcExclude: ['README.md', 'CONTRIBUTING.md'],
+  // TODO: fix workbox dead links at workbox GH repo
+  ignoreDeadLinks: ['/web/tools/workbox/guides/configure-workbox'],
   lastUpdated: true,
   markdown: {
     theme: {
