@@ -8,39 +8,41 @@ aside: false
 # The Architecture Diagram
 
 ```mermaid
-graph TD
+flowchart LR
+%% External Consumers
+    Nuxt("<div style='padding: 10px 15px;'>Framework<br>(e.g., Nuxt)</div>")
+    Vanilla("<div style='padding: 10px 15px;'>Vanilla Vite</div>")
+    App("<div style='padding: 10px 15px;'>User App Code</div>")
+
     subgraph Monorepo ["PWA Ecosystem (unplugin-pwa)"]
         direction TB
 
-        Core["📦 @unplugin-pwa/core\n(Context, Configuration, Helpers)"]
-        WB["📦 @vite-pwa/workbox-build\n(SW Generation, lazy-loaded)"]
-
         subgraph Builders ["Adapters / Builders"]
-            direction LR
-            Vite["📦 @unplugin-pwa/vite"]
-            Webpack["📦 @unplugin-pwa/webpack"]
-            Rspack["📦 @unplugin-pwa/rspack"]
+            direction TB
+            Vite["<div style='padding: 10px'>📦 @unplugin-pwa/vite</div>"]
+            Webpack["<div style='padding: 10px'>📦 @unplugin-pwa/webpack</div>"]
+            Rspack["<div style='padding: 10px'>📦 @unplugin-pwa/rspack</div>"]
         end
 
+        Core["<div style='padding: 10px'>📦 @unplugin-pwa/core<br>(Context, Configuration, Helpers)</div>"]
+        WB["<div style='padding: 10px'>📦 @vite-pwa/workbox-build<br>(SW Generation, lazy-loaded)</div>"]
+
         subgraph Extras ["Optional"]
-            direction LR
-            Client["📦 @unplugin-pwa/core\n(React, Vue, Svelte types...)"]
+            Client["<div style='padding: 10px'>📦 @unplugin-pwa/client<br>(React, Vue, Svelte types...)</div>"]
         end
 
     %% Internal Relations
-        Vite -. "Injects Context" .-> Core
-        Webpack -. "Injects Context" .-> Core
-        Rspack -. "Injects Context" .-> Core
-
+        Builders -. "Injects Context" .-> Core
         Core == "Dynamic Import" === WB
     end
 
-%% External Consumers
-    Nuxt("Framework (e.g., Nuxt)") ==>|1. Resolves config| Core
+%% External Connections
+    Nuxt ==>|1. Resolves config| Core
     Nuxt ==>|2. Consumes plugin| Vite
-    Vanilla("Vanilla Vite") ==>|Consumes| Vite
-    Client -. "Imported by" .-> App("User App Code")
+    Vanilla ==>|Consumes| Vite
+    Client -. "Imported by" .-> App
 
+%% Styles
     classDef core fill:#fbca04,stroke:#333,stroke-width:2px,color:black;
     classDef builder fill:#2ea043,stroke:#333,stroke-width:2px,color:white;
     classDef framework fill:#388bfd,stroke:#333,stroke-width:2px,color:white;
