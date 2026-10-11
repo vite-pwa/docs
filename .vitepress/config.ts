@@ -600,6 +600,12 @@ export default withPwa(withMermaid(defineConfig({
         title: 'PWA Ecosystem Documentation',
       }),
     ],
+    optimizeDeps: {
+      include: [
+        'mermaid',
+        'elkjs/lib/elk.bundled.js',
+      ],
+    },
   },
   pwa,
   transformHead,
