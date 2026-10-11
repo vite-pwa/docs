@@ -1,13 +1,15 @@
-import type { DefaultTheme } from 'vitepress'
+import type { SidebarItem } from './nav/sidebar-item'
 import { withPwa } from '@vite-pwa/vitepress'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import llmsVitePlugin, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import { version } from '../package.json'
 import { pwa } from './scripts/pwa'
 import { transformHead } from './scripts/transformHead'
+import { sidebar as workboxApiSidebar } from './workbox-api'
 
-const Guide: DefaultTheme.SidebarItem[] = [
+const Guide: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/guide/',
@@ -82,7 +84,7 @@ const Guide: DefaultTheme.SidebarItem[] = [
   },
 ]
 
-const Deployment: DefaultTheme.SidebarItem[] = [
+const Deployment: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/deployment/',
@@ -109,7 +111,7 @@ const Deployment: DefaultTheme.SidebarItem[] = [
   },
 ]
 
-const AssetsGenerator: DefaultTheme.SidebarItem[] = [
+const AssetsGenerator: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/assets-generator/',
@@ -132,7 +134,7 @@ const AssetsGenerator: DefaultTheme.SidebarItem[] = [
   },
 ]
 
-const Frameworks: DefaultTheme.SidebarItem[] = [
+const Frameworks: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/frameworks/',
@@ -174,7 +176,7 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     link: '/frameworks/astro',
   },
   {
-    text: 'Nuxt 3',
+    text: 'Nuxt',
     link: '/frameworks/nuxt',
   },
   {
@@ -182,16 +184,24 @@ const Frameworks: DefaultTheme.SidebarItem[] = [
     link: '/frameworks/qwik',
   },
   {
-    text: 'Remix',
-    link: '/frameworks/remix',
-  },
-  {
     text: 'Laravel',
     link: '/frameworks/laravel',
   },
+  {
+    text: 'React Router',
+    link: '/frameworks/react-router',
+  },
+  {
+    text: 'TanStack',
+    link: '/frameworks/tanstack',
+  },
+  {
+    text: 'Remix',
+    link: '/frameworks/remix',
+  },
 ]
 
-const Examples: DefaultTheme.SidebarItem[] = [
+const Examples: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/examples/',
@@ -233,7 +243,7 @@ const Examples: DefaultTheme.SidebarItem[] = [
     link: '/examples/astro',
   },
   {
-    text: 'Nuxt 3',
+    text: 'Nuxt',
     link: '/examples/nuxt',
   },
   {
@@ -241,12 +251,20 @@ const Examples: DefaultTheme.SidebarItem[] = [
     link: '/examples/qwik',
   },
   {
+    text: 'React Router',
+    link: '/examples/react-router',
+  },
+  {
+    text: 'TanStack',
+    link: '/examples/tanstack',
+  },
+  {
     text: 'Remix',
     link: '/examples/remix',
   },
 ]
 
-const Workbox: DefaultTheme.SidebarItem[] = [
+const Workbox: SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/workbox/',
@@ -261,47 +279,123 @@ const Workbox: DefaultTheme.SidebarItem[] = [
   },
 ]
 
+const UnpluginPWA: SidebarItem[] = [
+  {
+    text: 'Getting Started',
+    link: '/unplugin-pwa/',
+  },
+  {
+    text: 'Architecture',
+    link: '/unplugin-pwa/architecture',
+  },
+  {
+    text: 'Core Package',
+    link: '/unplugin-pwa/core',
+  },
+  {
+    text: 'Vite Package',
+    link: '/unplugin-pwa/vite',
+  },
+  {
+    text: 'Inspector Package',
+    link: '/unplugin-pwa/inspector',
+  },
+  {
+    text: 'API Reference',
+    collapsed: true,
+    link: '/unplugin-pwa/api/',
+    // items: workboxApiSidebar(),
+  },
+]
+const VitePWAWorkbox: SidebarItem[] = [
+  {
+    text: 'Getting Started',
+    link: '/vite-pwa-workbox/',
+  },
+  {
+    text: 'generateSW',
+    link: '/vite-pwa-workbox/generate-sw',
+  },
+  {
+    text: 'buildSW',
+    link: '/vite-pwa-workbox/build-sw',
+  },
+  {
+    text: 'injectManifest',
+    link: '/vite-pwa-workbox/inject-manifest',
+  },
+  {
+    text: 'API Reference',
+    collapsed: true,
+    link: '/vite-pwa-workbox/api/',
+    items: workboxApiSidebar(),
+  },
+]
+
 function prepareSidebar(idx: number) {
   return [
     {
       text: 'Guide',
       collapsible: true,
       collapsed: true,
+      link: '/guide/',
       items: Guide,
     },
     {
       text: 'PWA Assets Generator',
       collapsible: true,
       collapsed: true,
+      link: '/assets-generator/',
       items: AssetsGenerator,
     },
     {
       text: 'Frameworks',
       collapsible: true,
       collapsed: true,
+      link: '/frameworks/',
       items: Frameworks,
     },
     {
       text: 'Examples',
       collapsible: true,
       collapsed: true,
+      link: '/examples/',
       items: Examples,
     },
     {
       text: 'Deploy',
       collapsible: true,
       collapsed: true,
+      link: '/deployment/',
       items: Deployment,
+    },
+    {
+      text: 'Unplugin PWA',
+      collapsible: true,
+      collapsed: true,
+      link: '/unplugin-pwa/',
+      activeMatch: '^/unplugin-pwa/',
+      items: UnpluginPWA,
+    },
+    {
+      text: 'Vite PWA Workbox',
+      collapsible: true,
+      collapsed: true,
+      link: '/vite-pwa-workbox/',
+      activeMatch: '^/vite-pwa-workbox/',
+      items: VitePWAWorkbox,
     },
     {
       text: 'Workbox',
       collapsible: true,
       collapsed: true,
+      link: '/workbox/',
       items: Workbox,
     },
-  ].map<DefaultTheme.SidebarItem>((entry, i) => {
-    if (idx === i)
+  ].map<SidebarItem>((entry, i) => {
+    if (idx === i) {
       entry.collapsed = false
+    }
 
     return entry
   })
@@ -309,28 +403,29 @@ function prepareSidebar(idx: number) {
 
 const ogUrl = 'https://vite-pwa-org.netlify.app/'
 const ogImage = `${ogUrl}og-image.png`
+const description = 'PWA Ecosystem, Modular PWA integrations for modern web frameworks'
 
-export default withPwa(defineConfig({
+export default withPwa(withMermaid(defineConfig({
   lang: 'en-US',
-  title: 'Vite PWA',
-  description: 'Zero-config PWA Framework-agnostic for Vite and Integrations',
+  title: 'PWA Ecosystem',
+  description,
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'icon', href: '/favicon.ico', sizes: '48x48' }],
     ['link', { rel: 'icon', href: '/favicon.svg', sizes: 'any', type: 'image/svg+xml' }],
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ffffff' }],
-    ['meta', { name: 'author', content: 'Anthony Fu' }],
+    ['meta', { name: 'author', content: 'Anthony Fu, Joaquín Sánchez' }],
     ['meta', {
       name: 'keywords',
-      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module, Remix',
+      content: 'PWA, React, Vue, VitePress, Preact, Svelte, SvelteKit, workbox, SolidJS, Vite, vite-plugin, íles, Astro, Nuxt 3, Nuxt module, React router, TanStack, Remix',
     }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Vite Plugin PWA' }],
+    ['meta', { property: 'og:title', content: 'PWA Ecosystem' }],
     ['meta', { property: 'og:image', content: ogImage }],
-    ['meta', { property: 'og:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite and Integrations' }],
+    ['meta', { property: 'og:description', content: description }],
     ['meta', { property: 'og:url', content: ogUrl }],
-    ['meta', { name: 'twitter:description', content: 'Zero-config PWA Framework-agnostic Plugin for Vite and Integrations' }],
-    ['meta', { name: 'twitter:title', content: 'Vite PWA' }],
+    ['meta', { name: 'twitter:description', content: description }],
+    ['meta', { name: 'twitter:title', content: 'PWA Ecosystem' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: ogImage }],
     ['meta', { name: 'twitter:site', content: '@antfu7' }],
@@ -372,11 +467,11 @@ export default withPwa(defineConfig({
     },
     socialLinks: [
       { icon: 'discord', link: 'https://discord.gg/uccDuWkScq' },
-      { icon: 'github', link: 'https://github.com/vite-pwa/vite-plugin-pwa' },
+      { icon: 'github', link: 'https://github.com/vite-pwa/unplugin-pwa' },
     ],
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2021-PRESENT Anthony Fu',
+      copyright: 'Copyright © 2021-PRESENT Anthony Fu, Joaquín Sánchez',
     },
     nav: [
       {
@@ -411,23 +506,23 @@ export default withPwa(defineConfig({
         activeMatch: '^/deployment/',
       },
       {
-        text: 'Workbox',
-        link: '/workbox/',
-        activeMatch: '^/workbox/',
+        text: 'Vite PWA Workbox',
+        link: '/vite-pwa-workbox/',
+        activeMatch: '^/vite-pwa-workbox/',
       },
       {
         text: `v${version}`,
         items: [
           {
-            text: 'Vite Plugin PWA',
+            text: 'Unplugin PWA',
             items: [
               {
                 text: 'Release Notes',
-                link: 'https://github.com/vite-pwa/vite-plugin-pwa/releases',
+                link: 'https://github.com/vite-pwa/unplugin-pwa/releases',
               },
               {
                 text: 'Contributing',
-                link: 'https://github.com/vite-pwa/vite-plugin-pwa/blob/main/CONTRIBUTING.md',
+                link: 'https://github.com/vite-pwa/unplugin-pwa/blob/main/CONTRIBUTING.md',
               },
             ],
           },
@@ -460,7 +555,7 @@ export default withPwa(defineConfig({
                 link: 'https://github.com/vite-pwa/astro',
               },
               {
-                text: 'Nuxt 3',
+                text: 'Nuxt',
                 link: 'https://github.com/vite-pwa/nuxt',
               },
               {
@@ -468,7 +563,15 @@ export default withPwa(defineConfig({
                 link: 'https://github.com/QwikDev/pwa',
               },
               {
-                text: 'Remix',
+                text: 'React Router',
+                link: 'https://github.com/vite-pwa/react-router',
+              },
+              {
+                text: 'TanStack',
+                link: 'https://github.com/vite-pwa/tanstack',
+              },
+              {
+                text: 'Remix (deprecated)',
                 link: 'https://github.com/vite-pwa/remix',
               },
             ],
@@ -482,7 +585,9 @@ export default withPwa(defineConfig({
       '/frameworks/': prepareSidebar(2),
       '/examples/': prepareSidebar(3),
       '/deployment/': prepareSidebar(4),
-      '/workbox/': prepareSidebar(5),
+      '/unplugin-pwa/': prepareSidebar(5),
+      '/vite-pwa-workbox/': prepareSidebar(6),
+      '/workbox/': prepareSidebar(7),
     },
   },
   vite: {
@@ -490,10 +595,10 @@ export default withPwa(defineConfig({
     plugins: [
       groupIconVitePlugin(),
       llmsVitePlugin({
-        title: 'Vite PWA Plugin Documentation',
+        title: 'PWA Ecosystem Documentation',
       }),
     ],
   },
   pwa,
   transformHead,
-}))
+})))

@@ -35,8 +35,9 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
+    "gen-workbox-api": "node gen-workbox-api-pages.ts",
+    "dev": "pnpm gen-workbox-api && vitepress dev",
+    "build": "pnpm gen-workbox-api && vitepress build",
     "preview": "nr build && vitepress serve",
     "https": "nr build && serve .vitepress/dist",
     "lint": "eslint .",
@@ -54,10 +55,12 @@
     "@types/node": "^22.9.3",
     "@vite-pwa/assets-generator": "^1.0.2",
     "@vite-pwa/vitepress": "^1.1.0",
+    "@vite-pwa/workbox-types": "^8.0.9",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vueuse/core": "^14.1.0",
     "eslint": "^9.39.1",
     "https-localhost": "^4.7.1",
+    "mermaid": "12.1.0",
     "oxc-minify": "0.95.0",
     "typescript": "~5.9.3",
     "unocss": "^66.5.9",
@@ -65,6 +68,7 @@
     "vite": "7.1.10",
     "vite-plugin-pwa": "^1.2.0",
     "vitepress": "2.0.0-alpha.12",
+    "vitepress-plugin-mermaid": "2.0.17",
     "vitepress-plugin-group-icons": "^1.6.5",
     "vitepress-plugin-llms": "^1.10.0",
     "workbox-window": "^7.4.0"

@@ -2,22 +2,22 @@
 layout: home
 sidebar: false
 
-title: Vite PWA
+title: PWA Ecosystem
 
 hero:
   name: PWA
-  text: Vite Plugin
+  text: Ecosystem
   tagline: |
-    PWA integrations for Vite and the ecosystem
-    Zero-config and framework-agnostic
-    PWA Plugin for Vite
+    Modular PWA integrations for modern web frameworks
+    Zero-config, extensible, and framework-agnostic
+    bundler support for Vite, Webpack, and more
   image:
     light:
       src: /icon_light.svg
-      alt: Vite PWA Logo
+      alt: PWA Ecosystem Logo
     dark:
       src: /icon_dark.svg
-      alt: Vite PWA Logo
+      alt: PWA Ecosystem Logo
   actions:
     - theme: brand
       text: Get Started
@@ -38,7 +38,10 @@ features:
     details: Generate Service Worker with Offline support (via Workbox)
   - icon: ⚡
     title: Fully tree shakable
-    details: Auto inject Web App Manifest
+    details: Client virtual modules are strictly optimized for Dead Code Elimination
+  - icon: 📄
+    title: Web Manifest
+    details: auto-inject Web App Manifest and PWA assets seamlessly
   - icon: 💬
     title: Prompt for new content
     details: Built-in support for Vanilla JavaScript, Vue 3, React, Svelte, SolidJS and Preact
@@ -55,11 +58,24 @@ features:
     details: Debug your custom service worker logic as you develop your application
     link: /guide/development
     linkText: Development
+  - icon: 🔍
+    title: Inspector
+    details: Visually inspect your resolved configuration, web manifest and service worker during development, via middleware or DevFrame
+    link: /guide/inspector
+    linkText: Inspector
+  - icon: 🧩
+    title: Modular
+    details: Use the ready-to-use plugins or compose your own integration from the building blocks in @unplugin-pwa/core and @unplugin-pwa/vite
+    link: /guide/unplugin-pwa
+    linkText: Unplugin PWA
   - icon: 🛠️
-    title: Versatile
-    details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, Nuxt 3, and Remix'
+    title: Frameworks
+    details: 'Integration with meta frameworks: îles, SvelteKit, VitePress, Astro, Nuxt, React Router, and TanStack'
     link: /frameworks/
     linkText: Frameworks
+  - icon: 📦️
+    title: Universal Bundlers
+    details: Native integration with Vite, Rolldown, Webpack (WIP), Rspack (WIP), and Rsbuild (WIP).
   - icon: 💥
     title: PWA Assets Generator
     details: Generate all the PWA assets from a single command and a single source image

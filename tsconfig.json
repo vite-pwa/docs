@@ -17,6 +17,7 @@
       "vite-plugin-pwa/vanillajs",
       "vitepress"
     ],
+    "allowImportingTsExtensions": true,
     "strict": true,
     "strictNullChecks": true,
     "noUnusedLocals": true,

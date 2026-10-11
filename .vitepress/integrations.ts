@@ -37,7 +37,7 @@ const plainIntegrations = [
   },
   {
     avatar: '/integration-logos/sveltekit.svg',
-    name: 'SvelteKit',
+    name: 'SvelteKit 2 and 3',
     github: 'sveltejs/kit',
     bluesky: 'svelte.dev',
     title: 'The fastest way to build svelte apps',
@@ -59,7 +59,7 @@ const plainIntegrations = [
   },
   {
     avatar: '/integration-logos/nuxt.svg',
-    name: 'Nuxt 3',
+    name: 'Nuxt 3, 4 and 5',
     github: 'nuxt/nuxt',
     mastodon: 'nuxt',
     x: '@nuxt_js',
@@ -68,10 +68,26 @@ const plainIntegrations = [
   },
   {
     avatar: '/integration-logos/remix.svg',
-    name: 'Remix',
+    name: 'React Router',
+    github: 'remix-run/react-router',
+    x: 'ReactRouter',
+    bluesky: 'reactrouter.com',
+    title: 'Declarative routing for React',
+  },
+  {
+    avatar: '/integration-logos/tanstack.svg',
+    name: 'TanStack',
+    github: 'TanStack',
+    x: 'tan_stack',
+    bluesky: 'tanstack.com',
+    title: 'The open source application stack for the web',
+  },
+  {
+    avatar: '/integration-logos/remix.svg',
+    name: 'Remix (deprecated)',
     github: 'remix-run/remix',
     x: 'remix_run',
-    title: 'Build better websites with Remix and React Router',
+    title: 'Build better websites with Remix',
   },
 ]
 

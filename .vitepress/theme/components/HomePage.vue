@@ -1,7 +1,24 @@
 <script setup lang="ts">
+import { useData } from 'vitepress'
 import { VPTeamMembers } from 'vitepress/theme'
+import { computed } from 'vue'
 import { teamMembers } from '../../contributors'
 import { integrations } from '../../integrations'
+
+const { isDark } = useData()
+
+const useIntegrations = computed(() => {
+  const dark = isDark.value
+  return integrations.map((i) => {
+    if (i.name === 'React Router') {
+      return {
+        ...i,
+        avatar: `/integration-logos/react-router-${dark ? 'dark' : 'light'}.svg`,
+      }
+    }
+    return i
+  })
+})
 </script>
 
 <template>
@@ -13,7 +30,7 @@ import { integrations } from '../../integrations'
             Integrations
           </h2>
           <div w-full p-10 class="integrations">
-            <VPTeamMembers size="small" :members="integrations" />
+            <VPTeamMembers size="small" :members="useIntegrations" />
           </div>
           <h2 id="meet-the-team" op70 font-normal p="t-10 b-2">
             Meet The Team

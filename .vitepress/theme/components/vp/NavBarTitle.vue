@@ -9,9 +9,8 @@ const { hasSidebar } = useLayout()
 <template>
   <div class="VPNavBarTitle" :class="{ 'has-sidebar': hasSidebar }">
     <a class="title" :href="site.base">
-      Vite &#160;
-      <img dark-logo class="logo" src="/icon_dark.svg" alt="Vite PWA dark logo" width="50" height="50">
-      <img light-logo class="logo" src="/icon_light.svg" alt="Vite PWA light logo" width="50" height="50">
+      <img dark-logo class="logo" src="/unplugin-pwa-hero-dark.svg" alt="Unplugin PWA dark logo" width="136" height="50">
+      <img light-logo class="logo" src="/unplugin-pwa-hero.svg" alt="Unplugin PWA light logo" width="136" height="50">
     </a>
   </div>
 </template>
@@ -50,7 +49,7 @@ const { hasSidebar } = useLayout()
 }
 
 .logo {
-  width: 50px;
+  width: 136px;
   height: 50px;
 }
 </style>

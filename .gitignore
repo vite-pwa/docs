@@ -5,3 +5,6 @@ dist
 .idea/
 .vitepress/cache/
 .vitepress/dist/
+vite-pwa-workbox/api/packages/
+vite-pwa-workbox/api/symbols/
+

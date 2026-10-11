@@ -1,8 +1,8 @@
 ---
 title: Getting Started | Workbox
 prev:
-  text: Apache Http Server 2.4+ | Deployment
-  link: /deployment/apache
+  text: API Reference | Vite PWA Workbox
+  link: /vite-pwa-workbox/api/
 ---
 
 # Getting Started

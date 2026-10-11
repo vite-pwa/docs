@@ -3,6 +3,7 @@ import { presetAttributify, presetWind3 } from 'unocss'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import sidebar from './plugins/sidebar'
 
 export default defineConfig({
   logLevel: 'info',
@@ -51,6 +52,8 @@ export default defineConfig({
       // generate `components.d.ts` for ts support with Volar
       dts: '.vitepress/components.d.ts',
     }),
+
+    sidebar(),
 
     // https://github.com/unocss/unocss
     Unocss({

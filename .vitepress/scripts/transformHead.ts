@@ -19,15 +19,15 @@ export async function transformHead({ pageData }: TransformContext): Promise<Hea
   head.push(['noscript', {}, `<link rel="stylesheet" crossorigin="anonymous" href="${firaFont}" />`])
 
   // logo images
-  head.push(['link', { rel: 'prefetch', href: '/icon_light.svg' }])
-  head.push(['link', { rel: 'prefetch', href: '/icon_dark.svg' }])
+  head.push(['link', { rel: 'prefetch', href: '/unplugin-pwa-hero.svg' }])
+  head.push(['link', { rel: 'prefetch', href: '/unplugin-pwa-hero-dark.svg' }])
 
   // banner for index page
   if (pageData.relativePath === 'index.md') {
     head.push(['link', { rel: 'dns-prefetch', href: sponsors }])
     head.push(['link', { rel: 'preconnect', crossorigin: 'anonymous', href: sponsors }])
-    head.push(['link', { rel: 'prefetch', href: '/banner_light.svg' }])
-    head.push(['link', { rel: 'prefetch', href: '/banner_dark.svg' }])
+    head.push(['link', { rel: 'prefetch', href: '/icon_light.svg' }])
+    head.push(['link', { rel: 'prefetch', href: '/icon_dark.svg' }])
   }
 
   // prompt for update image

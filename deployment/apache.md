@@ -1,6 +1,8 @@
 ---
 title: Apache Http Server 2.4+ | Deployment
-next: Getting Started | Workbox
+next: 
+  text: Getting Started | Unplugin PWA
+  link: /unplugin-pwa/
 ---
 
 # Apache Http Server 2.4+

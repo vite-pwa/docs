@@ -31,6 +31,10 @@ sup.VPBadgeCustom.tip {
   transform: scale(0.9);
 }
 
+.VPSidebarItem.has-active > .item > .caret {
+  display: none;
+}
+
 /* h3 breaks SEO => replaced with h2 with the same size */
 .home-content h2 {
   margin-top: 2rem;
@@ -237,21 +241,143 @@ html.dark svg g[stroke-linecap="round"] > g[transform] > path[stroke="#1e1e1e"] 
   stroke: #fff;
 }
 
-/* dark/light radial transition */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+/* ============================================================
+   Symbol table → vertical cards (stacked rows) + clickable
+   ============================================================ */
+
+/* 1. Table as block container */
+.vp-doc table.symbol-table {
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-::view-transition-old(root),
-.dark::view-transition-new(root) {
+/* 2. Hide the default header */
+.vp-doc table.symbol-table thead {
+  display: none;
+}
+
+.vp-doc table.symbol-table tbody {
+  display: block;
+  width: 100%;
+}
+
+/* 3. Each row = a card with relative positioning for the overlay */
+.vp-doc table.symbol-table tbody tr {
+  display: block;
+  position: relative;         /* for the link overlay */
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;            /* visual feedback */
+}
+
+.vp-doc table.symbol-table tbody tr:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 4. Each cell = block (vertical stacking) */
+.vp-doc table.symbol-table tbody td {
+  display: block;
+  padding: 0.3rem 0;
+  border: none;
+  position: relative;        /* ensure content is above overlay */
   z-index: 1;
 }
 
-::view-transition-new(root),
-.dark::view-transition-old(root) {
-  z-index: 9999;
+/* 5. The label – bold, block‑level, on its own line */
+.vp-doc table.symbol-table tbody td::before {
+  content: attr(data-label);
+  display: block;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
+/* 6. The actual content – takes full width */
+.vp-doc table.symbol-table tbody td > * {
+  display: block;
+  width: 100%;
+}
+
+/* 7. Description wraps and fills the card */
+.vp-doc table.symbol-table tbody td[data-label="Description"] {
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+/* 8. The link inside the first cell – we hide it visually but keep it clickable,
+      and use its `::after` to cover the whole card. */
+.vp-doc table.symbol-table tbody td:first-child a {
+  display: block;            /* makes the link take the full width of the cell */
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* The pseudo‑element creates an invisible overlay that covers the entire card */
+.vp-doc table.symbol-table tbody td:first-child a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;               /* behind the cell content (z-index:1) */
+  cursor: pointer;
+}
+
+/* Ensure the link text remains clickable (for accessibility) */
+.vp-doc table.symbol-table tbody td:first-child a {
+  position: relative;
+  z-index: 2;               /* above the overlay so the text can be selected */
+}
+
+/* If you want to style list items as cards (for functions, type aliases) */
+.vp-doc ul.api {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.vp-doc ul.api li {
+  display: inline-flex;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vp-doc ul.api li:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.vp-doc ul.api li a {
+  display: block; /* makes the whole <li> clickable if you wrap the <a> around it? But you can't change the HTML easily */
+  /* Actually, you'd need to make the <a> fill the <li> */
+}
+
+.symbol-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.symbol-table th,
+.symbol-table td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.6rem 1rem;
+  text-align: left;
+}
+.symbol-table th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
 
