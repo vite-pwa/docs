@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { DefaultTheme } from 'vitepress/theme'
-import VPIconHeart from 'vitepress/dist/client/theme-default/components/icons/VPIconHeart.vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import VPSocialLinks from 'vitepress/dist/client/theme-default/components/VPSocialLinks.vue'
+import { VPLink, VPSocialLinks } from 'vitepress/theme'
 import { computed } from 'vue'
 
 interface Props {
@@ -49,7 +47,7 @@ const dimension = computed(() => 'teamMember' in props.member ? '96' : '64')
     </div>
     <div v-if="member.sponsor" class="sp">
       <VPLink class="sp-link" :href="member.sponsor" no-icon>
-        <VPIconHeart class="sp-icon" /> {{ member.actionText || 'Sponsor' }}
+        <span class="vpi-heart sp-icon" /> {{ member.actionText || 'Sponsor' }}
       </VPLink>
     </div>
   </article>
