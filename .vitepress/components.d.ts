@@ -24,6 +24,8 @@ declare module 'vue' {
     InjectManifestCleanupOutdatedCaches: typeof import('./theme/components/InjectManifestCleanupOutdatedCaches.md')['default']
     InjectManifestSourceMap: typeof import('./theme/components/InjectManifestSourceMap.md')['default']
     NavBarTitle: typeof import('./theme/components/vp/NavBarTitle.vue')['default']
+    NotFound: typeof import('./theme/components/NotFound.vue')['default']
+    OfflineToast: typeof import('./theme/components/OfflineToast.vue')['default']
     PromptForUpdateImg: typeof import('./theme/components/PromptForUpdateImg.vue')['default']
     ReactReactiveWarning: typeof import('./theme/components/ReactReactiveWarning.md')['default']
     ReloadPrompt: typeof import('./theme/components/ReloadPrompt.vue')['default']

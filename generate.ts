@@ -1,17 +1,17 @@
+import unpluginPWACore from '@unplugin-pwa/types/unplugin-pwa/core' with { type: 'json' }
+import unpluginPWAVite from '@unplugin-pwa/types/unplugin-pwa/vite' with { type: 'json' }
 import workboxBuild from '@vite-pwa/workbox-types/workbox-build' with { type: 'json' }
 import workboxCli from '@vite-pwa/workbox-types/workbox-cli' with { type: 'json' }
 import workboxSwkit from '@vite-pwa/workbox-types/workbox-swkit' with { type: 'json' }
 import workboxWindow from '@vite-pwa/workbox-types/workbox-window' with { type: 'json' }
-// import unpluginPWACore from '@unplugin-pwa/types/core' with { type: 'json' }
-// import unpluginPWAVite from '@unplugin-pwa/types/vite' with { type: 'json' }
 
 const sources: Record<string, any> = {
   'workbox-swkit': workboxSwkit,
   'workbox-build': workboxBuild,
   'workbox-window': workboxWindow,
   'workbox-cli': workboxCli,
-  // 'unplugin-pwa-core': unpluginPWACore,
-  // 'unplugin-pwa-vite': unpluginPWAVite,
+  'unplugin-pwa-core': unpluginPWACore,
+  'unplugin-pwa-vite': unpluginPWAVite,
 }
 
 const KIND: Record<number, string> = {

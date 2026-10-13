@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
+import workboxSubpackageExports from '@vite-pwa/workbox-types/subpackages-exports' with { type: 'json' }
 import { getPackages, getSymbols } from './generate.ts'
 import { renderPackageHTML, renderSymbolPage } from './render.ts'
 
 mkdirSync(resolve('vite-pwa-workbox/api/packages'), { recursive: true })
 
+console.log(workboxSubpackageExports)
 const packages = getPackages()
 const titleSuffix = ' | API Reference | Vite PWA Workbox'
 for (let i = 0; i < packages.length; i++) {

@@ -1,5 +1,4 @@
 import type { ApiSymbol, PackageGroup } from './generate.ts'
-
 import { getPackages, KIND_ORDER } from './generate.ts'
 
 // ---- HTML escaping ----
@@ -108,7 +107,7 @@ export function renderPackageHTML(pkg: PackageGroup, options?: PackageOptions): 
     ? ['/vite-pwa-workbox', '@vite-pwa/'] as const
     : pkg.label.startsWith('unplugin-pwa-')
       ? ['/unplugin-pwa', '@unplugin-pwa/'] as const
-      : ['', ''] as const
+      : ['', '', undefined] as const
   const { title: pkgTitle, frontmatter, badge = 'package' } = options || {}
   const badgeText = badge === 'package' ? 'Package' : 'Subpackage'
   const title = pkgTitle || `${badgeText} ${prefix}${pkg.label}`
