@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { useLayout } from 'vitepress/theme'
+import { onMounted, shallowRef, watchEffect } from 'vue'
 
 const { site } = useData()
 const { hasSidebar } = useLayout()
+const hasSidebarClass = shallowRef(false)
+
+onMounted(() => {
+  watchEffect(() => {
+    hasSidebarClass.value = hasSidebar.value
+  })
+})
 </script>
 
 <template>
-  <div class="VPNavBarTitle" :class="{ 'has-sidebar': hasSidebar }">
+  <div class="VPNavBarTitle" :class="{ 'has-sidebar': hasSidebarClass }">
     <a class="title" :href="site.base">
       <img dark-logo class="logo" src="/unplugin-pwa-hero-dark.svg" alt="Unplugin PWA dark logo" width="136" height="50">
       <img light-logo class="logo" src="/unplugin-pwa-hero.svg" alt="Unplugin PWA light logo" width="136" height="50">
