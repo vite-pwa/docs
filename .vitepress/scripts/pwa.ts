@@ -116,14 +116,14 @@ export const pwa = definePwaConfig({
       preferred_width: 480,
     },
   },
-  experimental: {
-    includeAllowlist: true,
-  },
+  minify: false,
   buildSW: {
     inlineWorkboxRuntime: false,
     workboxRuntimeCompatible: false,
     swSrc: '.vitepress/pwa-ecosystem-sw.ts',
-    globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,json,excalidraw}'],
+    globPatterns: [
+      '**/*.{css,js,html,svg,png,webp,ico,txt,woff2,json,excalidraw}',
+    ],
     globIgnores: [
       'shortcuts/*.svg',
       'unplugin-pwa/api/symbols/**',
