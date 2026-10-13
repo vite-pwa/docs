@@ -103,3 +103,7 @@ We provide the following examples projects:
 - [VitePress](/examples/vitepress).
 - [îles](/examples/iles): prompt for update.
 - [Astro](/examples/astro).
+- [Nuxt](/examples/nuxt).
+- [React Router](/examples/react-router).
+- [TanStack](/examples/tanstack).
+- [Remix](/examples/remix).

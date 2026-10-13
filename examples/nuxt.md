@@ -1,5 +1,5 @@
 ---
-title: Nuxt 3 | Examples
+title: Nuxt | Examples
 ---
 
 # Nuxt 3

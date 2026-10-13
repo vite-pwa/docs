@@ -177,4 +177,7 @@ These custom virtual modules will expose a wrapper for <code>virtual:pwa-registe
 - [VitePress](/frameworks/vitepress)
 - [îles](/frameworks/iles)
 - [Astro](/frameworks/astro)
-- [Nuxt 3](/frameworks/nuxt)
+- [Nuxt](/frameworks/nuxt)
+- [React Router](/frameworks/react-router)
+- [TanStack](/frameworks/tanstack)
+- [Remix](/frameworks/remix)

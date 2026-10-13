@@ -1,9 +1,9 @@
 ---
-title: Nuxt 3 | Frameworks
+title: Nuxt | Frameworks
 outline: deep
 ---
 
-# Nuxt 3
+# Nuxt
 
 <ChangeLog />
 
@@ -11,7 +11,7 @@ outline: deep
 This PWA module can only be used with Vite.
 :::
 
-## Nuxt 3 Integration
+## Nuxt Integration
 
 `vite-plugin-pwa` provides the new `@vite-pwa/nuxt` module that will allow you to use `vite-plugin-pwa` in your Nuxt 3 applications.
 
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 })
 ```
 
-## Using Nuxt 3 Plugin
+## Using Nuxt Plugin
 
 `@vite-pwa/nuxt` will register a plugin that will provide PWA logic via `$pwa` property when the PWA is enabled (`$pwa` will be `undefined` if PWA disabled or running dev server without PWA dev options enabled).
 
