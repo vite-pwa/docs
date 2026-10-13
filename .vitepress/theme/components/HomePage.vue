@@ -35,7 +35,7 @@ const useIntegrations = computed(() => {
           <h2 id="meet-the-team" op70 font-normal p="t-10 b-2">
             Meet The Team
           </h2>
-          <div w-full p-10>
+          <div w-full p-10 class="members">
             <VPTeamMembers size="medium" :members="teamMembers" />
           </div>
           <h2 id="sponsored-by" op70 font-normal pt-5 pb-2>
@@ -75,5 +75,12 @@ const useIntegrations = computed(() => {
 .integrations .avatar .avatar-img {
   border-radius: unset;
   object-fit: unset;
+}
+.integrations .avatar .avatar-img[src$="vitepress.svg"] {
+  width: 53px;
+  height: 64px;
+}
+.members .avatar .avatar-img {
+  margin: 0;
 }
 </style>

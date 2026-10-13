@@ -61,12 +61,12 @@ features:
   - icon: 🔍
     title: Inspector
     details: Visually inspect your resolved configuration, web manifest and service worker during development, via middleware or DevFrame
-    link: /guide/inspector
+    link: /unplugin-pwa/inspector/
     linkText: Inspector
   - icon: 🧩
     title: Modular
     details: Use the ready-to-use plugins or compose your own integration from the building blocks in @unplugin-pwa/core and @unplugin-pwa/vite
-    link: /guide/unplugin-pwa
+    link: /unplugin-pwa/
     linkText: Unplugin PWA
   - icon: 🛠️
     title: Frameworks
