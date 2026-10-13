@@ -3,7 +3,6 @@ import { useOnline } from '@vueuse/core'
 import { inBrowser, useData, useRoute, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { onMounted, shallowRef, watch } from 'vue'
-import { prepareApiPages } from '../pages.ts'
 import HomePage from './components/HomePage.vue'
 import NotFound from './components/NotFound.vue'
 import OfflineToast from './components/OfflineToast.vue'
@@ -16,7 +15,6 @@ const { page } = useData()
 
 const apiPageOffline = shallowRef<string | undefined>()
 const apiPageOfflineRetry = shallowRef<boolean>(false)
-const apiPages = prepareApiPages()
 
 const failedRetries = new Set<string>()
 
@@ -71,8 +69,7 @@ watch(() => [
   }
   const offlinePage = decodeURIComponent(q)
   url = new URL(offlinePage, window.location.origin)
-  const page = apiPages.get(url.pathname)
-  apiPageOffline.value = page || undefined
+  apiPageOffline.value = url.pathname
   apiPageOfflineRetry.value = !failedRetries.has(url.pathname)
 }, { immediate: true })
 

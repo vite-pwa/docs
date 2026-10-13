@@ -104,11 +104,7 @@ if (import.meta.env.PROD) {
         handlerDidError: async ({ request }) => {
           const url = new URL(request.url)
           const path = url.pathname
-          const apiPage = API_PAGE_REGEX.test(path) || apiAssetRegexp.test(path)
-          if (apiPage) {
-            return Response.redirect(`404?q=${encodeURIComponent(path)}`, 302)
-          }
-          return Response.redirect('404', 302)
+          return Response.redirect(`/404?q=${encodeURIComponent(path)}`, 302)
         },
         /* this callback will prevent caching the response */
         cacheWillUpdate: async () => null,
