@@ -85,13 +85,15 @@ precacheAndRoute(
 cleanupOutdatedCaches()
 
 let allowlist: undefined | RegExp[]
+let denylist: undefined | RegExp[]
 if (import.meta.env.DEV) {
   allowlist = [/^\/$/]
 }
 
 if (import.meta.env.PROD) {
-  // hoist regexp
   const apiAssetRegexp = /^\/assets\/(?:vite-pwa-workbox|unplugin-pwa)_api_(?:packages|symbols)_/i
+  denylist = [apiAssetRegexp, API_PAGE_REGEX]
+  // hoist regexp
   registerRoute(
     ({ request, sameOrigin }) => {
       return sameOrigin && request.mode === 'navigate'
@@ -189,5 +191,5 @@ if (import.meta.env.PROD) {
 // to allow work offline
 registerRoute(new NavigationRoute(
   createHandlerBoundToURL('index.html'),
-  { allowlist },
+  { allowlist, denylist },
 ))
