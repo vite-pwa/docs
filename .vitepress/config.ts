@@ -1,15 +1,14 @@
-import type { SidebarItem } from './nav/sidebar-item'
-import { withPwa } from '@vite-pwa/vitepress'
+import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import llmsVitePlugin, { copyOrDownloadAsMarkdownButtons } from 'vitepress-plugin-llms'
-import { withMermaid } from 'vitepress-plugin-mermaid'
-import { version } from '../package.json'
-import { pwa } from './scripts/pwa'
-import { transformHead } from './scripts/transformHead'
-import { sidebar as workboxApiSidebar } from './workbox-api'
+import packageJSON from '../package.json' with { type: 'json' }
+import { pwa } from './scripts/pwa.ts'
+import { transformHead } from './scripts/transformHead.ts'
+import { withPwa } from './with-pwa/index.ts'
+import { sidebar as workboxApiSidebar } from './workbox-api.ts'
 
-const Guide: SidebarItem[] = [
+const Guide: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/guide/',
@@ -84,7 +83,7 @@ const Guide: SidebarItem[] = [
   },
 ]
 
-const Deployment: SidebarItem[] = [
+const Deployment: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/deployment/',
@@ -111,7 +110,7 @@ const Deployment: SidebarItem[] = [
   },
 ]
 
-const AssetsGenerator: SidebarItem[] = [
+const AssetsGenerator: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/assets-generator/',
@@ -134,7 +133,7 @@ const AssetsGenerator: SidebarItem[] = [
   },
 ]
 
-const Frameworks: SidebarItem[] = [
+const Frameworks: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/frameworks/',
@@ -201,7 +200,7 @@ const Frameworks: SidebarItem[] = [
   },
 ]
 
-const Examples: SidebarItem[] = [
+const Examples: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/examples/',
@@ -264,7 +263,7 @@ const Examples: SidebarItem[] = [
   },
 ]
 
-const Workbox: SidebarItem[] = [
+const Workbox: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/workbox/',
@@ -279,14 +278,10 @@ const Workbox: SidebarItem[] = [
   },
 ]
 
-const UnpluginPWA: SidebarItem[] = [
+const UnpluginPWA: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/unplugin-pwa/',
-  },
-  {
-    text: 'Architecture',
-    link: '/unplugin-pwa/architecture',
   },
   {
     text: 'Core Package',
@@ -307,7 +302,7 @@ const UnpluginPWA: SidebarItem[] = [
     // items: workboxApiSidebar(),
   },
 ]
-const VitePWAWorkbox: SidebarItem[] = [
+const VitePWAWorkbox: DefaultTheme.SidebarItem[] = [
   {
     text: 'Getting Started',
     link: '/vite-pwa-workbox/',
@@ -392,7 +387,7 @@ function prepareSidebar(idx: number) {
       link: '/workbox/',
       items: Workbox,
     },
-  ].map<SidebarItem>((entry, i) => {
+  ].map<DefaultTheme.SidebarItem>((entry, i) => {
     if (idx === i) {
       entry.collapsed = false
     }
@@ -405,7 +400,7 @@ const ogUrl = 'https://vite-pwa-org.netlify.app/'
 const ogImage = `${ogUrl}og-image.png`
 const description = 'PWA Ecosystem, Modular PWA integrations for modern web frameworks'
 
-export default withPwa(withMermaid(defineConfig({
+export default withPwa(defineConfig({
   lang: 'en-US',
   title: 'PWA Ecosystem',
   description,
@@ -513,7 +508,7 @@ export default withPwa(withMermaid(defineConfig({
         activeMatch: '^/vite-pwa-workbox/',
       },
       {
-        text: `v${version}`,
+        text: `v${packageJSON.version}`,
         items: [
           {
             text: 'Unplugin PWA',
@@ -600,13 +595,7 @@ export default withPwa(withMermaid(defineConfig({
         title: 'PWA Ecosystem Documentation',
       }),
     ],
-    optimizeDeps: {
-      include: [
-        'mermaid',
-        'elkjs/lib/elk.bundled.js',
-      ],
-    },
   },
   pwa,
   transformHead,
-})))
+}))

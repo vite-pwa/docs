@@ -3,18 +3,18 @@ import { presetAttributify, presetWind3 } from 'unocss'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import sidebar from './plugins/sidebar'
+// import sidebar from './plugins/sidebar'
 
 export default defineConfig({
   logLevel: 'info',
+  build: {
+    minify: false,
+  },
   optimizeDeps: {
     exclude: [
       '@vueuse/core',
       'vitepress',
     ],
-  },
-  experimental: {
-    enableNativePlugin: true,
   },
   server: {
     hmr: {
@@ -53,7 +53,7 @@ export default defineConfig({
       dts: '.vitepress/components.d.ts',
     }),
 
-    sidebar(),
+    // sidebar(),
 
     // https://github.com/unocss/unocss
     Unocss({

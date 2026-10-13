@@ -1,14 +1,29 @@
-import type { PwaOptions } from '@vite-pwa/vitepress'
+import type { VitePWAStrategy } from '@unplugin-pwa/core'
+import type { SWType } from '@vite-pwa/workbox-build/types'
+import type { PwaOptions } from '../with-pwa/types.ts'
 
-export const pwa: Partial<PwaOptions> = {
+function definePwaConfig<
+  UserStrategy extends VitePWAStrategy,
+  T extends SWType,
+>(
+  config: Partial<PwaOptions<UserStrategy, T>>,
+): Partial<PwaOptions<UserStrategy, T>> {
+  return config
+}
+
+export const pwa = definePwaConfig({
   outDir: '.vitepress/dist',
   registerType: 'prompt',
   includeManifestIcons: false,
+  includeManifestShortcutIcons: false,
+  includeManifestScreenshots: false,
+  swType: 'classic-and-module',
+  strategies: 'build-sw',
   manifest: {
     id: '/',
-    name: 'Vite PWA',
-    short_name: 'Vite PWA',
-    description: 'Zero-config PWA for Vite and the ecosystem',
+    name: 'PWA Ecosystem',
+    short_name: 'PWA Ecosystem',
+    description: 'Modular PWA integrations for modern web frameworks. Zero-config, extensible, and framework-agnostic bundler support for Vite, Webpack, and more',
     theme_color: '#ffffff',
     start_url: '/',
     lang: 'en-US',
@@ -45,7 +60,7 @@ export const pwa: Partial<PwaOptions> = {
       src: 'og-image.png',
       sizes: '1200x630',
       type: 'image/png',
-      label: 'Screenshot of Zero-config PWA Framework-agnostic Plugin for Vite and Integrations',
+      label: 'Screenshot of PWA Ecosystem',
     }],
     shortcuts: [{
       name: 'Getting Started',
@@ -84,9 +99,9 @@ export const pwa: Partial<PwaOptions> = {
         type: 'image/png',
       }],
     }, {
-      name: 'Workbox',
+      name: 'Vite PWA Workbox',
       description: 'Production-ready service worker libraries and tooling.',
-      url: '/workbox/',
+      url: '/vite-pwa-workbox/',
       icons: [{
         src: 'shortcuts/workbox.png',
         sizes: '96x96',
@@ -104,7 +119,10 @@ export const pwa: Partial<PwaOptions> = {
   experimental: {
     includeAllowlist: true,
   },
-  workbox: {
+  buildSW: {
+    inlineWorkboxRuntime: false,
+    workboxRuntimeCompatible: false,
+    swSrc: '.vitepress/pwa-ecosystem-sw.ts',
     globPatterns: ['**/*.{css,js,html,svg,png,ico,txt,woff2,json,excalidraw}'],
     globIgnores: [
       'shortcuts/*.svg',
@@ -117,62 +135,5 @@ export const pwa: Partial<PwaOptions> = {
       'assets/vite-pwa-workbox_api_packages_*',
       'assets/vite-pwa-workbox_api_symbols_*',
     ],
-    runtimeCaching: [
-      {
-        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'google-fonts-cache',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-      {
-        urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'gstatic-fonts-cache',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-      {
-        urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/.*/i,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'jsdelivr-images-cache',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
-          },
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-      {
-        urlPattern: /^\/(?:(?:vite-pwa-workbox|unplugin-pwa)\/api\/(?:packages|symbols)\/|assets\/(?:vite-pwa-workbox|unplugin-pwa)_api_(?:packages|symbols)_)/i,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'api-cache',
-          expiration: {
-            maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
-          },
-          cacheableResponse: {
-            statuses: [200],
-          },
-        },
-      },
-    ],
   },
-}
+})
