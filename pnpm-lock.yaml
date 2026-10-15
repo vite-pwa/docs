@@ -28,29 +28,32 @@ importers:
         specifier: ^22.9.3
         version: 22.18.10
       '@unplugin-pwa/core':
-        specifier: https://pkg.pr.new/@unplugin-pwa/core@8d37b19
-        version: https://pkg.pr.new/@unplugin-pwa/core@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+        specifier: https://pkg.pr.new/@unplugin-pwa/core@0bae7ec
+        version: https://pkg.pr.new/@unplugin-pwa/core@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+      '@unplugin-pwa/inspector':
+        specifier: https://pkg.pr.new/@unplugin-pwa/inspector@0bae7ec
+        version: https://pkg.pr.new/@unplugin-pwa/inspector@0bae7ec
       '@unplugin-pwa/types':
-        specifier: https://pkg.pr.new/@unplugin-pwa/types@8d37b19
-        version: https://pkg.pr.new/@unplugin-pwa/types@8d37b19
+        specifier: https://pkg.pr.new/@unplugin-pwa/types@0bae7ec
+        version: https://pkg.pr.new/@unplugin-pwa/types@0bae7ec
       '@unplugin-pwa/vite':
-        specifier: https://pkg.pr.new/@unplugin-pwa/vite@8d37b19
-        version: https://pkg.pr.new/@unplugin-pwa/vite@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+        specifier: https://pkg.pr.new/@unplugin-pwa/vite@0bae7ec
+        version: https://pkg.pr.new/@unplugin-pwa/vite@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
       '@vite-pwa/assets-generator':
         specifier: ^2.0.0
         version: 2.0.0(@types/node@22.18.10)
       '@vite-pwa/workbox-build':
-        specifier: ^8.0.10
-        version: 8.0.10(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+        specifier: ^8.0.11
+        version: 8.0.11(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
       '@vite-pwa/workbox-swkit':
-        specifier: ^8.0.10
-        version: 8.0.10
+        specifier: ^8.0.11
+        version: 8.0.11
       '@vite-pwa/workbox-types':
-        specifier: ^8.0.10
-        version: 8.0.10
+        specifier: ^8.0.11
+        version: 8.0.11
       '@vite-pwa/workbox-window':
-        specifier: ^8.0.10
-        version: 8.0.10
+        specifier: ^8.0.11
+        version: 8.0.11
       '@vitejs/plugin-vue':
         specifier: ^6.0.10
         version: 6.0.10(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))(vue@3.5.43(typescript@6.0.3))
@@ -76,8 +79,8 @@ importers:
         specifier: ^8.3.4
         version: 8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1)
       vitepress:
-        specifier: 2.0.0-alpha.20
-        version: 2.0.0-alpha.20(@types/node@22.18.10)(change-case@5.4.4)(jiti@2.6.1)(postcss@8.5.29)(terser@5.31.0)(tsx@4.19.1)(typescript@6.0.3)(yaml@2.9.1)
+        specifier: https://pkg.pr.new/vitepress@16c020d
+        version: https://pkg.pr.new/vitepress@16c020d(@types/node@22.18.10)(change-case@5.4.4)(jiti@2.6.1)(postcss@8.5.29)(terser@5.31.0)(tsx@4.19.1)(typescript@6.0.3)(yaml@2.9.1)
       vitepress-plugin-group-icons:
         specifier: ^1.7.7
         version: 1.7.7(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
@@ -934,8 +937,8 @@ packages:
   '@types/linkify-it@5.0.0':
     resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==}
 
-  '@types/markdown-it@14.1.2':
-    resolution: {integrity: sha512-promo4eFwuiW+TfGxhi+0x3czqTYJkG8qB17ZUJiVF10Xm7NLVRSLUsfRTU/6h1e24VvRnXCx+hG7li58lkzog==}
+  '@types/markdown-it@14.2.0':
+    resolution: {integrity: sha512-NoQ2yGlLWj4wpxMs+TYmRKk3thDrQ97agr7sFqfLsAlvoS8SNQuTrlObhFqG9iugdTtgOE9jpJ6FNM4ZGsa5xQ==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -1108,8 +1111,8 @@ packages:
     peerDependencies:
       vite: ^5.0.0-0 || ^6.0.0-0 || ^7.0.0-0 || ^8.0.0-0
 
-  '@unplugin-pwa/core@https://pkg.pr.new/@unplugin-pwa/core@8d37b19':
-    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/core@8d37b19}
+  '@unplugin-pwa/core@https://pkg.pr.new/@unplugin-pwa/core@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/core@0bae7ec}
     version: 0.0.0
     engines: {node: '>=22.14.0'}
     peerDependencies:
@@ -1124,8 +1127,8 @@ packages:
       vite:
         optional: true
 
-  '@unplugin-pwa/core@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@8d37b19':
-    resolution: {tarball: https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@8d37b19}
+  '@unplugin-pwa/core@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@0bae7ec}
     version: 0.0.0
     engines: {node: '>=22.14.0'}
     peerDependencies:
@@ -1140,18 +1143,23 @@ packages:
       vite:
         optional: true
 
-  '@unplugin-pwa/inspector@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@8d37b19':
-    resolution: {tarball: https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@8d37b19}
+  '@unplugin-pwa/inspector@https://pkg.pr.new/@unplugin-pwa/inspector@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/inspector@0bae7ec}
     version: 0.0.0
     engines: {node: '>=22.14.0'}
 
-  '@unplugin-pwa/types@https://pkg.pr.new/@unplugin-pwa/types@8d37b19':
-    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/types@8d37b19}
+  '@unplugin-pwa/inspector@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@0bae7ec}
     version: 0.0.0
     engines: {node: '>=22.14.0'}
 
-  '@unplugin-pwa/vite@https://pkg.pr.new/@unplugin-pwa/vite@8d37b19':
-    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/vite@8d37b19}
+  '@unplugin-pwa/types@https://pkg.pr.new/@unplugin-pwa/types@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/types@0bae7ec}
+    version: 0.0.0
+    engines: {node: '>=22.14.0'}
+
+  '@unplugin-pwa/vite@https://pkg.pr.new/@unplugin-pwa/vite@0bae7ec':
+    resolution: {tarball: https://pkg.pr.new/@unplugin-pwa/vite@0bae7ec}
     version: 0.0.0
     engines: {node: '>=22.14.0'}
     peerDependencies:
@@ -1174,8 +1182,8 @@ packages:
     engines: {node: '>=20.19.0'}
     hasBin: true
 
-  '@vite-pwa/workbox-build@8.0.10':
-    resolution: {integrity: sha512-xXg9ZLtkuokfiDeJo1TAhtvx5aCoQMYZXBcOHI1lZGfg/VBlOiQzKRKPcu10yM4LHTi/ZQ7plMYeQOxTDVMA5A==}
+  '@vite-pwa/workbox-build@8.0.11':
+    resolution: {integrity: sha512-zbhL7FF9Tp+dCMa+OY6QyGrtTsDmx7mfFQ33/aKlvolYJR4G7IeoqWl63+F7yCpTT/mpWqsixtsTmgKz3UVB9w==}
     engines: {node: '>=22.14.0'}
     peerDependencies:
       '@rspack/core': ^1.0.0 || ^2.0.0
@@ -1195,15 +1203,15 @@ packages:
       webpack:
         optional: true
 
-  '@vite-pwa/workbox-swkit@8.0.10':
-    resolution: {integrity: sha512-a90HWeYF/myS3XNE6J8PRA4LgwTkEbUJyVjnIGDlbFrxMXqePS+x55G4ODpwlfBNuORaQcXacZJkN7kCObsWHw==}
+  '@vite-pwa/workbox-swkit@8.0.11':
+    resolution: {integrity: sha512-fRxXWSeuJJy3ZHkqup+UD5oFj8v+654THLs7RpD7h/koM512Yus8OrVvEXkHAEMPTGosGKfp6T2+HzS1YuiG6Q==}
 
-  '@vite-pwa/workbox-types@8.0.10':
-    resolution: {integrity: sha512-bGzhYIOZ/CIr1xRP0HIohNGr/Qet09cAh5tOPLV6g4+8SqNt4MgOSQlDbPxCRdetwnfhiiyQTVxtFWfWtag3WA==}
+  '@vite-pwa/workbox-types@8.0.11':
+    resolution: {integrity: sha512-2QeACUK31O59eerxcSjHaiq6ElicjUevKZRS62RTxZ213ghp4lfdxzQd25UZZkBHMEunFPQi9hxoWaT40VaBIA==}
     engines: {node: '>=22.14.0'}
 
-  '@vite-pwa/workbox-window@8.0.10':
-    resolution: {integrity: sha512-ne6hi6p/1AY9uio9b+Aw1r8Yk0mxVoePYwpBZVqW+JMVvUi0tfgX3Vc4fPxrPcoEY8oaXfSzWpdbn+EeO+VXIw==}
+  '@vite-pwa/workbox-window@8.0.11':
+    resolution: {integrity: sha512-yZlHv6ZayWQyzmZ2+XMz0EAh8X9JUlKp9yez0VAErc96et9IkMs3jAcmxiMIqGE60ZHQLHOXaxyp59cgXwKAxw==}
 
   '@vitejs/plugin-vue@6.0.10':
     resolution: {integrity: sha512-b80aUQh3n+qEzzZm5oQp3rT2QImeCx58K6eFl/RkJ3d65KW0kTuv5lNsLRVAjbW9YRUpo/wzmvzMgV34bTAItA==}
@@ -1264,24 +1272,20 @@ packages:
   '@vue/shared@3.5.43':
     resolution: {integrity: sha512-uksS7YGMR5NZyr4JNq0Rp+QyLns0ueaz20KwzIPW9R0LH1Vnt4E+XUM29PNseEbf1www2gOuhuDi5AKOIXag9Q==}
 
-  '@vueuse/core@14.4.0':
-    resolution: {integrity: sha512-X4WHz1HlCzCBoYXesUkifzzWBAcZgXG8Fi5iNPQg/epdzOB3gu8Fawj3hvuwYR1nGcXGnvxwYYcUC/71++svtQ==}
-    peerDependencies:
-      vue: ^3.5.0
-
   '@vueuse/core@15.0.0':
     resolution: {integrity: sha512-Zv67h5mrk7YHDJsRObx+DXaCBz6RKBUpxqLesJ+3xZNPG6yuQs7ja7kg3veFrrouYLWAqydQ7CwGEbLVxB43Ng==}
     engines: {node: '>=22'}
     peerDependencies:
       vue: ^3.5.0
 
-  '@vueuse/integrations@14.4.0':
-    resolution: {integrity: sha512-oJz9qTgczvA7L1nXQFRU7h8tQbOCoiceqvMMhT9XYMyOGTqLJ2rEa09PON+nD2t48sZUfeOmg4eaWJXV4sZb/w==}
+  '@vueuse/integrations@15.0.0':
+    resolution: {integrity: sha512-uWC1608pEocJPeRk1IqrEA3uYHhAGTJNibcMAdxgdK2Sy2Hypc6b+VdNO9KekCxyPc4VXK8SKDp8vsXefR/ZFg==}
+    engines: {node: '>=22'}
     peerDependencies:
       async-validator: ^4
       axios: ^1
       change-case: ^5
-      drauu: ^0.4
+      drauu: ^1 || ^0.4
       focus-trap: ^7 || ^8
       fuse.js: ^7
       idb-keyval: ^6
@@ -1317,17 +1321,9 @@ packages:
       universal-cookie:
         optional: true
 
-  '@vueuse/metadata@14.4.0':
-    resolution: {integrity: sha512-swx/255R6JyHZFJhx845iz5CRWDZdCfvkZOpACWc5+c5WHcG24mv8gUT1WIdFQaHt6dq79rvILd9QnCWiyVm9g==}
-
   '@vueuse/metadata@15.0.0':
     resolution: {integrity: sha512-sfWE5LADAKJ0KnjtGliMdSN8Ij/L7uP6rXIZlgPloAI4zvvefbw6H5Lt7KJA6RqQOYgVqWF5Guj50HHMIzygBg==}
     engines: {node: '>=22'}
-
-  '@vueuse/shared@14.4.0':
-    resolution: {integrity: sha512-JRgY90Sz8DDtPMsaDflvPMp9xYk69JZAmbuDvAquUVXKr2gEjqtzGNTTthLfckH0BzBqvnu31gb4a8TGLRe79g==}
-    peerDependencies:
-      vue: ^3.5.0
 
   '@vueuse/shared@15.0.0':
     resolution: {integrity: sha512-vbNXhGrbV53xPOMSyOzMHQRvhMgZf7oNDw2RChUetVxwTIEkInQ1joZ9JbT0G3z2n2AJNjvmCWeM9ySYrnvogA==}
@@ -3345,8 +3341,9 @@ packages:
     resolution: {integrity: sha512-Qb42p9pYoRlMRbv+Yvh3reS4GInyr+ToU3G1tEC1Euz+gyBNywXkZIQPV/AoltizaakAeuI89Bkhkd7Y0jaM/w==}
     engines: {node: '>=18'}
 
-  vitepress@2.0.0-alpha.20:
-    resolution: {integrity: sha512-uQWKmP9PaBkf9zxHn0iOml/ZPPDaGKqQXVMBHz3yjwyyd9Eg+BKLGxbqmOGlfOMCt6Fj8TLiAnE59qlKZ0A3xw==}
+  vitepress@https://pkg.pr.new/vitepress@16c020d:
+    resolution: {tarball: https://pkg.pr.new/vitepress@16c020d}
+    version: 2.0.0-alpha.20
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -4094,7 +4091,7 @@ snapshots:
 
   '@types/linkify-it@5.0.0': {}
 
-  '@types/markdown-it@14.1.2':
+  '@types/markdown-it@14.2.0':
     dependencies:
       '@types/linkify-it': 5.0.0
       '@types/mdurl': 2.0.0
@@ -4389,9 +4386,9 @@ snapshots:
       - ocache
       - srvx
 
-  '@unplugin-pwa/core@https://pkg.pr.new/@unplugin-pwa/core@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
+  '@unplugin-pwa/core@https://pkg.pr.new/@unplugin-pwa/core@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
     dependencies:
-      '@vite-pwa/workbox-build': 8.0.10(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+      '@vite-pwa/workbox-build': 8.0.11(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
       hookable: 6.1.2
     optionalDependencies:
       '@vite-pwa/assets-generator': 2.0.0(@types/node@22.18.10)
@@ -4403,9 +4400,9 @@ snapshots:
       - typescript
       - webpack
 
-  '@unplugin-pwa/core@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
+  '@unplugin-pwa/core@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
     dependencies:
-      '@vite-pwa/workbox-build': 8.0.10(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+      '@vite-pwa/workbox-build': 8.0.11(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
       hookable: 6.1.2
     optionalDependencies:
       '@vite-pwa/assets-generator': 2.0.0(@types/node@22.18.10)
@@ -4417,18 +4414,20 @@ snapshots:
       - typescript
       - webpack
 
-  '@unplugin-pwa/inspector@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@8d37b19': {}
+  '@unplugin-pwa/inspector@https://pkg.pr.new/@unplugin-pwa/inspector@0bae7ec': {}
 
-  '@unplugin-pwa/types@https://pkg.pr.new/@unplugin-pwa/types@8d37b19': {}
+  '@unplugin-pwa/inspector@https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@0bae7ec': {}
 
-  '@unplugin-pwa/vite@https://pkg.pr.new/@unplugin-pwa/vite@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
+  '@unplugin-pwa/types@https://pkg.pr.new/@unplugin-pwa/types@0bae7ec': {}
+
+  '@unplugin-pwa/vite@https://pkg.pr.new/@unplugin-pwa/vite@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      '@unplugin-pwa/core': https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@8d37b19(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
-      '@unplugin-pwa/inspector': https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@8d37b19
-      '@vite-pwa/workbox-build': 8.0.10(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
-      '@vite-pwa/workbox-swkit': 8.0.10
-      '@vite-pwa/workbox-window': 8.0.10
+      '@unplugin-pwa/core': https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/core@0bae7ec(@vite-pwa/assets-generator@2.0.0(@types/node@22.18.10))(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+      '@unplugin-pwa/inspector': https://pkg.pr.new/vite-pwa/unplugin-pwa/@unplugin-pwa/inspector@0bae7ec
+      '@vite-pwa/workbox-build': 8.0.11(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))
+      '@vite-pwa/workbox-swkit': 8.0.11
+      '@vite-pwa/workbox-window': 8.0.11
     optionalDependencies:
       '@vite-pwa/assets-generator': 2.0.0(@types/node@22.18.10)
       magicast: 0.5.5
@@ -4450,11 +4449,11 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@vite-pwa/workbox-build@8.0.10(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
+  '@vite-pwa/workbox-build@8.0.11(magicast@0.5.5)(rolldown@1.2.13)(typescript@6.0.3)(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))':
     dependencies:
       '@jridgewell/remapping': 2.3.5
-      '@vite-pwa/workbox-swkit': 8.0.10
-      '@vite-pwa/workbox-window': 8.0.10
+      '@vite-pwa/workbox-swkit': 8.0.11
+      '@vite-pwa/workbox-window': 8.0.11
       magic-string: 1.4.3
       proper-tags: 2.0.2
       serialize-javascript: 7.1.2
@@ -4468,13 +4467,13 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@vite-pwa/workbox-swkit@8.0.10':
+  '@vite-pwa/workbox-swkit@8.0.11':
     dependencies:
       idb: 8.0.4
 
-  '@vite-pwa/workbox-types@8.0.10': {}
+  '@vite-pwa/workbox-types@8.0.11': {}
 
-  '@vite-pwa/workbox-window@8.0.10':
+  '@vite-pwa/workbox-window@8.0.11':
     dependencies:
       '@types/trusted-types': 2.0.7
 
@@ -4562,13 +4561,6 @@ snapshots:
 
   '@vue/shared@3.5.43': {}
 
-  '@vueuse/core@14.4.0(vue@3.5.43(typescript@6.0.3))':
-    dependencies:
-      '@types/web-bluetooth': 0.0.21
-      '@vueuse/metadata': 14.4.0
-      '@vueuse/shared': 14.4.0(vue@3.5.43(typescript@6.0.3))
-      vue: 3.5.43(typescript@6.0.3)
-
   '@vueuse/core@15.0.0(vue@3.5.43(typescript@6.0.3))':
     dependencies:
       '@types/web-bluetooth': 0.0.21
@@ -4576,22 +4568,16 @@ snapshots:
       '@vueuse/shared': 15.0.0(vue@3.5.43(typescript@6.0.3))
       vue: 3.5.43(typescript@6.0.3)
 
-  '@vueuse/integrations@14.4.0(change-case@5.4.4)(focus-trap@8.2.3)(vue@3.5.43(typescript@6.0.3))':
+  '@vueuse/integrations@15.0.0(change-case@5.4.4)(focus-trap@8.2.3)(vue@3.5.43(typescript@6.0.3))':
     dependencies:
-      '@vueuse/core': 14.4.0(vue@3.5.43(typescript@6.0.3))
-      '@vueuse/shared': 14.4.0(vue@3.5.43(typescript@6.0.3))
+      '@vueuse/core': 15.0.0(vue@3.5.43(typescript@6.0.3))
+      '@vueuse/shared': 15.0.0(vue@3.5.43(typescript@6.0.3))
       vue: 3.5.43(typescript@6.0.3)
     optionalDependencies:
       change-case: 5.4.4
       focus-trap: 8.2.3
 
-  '@vueuse/metadata@14.4.0': {}
-
   '@vueuse/metadata@15.0.0': {}
-
-  '@vueuse/shared@14.4.0(vue@3.5.43(typescript@6.0.3))':
-    dependencies:
-      vue: 3.5.43(typescript@6.0.3)
 
   '@vueuse/shared@15.0.0(vue@3.5.43(typescript@6.0.3))':
     dependencies:
@@ -6908,19 +6894,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress@2.0.0-alpha.20(@types/node@22.18.10)(change-case@5.4.4)(jiti@2.6.1)(postcss@8.5.29)(terser@5.31.0)(tsx@4.19.1)(typescript@6.0.3)(yaml@2.9.1):
+  vitepress@https://pkg.pr.new/vitepress@16c020d(@types/node@22.18.10)(change-case@5.4.4)(jiti@2.6.1)(postcss@8.5.29)(terser@5.31.0)(tsx@4.19.1)(typescript@6.0.3)(yaml@2.9.1):
     dependencies:
       '@docsearch/css': 4.7.1
       '@docsearch/js': 4.7.1
       '@docsearch/sidepanel-js': 4.7.1
       '@iconify-json/simple-icons': 1.2.100
       '@shikijs/transformers': 4.5.0
-      '@types/markdown-it': 14.1.2
+      '@types/markdown-it': 14.2.0
       '@vitejs/plugin-vue': 6.0.10(vite@8.3.4(@types/node@22.18.10)(jiti@2.6.1)(terser@5.31.0)(tsx@4.19.1)(yaml@2.9.1))(vue@3.5.43(typescript@6.0.3))
       '@vue/devtools-api': 8.2.1
       '@vue/shared': 3.5.43
-      '@vueuse/core': 14.4.0(vue@3.5.43(typescript@6.0.3))
-      '@vueuse/integrations': 14.4.0(change-case@5.4.4)(focus-trap@8.2.3)(vue@3.5.43(typescript@6.0.3))
+      '@vueuse/core': 15.0.0(vue@3.5.43(typescript@6.0.3))
+      '@vueuse/integrations': 15.0.0(change-case@5.4.4)(focus-trap@8.2.3)(vue@3.5.43(typescript@6.0.3))
       focus-trap: 8.2.3
       mark.js: 8.11.1
       minisearch: 7.2.0

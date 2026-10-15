@@ -118,6 +118,7 @@ export const pwa = definePwaConfig({
   },
   minify: false,
   buildSW: {
+    // enableSWKitLogs: true,
     inlineWorkboxRuntime: false,
     workboxRuntimeCompatible: false,
     swSrc: '.vitepress/pwa-ecosystem-sw.ts',

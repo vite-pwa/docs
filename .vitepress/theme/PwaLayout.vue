@@ -64,11 +64,11 @@ watch(() => [
   url.hash = hash
   const q = url.searchParams.get('q')
   if (!q) {
+    apiPageOfflineRetry.value = false
     apiPageOffline.value = undefined
     return
   }
-  const offlinePage = decodeURIComponent(q)
-  url = new URL(offlinePage, window.location.origin)
+  url = new URL(q, window.location.origin)
   apiPageOffline.value = url.pathname
   apiPageOfflineRetry.value = !failedRetries.has(url.pathname)
 }, { immediate: true })

@@ -5,13 +5,17 @@ import { CacheableResponsePlugin } from '@vite-pwa/workbox-swkit/cacheable-respo
 import { ExpirationPlugin } from '@vite-pwa/workbox-swkit/expiration'
 import { cleanupOutdatedCaches, createHandlerBoundToURL, precacheAndRoute } from '@vite-pwa/workbox-swkit/precaching'
 import { NavigationRoute, registerRoute } from '@vite-pwa/workbox-swkit/routing'
-import { NetworkFirst, NetworkOnly, StaleWhileRevalidate } from '@vite-pwa/workbox-swkit/strategies'
+import { NetworkFirst, StaleWhileRevalidate } from '@vite-pwa/workbox-swkit/strategies'
 import { API_CACHE_NAME, API_PAGE_REGEX, prepareApiPages } from './pages.ts'
 
 declare let self: ServiceWorkerGlobalScope
 
 // eslint-disable-next-line no-console
 console.log('X')
+
+if (import.meta.env.ENABLE_SWKIT_LOGS) {
+  self.__WB_DISABLE_DEV_LOGS = false
+}
 
 async function createCaches(): Promise<void> {
   await Promise.all([
@@ -91,27 +95,9 @@ if (import.meta.env.DEV) {
 }
 
 if (import.meta.env.PROD) {
+  // hoist regexp
   const apiAssetRegexp = /^\/assets\/(?:vite-pwa-workbox|unplugin-pwa)_api_(?:packages|symbols)_/i
   denylist = [apiAssetRegexp, API_PAGE_REGEX]
-  // hoist regexp
-  registerRoute(
-    ({ request, sameOrigin }) => {
-      return sameOrigin && request.mode === 'navigate'
-    },
-    new NetworkOnly({
-      plugins: [{
-        /* this callback will be called when the fetch call fails */
-        handlerDidError: async ({ request }) => {
-          const url = new URL(request.url)
-          const path = url.pathname
-          return Response.redirect(`/404?q=${encodeURIComponent(path)}`, 302)
-        },
-        /* this callback will prevent caching the response */
-        cacheWillUpdate: async () => null,
-      }],
-    }),
-    'GET',
-  )
   // googleapis
   registerRoute(
     /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -160,14 +146,10 @@ if (import.meta.env.PROD) {
     }),
     'GET',
   )
-  // api pages and assets
+  // api pages assets
   registerRoute(
     ({ sameOrigin, url }) => {
-      if (!sameOrigin) {
-        return false
-      }
-      const path = url.pathname
-      return API_PAGE_REGEX.test(path) || apiAssetRegexp.test(path)
+      return sameOrigin ? apiAssetRegexp.test(url.pathname) : false
     },
     new NetworkFirst({
       cacheName: API_CACHE_NAME,
@@ -182,6 +164,32 @@ if (import.meta.env.PROD) {
     }),
     'GET',
   )
+  // api pages
+  registerRoute(
+    ({ sameOrigin, url }) => {
+      return sameOrigin ? API_PAGE_REGEX.test(url.pathname) : false
+    },
+    new NetworkFirst({
+      cacheName: API_CACHE_NAME,
+      plugins: [
+        new ExpirationPlugin({
+          maxAgeSeconds: 60 * 60 * 24 * 7, // <== 7 days
+        }),
+        new CacheableResponsePlugin({
+          statuses: [200],
+        }),
+        {
+          /* this callback will be called when the fetch call fails */
+          handlerDidError: async ({ request }) => {
+            const url = new URL(request.url)
+            const path = url.pathname
+            return Response.redirect(`/404?q=${encodeURIComponent(path)}`, 302)
+          },
+        },
+      ],
+    }),
+    'GET',
+  )
 }
 
 // to allow work offline
@@ -189,3 +197,9 @@ registerRoute(new NavigationRoute(
   createHandlerBoundToURL('index.html'),
   { allowlist, denylist },
 ))
+
+declare global {
+  interface WorkerGlobalScope {
+    __WB_DISABLE_DEV_LOGS: boolean
+  }
+}
