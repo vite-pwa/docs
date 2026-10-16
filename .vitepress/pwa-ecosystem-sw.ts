@@ -5,7 +5,7 @@ import { CacheableResponsePlugin } from '@vite-pwa/workbox-swkit/cacheable-respo
 import { ExpirationPlugin } from '@vite-pwa/workbox-swkit/expiration'
 import { cleanupOutdatedCaches, createHandlerBoundToURL, precacheAndRoute } from '@vite-pwa/workbox-swkit/precaching'
 import { NavigationRoute, registerRoute } from '@vite-pwa/workbox-swkit/routing'
-import { NetworkFirst, StaleWhileRevalidate } from '@vite-pwa/workbox-swkit/strategies'
+import { NetworkFirst, NetworkOnly, StaleWhileRevalidate } from '@vite-pwa/workbox-swkit/strategies'
 import { API_CACHE_NAME, API_PAGE_REGEX, prepareApiPages } from './pages.ts'
 
 declare let self: ServiceWorkerGlobalScope
@@ -185,6 +185,24 @@ if (import.meta.env.PROD) {
             const path = url.pathname
             return Response.redirect(`/404?q=${encodeURIComponent(path)}`, 302)
           },
+        },
+      ],
+    }),
+    'GET',
+  )
+  // fallback for missing pages when offline, redirect to 404
+  // this will prevent flashing: navigation fallback => home, then 404 on VP client side routing
+  registerRoute(
+    ({ sameOrigin, url, request }) => {
+      return sameOrigin && request.mode === 'navigate' && !API_PAGE_REGEX.test(url.pathname)
+    },
+    new NetworkOnly({
+      plugins: [
+        {
+          /* this callback will be called when the fetch call fails */
+          handlerDidError: async () => Response.redirect('/404', 302),
+          /* this callback will prevent caching the response */
+          cacheWillUpdate: async () => null,
         },
       ],
     }),
